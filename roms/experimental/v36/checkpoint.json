@@ -1,0 +1,12 @@
+{
+  "version": "v36",
+  "status": ["EXPERIMENTAL", "CURRENT_CHECKPOINT", "PRECHECK"],
+  "repository_filename": "A2WC012E_MAP_v36_IDLE_CATCH_PRECHECK.bin",
+  "source_filename": "forester_sg9_sti_MAP_v36_IDLE_CATCH_PRECHECK(1).bin",
+  "size_bytes": 524288,
+  "sha256": "8194b6598f72fe32dc88d7df67073e0a44c841e6a6aa65810d3cc09a203a4105",
+  "base_rom_id": "A2WC012E",
+  "patched_id_at_0x2000": "A2WC0MME",
+  "patch": "MeRpMoD",
+  "purpose": ["MAP configuration", "IDLE_CATCH precheck", "baseline for future binary diffs"]
+}
