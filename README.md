@@ -13,12 +13,13 @@
 - логи, которыми подтверждена конкретная версия;
 - зависимости между таблицами;
 - последовательность настройки;
+- подтверждённые адреса таблиц;
 - неудачные подходы, чтобы не повторять их;
-- статус каждого вывода: подтверждено, вероятно, эксперимент или отклонено.
+- незакрытые гипотезы отдельно от проверенных фактов.
 
 ## Статусы
 
-- ✅ **CONFIRMED** — результат подтверждён поведением автомобиля и/или логами.
+- ✅ **CONFIRMED** — результат подтверждён поведением автомобиля, ROM diff и/или логами.
 - 🟡 **PROBABLE** — вывод выглядит обоснованным, но проверки пока недостаточно.
 - 🧪 **EXPERIMENTAL** — изменение находится в процессе проверки.
 - ❌ **REJECTED** — подход не дал ожидаемого результата либо вызвал проблему.
@@ -42,15 +43,29 @@
 ├── docs/
 │   ├── workflow.md
 │   ├── table-dependencies.md
+│   ├── a2wc012e-map.md
 │   ├── maf-scaling.md
 │   ├── tgv-delete.md
 │   ├── known-results.md
-│   └── rejected-experiments.md
+│   ├── rejected-experiments.md
+│   └── research-backlog.md
+├── definitions/
+│   └── README.md
 ├── roms/
 │   └── README.md
 └── logs/
     └── README.md
 ```
+
+## Быстрые ссылки
+
+- [`docs/workflow.md`](docs/workflow.md) — порядок настройки и проверки после прошивки.
+- [`docs/table-dependencies.md`](docs/table-dependencies.md) — что проверять при изменении каждой группы таблиц.
+- [`docs/a2wc012e-map.md`](docs/a2wc012e-map.md) — подтверждённые и неподтверждённые offsets A2WC012E.
+- [`docs/maf-scaling.md`](docs/maf-scaling.md) — методика CL/OL MAF, формулы и реальные фильтры логов.
+- [`docs/known-results.md`](docs/known-results.md) — уже установленные факты проекта.
+- [`docs/rejected-experiments.md`](docs/rejected-experiments.md) — то, что не сработало или дало проблему.
+- [`docs/research-backlog.md`](docs/research-backlog.md) — вопросы, которые ещё нельзя считать закрытыми.
 
 ## Текущий порядок работы
 
@@ -65,7 +80,18 @@
 7. Затем корректировать ignition/boost и связанные компенсации.
 8. После каждого этапа создать контрольную стабильную версию.
 
-Подробнее: [`docs/workflow.md`](docs/workflow.md).
+## Уже подтверждённые технические точки
+
+Для A2WC012E подтверждены, среди прочего:
+
+```text
+MAF Voltage axis: 0x5E538
+MAF Flow table:   0x5E610
+Target Throttle:  0x5D6AC
+Requested Torque: 0x5DB70
+```
+
+Подробности и уровень доверия к каждому адресу — в `docs/a2wc012e-map.md`.
 
 ## Важно
 
