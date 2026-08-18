@@ -1,0 +1,2 @@
+# ECU ROM images are binary artifacts. Do not attempt textual merge/diff.
+*.bin binary
