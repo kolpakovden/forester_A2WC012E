@@ -1,6 +1,6 @@
 # A2WC012E ECU Tuning Knowledge Base — Subaru Forester STI SH5
 
-Практическая база знаний по исследованию и настройке ECU/ROM **A2WC012E** для **Subaru Forester STI SH5, JDM / RHD**, собранная из реальных изменений, binary diff, логов и проверок на автомобиле.
+Практическая база знаний по исследованию и настройке ECU/ROM **A2WC012E** для **Subaru Forester STI SH5, JDM / RHD**, собранная из реальных изменений, binary diff, логов, исходников patch и проверок на автомобиле.
 
 > Основной объект этого репозитория — именно **ROM ID A2WC012E**. Значения, offsets и выводы нельзя автоматически переносить на другие ROM ID, даже если двигатель, ECU или модель автомобиля похожи.
 
@@ -16,14 +16,17 @@
 - зависимости между таблицами;
 - последовательность настройки;
 - подтверждённые адреса таблиц;
+- методику поиска новых адресов;
+- code hooks и runtime RAM references отдельно от calibration offsets;
 - неудачные подходы, чтобы не повторять их;
 - незакрытые гипотезы отдельно от проверенных фактов.
 
 ## Статусы
 
-- ✅ **CONFIRMED** — результат подтверждён поведением автомобиля, ROM diff и/или логами.
+- ✅ **CONFIRMED** — результат подтверждён поведением автомобиля, ROM diff и/или прямой проверкой структуры A2WC012E.
 - 🟡 **PROBABLE** — вывод выглядит обоснованным, но проверки пока недостаточно.
 - 🧪 **EXPERIMENTAL** — изменение находится в процессе проверки.
+- 📚 **REFERENCE** — адрес/название получены из source map, definition или другого источника и служат ориентиром для исследования.
 - ❌ **REJECTED** — подход не дал ожидаемого результата либо вызвал проблему.
 
 ## Основные правила
@@ -37,6 +40,7 @@
 7. Перед записью в ECU всегда сохранять заведомо рабочую предыдущую ROM.
 8. Аппаратную конфигурацию автомобиля фиксировать отдельно для каждой значимой версии, чтобы не смешивать особенности железа с особенностями ROM.
 9. Исторические файлы не переименовывать задним числом, если это ломает связь с логами и предыдущими обсуждениями.
+10. Не смешивать ROM/code addresses и runtime RAM pointers: одинаковая подсистема может иметь несколько разных адресов с разным назначением.
 
 ## Структура
 
@@ -48,7 +52,10 @@
 ├── docs/
 │   ├── workflow.md
 │   ├── table-dependencies.md
+│   ├── address-research-workflow.md
 │   ├── a2wc012e-map.md
+│   ├── merpmod-a2wc012e-address-map.md
+│   ├── experimental-map-series.md
 │   ├── maf-scaling.md
 │   ├── tgv-delete.md
 │   ├── known-results.md
@@ -68,8 +75,12 @@
 
 - [`docs/workflow.md`](docs/workflow.md) — порядок настройки и проверки после прошивки.
 - [`docs/table-dependencies.md`](docs/table-dependencies.md) — что проверять при изменении каждой группы таблиц.
-- [`docs/a2wc012e-map.md`](docs/a2wc012e-map.md) — подтверждённые и неподтверждённые offsets A2WC012E.
+- [`docs/address-research-workflow.md`](docs/address-research-workflow.md) — как искать, проверять и переводить новые адреса в CONFIRMED.
+- [`docs/a2wc012e-map.md`](docs/a2wc012e-map.md) — подтверждённые и неподтверждённые calibration offsets A2WC012E.
+- [`docs/merpmod-a2wc012e-address-map.md`](docs/merpmod-a2wc012e-address-map.md) — target/source map MerpMod: ROM/code hooks, runtime RAM и ROM-hole.
+- [`docs/experimental-map-series.md`](docs/experimental-map-series.md) — история последних experimental v36→v41 и точные изменения.
 - [`docs/maf-scaling.md`](docs/maf-scaling.md) — методика CL/OL MAF, формулы и реальные фильтры логов.
+- [`docs/tgv-delete.md`](docs/tgv-delete.md) — TGV DTC delete и найденная вторая Idle Timing table.
 - [`docs/known-results.md`](docs/known-results.md) — уже установленные факты проекта.
 - [`docs/rejected-experiments.md`](docs/rejected-experiments.md) — то, что не сработало или дало проблему.
 - [`docs/research-backlog.md`](docs/research-backlog.md) — вопросы, которые ещё нельзя считать закрытыми.
@@ -87,18 +98,24 @@
 5. Настроить верх MAF по широкополосной лямбде в Open Loop.
 6. Только после стабилизации MAF оценивать injector scalar/latency и Primary Open Loop Fueling.
 7. Затем корректировать ignition/boost и связанные компенсации.
-8. После каждого этапа создать контрольную стабильную версию.
+8. Для SD/patch-разработки отдельно проверять hooks, RAM pointers и linker map.
+9. После каждого этапа создать контрольную стабильную версию.
 
 ## Уже подтверждённые технические точки
 
 Для A2WC012E подтверждены, среди прочего:
 
 ```text
-MAF Voltage axis: 0x5E538
-MAF Flow table:   0x5E610
-Target Throttle:  0x5D6AC
-Requested Torque: 0x5DB70
+MAF Voltage axis:     0x5E538
+MAF Flow table:       0x5E610
+Target Throttle:      0x5D6AC
+Requested Torque:     0x5DB70
+Base Timing Idle A:   0x5B157
+Base Timing Idle B:   0x5B167
+Idle ECT axis:        0x5AFDC
 ```
+
+Для `Base Timing Idle B` подтверждены наличие и адрес; конкретная логика выбора A/B всё ещё исследуется.
 
 Подробности и уровень доверия к каждому адресу — в [`docs/a2wc012e-map.md`](docs/a2wc012e-map.md).
 
@@ -109,15 +126,18 @@ Requested Torque: 0x5DB70
 1. `README.md` — назначение и правила проекта.
 2. `docs/known-results.md` — что уже считается подтверждённым.
 3. `docs/rejected-experiments.md` — что уже пробовали и не нужно повторять без новых данных.
-4. `docs/table-dependencies.md` — какие параметры проверять при каждой правке.
-5. `CHANGELOG.md` — история осмысленных версий.
-6. Только после этого — текущий BIN, definition и соответствующие логи.
+4. `docs/address-research-workflow.md` — как здесь подтверждаются новые offsets.
+5. `docs/table-dependencies.md` — какие параметры проверять при каждой правке.
+6. `docs/a2wc012e-map.md` и `docs/merpmod-a2wc012e-address-map.md` — две разные карты адресов.
+7. `CHANGELOG.md` — история осмысленных этапов.
+8. Только после этого — текущий BIN, definition и соответствующие логи.
 
 Если новый участник предлагает изменение, желательно сначала сформулировать:
 
 - какую проблему решаем;
-- какую таблицу меняем;
+- какую таблицу/функцию меняем;
 - какие связанные таблицы/параметры должны быть проверены;
+- какой тип адреса используется: calibration / code / RAM;
 - какой результат ожидаем увидеть в логе;
 - какая ROM остаётся гарантированной точкой отката.
 

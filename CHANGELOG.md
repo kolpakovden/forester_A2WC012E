@@ -53,6 +53,17 @@ Base ROM:
 - ...
 ```
 
+## 2026-08-19 — address research / MerpMod map
+
+- Добавлен `docs/address-research-workflow.md` с фактической методикой поиска и подтверждения новых offsets: полный BIN → source/reference → проверка datatype/axis/scaling → controlled edit → binary diff.
+- Зафиксировано правило разделять calibration/code addresses и runtime RAM pointers.
+- Добавлен `docs/merpmod-a2wc012e-address-map.md` с A2WC012E target map MerpMod: ROM/code hooks, RAM engine parameters, load smoothing и memory-reset references.
+- `dRomHoleStart 0x00069C10` отмечен как source-corroborated: адрес совпадает в target header и существующем A2WC012E MerpMod patch.
+- Подтверждено наличие второй 16-point idle timing table: `Base Timing Idle B @ 0x5B167` с общей ECT axis `0x5AFDC`; конкретная логика выбора A/B и связь с TGV пока остаются `PROBABLE`.
+- В основную карту добавлены связанные idle/load/IAT candidates из рабочего definition без повышения их до `CONFIRMED`.
+- Добавлен `docs/experimental-map-series.md`: отдельная история experimental изменений v36, v37, v38, v40 и v41 с точными offsets и old/new values.
+- Зафиксирована текущая экспериментальная ветка Delta MAP compensation (`DMapMini`): 7×7 neutral table, `Pull3D 0x00002110`, `pDeltaMap 0xFFFFAF88`, `pEngineSpeed 0xFFFFB218`. Статус — `EXPERIMENTAL`, без утверждения о подтверждённом поведении на автомобиле.
+
 ## 2026-08-18 — collaboration / repository hardening
 
 - Зафиксировано, что автомобиль проекта — **Subaru Forester STI SH5, JDM / RHD**, ECU/ROM **A2WC012E**.

@@ -39,20 +39,76 @@ P2022
 
 > DTC delete и calibration delete — это разные задачи.
 
+## Найденная вторая Idle Timing table
+
+При исследовании области idle timing в A2WC012E обнаружены две последовательные 16-point таблицы с общей ECT axis:
+
+```text
+ECT axis:            0x5AFDC
+Base Timing Idle A:  0x5B157
+Base Timing Idle B:  0x5B167
+```
+
+Наличие второй таблицы и её структура подтверждаются данными ROM: `0x5B167` идёт сразу после 16 байт первой таблицы и корректно декодируется по той же температурной оси.
+
+В working definition она отображается как:
+
+```text
+Base Timing Idle B (In-Gear)
+```
+
+При этом базовое описание definition допускает связь переключения A/B с TGV, но **для A2WC012E мы пока не считаем доказанным**, что именно TGV status выбирает эту карту или что название `In-Gear` полностью описывает её условие выбора.
+
+Поэтому разделяем два факта:
+
+```text
+наличие/адрес Base Timing Idle B — CONFIRMED
+условие выбора A/B и связь с TGV — PROBABLE
+```
+
+Практический вывод: при TGV delete эту таблицу **нужно учитывать и сравнивать**, но не следует автоматически копировать A → B или менять её только из-за предположения о TGV.
+
+## Что ещё смотреть рядом
+
+В working definition также присутствуют кандидаты:
+
+```text
+Base Timing Idle Minimum
+  table: 0x5B148
+  axis:  0x5B10C
+
+Base Timing Idle Minimum Vehicle Speed Enable
+  0x5AD20
+```
+
+Они полезны для исследования idle/idle-catch, но до отдельной проверки остаются `PROBABLE`.
+
 ## После TGV delete проверить
 
 - холодный запуск;
 - горячий запуск;
 - ХХ;
+- падение оборотов и idle catch;
 - переходные режимы;
 - CL trims;
 - AFR в OL;
 - IAM / FBKC / FLKC;
 - отсутствие новых DTC.
 
+Если исследуется выбор Idle Timing A/B, дополнительно логировать/сопоставлять:
+
+- gear / neutral / clutch state;
+- vehicle speed;
+- ECT;
+- RPM;
+- commanded/final timing;
+- throttle/load.
+
 ## Статус
 
 - DTC list: **CONFIRMED as applied**.
-- Необходимость дополнительных TGV calibration changes: **PROBABLE / требует отдельной проверки definition и ROM**.
+- Base Timing Idle B `0x5B167`: **CONFIRMED presence/address**.
+- Конкретная логика выбора Idle A/B: **PROBABLE**.
+- Необходимость дополнительных TGV calibration changes: **PROBABLE / требует отдельной проверки definition, ROM и runtime behavior**.
 
 Пока не найдено и не подтверждено конкретное связанное значение, не менять таблицу только потому, что в её названии присутствует TGV.
