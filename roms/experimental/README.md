@@ -80,23 +80,25 @@ Status:   experimental working base
 
 SHA-256 нужно снять непосредственно с исходного серверного файла перед публикацией.
 
-### v45 — DMAP test
+### v45 — DMAP test / checksum-fixed artifact
 
-Из истории проекта:
+Предоставлен и побайтно проверен файл:
 
 ```text
-Role:    v45_DMAP_TEST based on working v44
-Size:    524288 bytes
-SHA-256: 487bc4333b7e985e4dce5473b4525cd5be206e72c066b864ef19bcd225bdca20
-Hook:    4-byte patch @ 0x6A612
-Block:   0x6AC40-0x6AD43
-Status:  EXPERIMENTAL
+Artifact:   forester_sg9_sti_MAP_v45_DMAP_TEST_CHECKSUM.bin
+Size:       524288 bytes
+SHA-256:    92e0ff671bda35fe7951d68513c2ed188035b950556ffbe3e1e7cb603f241329
+Patched ID: A2WC0MME @ 0x2000
+MeRpMoD:    present
+Hook:       0x6A612
+DMAP block: 0x6AC40-0x6AD43
+Status:     EXPERIMENTAL
 ```
 
-Оригинальный BIN был сгенерирован на рабочем сервере; публиковать нужно именно его байты и подтвердить приведённый SHA-256.
+Ранее записанный SHA-256 `487bc4333b7e985e4dce5473b4525cd5be206e72c066b864ef19bcd225bdca20` относится к **другому побайтовому состоянию v45** и не является checksum для предоставленного `*_CHECKSUM.bin`.
+
+Подробности: [`v45/README.md`](v45/README.md).
 
 ## Почему здесь могут временно отсутствовать `.bin`
 
-GitHub connector умеет работать с binary blob, но для публикации нужен сам бинарный payload. Метаданные, SHA-256, change CSV и история не позволяют безопасно восстановить **точно тот же** test artifact побайтно.
-
-Поэтому до получения оригинального payload запись остаётся как `pending original artifact retrieval`, а не заменяется самодельной реконструкцией.
+Метаданные, SHA-256, change CSV и история не позволяют безопасно восстановить **точно тот же** test artifact побайтно. Поэтому до получения исходного binary payload запись остаётся как `pending original artifact retrieval`, а не заменяется самодельной реконструкцией.
