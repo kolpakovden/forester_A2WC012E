@@ -1,0 +1,2 @@
+parameter_candidate;offset;old_raw_float;new_raw_float;interpreted_ms_old;interpreted_ms_new
+Overrun initial injector enrichment (pulsewidth);0x58da0;2800.0;1000.0;2.8;1.0
