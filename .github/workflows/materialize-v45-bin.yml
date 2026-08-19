@@ -1,3 +1,4 @@
+# One-shot transport workflow for the verified v45 checksum ROM.
 name: Materialize v45 BIN
 
 on:
