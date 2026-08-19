@@ -53,6 +53,13 @@ Base ROM:
 - ...
 ```
 
+## 2026-08-19 — project identity correction
+
+- Исправлена ошибочная идентификация автомобиля в документации: автомобиль проекта — **Subaru Forester STI SG9, JDM / RHD**, а не SH5.
+- `sg9` в именах BIN соответствует реальной модели автомобиля проекта и не является legacy-обозначением другой машины.
+- Исправлены `README.md` и `docs/known-results.md`.
+- Старые commit messages с `SH5` остаются только в истории Git и считаются документированной ошибкой, а не фактом о машине.
+
 ## 2026-08-19 — address research / MerpMod map
 
 - Добавлен `docs/address-research-workflow.md` с фактической методикой поиска и подтверждения новых offsets: полный BIN → source/reference → проверка datatype/axis/scaling → controlled edit → binary diff.
@@ -66,8 +73,8 @@ Base ROM:
 
 ## 2026-08-18 — collaboration / repository hardening
 
-- Зафиксировано, что автомобиль проекта — **Subaru Forester STI SH5, JDM / RHD**, ECU/ROM **A2WC012E**.
-- Уточнено, что `sg9` в именах старых BIN — legacy filename, а не идентификация автомобиля проекта.
+- Зафиксировано, что автомобиль проекта — **Subaru Forester STI SG9, JDM / RHD**, ECU/ROM **A2WC012E**.
+- Уточнено, что `sg9` в именах BIN соответствует автомобилю проекта; прежняя трактовка как legacy filename была ошибочной.
 - Добавлен `CONTRIBUTING.md` для совместной работы.
 - Расширена карта зависимостей таблиц.
 - Добавлены отдельные зависимости для idle catch и airflow/load limits.
