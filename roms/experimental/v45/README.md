@@ -10,6 +10,31 @@ Size:     524288 bytes (512 KiB)
 SHA-256:  92e0ff671bda35fe7951d68513c2ed188035b950556ffbe3e1e7cb603f241329
 ```
 
+## Binary artifact в репозитории
+
+Из-за ограничения GitHub connector исходный payload сохранён в `main` как **побайтно обратимый XZ-архив**:
+
+```text
+forester_sg9_sti_MAP_v45_DMAP_TEST_CHECKSUM.bin.xz
+XZ size:    192132 bytes
+XZ SHA-256: a52b8efa8e0e188a444e9efc32dd9042b2d5e83c8ab052b43596a244dfa95ff2
+```
+
+Распаковка:
+
+```bash
+xz -dk forester_sg9_sti_MAP_v45_DMAP_TEST_CHECKSUM.bin.xz
+sha256sum forester_sg9_sti_MAP_v45_DMAP_TEST_CHECKSUM.bin
+```
+
+После распаковки **обязан** получиться исходный 524288-байтный BIN с SHA-256:
+
+```text
+92e0ff671bda35fe7951d68513c2ed188035b950556ffbe3e1e7cb603f241329
+```
+
+То есть архив — не реконструкция по таблицам и не новый ROM, а сжатое представление именно предоставленного файла.
+
 ## Проверенная идентификация
 
 ```text
