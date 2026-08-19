@@ -1,0 +1,37 @@
+name: Materialize v45 BIN
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'roms/experimental/v45/forester_sg9_sti_MAP_v45_DMAP_TEST_CHECKSUM.bin.xz'
+      - '.github/workflows/materialize-v45-bin.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Decompress and verify ROM
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd roms/experimental/v45
+          xz -dk forester_sg9_sti_MAP_v45_DMAP_TEST_CHECKSUM.bin.xz
+          echo '92e0ff671bda35fe7951d68513c2ed188035b950556ffbe3e1e7cb603f241329  forester_sg9_sti_MAP_v45_DMAP_TEST_CHECKSUM.bin' | sha256sum -c -
+          test "$(stat -c%s forester_sg9_sti_MAP_v45_DMAP_TEST_CHECKSUM.bin)" -eq 524288
+      - name: Commit binary artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add roms/experimental/v45/forester_sg9_sti_MAP_v45_DMAP_TEST_CHECKSUM.bin
+          git commit -m 'roms: add v45 DMAP checksum binary'
+          git push
