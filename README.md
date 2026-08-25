@@ -57,6 +57,7 @@
 │   ├── merpmod-a2wc012e-address-map.md
 │   ├── experimental-map-series.md
 │   ├── maf-scaling.md
+│   ├── gm-iat-scaling.md
 │   ├── tgv-delete.md
 │   ├── known-results.md
 │   ├── rejected-experiments.md
@@ -80,6 +81,7 @@
 - [`docs/merpmod-a2wc012e-address-map.md`](docs/merpmod-a2wc012e-address-map.md) — target/source map MerpMod: ROM/code hooks, runtime RAM и ROM-hole.
 - [`docs/experimental-map-series.md`](docs/experimental-map-series.md) — история последних experimental v36→v41 и точные изменения.
 - [`docs/maf-scaling.md`](docs/maf-scaling.md) — методика CL/OL MAF, формулы и реальные фильтры логов.
+- [`docs/gm-iat-scaling.md`](docs/gm-iat-scaling.md) — GM 25036751 / ACDelco 213-190 IAT: offsets A2WC012E, штатная кривая, рассчитанный 30-point scaling и план проверки на автомобиле.
 - [`docs/tgv-delete.md`](docs/tgv-delete.md) — TGV DTC delete и найденная вторая Idle Timing table.
 - [`docs/known-results.md`](docs/known-results.md) — уже установленные факты проекта.
 - [`docs/rejected-experiments.md`](docs/rejected-experiments.md) — то, что не сработало или дало проблему.
