@@ -18,15 +18,15 @@
             <filesize>512kb</filesize>
         </romid>
 
-        <!-- v70 prototype: static pre-flash Target Boost selector.
-             This intentionally changes one byte inside the stock Target Boost
-             ThreeDTable data pointer: 0x05 = 0x56B08 (Map 1),
-             0x07 = 0x76B08 (Map 2). This is NOT the final fail-safe runtime
-             selector; only values 0 and 1 are valid in this test definition. -->
-        <table type="2D" name="Active Target Boost Map" category="Dual Map - Target Boost" storagetype="uint8" endian="big" sizey="1" userlevel="1" storageaddress="0x53F29">
-            <scaling units="Map (0=Map 1, 1=Map 2)" expression="(x-5)/2" to_byte="x*2+5" format="#" fineincrement="1" coarseincrement="1" min="0" max="1" />
+        <!-- v70 fail-safe static Target Boost selector.
+             Active Map is stored at 0x6C0C0 and evaluated by the ROM helper:
+             exactly 1 selects Map 2; every other byte value selects Map 1.
+             Map selection is intended to be changed offline before flashing,
+             not switched dynamically while the ECU is running. -->
+        <table type="2D" name="Active Target Boost Map" category="Dual Map - Target Boost" storagetype="uint8" endian="big" sizey="1" userlevel="1" storageaddress="0x6C0C0">
+            <scaling units="Map (0=Map 1, 1=Map 2)" expression="x" to_byte="x" format="#" fineincrement="1" coarseincrement="1" min="0" max="1" />
             <table type="Static Y Axis" name="Dual Map"><data>Active Map</data></table>
-            <description>Prototype static selector for Target Boost only. Display value 0 writes raw 0x05 and selects data at 0x56B08. Display value 1 writes raw 0x07 and selects data at 0x76B08. Do not use values other than 0 or 1. This prototype does not yet implement the final fail-safe rule where every value except exactly 1 must force Map 1.</description>
+            <description>Fail-safe Target Boost selector. Raw value exactly 1 selects Map 2. Raw value 0, 2, 255, or any other value selects Map 1. Change this calibration value offline before flashing; this definition does not provide dynamic map switching.</description>
         </table>
 
         <table type="3D" name="Target Boost - Map 1" category="Dual Map - Target Boost" storagetype="uint16" endian="big" sizex="8" sizey="12" userlevel="1" logparam="E52" storageaddress="0x56B08">
