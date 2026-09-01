@@ -20,13 +20,13 @@
 
         <!-- v70 fail-safe static Target Boost selector.
              Active Map is stored at 0x6C0C0 and evaluated by the ROM helper:
-             exactly 1 selects Map 2; every other byte value selects Map 1.
-             Map selection is intended to be changed offline before flashing,
-             not switched dynamically while the ECU is running. -->
-        <table type="2D" name="Active Target Boost Map" category="Dual Map - Target Boost" storagetype="uint8" endian="big" sizey="1" userlevel="1" storageaddress="0x6C0C0">
-            <scaling units="Map (0=Map 1, 1=Map 2)" expression="x" to_byte="x" format="#" fineincrement="1" coarseincrement="1" min="0" max="1" />
+             raw value exactly 1 selects Map 2; every other raw byte selects Map 1.
+             RomRaider displays raw 0 as Map 1 and raw 1 as Map 2,
+             so the user-facing selector accepts 1 or 2. -->
+        <table type="2D" name="Active Map" category="Dual Map - Target Boost" storagetype="uint8" endian="big" sizey="1" userlevel="1" storageaddress="0x6C0C0">
+            <scaling units="Map (1=Map 1, 2=Map 2)" expression="x+1" to_byte="x-1" format="#" fineincrement="1" coarseincrement="1" min="1" max="2" />
             <table type="Static Y Axis" name="Dual Map"><data>Active Map</data></table>
-            <description>Fail-safe Target Boost selector. Raw value exactly 1 selects Map 2. Raw value 0, 2, 255, or any other value selects Map 1. Change this calibration value offline before flashing; this definition does not provide dynamic map switching.</description>
+            <description>User-facing value 1 selects Map 1 (raw 0). User-facing value 2 selects Map 2 (raw 1). The ROM helper is fail-safe: only raw value exactly 1 selects Map 2; raw 0, 2, 255, or any other unexpected raw value selects Map 1. Change this calibration value offline before flashing; this definition does not provide dynamic map switching.</description>
         </table>
 
         <table type="3D" name="Target Boost - Map 1" category="Dual Map - Target Boost" storagetype="uint16" endian="big" sizex="8" sizey="12" userlevel="1" logparam="E52" storageaddress="0x56B08">
