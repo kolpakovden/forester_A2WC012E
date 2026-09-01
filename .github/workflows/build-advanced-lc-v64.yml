@@ -1,0 +1,39 @@
+name: Build Advanced LC v64
+
+on:
+  push:
+    branches:
+      - chatgpt/advanced-lc-v64
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build v64 Advanced LC
+        run: |
+          python3 tools/a2wc012e_advanced_lc_patch.py \
+            forester_sg9_sti_MAP_IAT_GM_dMap_v63.bin \
+            forester_sg9_sti_MAP_IAT_GM_dMap_v64_ADV_LC.bin \
+            forester_sg9_sti_MAP_IAT_GM_dMap_v64_ADV_LC_report.txt
+
+      - name: Show hashes
+        run: |
+          sha256sum forester_sg9_sti_MAP_IAT_GM_dMap_v63.bin
+          sha256sum forester_sg9_sti_MAP_IAT_GM_dMap_v64_ADV_LC.bin
+
+      - name: Upload v64 artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: forester-sg9-v64-advanced-lc
+          if-no-files-found: error
+          retention-days: 30
+          path: |
+            forester_sg9_sti_MAP_IAT_GM_dMap_v64_ADV_LC.bin
+            forester_sg9_sti_MAP_IAT_GM_dMap_v64_ADV_LC_report.txt
