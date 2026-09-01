@@ -7,6 +7,8 @@ on:
       - 'forester_sg9_sti_MAP_IAT_GM_dMap_v70_DUALMAP_TEST.bin'
       - 'definitions/ecu_defs_A2WC012E_v70_DUALMAP_TEST.xml'
       - '.github/workflows/package-v70-dualmap.yml'
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
