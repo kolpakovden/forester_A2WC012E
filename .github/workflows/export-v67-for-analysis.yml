@@ -1,0 +1,38 @@
+name: Export v67 for analysis
+
+on:
+  push:
+    branches:
+      - chatgpt/spark-cut-v68
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build analysis report
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib
+          p=Path('forester_sg9_sti_MAP_IAT_GM_dMap_v67.bin')
+          b=p.read_bytes()
+          lines=[]
+          lines.append(f'size={len(b)}')
+          lines.append(f'sha256={hashlib.sha256(b).hexdigest()}')
+          lines.append(f'internal_id={b[0x2000:0x2008]!r}')
+          lines.append(f'ecu_id={b[0x5F004:0x5F00E].hex()} ascii={b[0x5F004:0x5F00E]!r}')
+          for a in [0x11310,0x1132C,0x113D8,0x25758,0x2578E,0x69C10,0x6A612,0x6AC40,0x6AD40,0x6AD44,0x6AD50,0x6AD70,0x6AD74,0x6AD78,0x6AD7C,0x6AD80,0x6AD90,0x6ADB0,0x6ADB4,0x6ADB8,0x6ADBC,0x6ADC0,0x6ADC4,0xA640,0xA67C,0xA68A]:
+              lines.append(f'{a:06X}: {b[a:a+0x20].hex()}')
+          Path('v67_analysis.txt').write_text('\n'.join(lines))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v67-analysis-input
+          path: |
+            forester_sg9_sti_MAP_IAT_GM_dMap_v67.bin
+            v67_analysis.txt
+          retention-days: 7
