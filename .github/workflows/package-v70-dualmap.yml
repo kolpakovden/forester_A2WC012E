@@ -1,0 +1,44 @@
+name: Package v70 Dual Map
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'forester_sg9_sti_MAP_IAT_GM_dMap_v70_DUALMAP_TEST.bin'
+      - 'definitions/ecu_defs_A2WC012E_v70_DUALMAP_TEST.xml'
+      - '.github/workflows/package-v70-dualmap.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify v70 BIN
+        shell: bash
+        run: |
+          echo 'FD01D605B42E06D1F712FAF24BA1C57736E4D7BEBEA29F1957A71B1BC95317F2  forester_sg9_sti_MAP_IAT_GM_dMap_v70_DUALMAP_TEST.bin' | sha256sum -c -
+
+      - name: Build package
+        shell: bash
+        run: |
+          mkdir -p package
+          cp forester_sg9_sti_MAP_IAT_GM_dMap_v70_DUALMAP_TEST.bin package/
+          cp definitions/ecu_defs_A2WC012E_v70_DUALMAP_TEST.xml package/
+          cd package
+          zip -9 ../A2WC012E_v70_DUALMAP_TEST_PACKAGE.zip \
+            forester_sg9_sti_MAP_IAT_GM_dMap_v70_DUALMAP_TEST.bin \
+            ecu_defs_A2WC012E_v70_DUALMAP_TEST.xml
+
+      - name: Upload package
+        uses: actions/upload-artifact@v4
+        with:
+          name: A2WC012E_v70_DUALMAP_TEST_PACKAGE
+          path: A2WC012E_v70_DUALMAP_TEST_PACKAGE.zip
+          if-no-files-found: error
+          retention-days: 90
