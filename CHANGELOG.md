@@ -53,10 +53,68 @@ Base ROM:
 - ...
 ```
 
+## 2026-09-02 — v69 Clean Spark Cut LC
+
+Base ROM:
+- `forester_sg9_sti_MAP_IAT_GM_dMap_v68_SPARK_CUT_ENABLED.bin`
+- SHA256 `8f02eecf37fad5340baf0ba5d66e62308a979660b4926c6ad0559fc53f869ecc`
+
+Новый основной test ROM:
+- `forester_sg9_sti_MAP_IAT_GM_dMap_v69_CLEAN_SPARK_CUT.bin`
+- SHA256 `02581366d410326102c8ca7ffe7f483e2b1ecdc1f7363cd8a7eac663c8d6e4aa`
+
+Fallback:
+- `forester_sg9_sti_MAP_IAT_GM_dMap_v69_CLEAN_SPARK_SAFE.bin`
+- SHA256 `b3bb642372636c7abb312e7659f91ad4e69d683afe0a2d4d681eb3a405715ec2`
+
+Изменения:
+- `LC Cut Mode = 1` в основном BIN; fallback использует mode 0.
+- Spark pattern уменьшен `3/5 → 2/5`.
+- POLF wrapper перенесён на `0x6B000`; pointer `0x1132C` изменён `0x0006AE00 → 0x0006B000`.
+- Пока `LC Engaged && LC Cut Mode == 1`, active MerpMod `RevLimCut @ 0xFFFFCA44` и `RevLimResume @ 0xFFFFCA48` поднимаются до normal `RedLineCut @ 0xFFFFCA4C`.
+- Ниже RedLineCut очищается только rev-limit fuel-cut bit `0x80` в `pFlagsRevLim @ 0xFFFFB868`.
+- Normal RedLineCut logic/calibration не удалены и остаются hard fuel-cut protection.
+- DeltaMAP, Advanced LC fuel/timing, OCR/GR hooks и revlim code сохранены в ожидаемых областях.
+
+Новый logger:
+- `A2WC0MME LC Spark Cut Active @ 0xFFCA78`.
+- `A2WC0MME LC Spark Event Counter @ 0xFFCA79`.
+
+Статус:
+- **EXPERIMENTAL / awaiting vehicle validation**.
+
+Ожидаемая проверка:
+- на clean-spark LC active cut RPM должен стать normal RedLineCut;
+- Injector Pulse Width не должен циклически падать к ~`0.77 ms` из-за LC limiter;
+- spark-cut flag/counter должны показать event pattern;
+- тест короткий, только на полностью прогретом моторе/масле.
+
+## 2026-09-02 — v68 spark-cut vehicle result
+
+Test ROM:
+- `forester_sg9_sti_MAP_IAT_GM_dMap_v68_SPARK_CUT_ENABLED.bin`
+- SHA256 `8f02eecf37fad5340baf0ba5d66e62308a979660b4926c6ad0559fc53f869ecc`
+- `LC Cut Mode = 1`, initial pattern `3/5`.
+
+Лог:
+- `romraiderlog_20260902_001107.csv` — пользователь подтвердил, что он записан именно на v68 enabled.
+
+Подтверждено логом:
+- limiter region примерно `4.4–4.6k rpm`;
+- MAP вырос примерно до `1.93 bar absolute`;
+- Injector Pulse Width продолжал повторно падать до ~`0.77 ms` между нормальными/high-IPW samples;
+- значит LC fuel cut оставался активен параллельно с новым режимом;
+- logged timing на limiter в части выборки около `+3…+4°`;
+- ECT в тесте около `61°C`, поэтому этот прогон не использовать как нормальный thermal baseline.
+
+Вывод:
+- v68 сохраняется как **EXPERIMENTAL / vehicle-tested evidence**, но не считается clean spark-cut реализацией.
+- прямой spark-cut-active channel в этом логе отсутствовал, поэтому per-event spark suppression не объявляется CONFIRMED только по этому CSV.
+
 ## 2026-08-19 — project identity correction
 
 - Исправлена ошибочная идентификация автомобиля в документации: автомобиль проекта — **Subaru Forester STI SG9, JDM / RHD**, а не SH5.
-- `sg9` в именах BIN соответствует реальной модели автомобиля проекта и не является legacy-обозначением другой машины.
+- `sg9` в именах BIN соответствует реальной модели автомобиля проекта и не является legacy filename другой машины.
 - Исправлены `README.md` и `docs/known-results.md`.
 - Старые commit messages с `SH5` остаются только в истории Git и считаются документированной ошибкой, а не фактом о машине.
 

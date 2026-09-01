@@ -1,0 +1,53 @@
+A2WC012E / A2WC0MME v69 CLEAN SPARK CUT
+
+Base: forester_sg9_sti_MAP_IAT_GM_dMap_v68_SPARK_CUT_ENABLED.bin
+  SHA256 8f02eecf37fad5340baf0ba5d66e62308a979660b4926c6ad0559fc53f869ecc
+  size 524288
+  Internal ID A2WC0MME
+  ECU ID bytes 1356212FFF
+
+Main test ROM: forester_sg9_sti_MAP_IAT_GM_dMap_v69_CLEAN_SPARK_CUT.bin
+  SHA256 02581366d410326102c8ca7ffe7f483e2b1ecdc1f7363cd8a7eac663c8d6e4aa
+  LC Cut Mode = 1 (Clean Spark)
+  Spark pattern = 2/5
+
+Safe/fallback ROM: forester_sg9_sti_MAP_IAT_GM_dMap_v69_CLEAN_SPARK_SAFE.bin
+  SHA256 b3bb642372636c7abb312e7659f91ad4e69d683afe0a2d4d681eb3a405715ec2
+  LC Cut Mode = 0
+
+v69 clean-spark change:
+  The v68 POLF-time flag clear was not sufficient: vehicle log still showed IPW dropping to 0.77 ms.
+  v69 additionally overrides MerpMod ACTIVE rev-limiter thresholds while LC Spark mode is engaged:
+    FFFFCA44 RevLim Active Cut RPM     <- FFFFCA4C RedLine Cut RPM
+    FFFFCA48 RevLim Active Resume RPM  <- FFFFCA4C RedLine Cut RPM
+  and clears only pFlagsRevLim bit 0x80 while RPM < RedLine Cut.
+  At/above RedLine Cut this bypass path is skipped. Ordinary redline code/calibration remains unchanged.
+
+Preserved from tested v68:
+  Delta MAP block 0x6AC40-0x6AD43 unchanged
+  OCR/GR ignition hook sites unchanged
+  OCR/GR custom spark routines unchanged
+  Advanced LC fuel target unchanged
+  Base Timing Lock remains -2.0 deg
+  LC Spark Event Cycle remains 5
+  MerpMod revlim code 0x25758-0x2583F unchanged
+  RedLine Cut calibration 0x6A4D0 unchanged
+
+Changed from v68 enabled:
+  0x1132C POLF wrapper pointer: 0x0006AE00 -> 0x0006B000
+  0x6ADC8 LC Spark Events Cut: 3 -> 2
+  0x6B000 new v69 clean-spark POLF wrapper
+
+Direct validation for next log:
+  A2WC0MME LC Spark Cut Active @ 0xFFCA78
+  A2WC0MME LC Spark Event Counter @ 0xFFCA79
+  MerpMod RevLimit Active Cut RPM @ 0xFFCA44 if available
+  Fuel Injector #1 Pulse Width should no longer alternate down to ~0.77 ms because of the LC limiter.
+
+Safety/status:
+  EXPERIMENTAL vehicle test build. Clean spark cut can raise exhaust/turbine thermal load sharply.
+  Start with a fully warmed engine/oil and a short LC test only.
+  Because the v68 mixed-cut test reached ~1.93 bar absolute, v69 is intentionally reduced to 2 cut events of 5.
+  Checksum is NOT recalculated by the patch builder. Open/save the selected BIN in EcuFlash so subarudbw is corrected before flashing.
+
+Changed bytes vs v68 enabled: 108

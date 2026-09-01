@@ -1,0 +1,18 @@
+<!-- A2WC0MME v69 logger addon. Merge these ecuparam nodes into the SSM <ecuparams> section of the full RomRaider logger definition. -->
+<ecuparams>
+    <ecuparam id="E1107" name="MerpMod Delta MAP" desc="E1107-A2WC0MME live Delta MAP from RAM 0xFFFFAF88" target="1">
+        <ecu id="1356212FFF"><address length="4">0xFFAF88</address></ecu>
+        <conversions>
+            <conversion units="bar" storagetype="float" expr="x*0.001333224" format="0.000" gauge_min="-3" gauge_max="3" gauge_step="0.25" />
+            <conversion units="raw" storagetype="float" expr="x" format="0.00" />
+        </conversions>
+    </ecuparam>
+    <ecuparam id="E1108" name="A2WC0MME LC Spark Cut Active" desc="v69 current spark-cut event flag; 1 means this ignition event is commanded cut" target="1">
+        <ecu id="1356212FFF"><address>0xFFCA78</address></ecu>
+        <conversions><conversion units="raw" expr="x" format="0" gauge_min="0" gauge_max="1" gauge_step="1" /></conversions>
+    </ecuparam>
+    <ecuparam id="E1109" name="A2WC0MME LC Spark Event Counter" desc="v69 custom 1-based spark-cut event counter" target="1">
+        <ecu id="1356212FFF"><address>0xFFCA79</address></ecu>
+        <conversions><conversion units="raw" expr="x" format="0" gauge_min="0" gauge_max="5" gauge_step="1" /></conversions>
+    </ecuparam>
+</ecuparams>

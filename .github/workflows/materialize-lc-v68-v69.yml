@@ -1,0 +1,56 @@
+name: Materialize v68-v69 Launch Control ROMs
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - tools/materialize_lc_v68_v69.py
+      - .github/workflows/materialize-lc-v68-v69.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build exact ROMs from v67
+        run: |
+          rm -rf /tmp/lc-roms
+          python3 tools/materialize_lc_v68_v69.py \
+            --input forester_sg9_sti_MAP_IAT_GM_dMap_v67.bin \
+            --out-dir /tmp/lc-roms
+
+      - name: Install generated ROMs
+        run: |
+          mkdir -p roms/experimental/v68 roms/experimental/v69
+          cp /tmp/lc-roms/forester_sg9_sti_MAP_IAT_GM_dMap_v68_SPARK_CUT_SAFE.bin roms/experimental/v68/
+          cp /tmp/lc-roms/forester_sg9_sti_MAP_IAT_GM_dMap_v68_SPARK_CUT_ENABLED.bin roms/experimental/v68/
+          cp /tmp/lc-roms/forester_sg9_sti_MAP_IAT_GM_dMap_v69_CLEAN_SPARK_SAFE.bin roms/experimental/v69/
+          cp /tmp/lc-roms/forester_sg9_sti_MAP_IAT_GM_dMap_v69_CLEAN_SPARK_CUT.bin roms/experimental/v69/
+          (cd roms/experimental/v68 && sha256sum *.bin > SHA256SUMS)
+          (cd roms/experimental/v69 && sha256sum *.bin > SHA256SUMS)
+
+      - name: Verify expected hashes
+        run: |
+          grep -q 'b9da808571b17bcd38bae71c6949c3da6d7ebcc2e17759abded1e6c1c0766466' roms/experimental/v68/SHA256SUMS
+          grep -q '8f02eecf37fad5340baf0ba5d66e62308a979660b4926c6ad0559fc53f869ecc' roms/experimental/v68/SHA256SUMS
+          grep -q 'b3bb642372636c7abb312e7659f91ad4e69d683afe0a2d4d681eb3a405715ec2' roms/experimental/v69/SHA256SUMS
+          grep -q '02581366d410326102c8ca7ffe7f483e2b1ecdc1f7363cd8a7eac663c8d6e4aa' roms/experimental/v69/SHA256SUMS
+
+      - name: Commit materialized ROMs
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add roms/experimental/v68 roms/experimental/v69
+          if git diff --cached --quiet; then
+            echo 'ROMs already materialized'
+            exit 0
+          fi
+          git commit -m 'Materialize v68/v69 LC ROMs'
+          git push

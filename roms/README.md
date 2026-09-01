@@ -2,9 +2,9 @@
 
 ROM-файлы хранятся только с понятным статусом и описанием.
 
-Проект относится к **Subaru Forester STI SH5, JDM / RHD, ECU A2WC012E**.
+Проект относится к **Subaru Forester STI SG9, JDM / RHD, ECU/ROM A2WC012E**. Текущая MerpMod/SD ветка использует patched internal ID `A2WC0MME`.
 
-> Исторические BIN могут содержать `sg9` в filename. Такие имена сохраняются ради происхождения файла и связи со старыми логами. Это не означает совместимость с SG9.
+> `sg9` в именах BIN соответствует реальному автомобилю проекта. Старые упоминания SH5 в истории/документации считаются ошибочными и не должны использоваться как идентификация проекта.
 
 Рекомендуемая структура:
 
@@ -50,7 +50,7 @@ A2WC012E_v0.4.0_maf-ol_tgv-delete.bin
 
 ROM для текущих тестов. Не считать безопасными только потому, что они находятся в репозитории.
 
-Метки вроде `TEST`, `PRECHECK`, `EXPERIMENTAL` означают, что версия ещё должна пройти проверку.
+Метки вроде `TEST`, `PRECHECK`, `EXPERIMENTAL`, `SPARK_CUT`, `CLEAN_SPARK` означают, что версия ещё должна пройти соответствующую проверку.
 
 Для experimental ROM желательно указать в `CHANGELOG.md`:
 
@@ -61,6 +61,13 @@ Base ROM:
 Что ожидаем увидеть:
 Какой лог нужен:
 ```
+
+### Текущая LC ветка
+
+- `roms/experimental/v68/` — vehicle-tested experimental spark-cut path; в логе подтверждено, что fuel cut ещё оставался активен.
+- `roms/experimental/v69/` — Clean Spark Cut test build; собран для следующей проверки, **ещё не подтверждён логом автомобиля**.
+
+Подробности: [`../docs/launch-control-spark-cut.md`](../docs/launch-control-spark-cut.md).
 
 ## rejected
 
@@ -77,10 +84,13 @@ Rejected означает: **не использовать эту конкрет
 - имя и происхождение файла;
 - к какой версии он относится;
 - definition/ECU compatibility;
-- ROM ID;
+- ROM ID / patched internal ID;
 - статус версии;
-- список изменённых таблиц;
+- список изменённых таблиц/patch regions;
 - binary diff относительно базы;
+- SHA-256;
 - наличие заведомо рабочей ROM для отката.
 
-Если файл имеет `PRECHECK` в имени, его нужно рассматривать как experimental до фактической проверки на автомобиле.
+Для generated patch BIN отдельно проверить checksum. Для текущей A2WC0MME ветки перед flashing generated BIN нужно открыть и **сохранить** в EcuFlash, чтобы `subarudbw` пересчитал checksum.
+
+Если файл имеет `PRECHECK`, `EXPERIMENTAL`, `SPARK_CUT` или `CLEAN_SPARK` в имени, его нужно рассматривать как experimental до фактической проверки на автомобиле.

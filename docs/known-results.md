@@ -6,6 +6,7 @@
 
 - Автомобиль проекта: **Subaru Forester STI SG9, JDM / RHD**.
 - Основная исследуемая калибровка: **A2WC012E**.
+- Patched internal ID текущей MerpMod/SD ветки: **A2WC0MME**.
 - `sg9` в именах исторических BIN соответствует реальной модели автомобиля проекта.
 - Для работы используется RomRaider и соответствующие XML definitions.
 - Перед прямой правкой BIN адрес таблицы должен быть отдельно подтверждён.
@@ -70,6 +71,51 @@ Points:           54
 - `564.93 cc/min` — тест.
 
 Статус этих тестовых scalar не считать `stable` только по факту использования. Каждая итоговая версия должна быть привязана к конкретной ROM и логу.
+
+## Launch Control / Advanced LC / Spark Cut
+
+### ✅ CONFIRMED — Advanced LC Base Timing Lock не равен гарантированному final timing
+
+В сравнительных launch-логах изменение `Base Timing Lock` с примерно `-2°` до `-5°` отражалось в pre-limiter timing, но не заставляло `Ignition Total Timing` постоянно держаться на том же значении после вступления limiter logic.
+
+Практический вывод: текущий Advanced LC timing hook меняет base timing stage, а downstream timing logic может изменить итоговый logged angle.
+
+Отдельный тест `-5°` не дал убедительного прироста spool относительно `-2°`, поэтому текущая experimental ветка вернулась к `-2°`.
+
+### ✅ CONFIRMED — v68 mode 1 всё ещё содержит LC fuel cut
+
+Пользователь подтвердил, что `romraiderlog_20260902_001107.csv` записан на:
+
+```text
+forester_sg9_sti_MAP_IAT_GM_dMap_v68_SPARK_CUT_ENABLED.bin
+LC Cut Mode = 1
+Spark pattern = 3/5
+```
+
+В этом логе около limiter region:
+
+- RPM примерно `4.4–4.6k`;
+- MAP достигает примерно `1.93 bar absolute`;
+- Injector Pulse Width повторно падает к ~`0.77 ms` между normal/high-IPW samples;
+- следовательно, fuel-cut component остаётся активен в v68 mode 1.
+
+Это подтверждает необходимость отдельного clean-spark этапа. Сам факт per-event spark suppression в этом конкретном CSV **не** считается напрямую подтверждённым, потому что в лог не был включён отдельный spark-cut-active flag.
+
+### 🧪 v69 Clean Spark Cut — assembled, awaiting vehicle validation
+
+Основной v69 BIN:
+
+```text
+SHA256 02581366d410326102c8ca7ffe7f483e2b1ecdc1f7363cd8a7eac663c8d6e4aa
+LC Cut Mode = 1
+Spark pattern = 2/5
+```
+
+Он предназначен для удаления именно LC fuel-cut component путём перевода active `RevLimCut/RevLimResume` к normal RedLineCut пока LC clean-spark mode активен. Обычная high-RPM fuel-cut protection сохранена.
+
+До контрольного лога v69 нельзя переводить в CONFIRMED/stable.
+
+Подробности: [`launch-control-spark-cut.md`](launch-control-spark-cut.md).
 
 ## TGV
 

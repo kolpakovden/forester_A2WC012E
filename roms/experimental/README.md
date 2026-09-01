@@ -1,6 +1,6 @@
 # Experimental ROM inventory
 
-Здесь хранятся **тестовые/промежуточные** ROM A2WC012E. Наличие файла в этой директории не означает, что его можно считать `stable`.
+Здесь хранятся **тестовые/промежуточные** ROM A2WC012E/A2WC0MME. Наличие файла в этой директории не означает, что его можно считать `stable`.
 
 ## Правило для BIN
 
@@ -8,7 +8,7 @@
 
 ```text
 size == 524288 bytes
-internal/base family == A2WC012E
+internal/base family == A2WC012E / documented patched ID
 SHA-256 записан в manifest/SHA256SUMS
 есть описание base ROM и изменений
 есть статус EXPERIMENTAL / PRECHECK / REJECTED / CONFIRMED
@@ -98,6 +98,36 @@ Status:     EXPERIMENTAL
 Ранее записанный SHA-256 `487bc4333b7e985e4dce5473b4525cd5be206e72c066b864ef19bcd225bdca20` относится к **другому побайтовому состоянию v45** и не является checksum для предоставленного `*_CHECKSUM.bin`.
 
 Подробности: [`v45/README.md`](v45/README.md).
+
+### v68 — experimental spark-cut LC
+
+```text
+ENABLED SHA256: 8f02eecf37fad5340baf0ba5d66e62308a979660b4926c6ad0559fc53f869ecc
+SAFE SHA256:    b9da808571b17bcd38bae71c6949c3da6d7ebcc2e17759abded1e6c1c0766466
+Status:         EXPERIMENTAL / VEHICLE TESTED
+Mode:           1 for ENABLED / 0 for SAFE
+Pattern:        3/5
+```
+
+Vehicle log `romraiderlog_20260902_001107.csv` was confirmed to be recorded on v68 ENABLED. MAP reached about `1.93 bar absolute`, but Injector Pulse Width still repeatedly fell to ~`0.77 ms`, confirming that LC fuel cut was still present.
+
+Files/details: [`v68/README.md`](v68/README.md).
+
+### v69 — Clean Spark Cut LC
+
+```text
+CLEAN SHA256: 02581366d410326102c8ca7ffe7f483e2b1ecdc1f7363cd8a7eac663c8d6e4aa
+SAFE SHA256:  b3bb642372636c7abb312e7659f91ad4e69d683afe0a2d4d681eb3a405715ec2
+Status:       EXPERIMENTAL / AWAITING VEHICLE VALIDATION
+Mode:         1 for CLEAN / 0 for SAFE
+Pattern:      2/5
+```
+
+Purpose: remove the LC fuel-cut component by moving active MerpMod rev-limit thresholds to normal RedLineCut while clean-spark LC is engaged; retain normal high-RPM fuel-cut protection.
+
+Files/details: [`v69/README.md`](v69/README.md).
+
+Full LC technical notes: [`../../docs/launch-control-spark-cut.md`](../../docs/launch-control-spark-cut.md).
 
 ## Почему здесь могут временно отсутствовать `.bin`
 

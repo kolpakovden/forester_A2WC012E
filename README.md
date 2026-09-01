@@ -56,6 +56,7 @@
 │   ├── a2wc012e-map.md
 │   ├── merpmod-a2wc012e-address-map.md
 │   ├── experimental-map-series.md
+│   ├── launch-control-spark-cut.md
 │   ├── maf-scaling.md
 │   ├── gm-iat-scaling.md
 │   ├── tgv-delete.md
@@ -80,6 +81,7 @@
 - [`docs/a2wc012e-map.md`](docs/a2wc012e-map.md) — подтверждённые и неподтверждённые calibration offsets A2WC012E.
 - [`docs/merpmod-a2wc012e-address-map.md`](docs/merpmod-a2wc012e-address-map.md) — target/source map MerpMod: ROM/code hooks, runtime RAM и ROM-hole.
 - [`docs/experimental-map-series.md`](docs/experimental-map-series.md) — история последних experimental v36→v41 и точные изменения.
+- [`docs/launch-control-spark-cut.md`](docs/launch-control-spark-cut.md) — Advanced LC, v68 mixed fuel/spark behaviour и v69 Clean Spark Cut.
 - [`docs/maf-scaling.md`](docs/maf-scaling.md) — методика CL/OL MAF, формулы и реальные фильтры логов.
 - [`docs/gm-iat-scaling.md`](docs/gm-iat-scaling.md) — GM 25036751 / ACDelco 213-190 IAT: offsets A2WC012E, штатная кривая, рассчитанный 30-point scaling и план проверки на автомобиле.
 - [`docs/tgv-delete.md`](docs/tgv-delete.md) — TGV DTC delete и найденная вторая Idle Timing table.
@@ -88,6 +90,17 @@
 - [`docs/research-backlog.md`](docs/research-backlog.md) — вопросы, которые ещё нельзя считать закрытыми.
 - [`evidence/`](evidence/) — проверочные артефакты, hashes и результаты binary diff.
 - [`CONTRIBUTING.md`](CONTRIBUTING.md) — как другому человеку безопасно продолжать работу с проектом.
+
+## Текущая experimental ветка — Launch Control
+
+Последний собранный тестовый этап — **v69 Clean Spark Cut**.
+
+- v68 `LC Cut Mode = 1` был проверен на автомобиле: MAP достигал примерно `1.93 bar absolute`, но Injector Pulse Width продолжал периодически падать до ~`0.77 ms`, поэтому fuel cut оставался активен параллельно.
+- v69 предназначен для отделения LC от fuel cut: в clean-spark режиме активные MerpMod `RevLimCut/RevLimResume` переводятся на normal RedLineCut, а spark scheduler продолжает удерживать launch RPM.
+- начальный spark pattern v69 уменьшен до `2/5`.
+- v69 пока имеет статус **EXPERIMENTAL / awaiting vehicle validation**.
+
+Подробности, hashes, addresses и ожидаемая сигнатура следующего лога: [`docs/launch-control-spark-cut.md`](docs/launch-control-spark-cut.md).
 
 ## Текущий порядок работы
 
@@ -131,8 +144,9 @@ Idle ECT axis:        0x5AFDC
 4. `docs/address-research-workflow.md` — как здесь подтверждаются новые offsets.
 5. `docs/table-dependencies.md` — какие параметры проверять при каждой правке.
 6. `docs/a2wc012e-map.md` и `docs/merpmod-a2wc012e-address-map.md` — две разные карты адресов.
-7. `CHANGELOG.md` — история осмысленных этапов.
-8. Только после этого — текущий BIN, definition и соответствующие логи.
+7. `docs/launch-control-spark-cut.md` — текущая patch-ветка LC/spark cut и её статус.
+8. `CHANGELOG.md` — история осмысленных этапов.
+9. Только после этого — текущий BIN, definition и соответствующие логи.
 
 Если новый участник предлагает изменение, желательно сначала сформулировать:
 

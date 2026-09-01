@@ -4,6 +4,34 @@
 
 ## High priority
 
+### v69 Clean Spark Cut validation
+
+v68 `LC Cut Mode = 1` был проверен на автомобиле и дал заметно более сильный spool, но Injector Pulse Width всё ещё периодически падал до ~`0.77 ms`; значит LC fuel cut оставался активен.
+
+Для v69 собран clean-spark вариант, который во время `LC Engaged && LC Cut Mode == 1` переводит active `RevLimCut/RevLimResume` к normal RedLineCut и оставляет отдельный spark scheduler на launch RPM.
+
+Нужно подтвердить на полностью прогретом моторе коротким логом:
+
+- `LC Engaged`;
+- RPM;
+- MAP;
+- Injector Pulse Width;
+- Ignition Total Timing;
+- Wideband AFR;
+- `LC Spark Cut Active @ 0xFFCA78`;
+- `LC Spark Event Counter @ 0xFFCA79`;
+- `RevLim Active Cut RPM @ 0xFFCA44`.
+
+Критерии успеха:
+
+1. active cut RPM в clean-spark LC уходит к normal RedLineCut;
+2. IPW больше не циклически проваливается к ~`0.77 ms` из-за launch limiter;
+3. spark flag/counter подтверждает pattern `2/5`;
+4. RPM остаётся контролируемым около launch target;
+5. ordinary RedLine fuel cut остаётся рабочей защитой.
+
+Статус: **EXPERIMENTAL / DO NOT MARK STABLE BEFORE LOG**.
+
 ### A/F Learning #1 Modify Airflow Limit (Max)
 
 - В custom definition указан offset `0x58BF8`.
@@ -68,16 +96,17 @@ Target Boost Compensation (Atm. Pressure) Multiplier Offset: 0.2500
 
 Нужно подтвердить, как именно эти таблицы участвуют в расчёте target boost на A2WC012E, прежде чем менять их.
 
-### Launch Control / Flat Foot Shifting
+### Launch Control / Flat Foot Shifting — remaining questions
 
-Патчи присутствовали/ожидались в отдельных ROM, но их адреса и состояние должны документироваться отдельно от штатных calibration tables.
+Базовая LC state/limits и несколько patch-related offsets уже документированы. После v69 validation ещё остаётся отдельно проверить:
 
-Перед переносом в stable definition нужно подтвердить:
+- поведение FFS с новыми spark hooks;
+- отсутствие нежелательного влияния OCR/GR hooks вне LC;
+- корректный reset spark event counter при выходе из LC;
+- thermal behavior при повторных коротких launch events;
+- нужен ли отдельный combo-cut mode после clean-spark validation.
 
-- patch signature;
-- activation settings;
-- связанные limits;
-- отсутствие пересечения с другими ручными patch.
+Подробности текущей ветки: [`launch-control-spark-cut.md`](launch-control-spark-cut.md).
 
 ## Правило закрытия backlog
 
