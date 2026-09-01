@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<roms>
+    <rom>
+        <romid>
+            <xmlid>A2WC012E.MeRpMoD.Gratis.Testing.v13.5.6.212.v70DMTEST</xmlid>
+            <internalidaddress>69C10</internalidaddress>
+            <internalidstring>A2WC012E.MeRpMoD.Gratis.Testing.v13.5.6.212</internalidstring>
+            <ecuid>1356212FFF</ecuid>
+            <year>04-07</year>
+            <market>JDM</market>
+            <make>Subaru</make>
+            <model>Forester</model>
+            <submodel>STi</submodel>
+            <transmission>MT</transmission>
+            <memmodel>SH7055</memmodel>
+            <flashmethod>sti04</flashmethod>
+            <checksummodule>subarudbw</checksummodule>
+            <filesize>512kb</filesize>
+        </romid>
+
+        <!-- v70 prototype: static pre-flash Target Boost selector.
+             This intentionally changes one byte inside the stock Target Boost
+             ThreeDTable data pointer: 0x05 = 0x56B08 (Map 1),
+             0x07 = 0x76B08 (Map 2). This is NOT the final fail-safe runtime
+             selector; only values 0 and 1 are valid in this test definition. -->
+        <table type="2D" name="Active Target Boost Map" category="Dual Map - Target Boost" storagetype="uint8" endian="big" sizey="1" userlevel="1" storageaddress="0x53F29">
+            <scaling units="Map (0=Map 1, 1=Map 2)" expression="(x-5)/2" to_byte="x*2+5" format="#" fineincrement="1" coarseincrement="1" min="0" max="1" />
+            <table type="Static Y Axis" name="Dual Map"><data>Active Map</data></table>
+            <description>Prototype static selector for Target Boost only. Display value 0 writes raw 0x05 and selects data at 0x56B08. Display value 1 writes raw 0x07 and selects data at 0x76B08. Do not use values other than 0 or 1. This prototype does not yet implement the final fail-safe rule where every value except exactly 1 must force Map 1.</description>
+        </table>
+
+        <table type="3D" name="Target Boost - Map 1" category="Dual Map - Target Boost" storagetype="uint16" endian="big" sizex="8" sizey="12" userlevel="1" logparam="E52" storageaddress="0x56B08">
+            <scaling category="Metric" units="Boost Target (bar absolute)" expression="x*.001333224" to_byte="x/.001333224" format="#0.000" fineincrement=".01" coarseincrement=".1" />
+            <scaling category="Standard" units="Boost Target (psi relative sea level)" expression="(x-760)*.01933677" to_byte="(x/.01933677)+760" format="0.00" fineincrement=".01" coarseincrement=".5" />
+            <table type="X Axis" name="Throttle Plate Opening Angle" storagetype="float" endian="little" sizex="8" storageaddress="0x56AB8" logparam="E38">
+                <scaling units="%" expression="x/.84" to_byte="x*.84" format="0.0" fineincrement=".3" coarseincrement="1" />
+            </table>
+            <table type="Y Axis" name="Engine Speed" storagetype="float" endian="little" sizey="12" storageaddress="0x56AD8" logparam="P8">
+                <scaling units="RPM" expression="x" to_byte="x" format="#" fineincrement="50" coarseincrement="100" />
+            </table>
+            <description>Original Target Boost table. Map 1 and Map 2 share the stock X and Y axes.</description>
+        </table>
+
+        <table type="3D" name="Target Boost - Map 2" category="Dual Map - Target Boost" storagetype="uint16" endian="big" sizex="8" sizey="12" userlevel="1" logparam="E52" storageaddress="0x76B08">
+            <scaling category="Metric" units="Boost Target (bar absolute)" expression="x*.001333224" to_byte="x/.001333224" format="#0.000" fineincrement=".01" coarseincrement=".1" />
+            <scaling category="Standard" units="Boost Target (psi relative sea level)" expression="(x-760)*.01933677" to_byte="(x/.01933677)+760" format="0.00" fineincrement=".01" coarseincrement=".5" />
+            <table type="X Axis" name="Throttle Plate Opening Angle" storagetype="float" endian="little" sizex="8" storageaddress="0x56AB8" logparam="E38">
+                <scaling units="%" expression="x/.84" to_byte="x*.84" format="0.0" fineincrement=".3" coarseincrement="1" />
+            </table>
+            <table type="Y Axis" name="Engine Speed" storagetype="float" endian="little" sizey="12" storageaddress="0x56AD8" logparam="P8">
+                <scaling units="RPM" expression="x" to_byte="x" format="#" fineincrement="50" coarseincrement="100" />
+            </table>
+            <description>Second Target Boost table stored at 0x76B08. Initially byte-for-byte identical to Map 1 and using the same stock X and Y axes.</description>
+        </table>
+
+        <!-- Preserve the custom v69 launch-control calibration entries in this test definition. -->
+        <table type="2D" name="Rev Limit (Redline)" category="MerpMod - Rev Limit / Launch / FFS" storagetype="float" endian="little" sizey="1" userlevel="1" storageaddress="0x6A4D0">
+            <scaling units="Engine Speed (RPM)" expression="x" to_byte="x" format="#" fineincrement="50" coarseincrement="100" />
+            <table type="Static Y Axis" name="MerpMod Redline" sizey="1"><data>Redline</data></table>
+            <description>MerpMod redline limit.</description>
+        </table>
+        <table type="2D" name="Rev Limit (Launch Control)" category="MerpMod - Rev Limit / Launch / FFS" storagetype="float" endian="little" sizey="1" userlevel="1" storageaddress="0x6A4F0">
+            <scaling units="Engine Speed (RPM)" expression="x" to_byte="x" format="#" fineincrement="50" coarseincrement="100" />
+            <table type="Static Y Axis" name="Launch Control" sizey="1"><data>Launch RPM Limit</data></table>
+        </table>
+        <table type="2D" name="LC Maximum Speed Threshold" category="MerpMod - Rev Limit / Launch / FFS" storagetype="float" endian="little" sizey="1" userlevel="1" storageaddress="0x6A4EC">
+            <scaling name="Metric" units="Vehicle Speed (km/h)" expression="x" to_byte="x" format="0.0" fineincrement="1" coarseincrement="5" />
+            <scaling name="Standard" units="Vehicle Speed (mph)" expression="x*.621371" to_byte="x/.621371" format="0.0" fineincrement="1" coarseincrement="5" />
+            <table type="Static Y Axis" name="Launch Control" sizey="1"><data>Maximum Vehicle Speed</data></table>
+        </table>
+        <table type="2D" name="LC Minimum Throttle Threshold" category="MerpMod - Rev Limit / Launch / FFS" storagetype="float" endian="little" sizey="1" userlevel="1" storageaddress="0x6A514">
+            <scaling units="Throttle (%)" expression="x" to_byte="x" format="0.0" fineincrement="1" coarseincrement="5" />
+            <table type="Static Y Axis" name="Launch Control" sizey="1"><data>Minimum Throttle</data></table>
+        </table>
+        <table type="2D" name="LC Advanced Fuel Mode" category="MerpMod - Launch Control Advanced" storagetype="uint8" endian="big" sizey="1" userlevel="1" storageaddress="0x6AD78">
+            <scaling units="Mode (0=Off, 1=Lock)" expression="x" to_byte="x" format="#" fineincrement="1" coarseincrement="1" />
+            <table type="Static Y Axis" name="Advanced Launch Control"><data>Fuel Override</data></table>
+            <description>0 = disabled. Any non-zero value enables the custom launch-only primary fueling override while MerpMod LC Engaged Signal is 1.</description>
+        </table>
+        <table type="2D" name="LC Advanced Fuel Target" category="MerpMod - Launch Control Advanced" storagetype="float" endian="big" sizey="1" userlevel="1" storageaddress="0x6AD7C">
+            <scaling units="Estimated AFR (gasoline)" expression="14.7/(1+x)" to_byte="14.7/x-1" format="0.00" fineincrement=".05" coarseincrement=".1" />
+            <table type="Static Y Axis" name="Advanced Launch Control"><data>Primary OL Fueling Lock</data></table>
+            <description>Launch-only Primary Open Loop enrichment lock. Verify actual AFR with a wideband.</description>
+        </table>
+        <table type="2D" name="LC Advanced Timing Mode" category="MerpMod - Launch Control Advanced" storagetype="uint8" endian="big" sizey="1" userlevel="1" storageaddress="0x6ADB8">
+            <scaling units="Mode (0=Off, 1=Lock)" expression="x" to_byte="x" format="#" fineincrement="1" coarseincrement="1" />
+            <table type="Static Y Axis" name="Advanced Launch Control"><data>Timing Override</data></table>
+            <description>0 = disabled. Any non-zero value enables the custom launch-only base timing lock while MerpMod LC Engaged Signal is 1.</description>
+        </table>
+        <table type="2D" name="LC Advanced Base Timing Lock" category="MerpMod - Launch Control Advanced" storagetype="float" endian="big" sizey="1" userlevel="1" storageaddress="0x6ADBC">
+            <scaling units="Base Ignition Timing (degrees BTDC)" expression="x" to_byte="x" format="0.0" fineincrement=".5" coarseincrement="1" />
+            <table type="Static Y Axis" name="Advanced Launch Control"><data>Locked Base Timing</data></table>
+            <description>Base timing value written during launch. This is base timing, not guaranteed final Ignition Total Timing.</description>
+        </table>
+        <table type="2D" name="LC Cut Mode" category="MerpMod - Launch Control Advanced" storagetype="uint8" endian="big" sizey="1" userlevel="1" storageaddress="0x6ADC4">
+            <scaling units="Mode (0=Fuel, 1=Spark)" expression="x" to_byte="x" format="#" fineincrement="1" coarseincrement="1" />
+            <table type="Static Y Axis" name="Advanced Launch Control"><data>Limiter Strategy</data></table>
+            <description>0 = existing MerpMod fuel-cut launch limiter. 1 = v69 Clean Spark. In mode 1 the active LC fuel-cut thresholds are moved to RedLineCut while the ignition scheduler controls launch RPM. Hard redline fuel-cut protection remains.</description>
+        </table>
+        <table type="2D" name="LC Spark Events Cut" category="MerpMod - Launch Control Advanced" storagetype="uint8" endian="big" sizey="1" userlevel="1" storageaddress="0x6ADC8">
+            <scaling units="Events" expression="x" to_byte="x" format="#" fineincrement="1" coarseincrement="1" />
+            <table type="Static Y Axis" name="Advanced Launch Control"><data>Spark Events Cut</data></table>
+            <description>Number of ignition events suppressed at the start of each cycle. v69 initial value: 2.</description>
+        </table>
+        <table type="2D" name="LC Spark Event Cycle" category="MerpMod - Launch Control Advanced" storagetype="uint8" endian="big" sizey="1" userlevel="1" storageaddress="0x6ADCC">
+            <scaling units="Events" expression="x" to_byte="x" format="#" fineincrement="1" coarseincrement="1" />
+            <table type="Static Y Axis" name="Advanced Launch Control"><data>Spark Event Cycle</data></table>
+            <description>Total spark-cut event cycle length. v69 initial value: 5 (2 cut / 5 total).</description>
+        </table>
+    </rom>
+</roms>
