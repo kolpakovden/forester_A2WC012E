@@ -18,28 +18,45 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install Capstone
         run: python3 -m pip install --user 'capstone>=5.0.0'
-      - name: Disassemble AF correction and learning limits
+      - name: Trace final AF correction path
         shell: python
         run: |
           from pathlib import Path
-          import capstone
+          import capstone, struct
           b=Path('roms/experimental/v68/forester_sg9_sti_MAP_IAT_GM_dMap_v68_SPARK_CUT_ENABLED.bin').read_bytes()
           mode=capstone.CS_MODE_SH2|capstone.CS_MODE_BIG_ENDIAN
           if hasattr(capstone,'CS_MODE_SHFPU'): mode |= capstone.CS_MODE_SHFPU
           md=capstone.Cs(capstone.CS_ARCH_SH,mode); md.skipdata=True
-          ranges=[
-            (0x20370,0x20430,'xref 0x58B68 (1.15)'),
-            (0x21240,0x21330,'xref 0x58B38/3C (0.85/1.05)'),
-            (0x21980,0x21B30,'A/F Learning #1 Limits 0x58BE0/E4'),
-            (0x21F80,0x22170,'A/F correction candidate constants 0x58BD0-D4 and 0x58BC8-CC'),
-            (0x22160,0x222C0,'second A/F Learning #1 Limits xref'),
-            (0x247D0,0x249A0,'0x58B3C xrefs')]
-          for lo,hi,title in ranges:
+          def dis(lo,hi,title):
               print('\n====',title,f'0x{lo:06X}-0x{hi:06X}','====')
               for ins in md.disasm(b[lo:hi],lo):
                   raw=b[ins.address:ins.address+ins.size].hex(' ')
                   print(f'{ins.address:06X}: {raw:<8} {ins.mnemonic:<12} {ins.op_str}')
+          dis(0x1F430,0x1F610,'B524 state setup / update')
+          dis(0x1F700,0x1F850,'B524/B530 controller stage')
+          dis(0x1F8C0,0x1FB10,'controller stage including 0x1FA06')
+          dis(0x21F20,0x22120,'candidate STFT limiter/update block')
+          dis(0x22150,0x222A0,'learning-limit block for comparison')
+          print('\n==== literal resolution in 0x21F20-0x22120 ====')
+          for pc in range(0x21F20,0x22120,2):
+              op=(b[pc]<<8)|b[pc+1]
+              if (op&0xF000)==0xD000:
+                  lit=((pc+4)&~3)+(op&0xff)*4
+                  if lit+4<=len(b):
+                      val=int.from_bytes(b[lit:lit+4],'big')
+                      if val<0x80000 or val>=0xffff0000:
+                          extra=''
+                          if val<0x80000 and val+4<=len(b):
+                              try: extra=f' data={b[val:val+4].hex()} float={struct.unpack(">f",b[val:val+4])[0]:g}'
+                              except: pass
+                          print(f'pc=0x{pc:06X} r{(op>>8)&0xf} literal=0x{lit:06X} value=0x{val:08X}{extra}')
+          print('\n==== B538 16-bit direct refs ====')
+          for pc in range(0,len(b)-1,2):
+              op=(b[pc]<<8)|b[pc+1]
+              if (op&0xF000)==0x9000:
+                  lit=pc+4+(op&0xff)*2
+                  if lit+2<=len(b) and int.from_bytes(b[lit:lit+2],'big')==0xB538:
+                      print(f'pc=0x{pc:06X} r{(op>>8)&0xf} literal=0x{lit:06X}')
           print('\nROM constants:')
-          import struct
-          for off in [0x58B38,0x58B3C,0x58B68,0x58BC8,0x58BCC,0x58BD0,0x58BD4,0x58BE0,0x58BE4]:
+          for off in [0x58BBC,0x58BC0,0x58BC4,0x58BC8,0x58BCC,0x58BD0,0x58BD4,0x58BE0,0x58BE4]:
               print(f'{off:06X}: {b[off:off+4].hex()} = {struct.unpack(">f",b[off:off+4])[0]}')
