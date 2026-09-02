@@ -18,7 +18,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install Capstone
         run: python3 -m pip install --user 'capstone>=5.0.0'
-      - name: Focus target references
+      - name: Trace B538 access
         shell: python
         run: |
           from pathlib import Path
@@ -27,38 +27,39 @@ jobs:
           mode=capstone.CS_MODE_SH2|capstone.CS_MODE_BIG_ENDIAN
           if hasattr(capstone,'CS_MODE_SHFPU'): mode |= capstone.CS_MODE_SHFPU
           md=capstone.Cs(capstone.CS_ARCH_SH,mode)
+          md.skipdata=True
           out=[]
           def p(s=''): out.append(str(s))
-          def dis(lo,hi):
-              for ins in md.disasm(b[lo:hi],lo):
-                  raw=b[ins.address:ins.address+ins.size].hex(' ')
-                  p(f'{ins.address:06X}: {raw:<8} {ins.mnemonic:<12} {ins.op_str}')
           refs=[]
           for pc in range(0,len(b)-1,2):
               op=(b[pc]<<8)|b[pc+1]
               if (op&0xF000)==0x9000:
                   lit=pc+4+(op&0xff)*2
-                  if lit+2<=len(b):
-                      w=int.from_bytes(b[lit:lit+2],'big')
-                      if w in (0xB538,0xB330):
-                          refs.append((pc,lit,w,(op>>8)&0xf))
-          p('A2WC012E v68 focused A/F Correction references')
-          p('B538=float A/F Correction #1; B330=2-byte mirror')
-          p('count='+str(len(refs)))
-          for n,(pc,lit,w,rn) in enumerate(refs,1):
+                  if lit+2<=len(b) and int.from_bytes(b[lit:lit+2],'big')==0xB538:
+                      refs.append((pc,lit,(op>>8)&0xf))
+          p('A2WC012E v68 B538 read/write trace')
+          p('B538 neutral evidence: stock reset path at 0x207A8 uses FLDI1 then writes from B538 upward')
+          p('refs='+str(len(refs)))
+          for n,(pc,lit,rn) in enumerate(refs,1):
               p('')
-              p(f'===== REF {n}: pc=0x{pc:06X}, target=0xFFFF{w:04X}, r{rn}, literal=0x{lit:06X} =====')
-              lo=max(0,pc-0x60); hi=min(len(b),pc+0x80)
-              dis(lo,hi)
-              p('RAW LITERAL AREA:')
-              la=max(0,lit-0x10)&~1; lh=min(len(b),lit+0x20)
-              for a in range(la,lh,16): p(f'{a:06X}: '+b[a:min(a+16,lh)].hex(' '))
-          Path('evidence/afcorr-v68-target-refs.txt').write_text('\n'.join(out)+'\n')
-      - name: Commit focused report
+              p(f'===== B538 REF {n}: pc=0x{pc:06X} -> r{rn}, literal=0x{lit:06X} =====')
+              # Decode from exact pointer load forward; this avoids literal-pool bytes before a function.
+              for ins in md.disasm(b[pc:min(len(b),pc+0x80)],pc):
+                  raw=b[ins.address:ins.address+ins.size].hex(' ')
+                  mark=' <== B538 PTR' if ins.address==pc else ''
+                  p(f'{ins.address:06X}: {raw:<8} {ins.mnemonic:<12} {ins.op_str}{mark}')
+              p('')
+              p('PRECEDING 0x30 bytes (skipdata):')
+              lo=max(0,pc-0x30)
+              for ins in md.disasm(b[lo:pc],lo):
+                  raw=b[ins.address:ins.address+ins.size].hex(' ')
+                  p(f'{ins.address:06X}: {raw:<8} {ins.mnemonic:<12} {ins.op_str}')
+          Path('evidence/afcorr-v68-b538-access.txt').write_text('\n'.join(out)+'\n')
+      - name: Commit trace
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add evidence/afcorr-v68-target-refs.txt
+          git add evidence/afcorr-v68-b538-access.txt
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m 'Add focused v68 AF correction references'
+          git commit -m 'Add v68 B538 read-write trace'
           git push
