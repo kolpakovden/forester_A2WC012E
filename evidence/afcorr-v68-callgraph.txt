@@ -1,0 +1,155 @@
+A2WC012E v68 AF correction candidate call graph
+
+===== TARGET 0x01ED34 =====
+direct BSR callers: none
+32-bit literal occurrences: 0x01135C
+-- literal ref pc=0x011168 -> r3 --
+011148: 00 09    nop          
+01114A: d2 7f    mov.l        0x11348,r2
+01114C: 42 0b    jsr          @r2
+01114E: 00 09    nop          
+011150: d3 7e    mov.l        0x1134c,r3
+011152: 43 0b    jsr          @r3
+011154: 00 09    nop          
+011156: d2 7e    mov.l        0x11350,r2
+011158: 42 0b    jsr          @r2
+01115A: 00 09    nop          
+01115C: d3 7d    mov.l        0x11354,r3
+01115E: 43 0b    jsr          @r3
+011160: 00 09    nop          
+011162: d2 7d    mov.l        0x11358,r2
+011164: 42 0b    jsr          @r2
+011166: 00 09    nop          
+011168: d3 7c    mov.l        0x1135c,r3
+01116A: 43 0b    jsr          @r3
+01116C: 00 09    nop          
+01116E: d2 7c    mov.l        0x11360,r2
+011170: 42 0b    jsr          @r2
+011172: 00 09    nop          
+011174: d3 7b    mov.l        0x11364,r3
+011176: 43 0b    jsr          @r3
+011178: 00 09    nop          
+01117A: d2 7b    mov.l        0x11368,r2
+01117C: 42 0b    jsr          @r2
+01117E: 00 09    nop          
+011180: d3 7a    mov.l        0x1136c,r3
+011182: 43 0b    jsr          @r3
+011184: 00 09    nop          
+011186: d2 7a    mov.l        0x11370,r2
+011188: 42 0b    jsr          @r2
+01118A: 00 09    nop          
+01118C: d3 79    mov.l        0x11374,r3
+01118E: 43 0b    jsr          @r3
+011190: 00 09    nop          
+011192: d2 79    mov.l        0x11378,r2
+011194: 42 0b    jsr          @r2
+011196: 00 09    nop          
+011198: d3 78    mov.l        0x1137c,r3
+01119A: 43 0b    jsr          @r3
+01119C: 00 09    nop          
+01119E: d2 78    mov.l        0x11380,r2
+0111A0: 42 0b    jsr          @r2
+0111A2: 00 09    nop          
+0111A4: d3 77    mov.l        0x11384,r3
+0111A6: 43 0b    jsr          @r3
+0111A8: 00 09    nop          
+0111AA: d2 77    mov.l        0x11388,r2
+0111AC: 42 0b    jsr          @r2
+0111AE: 00 09    nop          
+0111B0: d3 76    mov.l        0x1138c,r3
+0111B2: 43 0b    jsr          @r3
+0111B4: 00 09    nop          
+0111B6: d2 76    mov.l        0x11390,r2
+
+===== TARGET 0x01FECC =====
+direct BSR callers: none
+32-bit literal occurrences: none
+
+===== TARGET 0x0207A2 =====
+direct BSR callers: none
+32-bit literal occurrences: none
+
+===== TARGET 0x020830 =====
+direct BSR callers: none
+32-bit literal occurrences: none
+
+===== TARGET 0x0208EC =====
+direct BSR callers: none
+32-bit literal occurrences: none
+
+===== TARGET 0x020B10 =====
+direct BSR callers: none
+32-bit literal occurrences: none
+
+===== TARGET 0x020D34 =====
+direct BSR callers: none
+32-bit literal occurrences: none
+
+===== TARGET 0x0211C2 =====
+direct BSR callers: none
+32-bit literal occurrences: none
+
+===== TARGET 0x03C256 =====
+direct BSR callers: none
+32-bit literal occurrences: 0x04152C
+
+===== TARGET 0x04B28C =====
+direct BSR callers: none
+32-bit literal occurrences: 0x049198
+-- literal ref pc=0x049084 -> r2 --
+049064: 00 09    nop          
+049066: d3 47    mov.l        0x49184,r3
+049068: 43 0b    jsr          @r3
+04906A: 00 09    nop          
+04906C: d2 46    mov.l        0x49188,r2
+04906E: 42 0b    jsr          @r2
+049070: 00 09    nop          
+049072: d3 46    mov.l        0x4918c,r3
+049074: 43 0b    jsr          @r3
+049076: 00 09    nop          
+049078: d2 45    mov.l        0x49190,r2
+04907A: 42 0b    jsr          @r2
+04907C: 00 09    nop          
+04907E: d3 45    mov.l        0x49194,r3
+049080: 43 0b    jsr          @r3
+049082: 00 09    nop          
+049084: d2 44    mov.l        0x49198,r2
+049086: 42 0b    jsr          @r2
+049088: 00 09    nop          
+04908A: d3 44    mov.l        0x4919c,r3
+04908C: 43 0b    jsr          @r3
+04908E: 00 09    nop          
+049090: d2 43    mov.l        0x491a0,r2
+049092: 42 0b    jsr          @r2
+049094: 00 09    nop          
+049096: d3 43    mov.l        0x491a4,r3
+049098: 43 0b    jsr          @r3
+04909A: 00 09    nop          
+04909C: d2 42    mov.l        0x491a8,r2
+04909E: 42 0b    jsr          @r2
+0490A0: 00 09    nop          
+0490A2: d3 42    mov.l        0x491ac,r3
+0490A4: 43 0b    jsr          @r3
+0490A6: 00 09    nop          
+0490A8: d2 41    mov.l        0x491b0,r2
+0490AA: 42 0b    jsr          @r2
+0490AC: 00 09    nop          
+0490AE: d3 41    mov.l        0x491b4,r3
+0490B0: 43 0b    jsr          @r3
+0490B2: 00 09    nop          
+0490B4: d2 40    mov.l        0x491b8,r2
+0490B6: 42 0b    jsr          @r2
+0490B8: 00 09    nop          
+0490BA: d3 40    mov.l        0x491bc,r3
+0490BC: 43 0b    jsr          @r3
+0490BE: 00 09    nop          
+0490C0: d2 3f    mov.l        0x491c0,r2
+0490C2: 42 0b    jsr          @r2
+0490C4: 00 09    nop          
+0490C6: d3 3f    mov.l        0x491c4,r3
+0490C8: 43 0b    jsr          @r3
+0490CA: 00 09    nop          
+0490CC: d2 3e    mov.l        0x491c8,r2
+0490CE: 42 0b    jsr          @r2
+0490D0: 00 09    nop          
+0490D2: d3 3e    mov.l        0x491cc,r3
