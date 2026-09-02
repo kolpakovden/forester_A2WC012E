@@ -18,7 +18,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install Capstone
         run: python3 -m pip install --user 'capstone>=5.0.0'
-      - name: Inspect B538 update path
+      - name: Prove common clamp helper
         shell: python
         run: |
           from pathlib import Path
@@ -27,34 +27,11 @@ jobs:
           mode=capstone.CS_MODE_SH2|capstone.CS_MODE_BIG_ENDIAN
           if hasattr(capstone,'CS_MODE_SHFPU'): mode |= capstone.CS_MODE_SHFPU
           md=capstone.Cs(capstone.CS_ARCH_SH,mode); md.skipdata=True
-          def dis(lo,hi,title):
-              print('\n====',title,f'0x{lo:06X}-0x{hi:06X}','====')
+          for lo,hi,title in [(0x23E0,0x24C0,'helper around 0x2464'),(0x209b0,0x20a18,'stage A final clamp/store'),(0x20bd4,0x20c3c,'stage B final clamp/store'),(0x20df8,0x20e60,'stage C final clamp/store')]:
+              print('\n====',title,'====')
               for ins in md.disasm(b[lo:hi],lo):
                   raw=b[ins.address:ins.address+ins.size].hex(' ')
                   print(f'{ins.address:06X}: {raw:<8} {ins.mnemonic:<12} {ins.op_str}')
-          def lits(lo,hi):
-              print('\nLITERALS')
-              for pc in range(lo,hi,2):
-                  op=(b[pc]<<8)|b[pc+1]
-                  if (op&0xF000)==0xD000:
-                      lit=((pc+4)&~3)+(op&0xff)*4
-                      if lit+4<=len(b):
-                          val=int.from_bytes(b[lit:lit+4],'big')
-                          if val<0x80000 or val>=0xffff0000:
-                              print(f'pc=0x{pc:06X} -> 0x{val:08X}')
-                  if (op&0xF000)==0x9000:
-                      lit=pc+4+(op&0xff)*2
-                      if lit+2<=len(b):
-                          val=int.from_bytes(b[lit:lit+2],'big')
-                          if 0xB000 <= val <= 0xBFFF:
-                              print(f'pc=0x{pc:06X} -> signext 0xFFFF{val:04X}')
-          dis(0x1FE80,0x1FF60,'B538 reset / related state')
-          lits(0x1FE80,0x1FF60)
-          dis(0x206E0,0x208A0,'B538/B574/B578 buffer processing')
-          lits(0x206E0,0x208A0)
-          dis(0x208D0,0x20A20,'B538 filter stage A')
-          lits(0x208D0,0x20A20)
-          dis(0x20AF0,0x20C30,'B538 filter stage B')
-          lits(0x20AF0,0x20C30)
-          dis(0x20D10,0x20E50,'B538 filter stage C')
-          lits(0x20D10,0x20E50)
+          print('\nFLOAT LITERALS')
+          for off in [0x209c0,0x209c4,0x20be4,0x20be8,0x20e08,0x20e0c]:
+              print(f'0x{off:06X} {b[off:off+4].hex()} {struct.unpack(">f",b[off:off+4])[0]}')
