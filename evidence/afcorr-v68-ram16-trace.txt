@@ -1,0 +1,2757 @@
+A2WC012E v68 AF Correction 16-bit RAM literal trace
+target float: 0xFFFFB538
+target mirror: 0xFFFFB330
+
+16-bit sign-extended refs in FFFFB000-FFFFB8FF: 1843
+pc=0x008ECA op=91C8 literal=0x00905E word=B20D value=0xFFFFB20D -> r1
+pc=0x00984E op=91E4 literal=0x009A1A word=B079 value=0xFFFFB079 -> r1
+pc=0x00FCEE op=960A literal=0x00FD06 word=B8C8 value=0xFFFFB8C8 -> r6
+pc=0x0113EA op=9690 literal=0x01150E word=B3F4 value=0xFFFFB3F4 -> r6
+pc=0x011538 op=9254 literal=0x0115E4 word=B204 value=0xFFFFB204 -> r2
+pc=0x01153C op=9353 literal=0x0115E6 word=B154 value=0xFFFFB154 -> r3
+pc=0x011590 op=9332 literal=0x0115F8 word=B218 value=0xFFFFB218 -> r3
+pc=0x011594 op=9231 literal=0x0115FA word=B210 value=0xFFFFB210 -> r2
+pc=0x011744 op=937A literal=0x01183C word=B304 value=0xFFFFB304 -> r3
+pc=0x011748 op=9279 literal=0x01183E word=B218 value=0xFFFFB218 -> r2
+pc=0x01174E op=9177 literal=0x011840 word=B220 value=0xFFFFB220 -> r1
+pc=0x011888 op=927E literal=0x011988 word=B204 value=0xFFFFB204 -> r2
+pc=0x01188C op=937D literal=0x01198A word=B154 value=0xFFFFB154 -> r3
+pc=0x0119B4 op=9382 literal=0x011ABC word=B090 value=0xFFFFB090 -> r3
+pc=0x011A14 op=9355 literal=0x011AC2 word=B218 value=0xFFFFB218 -> r3
+pc=0x011A5E op=9331 literal=0x011AC4 word=B304 value=0xFFFFB304 -> r3
+pc=0x011A60 op=9231 literal=0x011AC6 word=B204 value=0xFFFFB204 -> r2
+pc=0x011A64 op=9130 literal=0x011AC8 word=B154 value=0xFFFFB154 -> r1
+pc=0x011D58 op=9327 literal=0x011DAA word=B218 value=0xFFFFB218 -> r3
+pc=0x011ED8 op=916B literal=0x011FB2 word=B204 value=0xFFFFB204 -> r1
+pc=0x011EDE op=9369 literal=0x011FB4 word=B090 value=0xFFFFB090 -> r3
+pc=0x011EE0 op=9269 literal=0x011FB6 word=B08C value=0xFFFFB08C -> r2
+pc=0x011EE6 op=9167 literal=0x011FB8 word=B304 value=0xFFFFB304 -> r1
+pc=0x011FEC op=9338 literal=0x012060 word=B204 value=0xFFFFB204 -> r3
+pc=0x0120E8 op=924D literal=0x012186 word=B320 value=0xFFFFB320 -> r2
+pc=0x0120EE op=914B literal=0x012188 word=B090 value=0xFFFFB090 -> r1
+pc=0x0120F0 op=934B literal=0x01218A word=B304 value=0xFFFFB304 -> r3
+pc=0x0120F8 op=9248 literal=0x01218C word=B306 value=0xFFFFB306 -> r2
+pc=0x0122D4 op=927D literal=0x0123D2 word=B218 value=0xFFFFB218 -> r2
+pc=0x0122D8 op=937C literal=0x0123D4 word=B0D8 value=0xFFFFB0D8 -> r3
+pc=0x0126F4 op=935F literal=0x0127B6 word=B15C value=0xFFFFB15C -> r3
+pc=0x0126F8 op=915E literal=0x0127B8 word=B304 value=0xFFFFB304 -> r1
+pc=0x0128A0 op=912D literal=0x0128FE word=B320 value=0xFFFFB320 -> r1
+pc=0x0129F8 op=922A literal=0x012A50 word=B15C value=0xFFFFB15C -> r2
+pc=0x012ABC op=937E literal=0x012BBC word=B0B8 value=0xFFFFB0B8 -> r3
+pc=0x012AE0 op=906E literal=0x012BC0 word=B304 value=0xFFFFB304 -> r0
+pc=0x012B24 op=934A literal=0x012BBC word=B0B8 value=0xFFFFB0B8 -> r3
+pc=0x012B28 op=924A literal=0x012BC0 word=B304 value=0xFFFFB304 -> r2
+pc=0x012C90 op=932F literal=0x012CF2 word=B204 value=0xFFFFB204 -> r3
+pc=0x012C9A op=912C literal=0x012CF6 word=B218 value=0xFFFFB218 -> r1
+pc=0x012EE0 op=933E literal=0x012F60 word=B0C8 value=0xFFFFB0C8 -> r3
+pc=0x0130C4 op=9381 literal=0x0131CA word=B090 value=0xFFFFB090 -> r3
+pc=0x0130C8 op=9280 literal=0x0131CC word=B204 value=0xFFFFB204 -> r2
+pc=0x013188 op=9323 literal=0x0131D2 word=B0E0 value=0xFFFFB0E0 -> r3
+pc=0x01318C op=9222 literal=0x0131D4 word=B218 value=0xFFFFB218 -> r2
+pc=0x0132C0 op=9310 literal=0x0132E4 word=B094 value=0xFFFFB094 -> r3
+pc=0x01335C op=937C literal=0x013458 word=B204 value=0xFFFFB204 -> r3
+pc=0x0135F8 op=9361 literal=0x0136BE word=B024 value=0xFFFFB024 -> r3
+pc=0x0135FC op=9260 literal=0x0136C0 word=B218 value=0xFFFFB218 -> r2
+pc=0x013602 op=915E literal=0x0136C2 word=B090 value=0xFFFFB090 -> r1
+pc=0x013714 op=936B literal=0x0137EE word=B08C value=0xFFFFB08C -> r3
+pc=0x013720 op=9366 literal=0x0137F0 word=B218 value=0xFFFFB218 -> r3
+pc=0x013774 op=933F literal=0x0137F6 word=B204 value=0xFFFFB204 -> r3
+pc=0x013786 op=9337 literal=0x0137F8 word=B318 value=0xFFFFB318 -> r3
+pc=0x013856 op=926F literal=0x013938 word=B218 value=0xFFFFB218 -> r2
+pc=0x013A5C op=936F literal=0x013B3E word=B218 value=0xFFFFB218 -> r3
+pc=0x013A60 op=926E literal=0x013B40 word=B024 value=0xFFFFB024 -> r2
+pc=0x013A9C op=9351 literal=0x013B42 word=B08C value=0xFFFFB08C -> r3
+pc=0x013AA0 op=9151 literal=0x013B46 word=B090 value=0xFFFFB090 -> r1
+pc=0x013AA8 op=924C literal=0x013B44 word=B09C value=0xFFFFB09C -> r2
+pc=0x013F20 op=9327 literal=0x013F72 word=B0E0 value=0xFFFFB0E0 -> r3
+pc=0x013F24 op=9226 literal=0x013F74 word=B218 value=0xFFFFB218 -> r2
+pc=0x014BA0 op=9021 literal=0x014BE6 word=B1E6 value=0xFFFFB1E6 -> r0
+pc=0x0151A8 op=9258 literal=0x01525C word=B0E0 value=0xFFFFB0E0 -> r2
+pc=0x0151EE op=9338 literal=0x015262 word=B08C value=0xFFFFB08C -> r3
+pc=0x01548C op=9019 literal=0x0154C2 word=B1E4 value=0xFFFFB1E4 -> r0
+pc=0x015540 op=904F literal=0x0155E2 word=B1E4 value=0xFFFFB1E4 -> r0
+pc=0x015904 op=9247 literal=0x015996 word=B01C value=0xFFFFB01C -> r2
+pc=0x0162EC op=9047 literal=0x01637E word=B1E4 value=0xFFFFB1E4 -> r0
+pc=0x01641A op=9323 literal=0x016464 word=B04C value=0xFFFFB04C -> r3
+pc=0x016422 op=9120 literal=0x016466 word=B050 value=0xFFFFB050 -> r1
+pc=0x0164EC op=9353 literal=0x016596 word=B04C value=0xFFFFB04C -> r3
+pc=0x0164F0 op=9252 literal=0x016598 word=B050 value=0xFFFFB050 -> r2
+pc=0x016694 op=9322 literal=0x0166DC word=B04C value=0xFFFFB04C -> r3
+pc=0x0166A4 op=911B literal=0x0166DE word=B050 value=0xFFFFB050 -> r1
+pc=0x016814 op=9232 literal=0x01687C word=B04C value=0xFFFFB04C -> r2
+pc=0x016ADC op=9340 literal=0x016B60 word=B000 value=0xFFFFB000 -> r3
+pc=0x016B0C op=9229 literal=0x016B62 word=B004 value=0xFFFFB004 -> r2
+pc=0x016EE2 op=906D literal=0x016FC0 word=B018 value=0xFFFFB018 -> r0
+pc=0x016F00 op=915F literal=0x016FC2 word=B090 value=0xFFFFB090 -> r1
+pc=0x01701E op=947A literal=0x017116 word=B068 value=0xFFFFB068 -> r4
+pc=0x017020 op=957A literal=0x017118 word=B018 value=0xFFFFB018 -> r5
+pc=0x017028 op=9177 literal=0x01711A word=B040 value=0xFFFFB040 -> r1
+pc=0x017050 op=9264 literal=0x01711C word=B01C value=0xFFFFB01C -> r2
+pc=0x01705C op=925F literal=0x01711E word=B044 value=0xFFFFB044 -> r2
+pc=0x017064 op=935D literal=0x017122 word=B04C value=0xFFFFB04C -> r3
+pc=0x01706C op=905B literal=0x017126 word=B050 value=0xFFFFB050 -> r0
+pc=0x0170B8 op=9233 literal=0x017122 word=B04C value=0xFFFFB04C -> r2
+pc=0x0170C4 op=932D literal=0x017122 word=B04C value=0xFFFFB04C -> r3
+pc=0x0170CE op=912A literal=0x017126 word=B050 value=0xFFFFB050 -> r1
+pc=0x0170D8 op=9225 literal=0x017126 word=B050 value=0xFFFFB050 -> r2
+pc=0x01715C op=9167 literal=0x01722E word=B01C value=0xFFFFB01C -> r1
+pc=0x017166 op=9262 literal=0x01722E word=B01C value=0xFFFFB01C -> r2
+pc=0x017186 op=9255 literal=0x017234 word=B020 value=0xFFFFB020 -> r2
+pc=0x0171A0 op=9549 literal=0x017236 word=B024 value=0xFFFFB024 -> r5
+pc=0x0171B2 op=933F literal=0x017234 word=B020 value=0xFFFFB020 -> r3
+pc=0x0171C8 op=9636 literal=0x017238 word=B02C value=0xFFFFB02C -> r6
+pc=0x0171E4 op=9427 literal=0x017236 word=B024 value=0xFFFFB024 -> r4
+pc=0x0171E8 op=9327 literal=0x01723A word=B028 value=0xFFFFB028 -> r3
+pc=0x0171FE op=921D literal=0x01723C word=B218 value=0xFFFFB218 -> r2
+pc=0x01720A op=9E18 literal=0x01723E word=B03C value=0xFFFFB03C -> r14
+pc=0x01720C op=9113 literal=0x017236 word=B024 value=0xFFFFB024 -> r1
+pc=0x01721C op=9210 literal=0x017240 word=B038 value=0xFFFFB038 -> r2
+pc=0x01729C op=9E77 literal=0x01738E word=B024 value=0xFFFFB024 -> r14
+pc=0x0172B0 op=946E literal=0x017390 word=B068 value=0xFFFFB068 -> r4
+pc=0x017322 op=9035 literal=0x017390 word=B068 value=0xFFFFB068 -> r0
+pc=0x0173FC op=9652 literal=0x0174A4 word=B018 value=0xFFFFB018 -> r6
+pc=0x01745C op=9423 literal=0x0174A6 word=B040 value=0xFFFFB040 -> r4
+pc=0x0174C0 op=9375 literal=0x0175AE word=B054 value=0xFFFFB054 -> r3
+pc=0x017528 op=9342 literal=0x0175B0 word=B058 value=0xFFFFB058 -> r3
+pc=0x017536 op=923B literal=0x0175B0 word=B058 value=0xFFFFB058 -> r2
+pc=0x017554 op=922D literal=0x0175B2 word=B05C value=0xFFFFB05C -> r2
+pc=0x017564 op=9224 literal=0x0175B0 word=B058 value=0xFFFFB058 -> r2
+pc=0x01756C op=9121 literal=0x0175B2 word=B05C value=0xFFFFB05C -> r1
+pc=0x017576 op=941D literal=0x0175B4 word=B064 value=0xFFFFB064 -> r4
+pc=0x017582 op=9515 literal=0x0175B0 word=B058 value=0xFFFFB058 -> r5
+pc=0x017584 op=9317 literal=0x0175B6 word=B060 value=0xFFFFB060 -> r3
+pc=0x017598 op=910E literal=0x0175B8 word=B020 value=0xFFFFB020 -> r1
+pc=0x0175A2 op=940A literal=0x0175BA word=B068 value=0xFFFFB068 -> r4
+pc=0x017600 op=9131 literal=0x017666 word=B044 value=0xFFFFB044 -> r1
+pc=0x01760A op=922C literal=0x017666 word=B044 value=0xFFFFB044 -> r2
+pc=0x017624 op=9321 literal=0x01766A word=B048 value=0xFFFFB048 -> r3
+pc=0x01762C op=901E literal=0x01766C word=B018 value=0xFFFFB018 -> r0
+pc=0x01763A op=9017 literal=0x01766C word=B018 value=0xFFFFB018 -> r0
+pc=0x017652 op=900C literal=0x01766E word=B068 value=0xFFFFB068 -> r0
+pc=0x01768C op=950E literal=0x0176AC word=B088 value=0xFFFFB088 -> r5
+pc=0x017694 op=960B literal=0x0176AE word=B08C value=0xFFFFB08C -> r6
+pc=0x0176D0 op=957D literal=0x0177CE word=B1E6 value=0xFFFFB1E6 -> r5
+pc=0x0176D2 op=907B literal=0x0177CC word=B1F9 value=0xFFFFB1F9 -> r0
+pc=0x017728 op=9253 literal=0x0177D2 word=B094 value=0xFFFFB094 -> r2
+pc=0x017778 op=952D literal=0x0177D6 word=B090 value=0xFFFFB090 -> r5
+pc=0x017780 op=9025 literal=0x0177CE word=B1E6 value=0xFFFFB1E6 -> r0
+pc=0x0177F8 op=9217 literal=0x01782A word=B094 value=0xFFFFB094 -> r2
+pc=0x0177FC op=9116 literal=0x01782C word=B090 value=0xFFFFB090 -> r1
+pc=0x017854 op=944C literal=0x0178F0 word=B09C value=0xFFFFB09C -> r4
+pc=0x017864 op=9645 literal=0x0178F2 word=B0A0 value=0xFFFFB0A0 -> r6
+pc=0x0178B0 op=9320 literal=0x0178F4 word=B0A4 value=0xFFFFB0A4 -> r3
+pc=0x0178BA op=931B literal=0x0178F4 word=B0A4 value=0xFFFFB0A4 -> r3
+pc=0x0178D0 op=910F literal=0x0178F2 word=B0A0 value=0xFFFFB0A0 -> r1
+pc=0x0178D6 op=930B literal=0x0178F0 word=B09C value=0xFFFFB09C -> r3
+pc=0x0178E8 op=9204 literal=0x0178F4 word=B0A4 value=0xFFFFB0A4 -> r2
+pc=0x017948 op=9473 literal=0x017A32 word=B0B4 value=0xFFFFB0B4 -> r4
+pc=0x017988 op=9555 literal=0x017A36 word=B0AC value=0xFFFFB0AC -> r5
+pc=0x0179B4 op=9140 literal=0x017A38 word=B0B0 value=0xFFFFB0B0 -> r1
+pc=0x0179BC op=923C literal=0x017A38 word=B0B0 value=0xFFFFB0B0 -> r2
+pc=0x0179D0 op=9332 literal=0x017A38 word=B0B0 value=0xFFFFB0B0 -> r3
+pc=0x0179E8 op=9027 literal=0x017A3A word=B1F9 value=0xFFFFB1F9 -> r0
+pc=0x0179FC op=931B literal=0x017A36 word=B0AC value=0xFFFFB0AC -> r3
+pc=0x017A82 op=900E literal=0x017AA2 word=B0B4 value=0xFFFFB0B4 -> r0
+pc=0x017AB6 op=920D literal=0x017AD4 word=B0B8 value=0xFFFFB0B8 -> r2
+pc=0x017AC2 op=9207 literal=0x017AD4 word=B0B8 value=0xFFFFB0B8 -> r2
+pc=0x017ACC op=9102 literal=0x017AD4 word=B0B8 value=0xFFFFB0B8 -> r1
+pc=0x017B04 op=918D literal=0x017C22 word=B090 value=0xFFFFB090 -> r1
+pc=0x017B08 op=9D8E literal=0x017C28 word=B0E0 value=0xFFFFB0E0 -> r13
+pc=0x017B12 op=9387 literal=0x017C24 word=B218 value=0xFFFFB218 -> r3
+pc=0x017B14 op=9087 literal=0x017C26 word=B304 value=0xFFFFB304 -> r0
+pc=0x017B20 op=9283 literal=0x017C2A word=B380 value=0xFFFFB380 -> r2
+pc=0x017B3C op=9376 literal=0x017C2C word=B4F8 value=0xFFFFB4F8 -> r3
+pc=0x017B40 op=9176 literal=0x017C30 word=B028 value=0xFFFFB028 -> r1
+pc=0x017B48 op=9271 literal=0x017C2E word=B204 value=0xFFFFB204 -> r2
+pc=0x017B5C op=9369 literal=0x017C32 word=B024 value=0xFFFFB024 -> r3
+pc=0x017B64 op=9066 literal=0x017C34 word=B1E6 value=0xFFFFB1E6 -> r0
+pc=0x017B78 op=945D literal=0x017C36 word=B0BC value=0xFFFFB0BC -> r4
+pc=0x017B84 op=9E59 literal=0x017C3A word=B0C4 value=0xFFFFB0C4 -> r14
+pc=0x017B88 op=9656 literal=0x017C38 word=B0C0 value=0xFFFFB0C0 -> r6
+pc=0x017B9C op=934E literal=0x017C3C word=B09C value=0xFFFFB09C -> r3
+pc=0x017BCA op=9338 literal=0x017C3E word=B0C8 value=0xFFFFB0C8 -> r3
+pc=0x017BD6 op=9E33 literal=0x017C40 word=B0FD value=0xFFFFB0FD -> r14
+pc=0x017C9A op=903C literal=0x017D16 word=B1E6 value=0xFFFFB1E6 -> r0
+pc=0x017CE4 op=9018 literal=0x017D18 word=B0FD value=0xFFFFB0FD -> r0
+pc=0x017D58 op=9A48 literal=0x017DEC word=B0D0 value=0xFFFFB0D0 -> r10
+pc=0x017D64 op=9343 literal=0x017DEE word=B0C8 value=0xFFFFB0C8 -> r3
+pc=0x017D7A op=9C39 literal=0x017DF0 word=B0D4 value=0xFFFFB0D4 -> r12
+pc=0x017D9A op=932A literal=0x017DF2 word=B0DC value=0xFFFFB0DC -> r3
+pc=0x017D9E op=9929 literal=0x017DF4 word=B0EC value=0xFFFFB0EC -> r9
+pc=0x017DA6 op=9C26 literal=0x017DF6 word=B0F8 value=0xFFFFB0F8 -> r12
+pc=0x017DA8 op=9126 literal=0x017DF8 word=B0FC value=0xFFFFB0FC -> r1
+pc=0x017DCC op=9115 literal=0x017DFA word=B0F0 value=0xFFFFB0F0 -> r1
+pc=0x017DE6 op=9209 literal=0x017DFC word=B0F4 value=0xFFFFB0F4 -> r2
+pc=0x017E5C op=936C literal=0x017F38 word=B0D8 value=0xFFFFB0D8 -> r3
+pc=0x017EC4 op=9339 literal=0x017F3A word=B0E0 value=0xFFFFB0E0 -> r3
+pc=0x017EC8 op=9238 literal=0x017F3C word=B0D0 value=0xFFFFB0D0 -> r2
+pc=0x017EF4 op=9220 literal=0x017F38 word=B0D8 value=0xFFFFB0D8 -> r2
+pc=0x017F08 op=9319 literal=0x017F3E word=B0E4 value=0xFFFFB0E4 -> r3
+pc=0x017F0C op=9118 literal=0x017F40 word=B0E8 value=0xFFFFB0E8 -> r1
+pc=0x017F1A op=9311 literal=0x017F40 word=B0E8 value=0xFFFFB0E8 -> r3
+pc=0x017F88 op=9063 literal=0x018052 word=B1F9 value=0xFFFFB1F9 -> r0
+pc=0x017F9A op=915B literal=0x018054 word=B090 value=0xFFFFB090 -> r1
+pc=0x017FD4 op=923F literal=0x018056 word=B0CC value=0xFFFFB0CC -> r2
+pc=0x017FD8 op=913E literal=0x018058 word=B0C8 value=0xFFFFB0C8 -> r1
+pc=0x017FE0 op=9239 literal=0x018056 word=B0CC value=0xFFFFB0CC -> r2
+pc=0x017FEE op=9034 literal=0x01805A word=B0FD value=0xFFFFB0FD -> r0
+pc=0x018024 op=9E1B literal=0x01805E word=B0FC value=0xFFFFB0FC -> r14
+pc=0x0180A4 op=9379 literal=0x01819A word=B090 value=0xFFFFB090 -> r3
+pc=0x0180B0 op=9374 literal=0x01819C word=B0BC value=0xFFFFB0BC -> r3
+pc=0x0180B4 op=9273 literal=0x01819E word=B0C0 value=0xFFFFB0C0 -> r2
+pc=0x0180C0 op=916E literal=0x0181A0 word=B0C4 value=0xFFFFB0C4 -> r1
+pc=0x0180C4 op=926D literal=0x0181A2 word=B0C8 value=0xFFFFB0C8 -> r2
+pc=0x0180C8 op=916C literal=0x0181A4 word=B0CC value=0xFFFFB0CC -> r1
+pc=0x0180D8 op=9365 literal=0x0181A6 word=B0D0 value=0xFFFFB0D0 -> r3
+pc=0x0180DC op=9264 literal=0x0181A8 word=B0D4 value=0xFFFFB0D4 -> r2
+pc=0x0180E0 op=9163 literal=0x0181AA word=B0D8 value=0xFFFFB0D8 -> r1
+pc=0x0180E4 op=9262 literal=0x0181AC word=B0E0 value=0xFFFFB0E0 -> r2
+pc=0x0180E8 op=9161 literal=0x0181AE word=B0E8 value=0xFFFFB0E8 -> r1
+pc=0x0180EC op=9260 literal=0x0181B0 word=B0F0 value=0xFFFFB0F0 -> r2
+pc=0x0180F0 op=915F literal=0x0181B2 word=B0EC value=0xFFFFB0EC -> r1
+pc=0x0180F4 op=945E literal=0x0181B4 word=B0FD value=0xFFFFB0FD -> r4
+pc=0x0180FC op=935C literal=0x0181B8 word=B0FC value=0xFFFFB0FC -> r3
+pc=0x018118 op=913F literal=0x01819A word=B090 value=0xFFFFB090 -> r1
+pc=0x01811A op=904E literal=0x0181BA word=B1F9 value=0xFFFFB1F9 -> r0
+pc=0x018134 op=9332 literal=0x01819C word=B0BC value=0xFFFFB0BC -> r3
+pc=0x018138 op=9231 literal=0x01819E word=B0C0 value=0xFFFFB0C0 -> r2
+pc=0x01813C op=9130 literal=0x0181A0 word=B0C4 value=0xFFFFB0C4 -> r1
+pc=0x018140 op=932F literal=0x0181A2 word=B0C8 value=0xFFFFB0C8 -> r3
+pc=0x018144 op=922E literal=0x0181A4 word=B0CC value=0xFFFFB0CC -> r2
+pc=0x018150 op=9229 literal=0x0181A6 word=B0D0 value=0xFFFFB0D0 -> r2
+pc=0x018154 op=9328 literal=0x0181A8 word=B0D4 value=0xFFFFB0D4 -> r3
+pc=0x018158 op=9127 literal=0x0181AA word=B0D8 value=0xFFFFB0D8 -> r1
+pc=0x01815C op=9326 literal=0x0181AC word=B0E0 value=0xFFFFB0E0 -> r3
+pc=0x018160 op=9125 literal=0x0181AE word=B0E8 value=0xFFFFB0E8 -> r1
+pc=0x018164 op=9324 literal=0x0181B0 word=B0F0 value=0xFFFFB0F0 -> r3
+pc=0x018168 op=9123 literal=0x0181B2 word=B0EC value=0xFFFFB0EC -> r1
+pc=0x01816C op=9422 literal=0x0181B4 word=B0FD value=0xFFFFB0FD -> r4
+pc=0x018186 op=9015 literal=0x0181B4 word=B0FD value=0xFFFFB0FD -> r0
+pc=0x0181DC op=9245 literal=0x01826A word=B304 value=0xFFFFB304 -> r2
+pc=0x0181F0 op=943C literal=0x01826C word=B110 value=0xFFFFB110 -> r4
+pc=0x018242 op=9013 literal=0x01826C word=B110 value=0xFFFFB110 -> r0
+pc=0x018256 op=9009 literal=0x01826C word=B110 value=0xFFFFB110 -> r0
+pc=0x01827C op=922E literal=0x0182DC word=B304 value=0xFFFFB304 -> r2
+pc=0x018294 op=9523 literal=0x0182DE word=B114 value=0xFFFFB114 -> r5
+pc=0x0182AA op=9019 literal=0x0182E0 word=B1F9 value=0xFFFFB1F9 -> r0
+pc=0x0182BC op=940F literal=0x0182DE word=B114 value=0xFFFFB114 -> r4
+pc=0x0182C8 op=9009 literal=0x0182DE word=B114 value=0xFFFFB114 -> r0
+pc=0x01830A op=9224 literal=0x018356 word=B118 value=0xFFFFB118 -> r2
+pc=0x018312 op=9321 literal=0x018358 word=B11C value=0xFFFFB11C -> r3
+pc=0x018318 op=911E literal=0x018358 word=B11C value=0xFFFFB11C -> r1
+pc=0x01831C op=931B literal=0x018356 word=B118 value=0xFFFFB118 -> r3
+pc=0x018336 op=9211 literal=0x01835C word=B120 value=0xFFFFB120 -> r2
+pc=0x01833E op=930E literal=0x01835E word=B124 value=0xFFFFB124 -> r3
+pc=0x018344 op=910B literal=0x01835E word=B124 value=0xFFFFB124 -> r1
+pc=0x018348 op=9308 literal=0x01835C word=B120 value=0xFFFFB120 -> r3
+pc=0x018380 op=9843 literal=0x01840A word=B128 value=0xFFFFB128 -> r8
+pc=0x018384 op=9942 literal=0x01840C word=B12C value=0xFFFFB12C -> r9
+pc=0x018388 op=9A41 literal=0x01840E word=B138 value=0xFFFFB138 -> r10
+pc=0x01838C op=9B40 literal=0x018410 word=B130 value=0xFFFFB130 -> r11
+pc=0x018390 op=9C3F literal=0x018412 word=B13C value=0xFFFFB13C -> r12
+pc=0x018394 op=9D3E literal=0x018414 word=B134 value=0xFFFFB134 -> r13
+pc=0x018396 op=9E3E literal=0x018416 word=B148 value=0xFFFFB148 -> r14
+pc=0x0183AC op=9235 literal=0x01841A word=B144 value=0xFFFFB144 -> r2
+pc=0x0183B0 op=9332 literal=0x018418 word=B140 value=0xFFFFB140 -> r3
+pc=0x018496 op=903E literal=0x018516 word=B149 value=0xFFFFB149 -> r0
+pc=0x0184A8 op=9036 literal=0x018518 word=B148 value=0xFFFFB148 -> r0
+pc=0x0184CC op=9023 literal=0x018516 word=B149 value=0xFFFFB149 -> r0
+pc=0x0184DE op=901B literal=0x018518 word=B148 value=0xFFFFB148 -> r0
+pc=0x01850C op=9203 literal=0x018516 word=B149 value=0xFFFFB149 -> r2
+pc=0x018528 op=9187 literal=0x01863A word=B149 value=0xFFFFB149 -> r1
+pc=0x018584 op=9059 literal=0x01863A word=B149 value=0xFFFFB149 -> r0
+pc=0x018596 op=9051 literal=0x01863C word=B148 value=0xFFFFB148 -> r0
+pc=0x0185C0 op=903B literal=0x01863A word=B149 value=0xFFFFB149 -> r0
+pc=0x0185D2 op=9033 literal=0x01863C word=B148 value=0xFFFFB148 -> r0
+pc=0x018606 op=9218 literal=0x01863A word=B149 value=0xFFFFB149 -> r2
+pc=0x018610 op=9113 literal=0x01863A word=B149 value=0xFFFFB149 -> r1
+pc=0x01878C op=9233 literal=0x0187F6 word=B134 value=0xFFFFB134 -> r2
+pc=0x018790 op=9132 literal=0x0187F8 word=B130 value=0xFFFFB130 -> r1
+pc=0x018798 op=922F literal=0x0187FA word=B13C value=0xFFFFB13C -> r2
+pc=0x01879C op=912E literal=0x0187FC word=B138 value=0xFFFFB138 -> r1
+pc=0x0187A2 op=902C literal=0x0187FE word=B148 value=0xFFFFB148 -> r0
+pc=0x0187BE op=901E literal=0x0187FE word=B148 value=0xFFFFB148 -> r0
+pc=0x0187DA op=9010 literal=0x0187FE word=B148 value=0xFFFFB148 -> r0
+pc=0x018888 op=943B literal=0x018902 word=B163 value=0xFFFFB163 -> r4
+pc=0x01892C op=9584 literal=0x018A38 word=B164 value=0xFFFFB164 -> r5
+pc=0x018930 op=9483 literal=0x018A3A word=B163 value=0xFFFFB163 -> r4
+pc=0x0189E2 op=942B literal=0x018A3C word=B162 value=0xFFFFB162 -> r4
+pc=0x018ADC op=9341 literal=0x018B62 word=B204 value=0xFFFFB204 -> r3
+pc=0x018AE0 op=9240 literal=0x018B64 word=B304 value=0xFFFFB304 -> r2
+pc=0x018AE4 op=9E3F literal=0x018B66 word=B163 value=0xFFFFB163 -> r14
+pc=0x018C3A op=9032 literal=0x018CA2 word=B163 value=0xFFFFB163 -> r0
+pc=0x018C4C op=9029 literal=0x018CA2 word=B163 value=0xFFFFB163 -> r0
+pc=0x018D16 op=9086 literal=0x018E26 word=B162 value=0xFFFFB162 -> r0
+pc=0x018D2C op=907B literal=0x018E26 word=B162 value=0xFFFFB162 -> r0
+pc=0x018D42 op=9071 literal=0x018E28 word=B164 value=0xFFFFB164 -> r0
+pc=0x018D58 op=9067 literal=0x018E2A word=B163 value=0xFFFFB163 -> r0
+pc=0x018D70 op=9C59 literal=0x018E26 word=B162 value=0xFFFFB162 -> r12
+pc=0x018F06 op=9436 literal=0x018F76 word=B164 value=0xFFFFB164 -> r4
+pc=0x018F60 op=900A literal=0x018F78 word=B1E7 value=0xFFFFB1E7 -> r0
+pc=0x018FCC op=926F literal=0x0190AE word=B14C value=0xFFFFB14C -> r2
+pc=0x018FDC op=9268 literal=0x0190B0 word=B150 value=0xFFFFB150 -> r2
+pc=0x018FFC op=9157 literal=0x0190AE word=B14C value=0xFFFFB14C -> r1
+pc=0x019034 op=923C literal=0x0190B0 word=B150 value=0xFFFFB150 -> r2
+pc=0x019110 op=9268 literal=0x0191E4 word=B15C value=0xFFFFB15C -> r2
+pc=0x019128 op=935D literal=0x0191E6 word=B218 value=0xFFFFB218 -> r3
+pc=0x01912E op=925B literal=0x0191E8 word=B204 value=0xFFFFB204 -> r2
+pc=0x019178 op=9234 literal=0x0191E4 word=B15C value=0xFFFFB15C -> r2
+pc=0x01917A op=9037 literal=0x0191EC word=B1E6 value=0xFFFFB1E6 -> r0
+pc=0x019198 op=9329 literal=0x0191EE word=B158 value=0xFFFFB158 -> r3
+pc=0x0191AE op=901F literal=0x0191F0 word=B1E7 value=0xFFFFB1E7 -> r0
+pc=0x0191D0 op=940F literal=0x0191F2 word=B163 value=0xFFFFB163 -> r4
+pc=0x0191D2 op=920C literal=0x0191EE word=B158 value=0xFFFFB158 -> r2
+pc=0x019262 op=9569 literal=0x019338 word=B163 value=0xFFFFB163 -> r5
+pc=0x019264 op=9469 literal=0x01933A word=B164 value=0xFFFFB164 -> r4
+pc=0x0192CC op=9436 literal=0x01933C word=B1E6 value=0xFFFFB1E6 -> r4
+pc=0x0192DC op=942D literal=0x01933A word=B164 value=0xFFFFB164 -> r4
+pc=0x0192EC op=9027 literal=0x01933E word=B1E9 value=0xFFFFB1E9 -> r0
+pc=0x019360 op=9069 literal=0x019436 word=B1E6 value=0xFFFFB1E6 -> r0
+pc=0x019368 op=9362 literal=0x019430 word=B218 value=0xFFFFB218 -> r3
+pc=0x01936C op=9261 literal=0x019432 word=B318 value=0xFFFFB318 -> r2
+pc=0x019372 op=9C5F literal=0x019434 word=B158 value=0xFFFFB158 -> r12
+pc=0x0195DC op=936C literal=0x0196B8 word=B218 value=0xFFFFB218 -> r3
+pc=0x0195E0 op=926B literal=0x0196BA word=B090 value=0xFFFFB090 -> r2
+pc=0x0195E4 op=916A literal=0x0196BC word=B318 value=0xFFFFB318 -> r1
+pc=0x0195FC op=905F literal=0x0196BE word=B1E6 value=0xFFFFB1E6 -> r0
+pc=0x0197A8 op=9335 literal=0x019816 word=B204 value=0xFFFFB204 -> r3
+pc=0x0197B0 op=9032 literal=0x019818 word=B1E6 value=0xFFFFB1E6 -> r0
+pc=0x0197B8 op=932F literal=0x01981A word=B318 value=0xFFFFB318 -> r3
+pc=0x019886 op=945B literal=0x019940 word=B164 value=0xFFFFB164 -> r4
+pc=0x0198C2 op=903E literal=0x019942 word=B163 value=0xFFFFB163 -> r0
+pc=0x0198D4 op=9035 literal=0x019942 word=B163 value=0xFFFFB163 -> r0
+pc=0x0198E0 op=9330 literal=0x019944 word=B158 value=0xFFFFB158 -> r3
+pc=0x019924 op=920E literal=0x019944 word=B158 value=0xFFFFB158 -> r2
+pc=0x01997C op=9372 literal=0x019A64 word=B204 value=0xFFFFB204 -> r3
+pc=0x019988 op=906D literal=0x019A66 word=B164 value=0xFFFFB164 -> r0
+pc=0x0199F4 op=9138 literal=0x019A68 word=B154 value=0xFFFFB154 -> r1
+pc=0x019A02 op=9032 literal=0x019A6A word=B1E7 value=0xFFFFB1E7 -> r0
+pc=0x019A24 op=9E22 literal=0x019A6C word=B163 value=0xFFFFB163 -> r14
+pc=0x019A26 op=921F literal=0x019A68 word=B154 value=0xFFFFB154 -> r2
+pc=0x019AB0 op=949A literal=0x019BE8 word=B164 value=0xFFFFB164 -> r4
+pc=0x019B1C op=9265 literal=0x019BEA word=B154 value=0xFFFFB154 -> r2
+pc=0x019B26 op=945F literal=0x019BE8 word=B164 value=0xFFFFB164 -> r4
+pc=0x019B40 op=9D54 literal=0x019BEC word=B160 value=0xFFFFB160 -> r13
+pc=0x019B44 op=9E50 literal=0x019BE8 word=B164 value=0xFFFFB164 -> r14
+pc=0x019B86 op=902F literal=0x019BE8 word=B164 value=0xFFFFB164 -> r0
+pc=0x019B9A op=9025 literal=0x019BE8 word=B164 value=0xFFFFB164 -> r0
+pc=0x019BAE op=901B literal=0x019BE8 word=B164 value=0xFFFFB164 -> r0
+pc=0x019BDA op=9005 literal=0x019BE8 word=B164 value=0xFFFFB164 -> r0
+pc=0x019C10 op=9012 literal=0x019C38 word=B164 value=0xFFFFB164 -> r0
+pc=0x019C24 op=9008 literal=0x019C38 word=B164 value=0xFFFFB164 -> r0
+pc=0x019C62 op=937A literal=0x019D5A word=B08C value=0xFFFFB08C -> r3
+pc=0x019C8C op=9466 literal=0x019D5C word=B1C8 value=0xFFFFB1C8 -> r4
+pc=0x019C8E op=9A66 literal=0x019D5E word=B1E3 value=0xFFFFB1E3 -> r10
+pc=0x019C92 op=9C65 literal=0x019D60 word=B1D0 value=0xFFFFB1D0 -> r12
+pc=0x019C96 op=9D64 literal=0x019D62 word=B1D4 value=0xFFFFB1D4 -> r13
+pc=0x019C98 op=9E64 literal=0x019D64 word=B1CC value=0xFFFFB1CC -> r14
+pc=0x019CD6 op=9047 literal=0x019D68 word=B1F9 value=0xFFFFB1F9 -> r0
+pc=0x019DCA op=926A literal=0x019EA2 word=B1CC value=0xFFFFB1CC -> r2
+pc=0x019DCC op=916A literal=0x019EA4 word=B580 value=0xFFFFB580 -> r1
+pc=0x019DDA op=9564 literal=0x019EA6 word=B1E3 value=0xFFFFB1E3 -> r5
+pc=0x019E18 op=9446 literal=0x019EA8 word=B1E2 value=0xFFFFB1E2 -> r4
+pc=0x019E80 op=9011 literal=0x019EA6 word=B1E3 value=0xFFFFB1E3 -> r0
+pc=0x019ED4 op=938A literal=0x019FEC word=B1CC value=0xFFFFB1CC -> r3
+pc=0x019ED8 op=9D89 literal=0x019FEE word=B1E3 value=0xFFFFB1E3 -> r13
+pc=0x019EFE op=9277 literal=0x019FF0 word=B1E0 value=0xFFFFB1E0 -> r2
+pc=0x019F00 op=9E77 literal=0x019FF2 word=B1E2 value=0xFFFFB1E2 -> r14
+pc=0x019F14 op=906E literal=0x019FF4 word=B1F9 value=0xFFFFB1F9 -> r0
+pc=0x019F6C op=903F literal=0x019FEE word=B1E3 value=0xFFFFB1E3 -> r0
+pc=0x019F80 op=9236 literal=0x019FF0 word=B1E0 value=0xFFFFB1E0 -> r2
+pc=0x019FD4 op=920F literal=0x019FF6 word=B1D8 value=0xFFFFB1D8 -> r2
+pc=0x019FDC op=920C literal=0x019FF8 word=B1DC value=0xFFFFB1DC -> r2
+pc=0x01A018 op=934E literal=0x01A0B8 word=B1C8 value=0xFFFFB1C8 -> r3
+pc=0x01A01C op=924D literal=0x01A0BA word=B1CC value=0xFFFFB1CC -> r2
+pc=0x01A022 op=914B literal=0x01A0BC word=B1D0 value=0xFFFFB1D0 -> r1
+pc=0x01A026 op=934A literal=0x01A0BE word=B1D4 value=0xFFFFB1D4 -> r3
+pc=0x01A02A op=9449 literal=0x01A0C0 word=B1E3 value=0xFFFFB1E3 -> r4
+pc=0x01A02C op=9049 literal=0x01A0C2 word=B1E2 value=0xFFFFB1E2 -> r0
+pc=0x01A04C op=9439 literal=0x01A0C2 word=B1E2 value=0xFFFFB1E2 -> r4
+pc=0x01A078 op=9423 literal=0x01A0C2 word=B1E2 value=0xFFFFB1E2 -> r4
+pc=0x01A0A4 op=900D literal=0x01A0C2 word=B1E2 value=0xFFFFB1E2 -> r0
+pc=0x01A258 op=9D4A literal=0x01A2F0 word=B1E4 value=0xFFFFB1E4 -> r13
+pc=0x01A27C op=9E39 literal=0x01A2F2 word=B1E6 value=0xFFFFB1E6 -> r14
+pc=0x01A35C op=955C literal=0x01A418 word=B1E8 value=0xFFFFB1E8 -> r5
+pc=0x01A51C op=9B80 literal=0x01A620 word=B1E9 value=0xFFFFB1E9 -> r11
+pc=0x01A534 op=9075 literal=0x01A622 word=B20E value=0xFFFFB20E -> r0
+pc=0x01A538 op=9274 literal=0x01A624 word=B20C value=0xFFFFB20C -> r2
+pc=0x01A690 op=9047 literal=0x01A722 word=B1E6 value=0xFFFFB1E6 -> r0
+pc=0x01A6A2 op=933F literal=0x01A724 word=B304 value=0xFFFFB304 -> r3
+pc=0x01A790 op=9256 literal=0x01A840 word=B1EA value=0xFFFFB1EA -> r2
+pc=0x01A7A4 op=904D literal=0x01A842 word=B1E5 value=0xFFFFB1E5 -> r0
+pc=0x01A7AC op=9A48 literal=0x01A840 word=B1EA value=0xFFFFB1EA -> r10
+pc=0x01A82C op=940A literal=0x01A844 word=B1E6 value=0xFFFFB1E6 -> r4
+pc=0x01A88E op=90B6 literal=0x01A9FE word=B1E4 value=0xFFFFB1E4 -> r0
+pc=0x01A8A2 op=90AD literal=0x01AA00 word=B1E6 value=0xFFFFB1E6 -> r0
+pc=0x01A8B6 op=90A2 literal=0x01A9FE word=B1E4 value=0xFFFFB1E4 -> r0
+pc=0x01A8CA op=9099 literal=0x01AA00 word=B1E6 value=0xFFFFB1E6 -> r0
+pc=0x01A8DE op=908E literal=0x01A9FE word=B1E4 value=0xFFFFB1E4 -> r0
+pc=0x01A8F2 op=9085 literal=0x01AA00 word=B1E6 value=0xFFFFB1E6 -> r0
+pc=0x01A906 op=907B literal=0x01AA00 word=B1E6 value=0xFFFFB1E6 -> r0
+pc=0x01A91A op=9070 literal=0x01A9FE word=B1E4 value=0xFFFFB1E4 -> r0
+pc=0x01A92E op=9067 literal=0x01AA00 word=B1E6 value=0xFFFFB1E6 -> r0
+pc=0x01A942 op=905C literal=0x01A9FE word=B1E4 value=0xFFFFB1E4 -> r0
+pc=0x01A956 op=9053 literal=0x01AA00 word=B1E6 value=0xFFFFB1E6 -> r0
+pc=0x01A96A op=904A literal=0x01AA02 word=B1E5 value=0xFFFFB1E5 -> r0
+pc=0x01A97E op=9041 literal=0x01AA04 word=B1E7 value=0xFFFFB1E7 -> r0
+pc=0x01A992 op=9036 literal=0x01AA02 word=B1E5 value=0xFFFFB1E5 -> r0
+pc=0x01A9A6 op=902D literal=0x01AA04 word=B1E7 value=0xFFFFB1E7 -> r0
+pc=0x01A9BA op=9022 literal=0x01AA02 word=B1E5 value=0xFFFFB1E5 -> r0
+pc=0x01A9CE op=9019 literal=0x01AA04 word=B1E7 value=0xFFFFB1E7 -> r0
+pc=0x01A9E2 op=900C literal=0x01A9FE word=B1E4 value=0xFFFFB1E4 -> r0
+pc=0x01A9F0 op=9006 literal=0x01AA00 word=B1E6 value=0xFFFFB1E6 -> r0
+pc=0x01AA0C op=9084 literal=0x01AB18 word=B1E5 value=0xFFFFB1E5 -> r0
+pc=0x01AA20 op=907B literal=0x01AB1A word=B1E7 value=0xFFFFB1E7 -> r0
+pc=0x01AA34 op=9070 literal=0x01AB18 word=B1E5 value=0xFFFFB1E5 -> r0
+pc=0x01AA48 op=9068 literal=0x01AB1C word=B1E4 value=0xFFFFB1E4 -> r0
+pc=0x01AA5C op=905D literal=0x01AB1A word=B1E7 value=0xFFFFB1E7 -> r0
+pc=0x01AA70 op=9055 literal=0x01AB1E word=B1E6 value=0xFFFFB1E6 -> r0
+pc=0x01AA84 op=9048 literal=0x01AB18 word=B1E5 value=0xFFFFB1E5 -> r0
+pc=0x01AA98 op=903F literal=0x01AB1A word=B1E7 value=0xFFFFB1E7 -> r0
+pc=0x01AAAC op=9038 literal=0x01AB20 word=B1E9 value=0xFFFFB1E9 -> r0
+pc=0x01AAC0 op=902F literal=0x01AB22 word=B1E8 value=0xFFFFB1E8 -> r0
+pc=0x01AAD4 op=9020 literal=0x01AB18 word=B1E5 value=0xFFFFB1E5 -> r0
+pc=0x01AAE2 op=901A literal=0x01AB1A word=B1E7 value=0xFFFFB1E7 -> r0
+pc=0x01AAF0 op=9016 literal=0x01AB20 word=B1E9 value=0xFFFFB1E9 -> r0
+pc=0x01AB04 op=900C literal=0x01AB20 word=B1E9 value=0xFFFFB1E9 -> r0
+pc=0x01AB2A op=9044 literal=0x01ABB6 word=B1E4 value=0xFFFFB1E4 -> r0
+pc=0x01AB2C op=9344 literal=0x01ABB8 word=B090 value=0xFFFFB090 -> r3
+pc=0x01AB30 op=9E43 literal=0x01ABBA word=B1F0 value=0xFFFFB1F0 -> r14
+pc=0x01AB58 op=9230 literal=0x01ABBC word=B218 value=0xFFFFB218 -> r2
+pc=0x01AB80 op=941E literal=0x01ABC0 word=B1F1 value=0xFFFFB1F1 -> r4
+pc=0x01ABE4 op=9472 literal=0x01ACCC word=B1F9 value=0xFFFFB1F9 -> r4
+pc=0x01ABE8 op=9771 literal=0x01ACCE word=B1F4 value=0xFFFFB1F4 -> r7
+pc=0x01ABEC op=9570 literal=0x01ACD0 word=B1F5 value=0xFFFFB1F5 -> r5
+pc=0x01AC28 op=9556 literal=0x01ACD8 word=B1F6 value=0xFFFFB1F6 -> r5
+pc=0x01AC86 op=9428 literal=0x01ACDA word=B1F7 value=0xFFFFB1F7 -> r4
+pc=0x01ACEC op=938B literal=0x01AE06 word=B20C value=0xFFFFB20C -> r3
+pc=0x01ACEE op=908B literal=0x01AE08 word=B1F1 value=0xFFFFB1F1 -> r0
+pc=0x01AD00 op=9083 literal=0x01AE0A word=B20E value=0xFFFFB20E -> r0
+pc=0x01AD22 op=9273 literal=0x01AE0C word=B1F8 value=0xFFFFB1F8 -> r2
+pc=0x01AD36 op=9E6A literal=0x01AE0E word=B1F9 value=0xFFFFB1F9 -> r14
+pc=0x01AD58 op=915A literal=0x01AE10 word=B090 value=0xFFFFB090 -> r1
+pc=0x01AD64 op=9055 literal=0x01AE12 word=B1E4 value=0xFFFFB1E4 -> r0
+pc=0x01AD80 op=9348 literal=0x01AE14 word=B218 value=0xFFFFB218 -> r3
+pc=0x01ADC0 op=9425 literal=0x01AE0E word=B1F9 value=0xFFFFB1F9 -> r4
+pc=0x01AE6A op=9319 literal=0x01AEA0 word=B1FA value=0xFFFFB1FA -> r3
+pc=0x01AE80 op=920F literal=0x01AEA2 word=B1F4 value=0xFFFFB1F4 -> r2
+pc=0x01AE8A op=900B literal=0x01AEA4 word=B1F9 value=0xFFFFB1F9 -> r0
+pc=0x01AEBC op=9562 literal=0x01AF84 word=B208 value=0xFFFFB208 -> r5
+pc=0x01AF72 op=9207 literal=0x01AF84 word=B208 value=0xFFFFB208 -> r2
+pc=0x01AF76 op=9307 literal=0x01AF88 word=B204 value=0xFFFFB204 -> r3
+pc=0x01AFDC op=9E6C literal=0x01B0B8 word=B20E value=0xFFFFB20E -> r14
+pc=0x01B066 op=9528 literal=0x01B0BA word=B20C value=0xFFFFB20C -> r5
+pc=0x01B098 op=940E literal=0x01B0B8 word=B20E value=0xFFFFB20E -> r4
+pc=0x01B110 op=910F literal=0x01B132 word=B20C value=0xFFFFB20C -> r1
+pc=0x01B11E op=9009 literal=0x01B134 word=B20E value=0xFFFFB20E -> r0
+pc=0x01B154 op=9E63 literal=0x01B21E word=B210 value=0xFFFFB210 -> r14
+pc=0x01B158 op=9060 literal=0x01B21C word=B1E6 value=0xFFFFB1E6 -> r0
+pc=0x01B260 op=936D literal=0x01B33E word=B218 value=0xFFFFB218 -> r3
+pc=0x01B28A op=9E58 literal=0x01B33E word=B218 value=0xFFFFB218 -> r14
+pc=0x01B294 op=9254 literal=0x01B340 word=B21C value=0xFFFFB21C -> r2
+pc=0x01B2AC op=9348 literal=0x01B340 word=B21C value=0xFFFFB21C -> r3
+pc=0x01B2B2 op=9446 literal=0x01B342 word=B220 value=0xFFFFB220 -> r4
+pc=0x01B2D2 op=9334 literal=0x01B33E word=B218 value=0xFFFFB218 -> r3
+pc=0x01B2DC op=9232 literal=0x01B344 word=B224 value=0xFFFFB224 -> r2
+pc=0x01B2EC op=932B literal=0x01B346 word=B228 value=0xFFFFB228 -> r3
+pc=0x01B2F4 op=9327 literal=0x01B346 word=B228 value=0xFFFFB228 -> r3
+pc=0x01B3B4 op=9A7C literal=0x01B4B0 word=B22C value=0xFFFFB22C -> r10
+pc=0x01B3F4 op=935D literal=0x01B4B2 word=B2EC value=0xFFFFB2EC -> r3
+pc=0x01B43C op=933A literal=0x01B4B4 word=B2CC value=0xFFFFB2CC -> r3
+pc=0x01B454 op=9A2E literal=0x01B4B4 word=B2CC value=0xFFFFB2CC -> r10
+pc=0x01B478 op=901B literal=0x01B4B2 word=B2EC value=0xFFFFB2EC -> r0
+pc=0x01B47A op=931C literal=0x01B4B6 word=B2DC value=0xFFFFB2DC -> r3
+pc=0x01B4D8 op=9050 literal=0x01B57C word=B1F9 value=0xFFFFB1F9 -> r0
+pc=0x01B4EC op=9247 literal=0x01B57E word=B220 value=0xFFFFB220 -> r2
+pc=0x01B4F2 op=9145 literal=0x01B580 word=B21C value=0xFFFFB21C -> r1
+pc=0x01B4F6 op=9344 literal=0x01B582 word=B218 value=0xFFFFB218 -> r3
+pc=0x01B524 op=9131 literal=0x01B58A word=B22C value=0xFFFFB22C -> r1
+pc=0x01B530 op=9E28 literal=0x01B584 word=B2EC value=0xFFFFB2EC -> r14
+pc=0x01B53C op=9823 literal=0x01B586 word=B2DC value=0xFFFFB2DC -> r8
+pc=0x01B53E op=9923 literal=0x01B588 word=B2CC value=0xFFFFB2CC -> r9
+pc=0x01B5B4 op=9E32 literal=0x01B61C word=B304 value=0xFFFFB304 -> r14
+pc=0x01B5D0 op=9325 literal=0x01B61E word=B300 value=0xFFFFB300 -> r3
+pc=0x01B5D8 op=9121 literal=0x01B61E word=B300 value=0xFFFFB300 -> r1
+pc=0x01B5EC op=9E18 literal=0x01B620 word=B306 value=0xFFFFB306 -> r14
+pc=0x01B608 op=930B literal=0x01B622 word=B302 value=0xFFFFB302 -> r3
+pc=0x01B612 op=9106 literal=0x01B622 word=B302 value=0xFFFFB302 -> r1
+pc=0x01B650 op=9468 literal=0x01B724 word=B314 value=0xFFFFB314 -> r4
+pc=0x01B69E op=9043 literal=0x01B728 word=B1E6 value=0xFFFFB1E6 -> r0
+pc=0x01B6DC op=9327 literal=0x01B72E word=B218 value=0xFFFFB218 -> r3
+pc=0x01B6E0 op=9024 literal=0x01B72C word=B164 value=0xFFFFB164 -> r0
+pc=0x01B6E8 op=9122 literal=0x01B730 word=B304 value=0xFFFFB304 -> r1
+pc=0x01B702 op=9316 literal=0x01B732 word=B30C value=0xFFFFB30C -> r3
+pc=0x01B708 op=9514 literal=0x01B734 word=B315 value=0xFFFFB315 -> r5
+pc=0x01B75C op=9E87 literal=0x01B86E word=B308 value=0xFFFFB308 -> r14
+pc=0x01B77C op=9278 literal=0x01B870 word=B30C value=0xFFFFB30C -> r2
+pc=0x01B78E op=9070 literal=0x01B872 word=B315 value=0xFFFFB315 -> r0
+pc=0x01B7A4 op=9166 literal=0x01B874 word=B090 value=0xFFFFB090 -> r1
+pc=0x01B7B0 op=9061 literal=0x01B876 word=B204 value=0xFFFFB204 -> r0
+pc=0x01B7C2 op=9059 literal=0x01B878 word=B1E6 value=0xFFFFB1E6 -> r0
+pc=0x01B7CC op=9054 literal=0x01B878 word=B1E6 value=0xFFFFB1E6 -> r0
+pc=0x01B7EC op=9346 literal=0x01B87C word=B310 value=0xFFFFB310 -> r3
+pc=0x01B814 op=9433 literal=0x01B87E word=B314 value=0xFFFFB314 -> r4
+pc=0x01B822 op=902D literal=0x01B880 word=B1F9 value=0xFFFFB1F9 -> r0
+pc=0x01B834 op=9423 literal=0x01B87E word=B314 value=0xFFFFB314 -> r4
+pc=0x01B838 op=9319 literal=0x01B86E word=B308 value=0xFFFFB308 -> r3
+pc=0x01B846 op=901A literal=0x01B87E word=B314 value=0xFFFFB314 -> r0
+pc=0x01B85A op=9010 literal=0x01B87E word=B314 value=0xFFFFB314 -> r0
+pc=0x01B8C0 op=936F literal=0x01B9A2 word=B218 value=0xFFFFB218 -> r3
+pc=0x01B914 op=9D47 literal=0x01B9A6 word=B319 value=0xFFFFB319 -> r13
+pc=0x01B916 op=9445 literal=0x01B9A4 word=B1E6 value=0xFFFFB1E6 -> r4
+pc=0x01B918 op=9E46 literal=0x01B9A8 word=B318 value=0xFFFFB318 -> r14
+pc=0x01B964 op=9221 literal=0x01B9AA word=B204 value=0xFFFFB204 -> r2
+pc=0x01BA1C op=9202 literal=0x01BA24 word=B318 value=0xFFFFB318 -> r2
+pc=0x01BA3C op=9083 literal=0x01BB46 word=B1E6 value=0xFFFFB1E6 -> r0
+pc=0x01BA40 op=937F literal=0x01BB42 word=B090 value=0xFFFFB090 -> r3
+pc=0x01BA44 op=927E literal=0x01BB44 word=B09C value=0xFFFFB09C -> r2
+pc=0x01BA50 op=917B literal=0x01BB4A word=B304 value=0xFFFFB304 -> r1
+pc=0x01BAA8 op=9A50 literal=0x01BB4C word=B320 value=0xFFFFB320 -> r10
+pc=0x01BB20 op=9314 literal=0x01BB4C word=B320 value=0xFFFFB320 -> r3
+pc=0x01BB26 op=900E literal=0x01BB46 word=B1E6 value=0xFFFFB1E6 -> r0
+pc=0x01BBBA op=9395 literal=0x01BCE8 word=B328 value=0xFFFFB328 -> r3
+pc=0x01BBCC op=938E literal=0x01BCEC word=B32A value=0xFFFFB32A -> r3
+pc=0x01BBDA op=9389 literal=0x01BCF0 word=B32C value=0xFFFFB32C -> r3
+pc=0x01BBDC op=9289 literal=0x01BCF2 word=B4F4 value=0xFFFFB4F4 -> r2
+pc=0x01BBF0 op=9380 literal=0x01BCF4 word=B32E value=0xFFFFB32E -> r3
+pc=0x01BBF4 op=927F literal=0x01BCF6 word=B538 value=0xFFFFB538 -> r2 <<< TARGET
+pc=0x01BC00 op=937A literal=0x01BCF8 word=B330 value=0xFFFFB330 -> r3 <<< TARGET
+pc=0x01BC04 op=9279 literal=0x01BCFA word=B6BC value=0xFFFFB6BC -> r2
+pc=0x01BC12 op=9373 literal=0x01BCFC word=B332 value=0xFFFFB332 -> r3
+pc=0x01BC14 op=9273 literal=0x01BCFE word=B680 value=0xFFFFB680 -> r2
+pc=0x01BC24 op=936C literal=0x01BD00 word=B334 value=0xFFFFB334 -> r3
+pc=0x01BC28 op=926B literal=0x01BD02 word=B6E8 value=0xFFFFB6E8 -> r2
+pc=0x01BC34 op=9366 literal=0x01BD04 word=B336 value=0xFFFFB336 -> r3
+pc=0x01BC38 op=9265 literal=0x01BD06 word=B760 value=0xFFFFB760 -> r2
+pc=0x01BC44 op=9360 literal=0x01BD08 word=B338 value=0xFFFFB338 -> r3
+pc=0x01BC48 op=925F literal=0x01BD0A word=B48C value=0xFFFFB48C -> r2
+pc=0x01BC50 op=935C literal=0x01BD0C word=B33A value=0xFFFFB33A -> r3
+pc=0x01BC54 op=925B literal=0x01BD0E word=B0E0 value=0xFFFFB0E0 -> r2
+pc=0x01BC60 op=9356 literal=0x01BD10 word=B33C value=0xFFFFB33C -> r3
+pc=0x01BC64 op=9255 literal=0x01BD12 word=B0C8 value=0xFFFFB0C8 -> r2
+pc=0x01BC72 op=934F literal=0x01BD14 word=B33E value=0xFFFFB33E -> r3
+pc=0x01BC82 op=9349 literal=0x01BD18 word=B340 value=0xFFFFB340 -> r3
+pc=0x01BC94 op=9342 literal=0x01BD1C word=B342 value=0xFFFFB342 -> r3
+pc=0x01BCA0 op=933E literal=0x01BD20 word=B344 value=0xFFFFB344 -> r3
+pc=0x01BCA4 op=923D literal=0x01BD22 word=B218 value=0xFFFFB218 -> r2
+pc=0x01BCB4 op=9336 literal=0x01BD24 word=B346 value=0xFFFFB346 -> r3
+pc=0x01BCC0 op=9332 literal=0x01BD28 word=B348 value=0xFFFFB348 -> r3
+pc=0x01BCD0 op=932C literal=0x01BD2C word=B34A value=0xFFFFB34A -> r3
+pc=0x01BCE0 op=9326 literal=0x01BD30 word=B34C value=0xFFFFB34C -> r3
+pc=0x01BD80 op=939B literal=0x01BEBA word=B34E value=0xFFFFB34E -> r3
+pc=0x01BD8C op=9397 literal=0x01BEBE word=B350 value=0xFFFFB350 -> r3
+pc=0x01BD90 op=9296 literal=0x01BEC0 word=B1C8 value=0xFFFFB1C8 -> r2
+pc=0x01BD9A op=9392 literal=0x01BEC2 word=B352 value=0xFFFFB352 -> r3
+pc=0x01BD9C op=9292 literal=0x01BEC4 word=B09C value=0xFFFFB09C -> r2
+pc=0x01BDAC op=938B literal=0x01BEC6 word=B354 value=0xFFFFB354 -> r3
+pc=0x01BDB0 op=928A literal=0x01BEC8 word=B4A4 value=0xFFFFB4A4 -> r2
+pc=0x01BDBC op=9385 literal=0x01BECA word=B356 value=0xFFFFB356 -> r3
+pc=0x01BDC0 op=9284 literal=0x01BECC word=B580 value=0xFFFFB580 -> r2
+pc=0x01BDCC op=937F literal=0x01BECE word=B358 value=0xFFFFB358 -> r3
+pc=0x01BDD0 op=927E literal=0x01BED0 word=B024 value=0xFFFFB024 -> r2
+pc=0x01BDDC op=9379 literal=0x01BED2 word=B35A value=0xFFFFB35A -> r3
+pc=0x01BDE0 op=9278 literal=0x01BED4 word=B058 value=0xFFFFB058 -> r2
+pc=0x01BDEA op=9374 literal=0x01BED6 word=B35C value=0xFFFFB35C -> r3
+pc=0x01BDEC op=9274 literal=0x01BED8 word=B090 value=0xFFFFB090 -> r2
+pc=0x01BDFC op=936D literal=0x01BEDA word=B35E value=0xFFFFB35E -> r3
+pc=0x01BE00 op=926C literal=0x01BEDC word=B154 value=0xFFFFB154 -> r2
+pc=0x01BE10 op=9365 literal=0x01BEDE word=B360 value=0xFFFFB360 -> r3
+pc=0x01BE14 op=9264 literal=0x01BEE0 word=B158 value=0xFFFFB158 -> r2
+pc=0x01BE1E op=9360 literal=0x01BEE2 word=B361 value=0xFFFFB361 -> r3
+pc=0x01BE32 op=9358 literal=0x01BEE6 word=B362 value=0xFFFFB362 -> r3
+pc=0x01BE42 op=9352 literal=0x01BEEA word=B363 value=0xFFFFB363 -> r3
+pc=0x01BE54 op=934B literal=0x01BEEE word=B364 value=0xFFFFB364 -> r3
+pc=0x01BE58 op=924A literal=0x01BEF0 word=B37C value=0xFFFFB37C -> r2
+pc=0x01BE64 op=9345 literal=0x01BEF2 word=B365 value=0xFFFFB365 -> r3
+pc=0x01BE68 op=9244 literal=0x01BEF4 word=B8A4 value=0xFFFFB8A4 -> r2
+pc=0x01BE70 op=9341 literal=0x01BEF6 word=B366 value=0xFFFFB366 -> r3
+pc=0x01BE80 op=933B literal=0x01BEFA word=B367 value=0xFFFFB367 -> r3
+pc=0x01BE90 op=9334 literal=0x01BEFC word=B368 value=0xFFFFB368 -> r3
+pc=0x01BEA0 op=932E literal=0x01BF00 word=B369 value=0xFFFFB369 -> r3
+pc=0x01BEB0 op=9327 literal=0x01BF02 word=B36A value=0xFFFFB36A -> r3
+pc=0x01BF32 op=90E0 literal=0x01C0F6 word=B379 value=0xFFFFB379 -> r0
+pc=0x01BF40 op=921C literal=0x01BF7C word=B140 value=0xFFFFB140 -> r2
+pc=0x01BF50 op=9315 literal=0x01BF7E word=B36B value=0xFFFFB36B -> r3
+pc=0x01BF54 op=9214 literal=0x01BF80 word=B144 value=0xFFFFB144 -> r2
+pc=0x01BF5C op=9311 literal=0x01BF82 word=B36C value=0xFFFFB36C -> r3
+pc=0x01BF60 op=9210 literal=0x01BF84 word=B204 value=0xFFFFB204 -> r2
+pc=0x01BF6A op=930C literal=0x01BF86 word=B36D value=0xFFFFB36D -> r3
+pc=0x01BF9C op=9326 literal=0x01BFEC word=B370 value=0xFFFFB370 -> r3
+pc=0x01BFA4 op=9223 literal=0x01BFEE word=B374 value=0xFFFFB374 -> r2
+pc=0x01C01C op=9E64 literal=0x01C0E8 word=B378 value=0xFFFFB378 -> r14
+pc=0x01C1E2 op=9327 literal=0x01C234 word=B08C value=0xFFFFB08C -> r3
+pc=0x01C1F0 op=9422 literal=0x01C238 word=B3AA value=0xFFFFB3AA -> r4
+pc=0x01C258 op=937A literal=0x01C350 word=B08C value=0xFFFFB08C -> r3
+pc=0x01C260 op=9178 literal=0x01C354 word=B090 value=0xFFFFB090 -> r1
+pc=0x01C26A op=9374 literal=0x01C356 word=B218 value=0xFFFFB218 -> r3
+pc=0x01C26C op=9274 literal=0x01C358 word=B0C8 value=0xFFFFB0C8 -> r2
+pc=0x01C274 op=9372 literal=0x01C35C word=B302 value=0xFFFFB302 -> r3
+pc=0x01C2CC op=9247 literal=0x01C35E word=B688 value=0xFFFFB688 -> r2
+pc=0x01C2D4 op=9144 literal=0x01C360 word=B09C value=0xFFFFB09C -> r1
+pc=0x01C2F0 op=9337 literal=0x01C362 word=B3A0 value=0xFFFFB3A0 -> r3
+pc=0x01C30E op=9429 literal=0x01C364 word=B3A9 value=0xFFFFB3A9 -> r4
+pc=0x01C38A op=9B86 literal=0x01C49A word=B3AA value=0xFFFFB3AA -> r11
+pc=0x01C434 op=9031 literal=0x01C49A word=B3AA value=0xFFFFB3AA -> r0
+pc=0x01C472 op=9012 literal=0x01C49A word=B3AA value=0xFFFFB3AA -> r0
+pc=0x01C4E8 op=936C literal=0x01C5C4 word=B090 value=0xFFFFB090 -> r3
+pc=0x01C4EC op=926B literal=0x01C5C6 word=B6E8 value=0xFFFFB6E8 -> r2
+pc=0x01C4F2 op=9069 literal=0x01C5C8 word=B302 value=0xFFFFB302 -> r0
+pc=0x01C528 op=904F literal=0x01C5CA word=B3A9 value=0xFFFFB3A9 -> r0
+pc=0x01C54E op=903D literal=0x01C5CC word=B3AA value=0xFFFFB3AA -> r0
+pc=0x01C560 op=9034 literal=0x01C5CC word=B3AA value=0xFFFFB3AA -> r0
+pc=0x01C5A4 op=9411 literal=0x01C5CA word=B3A9 value=0xFFFFB3A9 -> r4
+pc=0x01C60C op=9463 literal=0x01C6D6 word=B3AA value=0xFFFFB3AA -> r4
+pc=0x01C634 op=9450 literal=0x01C6D8 word=B3A9 value=0xFFFFB3A9 -> r4
+pc=0x01C63C op=904C literal=0x01C6D8 word=B3A9 value=0xFFFFB3A9 -> r0
+pc=0x01C64E op=9043 literal=0x01C6D8 word=B3A9 value=0xFFFFB3A9 -> r0
+pc=0x01C668 op=9035 literal=0x01C6D6 word=B3AA value=0xFFFFB3AA -> r0
+pc=0x01C690 op=9323 literal=0x01C6DA word=B094 value=0xFFFFB094 -> r3
+pc=0x01C694 op=9422 literal=0x01C6DC word=B3A4 value=0xFFFFB3A4 -> r4
+pc=0x01C6BC op=950F literal=0x01C6DE word=B39C value=0xFFFFB39C -> r5
+pc=0x01C708 op=9457 literal=0x01C7BA word=B3A8 value=0xFFFFB3A8 -> r4
+pc=0x01C70C op=9256 literal=0x01C7BC word=B384 value=0xFFFFB384 -> r2
+pc=0x01C712 op=9154 literal=0x01C7BE word=B39C value=0xFFFFB39C -> r1
+pc=0x01C714 op=9054 literal=0x01C7C0 word=B3A6 value=0xFFFFB3A6 -> r0
+pc=0x01C71A op=9152 literal=0x01C7C2 word=B3A4 value=0xFFFFB3A4 -> r1
+pc=0x01C78A op=931C literal=0x01C7C6 word=B09C value=0xFFFFB09C -> r3
+pc=0x01C7A4 op=9410 literal=0x01C7C8 word=B3AA value=0xFFFFB3AA -> r4
+pc=0x01C820 op=936E literal=0x01C900 word=B8A4 value=0xFFFFB8A4 -> r3
+pc=0x01C824 op=926D literal=0x01C902 word=B680 value=0xFFFFB680 -> r2
+pc=0x01C828 op=9E6C literal=0x01C904 word=B3AA value=0xFFFFB3AA -> r14
+pc=0x01C860 op=9251 literal=0x01C906 word=B388 value=0xFFFFB388 -> r2
+pc=0x01C868 op=924E literal=0x01C908 word=B38C value=0xFFFFB38C -> r2
+pc=0x01C888 op=933F literal=0x01C90A word=B218 value=0xFFFFB218 -> r3
+pc=0x01C88C op=923E literal=0x01C90C word=B0C8 value=0xFFFFB0C8 -> r2
+pc=0x01C892 op=913C literal=0x01C90E word=B058 value=0xFFFFB058 -> r1
+pc=0x01C940 op=945B literal=0x01C9FA word=B3AA value=0xFFFFB3AA -> r4
+pc=0x01C980 op=9B3C literal=0x01C9FC word=B398 value=0xFFFFB398 -> r11
+pc=0x01C984 op=9D3B literal=0x01C9FE word=B394 value=0xFFFFB394 -> r13
+pc=0x01C98A op=9339 literal=0x01CA00 word=B3A0 value=0xFFFFB3A0 -> r3
+pc=0x01C9A8 op=9E2B literal=0x01CA02 word=B390 value=0xFFFFB390 -> r14
+pc=0x01CA34 op=9372 literal=0x01CB1C word=B8B0 value=0xFFFFB8B0 -> r3
+pc=0x01CA3A op=9270 literal=0x01CB1E word=B8B4 value=0xFFFFB8B4 -> r2
+pc=0x01CA48 op=916A literal=0x01CB20 word=B3A8 value=0xFFFFB3A8 -> r1
+pc=0x01CA54 op=9466 literal=0x01CB24 word=B3A9 value=0xFFFFB3A9 -> r4
+pc=0x01CA58 op=9E63 literal=0x01CB22 word=B384 value=0xFFFFB384 -> r14
+pc=0x01CAC6 op=932E literal=0x01CB26 word=B390 value=0xFFFFB390 -> r3
+pc=0x01CAD0 op=932A literal=0x01CB28 word=B38C value=0xFFFFB38C -> r3
+pc=0x01CB8A op=946B literal=0x01CC64 word=B3A9 value=0xFFFFB3A9 -> r4
+pc=0x01CBFC op=9333 literal=0x01CC66 word=B37C value=0xFFFFB37C -> r3
+pc=0x01CC14 op=9328 literal=0x01CC68 word=B380 value=0xFFFFB380 -> r3
+pc=0x01CC18 op=9225 literal=0x01CC66 word=B37C value=0xFFFFB37C -> r2
+pc=0x01CC1C op=9125 literal=0x01CC6A word=B384 value=0xFFFFB384 -> r1
+pc=0x01CC3A op=9E14 literal=0x01CC66 word=B37C value=0xFFFFB37C -> r14
+pc=0x01CC9E op=927E literal=0x01CD9E word=B3A0 value=0xFFFFB3A0 -> r2
+pc=0x01CCA8 op=927A literal=0x01CDA0 word=B380 value=0xFFFFB380 -> r2
+pc=0x01CCBC op=9171 literal=0x01CDA2 word=B37C value=0xFFFFB37C -> r1
+pc=0x01CCC2 op=926C literal=0x01CD9E word=B3A0 value=0xFFFFB3A0 -> r2
+pc=0x01CCCE op=9367 literal=0x01CDA0 word=B380 value=0xFFFFB380 -> r3
+pc=0x01CCD8 op=9263 literal=0x01CDA2 word=B37C value=0xFFFFB37C -> r2
+pc=0x01CCDC op=935F literal=0x01CD9E word=B3A0 value=0xFFFFB3A0 -> r3
+pc=0x01CCEA op=9359 literal=0x01CDA0 word=B380 value=0xFFFFB380 -> r3
+pc=0x01CCF4 op=9158 literal=0x01CDA8 word=B384 value=0xFFFFB384 -> r1
+pc=0x01CCF8 op=9254 literal=0x01CDA4 word=B0C8 value=0xFFFFB0C8 -> r2
+pc=0x01CCFE op=9352 literal=0x01CDA6 word=B394 value=0xFFFFB394 -> r3
+pc=0x01CD0C op=9247 literal=0x01CD9E word=B3A0 value=0xFFFFB3A0 -> r2
+pc=0x01CD0E op=9347 literal=0x01CDA0 word=B380 value=0xFFFFB380 -> r3
+pc=0x01CD1A op=9342 literal=0x01CDA2 word=B37C value=0xFFFFB37C -> r3
+pc=0x01CD4C op=9228 literal=0x01CDA0 word=B380 value=0xFFFFB380 -> r2
+pc=0x01CD5E op=9220 literal=0x01CDA2 word=B37C value=0xFFFFB37C -> r2
+pc=0x01CD68 op=921B literal=0x01CDA2 word=B37C value=0xFFFFB37C -> r2
+pc=0x01CDF8 op=927E literal=0x01CEF8 word=B585 value=0xFFFFB585 -> r2
+pc=0x01CE28 op=9467 literal=0x01CEFA word=B3AA value=0xFFFFB3AA -> r4
+pc=0x01CE3C op=905E literal=0x01CEFC word=B3A9 value=0xFFFFB3A9 -> r0
+pc=0x01CE66 op=9049 literal=0x01CEFC word=B3A9 value=0xFFFFB3A9 -> r0
+pc=0x01CE7C op=933F literal=0x01CEFE word=B37C value=0xFFFFB37C -> r3
+pc=0x01CE90 op=9236 literal=0x01CF00 word=B3A6 value=0xFFFFB3A6 -> r2
+pc=0x01CE98 op=9132 literal=0x01CF00 word=B3A6 value=0xFFFFB3A6 -> r1
+pc=0x01CEDC op=900D literal=0x01CEFA word=B3AA value=0xFFFFB3AA -> r0
+pc=0x01CF80 op=9012 literal=0x01CFA8 word=B3A9 value=0xFFFFB3A9 -> r0
+pc=0x01CF94 op=9008 literal=0x01CFA8 word=B3A9 value=0xFFFFB3A9 -> r0
+pc=0x01DBE0 op=9232 literal=0x01DC48 word=B204 value=0xFFFFB204 -> r2
+pc=0x01DD12 op=902B literal=0x01DD6C word=B868 value=0xFFFFB868 -> r0
+pc=0x01DD24 op=9023 literal=0x01DD6E word=B86C value=0xFFFFB86C -> r0
+pc=0x01DD36 op=901B literal=0x01DD70 word=B870 value=0xFFFFB870 -> r0
+pc=0x01DD48 op=9013 literal=0x01DD72 word=B88C value=0xFFFFB88C -> r0
+pc=0x01DD5A op=900B literal=0x01DD74 word=B894 value=0xFFFFB894 -> r0
+pc=0x01DD8C op=959D literal=0x01DECA word=B888 value=0xFFFFB888 -> r5
+pc=0x01DDA0 op=9094 literal=0x01DECC word=B898 value=0xFFFFB898 -> r0
+pc=0x01DDB2 op=908C literal=0x01DECE word=B89C value=0xFFFFB89C -> r0
+pc=0x01DDC4 op=9084 literal=0x01DED0 word=B832 value=0xFFFFB832 -> r0
+pc=0x01DDF4 op=906A literal=0x01DECC word=B898 value=0xFFFFB898 -> r0
+pc=0x01DE06 op=9062 literal=0x01DECE word=B89C value=0xFFFFB89C -> r0
+pc=0x01DE18 op=905A literal=0x01DED0 word=B832 value=0xFFFFB832 -> r0
+pc=0x01DE4A op=903F literal=0x01DECC word=B898 value=0xFFFFB898 -> r0
+pc=0x01DE5C op=9037 literal=0x01DECE word=B89C value=0xFFFFB89C -> r0
+pc=0x01DE6E op=902F literal=0x01DED0 word=B832 value=0xFFFFB832 -> r0
+pc=0x01DEA0 op=9014 literal=0x01DECC word=B898 value=0xFFFFB898 -> r0
+pc=0x01DEB2 op=900C literal=0x01DECE word=B89C value=0xFFFFB89C -> r0
+pc=0x01DEC4 op=9004 literal=0x01DED0 word=B832 value=0xFFFFB832 -> r0
+pc=0x01DEEE op=9304 literal=0x01DEFA word=B434 value=0xFFFFB434 -> r3
+pc=0x01DF24 op=9351 literal=0x01DFCA word=B090 value=0xFFFFB090 -> r3
+pc=0x01DF2E op=954E literal=0x01DFCE word=B464 value=0xFFFFB464 -> r5
+pc=0x01DF52 op=923D literal=0x01DFD0 word=B438 value=0xFFFFB438 -> r2
+pc=0x01DF6C op=9331 literal=0x01DFD2 word=B43C value=0xFFFFB43C -> r3
+pc=0x01DF78 op=932C literal=0x01DFD4 word=B218 value=0xFFFFB218 -> r3
+pc=0x01DF9C op=941B literal=0x01DFD6 word=B469 value=0xFFFFB469 -> r4
+pc=0x01E018 op=9955 literal=0x01E0C6 word=B454 value=0xFFFFB454 -> r9
+pc=0x01E01A op=9A55 literal=0x01E0C8 word=B458 value=0xFFFFB458 -> r10
+pc=0x01E01C op=9B55 literal=0x01E0CA word=B450 value=0xFFFFB450 -> r11
+pc=0x01E01E op=9C55 literal=0x01E0CC word=B45C value=0xFFFFB45C -> r12
+pc=0x01E020 op=9D55 literal=0x01E0CE word=B44C value=0xFFFFB44C -> r13
+pc=0x01E022 op=9E55 literal=0x01E0D0 word=B46B value=0xFFFFB46B -> r14
+pc=0x01E024 op=9055 literal=0x01E0D2 word=B469 value=0xFFFFB469 -> r0
+pc=0x01E048 op=9244 literal=0x01E0D4 word=B094 value=0xFFFFB094 -> r2
+pc=0x01E06C op=9333 literal=0x01E0D6 word=B4A8 value=0xFFFFB4A8 -> r3
+pc=0x01E086 op=9327 literal=0x01E0D8 word=B4AC value=0xFFFFB4AC -> r3
+pc=0x01E09E op=931C literal=0x01E0DA word=B4B0 value=0xFFFFB4B0 -> r3
+pc=0x01E0B6 op=9311 literal=0x01E0DC word=B4B4 value=0xFFFFB4B4 -> r3
+pc=0x01E14C op=936F literal=0x01E22E word=B4A8 value=0xFFFFB4A8 -> r3
+pc=0x01E152 op=926D literal=0x01E230 word=B4AC value=0xFFFFB4AC -> r2
+pc=0x01E154 op=916D literal=0x01E232 word=B4B0 value=0xFFFFB4B0 -> r1
+pc=0x01E15E op=9369 literal=0x01E234 word=B4B4 value=0xFFFFB4B4 -> r3
+pc=0x01E166 op=9266 literal=0x01E236 word=B474 value=0xFFFFB474 -> r2
+pc=0x01E1AC op=9444 literal=0x01E238 word=B440 value=0xFFFFB440 -> r4
+pc=0x01E1AE op=9344 literal=0x01E23A word=B444 value=0xFFFFB444 -> r3
+pc=0x01E1BC op=923E literal=0x01E23C word=B448 value=0xFFFFB448 -> r2
+pc=0x01E1C8 op=9339 literal=0x01E23E word=B438 value=0xFFFFB438 -> r3
+pc=0x01E1DC op=9330 literal=0x01E240 word=B43C value=0xFFFFB43C -> r3
+pc=0x01E1FC op=9421 literal=0x01E242 word=B46A value=0xFFFFB46A -> r4
+pc=0x01E288 op=936C literal=0x01E364 word=B218 value=0xFFFFB218 -> r3
+pc=0x01E3A4 op=9376 literal=0x01E494 word=B090 value=0xFFFFB090 -> r3
+pc=0x01E3AC op=9C73 literal=0x01E496 word=B46A value=0xFFFFB46A -> r12
+pc=0x01E4DE op=9358 literal=0x01E592 word=B444 value=0xFFFFB444 -> r3
+pc=0x01E4E0 op=9258 literal=0x01E594 word=B440 value=0xFFFFB440 -> r2
+pc=0x01E4E8 op=9455 literal=0x01E596 word=B469 value=0xFFFFB469 -> r4
+pc=0x01E4F0 op=9252 literal=0x01E598 word=B438 value=0xFFFFB438 -> r2
+pc=0x01E504 op=9349 literal=0x01E59A word=B43C value=0xFFFFB43C -> r3
+pc=0x01E508 op=9448 literal=0x01E59C word=B46B value=0xFFFFB46B -> r4
+pc=0x01E546 op=9426 literal=0x01E596 word=B469 value=0xFFFFB469 -> r4
+pc=0x01E640 op=9358 literal=0x01E6F4 word=B218 value=0xFFFFB218 -> r3
+pc=0x01E644 op=9257 literal=0x01E6F6 word=B0E0 value=0xFFFFB0E0 -> r2
+pc=0x01E648 op=9156 literal=0x01E6F8 word=B090 value=0xFFFFB090 -> r1
+pc=0x01E652 op=9253 literal=0x01E6FC word=B468 value=0xFFFFB468 -> r2
+pc=0x01E65E op=914E literal=0x01E6FE word=B460 value=0xFFFFB460 -> r1
+pc=0x01E660 op=934E literal=0x01E700 word=B444 value=0xFFFFB444 -> r3
+pc=0x01E69E op=922F literal=0x01E700 word=B444 value=0xFFFFB444 -> r2
+pc=0x01E6B0 op=9027 literal=0x01E702 word=B469 value=0xFFFFB469 -> r0
+pc=0x01E6C4 op=901E literal=0x01E704 word=B46A value=0xFFFFB46A -> r0
+pc=0x01E724 op=9012 literal=0x01E74C word=B469 value=0xFFFFB469 -> r0
+pc=0x01E738 op=9009 literal=0x01E74E word=B46A value=0xFFFFB46A -> r0
+pc=0x01E78C op=9060 literal=0x01E850 word=B469 value=0xFFFFB469 -> r0
+pc=0x01E7A0 op=9257 literal=0x01E852 word=B218 value=0xFFFFB218 -> r2
+pc=0x01E7A6 op=9355 literal=0x01E854 word=B090 value=0xFFFFB090 -> r3
+pc=0x01E7F0 op=9330 literal=0x01E854 word=B090 value=0xFFFFB090 -> r3
+pc=0x01E7F2 op=902D literal=0x01E850 word=B469 value=0xFFFFB469 -> r0
+pc=0x01E844 op=9407 literal=0x01E856 word=B474 value=0xFFFFB474 -> r4
+pc=0x01E846 op=9307 literal=0x01E858 word=B47C value=0xFFFFB47C -> r3
+pc=0x01E8B4 op=9060 literal=0x01E978 word=B469 value=0xFFFFB469 -> r0
+pc=0x01E8F2 op=9242 literal=0x01E97A word=B218 value=0xFFFFB218 -> r2
+pc=0x01E8F4 op=9342 literal=0x01E97C word=B090 value=0xFFFFB090 -> r3
+pc=0x01E908 op=923A literal=0x01E980 word=B154 value=0xFFFFB154 -> r2
+pc=0x01E9FC op=9342 literal=0x01EA84 word=B47C value=0xFFFFB47C -> r3
+pc=0x01EA14 op=9139 literal=0x01EA8A word=B08C value=0xFFFFB08C -> r1
+pc=0x01EA28 op=922D literal=0x01EA86 word=B090 value=0xFFFFB090 -> r2
+pc=0x01EA2C op=932C literal=0x01EA88 word=B094 value=0xFFFFB094 -> r3
+pc=0x01EA38 op=9228 literal=0x01EA8C word=B15C value=0xFFFFB15C -> r2
+pc=0x01EA44 op=9023 literal=0x01EA8E word=B469 value=0xFFFFB469 -> r0
+pc=0x01EA56 op=9D1B literal=0x01EA90 word=B478 value=0xFFFFB478 -> r13
+pc=0x01EB54 op=9637 literal=0x01EBC6 word=B478 value=0xFFFFB478 -> r6
+pc=0x01EC14 op=9369 literal=0x01ECEA word=B09C value=0xFFFFB09C -> r3
+pc=0x01EC1A op=9267 literal=0x01ECEC word=B090 value=0xFFFFB090 -> r2
+pc=0x01EC1C op=9167 literal=0x01ECEE word=B0E0 value=0xFFFFB0E0 -> r1
+pc=0x01EC22 op=9365 literal=0x01ECF0 word=B218 value=0xFFFFB218 -> r3
+pc=0x01EC4A op=9352 literal=0x01ECF2 word=B4E0 value=0xFFFFB4E0 -> r3
+pc=0x01EC4C op=9252 literal=0x01ECF4 word=B4D4 value=0xFFFFB4D4 -> r2
+pc=0x01EC54 op=914F literal=0x01ECF6 word=B4EC value=0xFFFFB4EC -> r1
+pc=0x01EC58 op=9E4E literal=0x01ECF8 word=B4C0 value=0xFFFFB4C0 -> r14
+pc=0x01EC5C op=924D literal=0x01ECFA word=B73C value=0xFFFFB73C -> r2
+pc=0x01EC60 op=934C literal=0x01ECFC word=B6E8 value=0xFFFFB6E8 -> r3
+pc=0x01ECB0 op=9325 literal=0x01ECFE word=B4BC value=0xFFFFB4BC -> r3
+pc=0x01ECB8 op=9221 literal=0x01ECFE word=B4BC value=0xFFFFB4BC -> r2
+pc=0x01ECD0 op=9516 literal=0x01ED00 word=B4C4 value=0xFFFFB4C4 -> r5
+pc=0x01ED40 op=92BE literal=0x01EEC0 word=B4D0 value=0xFFFFB4D0 -> r2
+pc=0x01ED44 op=93BD literal=0x01EEC2 word=B7F0 value=0xFFFFB7F0 -> r3
+pc=0x01ED48 op=91BC literal=0x01EEC4 word=B734 value=0xFFFFB734 -> r1
+pc=0x01ED50 op=92B9 literal=0x01EEC6 word=B4F4 value=0xFFFFB4F4 -> r2
+pc=0x01ED54 op=93B8 literal=0x01EEC8 word=B760 value=0xFFFFB760 -> r3
+pc=0x01ED58 op=92B7 literal=0x01EECA word=B7E4 value=0xFFFFB7E4 -> r2
+pc=0x01ED60 op=93B4 literal=0x01EECC word=B7EC value=0xFFFFB7EC -> r3
+pc=0x01ED64 op=92B3 literal=0x01EECE word=B538 value=0xFFFFB538 -> r2 <<< TARGET
+pc=0x01ED6C op=93B0 literal=0x01EED0 word=B680 value=0xFFFFB680 -> r3
+pc=0x01ED7C op=91A9 literal=0x01EED2 word=B784 value=0xFFFFB784 -> r1
+pc=0x01ED80 op=93A8 literal=0x01EED4 word=B4BC value=0xFFFFB4BC -> r3
+pc=0x01ED84 op=94A7 literal=0x01EED6 word=B7A4 value=0xFFFFB7A4 -> r4
+pc=0x01ED90 op=93A2 literal=0x01EED8 word=B7C8 value=0xFFFFB7C8 -> r3
+pc=0x01ED94 op=92A1 literal=0x01EEDA word=B7CC value=0xFFFFB7CC -> r2
+pc=0x01ED98 op=91A0 literal=0x01EEDC word=B7D0 value=0xFFFFB7D0 -> r1
+pc=0x01EDB4 op=9393 literal=0x01EEDE word=B7D4 value=0xFFFFB7D4 -> r3
+pc=0x01EDB8 op=9D92 literal=0x01EEE0 word=B48C value=0xFFFFB48C -> r13
+pc=0x01EDEC op=9379 literal=0x01EEE2 word=B490 value=0xFFFFB490 -> r3
+pc=0x01EDFC op=9372 literal=0x01EEE4 word=B494 value=0xFFFFB494 -> r3
+pc=0x01EE0C op=936B literal=0x01EEE6 word=B498 value=0xFFFFB498 -> r3
+pc=0x01EE1C op=9364 literal=0x01EEE8 word=B49C value=0xFFFFB49C -> r3
+pc=0x01EE20 op=925F literal=0x01EEE2 word=B490 value=0xFFFFB490 -> r2
+pc=0x01EE24 op=915E literal=0x01EEE4 word=B494 value=0xFFFFB494 -> r1
+pc=0x01EE2C op=935B literal=0x01EEE6 word=B498 value=0xFFFFB498 -> r3
+pc=0x01EE5C op=9245 literal=0x01EEEA word=B78C value=0xFFFFB78C -> r2
+pc=0x01EE60 op=9144 literal=0x01EEEC word=B790 value=0xFFFFB790 -> r1
+pc=0x01EE64 op=9343 literal=0x01EEEE word=B794 value=0xFFFFB794 -> r3
+pc=0x01EE68 op=9242 literal=0x01EEF0 word=B798 value=0xFFFFB798 -> r2
+pc=0x01EE74 op=913D literal=0x01EEF2 word=B4EC value=0xFFFFB4EC -> r1
+pc=0x01EE9E op=9D29 literal=0x01EEF4 word=B4C4 value=0xFFFFB4C4 -> r13
+pc=0x01EEA8 op=9325 literal=0x01EEF6 word=B4A0 value=0xFFFFB4A0 -> r3
+pc=0x01EEB8 op=931E literal=0x01EEF8 word=B4C8 value=0xFFFFB4C8 -> r3
+pc=0x01EF10 op=9329 literal=0x01EF66 word=B4A4 value=0xFFFFB4A4 -> r3
+pc=0x01EF1C op=9224 literal=0x01EF68 word=B4A8 value=0xFFFFB4A8 -> r2
+pc=0x01EF28 op=931F literal=0x01EF6A word=B4AC value=0xFFFFB4AC -> r3
+pc=0x01EF38 op=9318 literal=0x01EF6C word=B4B0 value=0xFFFFB4B0 -> r3
+pc=0x01EF44 op=9313 literal=0x01EF6E word=B4B4 value=0xFFFFB4B4 -> r3
+pc=0x01EF50 op=920E literal=0x01EF70 word=B4B8 value=0xFFFFB4B8 -> r2
+pc=0x01EF7C op=930B literal=0x01EF96 word=B0E0 value=0xFFFFB0E0 -> r3
+pc=0x01EF8C op=9304 literal=0x01EF98 word=B4D0 value=0xFFFFB4D0 -> r3
+pc=0x01EFB0 op=9369 literal=0x01F086 word=B090 value=0xFFFFB090 -> r3
+pc=0x01EFC2 op=9061 literal=0x01F088 word=B469 value=0xFFFFB469 -> r0
+pc=0x01EFD8 op=9E58 literal=0x01F08C word=B4D8 value=0xFFFFB4D8 -> r14
+pc=0x01F038 op=912A literal=0x01F090 word=B08C value=0xFFFFB08C -> r1
+pc=0x01F04C op=931B literal=0x01F086 word=B090 value=0xFFFFB090 -> r3
+pc=0x01F054 op=921B literal=0x01F08E word=B094 value=0xFFFFB094 -> r2
+pc=0x01F064 op=9315 literal=0x01F092 word=B304 value=0xFFFFB304 -> r3
+pc=0x01F0C8 op=9B6F literal=0x01F1AA word=B4D8 value=0xFFFFB4D8 -> r11
+pc=0x01F0D2 op=9969 literal=0x01F1A8 word=B4D4 value=0xFFFFB4D4 -> r9
+pc=0x01F0E6 op=9061 literal=0x01F1AC word=B469 value=0xFFFFB469 -> r0
+pc=0x01F10E op=904E literal=0x01F1AE word=B830 value=0xFFFFB830 -> r0
+pc=0x01F22C op=935E literal=0x01F2EC word=B090 value=0xFFFFB090 -> r3
+pc=0x01F230 op=905D literal=0x01F2EE word=B469 value=0xFFFFB469 -> r0
+pc=0x01F258 op=934B literal=0x01F2F2 word=B4E4 value=0xFFFFB4E4 -> r3
+pc=0x01F262 op=9247 literal=0x01F2F4 word=B4E8 value=0xFFFFB4E8 -> r2
+pc=0x01F26E op=9240 literal=0x01F2F2 word=B4E4 value=0xFFFFB4E4 -> r2
+pc=0x01F278 op=933C literal=0x01F2F4 word=B4E8 value=0xFFFFB4E8 -> r3
+pc=0x01F288 op=9136 literal=0x01F2F8 word=B08C value=0xFFFFB08C -> r1
+pc=0x01F298 op=9228 literal=0x01F2EC word=B090 value=0xFFFFB090 -> r2
+pc=0x01F29C op=932B literal=0x01F2F6 word=B094 value=0xFFFFB094 -> r3
+pc=0x01F2CC op=9C11 literal=0x01F2F2 word=B4E4 value=0xFFFFB4E4 -> r12
+pc=0x01F2D0 op=9D10 literal=0x01F2F4 word=B4E8 value=0xFFFFB4E8 -> r13
+pc=0x01F332 op=9047 literal=0x01F3C4 word=B830 value=0xFFFFB830 -> r0
+pc=0x01F3AA op=920C literal=0x01F3C6 word=B4E0 value=0xFFFFB4E0 -> r2
+pc=0x01F3F0 op=9338 literal=0x01F464 word=B090 value=0xFFFFB090 -> r3
+pc=0x01F3F4 op=9237 literal=0x01F466 word=B0E0 value=0xFFFFB0E0 -> r2
+pc=0x01F3FA op=9135 literal=0x01F468 word=B6E8 value=0xFFFFB6E8 -> r1
+pc=0x01F408 op=912F literal=0x01F46A word=B585 value=0xFFFFB585 -> r1
+pc=0x01F418 op=9E28 literal=0x01F46C word=B4F0 value=0xFFFFB4F0 -> r14
+pc=0x01F450 op=930D literal=0x01F46E word=B4EC value=0xFFFFB4EC -> r3
+pc=0x01F472 op=9B86 literal=0x01F582 word=B131 value=0xFFFFB131 -> r11
+pc=0x01F494 op=9381 literal=0x01F59A word=B094 value=0xFFFFB094 -> r3
+pc=0x01F498 op=9280 literal=0x01F59C word=B090 value=0xFFFFB090 -> r2
+pc=0x01F4A4 op=937B literal=0x01F59E word=B514 value=0xFFFFB514 -> r3
+pc=0x01F4AE op=9277 literal=0x01F5A0 word=B518 value=0xFFFFB518 -> r2
+pc=0x01F4B2 op=9374 literal=0x01F59E word=B514 value=0xFFFFB514 -> r3
+pc=0x01F4B4 op=9175 literal=0x01F5A2 word=B510 value=0xFFFFB510 -> r1
+pc=0x01F4C8 op=936C literal=0x01F5A4 word=B4F8 value=0xFFFFB4F8 -> r3
+pc=0x01F4F0 op=9254 literal=0x01F59C word=B090 value=0xFFFFB090 -> r2
+pc=0x01F500 op=9350 literal=0x01F5A4 word=B4F8 value=0xFFFFB4F8 -> r3
+pc=0x01F524 op=933F literal=0x01F5A6 word=B304 value=0xFFFFB304 -> r3
+pc=0x01F528 op=923E literal=0x01F5A8 word=B0E0 value=0xFFFFB0E0 -> r2
+pc=0x01F52C op=9136 literal=0x01F59C word=B090 value=0xFFFFB090 -> r1
+pc=0x01F530 op=933B literal=0x01F5AA word=B218 value=0xFFFFB218 -> r3
+pc=0x01F558 op=9028 literal=0x01F5AC word=B469 value=0xFFFFB469 -> r0
+pc=0x01F604 op=9163 literal=0x01F6CE word=B4FC value=0xFFFFB4FC -> r1
+pc=0x01F614 op=905C literal=0x01F6D0 word=B500 value=0xFFFFB500 -> r0
+pc=0x01F64A op=9342 literal=0x01F6D2 word=B4F4 value=0xFFFFB4F4 -> r3
+pc=0x01F654 op=933C literal=0x01F6D0 word=B500 value=0xFFFFB500 -> r3
+pc=0x01F66C op=932F literal=0x01F6CE word=B4FC value=0xFFFFB4FC -> r3
+pc=0x01F68C op=9322 literal=0x01F6D4 word=B508 value=0xFFFFB508 -> r3
+pc=0x01F690 op=9221 literal=0x01F6D6 word=B504 value=0xFFFFB504 -> r2
+pc=0x01F694 op=9120 literal=0x01F6D8 word=B510 value=0xFFFFB510 -> r1
+pc=0x01F6B8 op=930B literal=0x01F6D2 word=B4F4 value=0xFFFFB4F4 -> r3
+pc=0x01F720 op=9280 literal=0x01F824 word=B090 value=0xFFFFB090 -> r2
+pc=0x01F728 op=937D literal=0x01F826 word=B500 value=0xFFFFB500 -> r3
+pc=0x01F742 op=9D71 literal=0x01F828 word=B51C value=0xFFFFB51C -> r13
+pc=0x01F760 op=9361 literal=0x01F826 word=B500 value=0xFFFFB500 -> r3
+pc=0x01F762 op=9C62 literal=0x01F82A word=B504 value=0xFFFFB504 -> r12
+pc=0x01F798 op=9C48 literal=0x01F82C word=B508 value=0xFFFFB508 -> r12
+pc=0x01F79A op=9348 literal=0x01F82E word=B4FC value=0xFFFFB4FC -> r3
+pc=0x01F800 op=9316 literal=0x01F830 word=B304 value=0xFFFFB304 -> r3
+pc=0x01F80E op=9309 literal=0x01F824 word=B090 value=0xFFFFB090 -> r3
+pc=0x01F810 op=9A0F literal=0x01F832 word=B50C value=0xFFFFB50C -> r10
+pc=0x01F87C op=9C62 literal=0x01F944 word=B510 value=0xFFFFB510 -> r12
+pc=0x01F880 op=9E61 literal=0x01F946 word=B514 value=0xFFFFB514 -> r14
+pc=0x01F890 op=935A literal=0x01F948 word=B518 value=0xFFFFB518 -> r3
+pc=0x01F8B2 op=924A literal=0x01F94A word=B094 value=0xFFFFB094 -> r2
+pc=0x01F8B8 op=9D46 literal=0x01F948 word=B518 value=0xFFFFB518 -> r13
+pc=0x01F914 op=931A literal=0x01F94C word=B504 value=0xFFFFB504 -> r3
+pc=0x01F91E op=9216 literal=0x01F94E word=B508 value=0xFFFFB508 -> r2
+pc=0x01FA56 op=9220 literal=0x01FA9A word=B500 value=0xFFFFB500 -> r2
+pc=0x01FA5A op=9C1F literal=0x01FA9C word=B4F8 value=0xFFFFB4F8 -> r12
+pc=0x01FA5C op=911F literal=0x01FA9E word=B840 value=0xFFFFB840 -> r1
+pc=0x01FB1C op=9308 literal=0x01FB30 word=B4FC value=0xFFFFB4FC -> r3
+pc=0x01FB6E op=905D literal=0x01FC2C word=B1F4 value=0xFFFFB1F4 -> r0
+pc=0x01FB70 op=935D literal=0x01FC2E word=B1C8 value=0xFFFFB1C8 -> r3
+pc=0x01FBCA op=9331 literal=0x01FC30 word=B585 value=0xFFFFB585 -> r3
+pc=0x01FC1C op=9308 literal=0x01FC30 word=B585 value=0xFFFFB585 -> r3
+pc=0x01FC7C op=9077 literal=0x01FD6E word=B840 value=0xFFFFB840 -> r0
+pc=0x01FCCC op=9250 literal=0x01FD70 word=B094 value=0xFFFFB094 -> r2
+pc=0x01FCD0 op=934F literal=0x01FD72 word=B090 value=0xFFFFB090 -> r3
+pc=0x01FCD4 op=914E literal=0x01FD74 word=B0E0 value=0xFFFFB0E0 -> r1
+pc=0x01FCDC op=924B literal=0x01FD76 word=B204 value=0xFFFFB204 -> r2
+pc=0x01FE0E op=922E literal=0x01FE6E word=B1E0 value=0xFFFFB1E0 -> r2
+pc=0x01FE20 op=9226 literal=0x01FE70 word=B090 value=0xFFFFB090 -> r2
+pc=0x01FEC0 op=936D literal=0x01FF9E word=B4D0 value=0xFFFFB4D0 -> r3
+pc=0x01FECC op=9168 literal=0x01FFA0 word=B584 value=0xFFFFB584 -> r1
+pc=0x01FED0 op=9267 literal=0x01FFA2 word=B580 value=0xFFFFB580 -> r2
+pc=0x01FED4 op=9566 literal=0x01FFA4 word=B538 value=0xFFFFB538 -> r5 <<< TARGET
+pc=0x01FEEA op=935C literal=0x01FFA6 word=B574 value=0xFFFFB574 -> r3
+pc=0x01FEEE op=925B literal=0x01FFA8 word=B578 value=0xFFFFB578 -> r2
+pc=0x01FEF2 op=915A literal=0x01FFAA word=B57C value=0xFFFFB57C -> r1
+pc=0x01FEF6 op=9359 literal=0x01FFAC word=B594 value=0xFFFFB594 -> r3
+pc=0x01FF10 op=934D literal=0x01FFAE word=B586 value=0xFFFFB586 -> r3
+pc=0x01FF16 op=924B literal=0x01FFB0 word=B587 value=0xFFFFB587 -> r2
+pc=0x01FF42 op=9436 literal=0x01FFB2 word=B585 value=0xFFFFB585 -> r4
+pc=0x01FF52 op=932F literal=0x01FFB4 word=B58D value=0xFFFFB58D -> r3
+pc=0x01FF76 op=941D literal=0x01FFB4 word=B58D value=0xFFFFB58D -> r4
+pc=0x01FF78 op=931D literal=0x01FFB6 word=B58E value=0xFFFFB58E -> r3
+pc=0x01FFF6 op=9370 literal=0x0200DA word=B58E value=0xFFFFB58E -> r3
+pc=0x020020 op=935C literal=0x0200DC word=B08C value=0xFFFFB08C -> r3
+pc=0x02003C op=9150 literal=0x0200E0 word=B218 value=0xFFFFB218 -> r1
+pc=0x020044 op=934D literal=0x0200E2 word=B090 value=0xFFFFB090 -> r3
+pc=0x020048 op=924C literal=0x0200E4 word=B094 value=0xFFFFB094 -> r2
+pc=0x02004E op=914A literal=0x0200E6 word=B304 value=0xFFFFB304 -> r1
+pc=0x02018C op=9936 literal=0x0201FC word=B58E value=0xFFFFB58E -> r9
+pc=0x02019A op=9130 literal=0x0201FE word=B58F value=0xFFFFB58F -> r1
+pc=0x02019C op=9330 literal=0x020200 word=B590 value=0xFFFFB590 -> r3
+pc=0x0201A2 op=922E literal=0x020202 word=B591 value=0xFFFFB591 -> r2
+pc=0x0201D0 op=9318 literal=0x020204 word=B6E8 value=0xFFFFB6E8 -> r3
+pc=0x0201E4 op=930F literal=0x020206 word=B73C value=0xFFFFB73C -> r3
+pc=0x020256 op=9357 literal=0x020308 word=B584 value=0xFFFFB584 -> r3
+pc=0x0202D8 op=9217 literal=0x02030A word=B58F value=0xFFFFB58F -> r2
+pc=0x0202DE op=9114 literal=0x02030A word=B58F value=0xFFFFB58F -> r1
+pc=0x020302 op=9303 literal=0x02030C word=B590 value=0xFFFFB590 -> r3
+pc=0x020320 op=9151 literal=0x0203C6 word=B590 value=0xFFFFB590 -> r1
+pc=0x020340 op=9242 literal=0x0203C8 word=B7EC value=0xFFFFB7EC -> r2
+pc=0x02034C op=903D literal=0x0203CA word=B598 value=0xFFFFB598 -> r0
+pc=0x020362 op=9133 literal=0x0203CC word=B591 value=0xFFFFB591 -> r1
+pc=0x020368 op=9230 literal=0x0203CC word=B591 value=0xFFFFB591 -> r2
+pc=0x020398 op=9319 literal=0x0203CE word=B058 value=0xFFFFB058 -> r3
+pc=0x02039C op=9218 literal=0x0203D0 word=B218 value=0xFFFFB218 -> r2
+pc=0x0203A0 op=9117 literal=0x0203D2 word=B840 value=0xFFFFB840 -> r1
+pc=0x0203A4 op=9016 literal=0x0203D4 word=B82C value=0xFFFFB82C -> r0
+pc=0x02040C op=9D5C literal=0x0204C8 word=B584 value=0xFFFFB584 -> r13
+pc=0x02052C op=934F literal=0x0205CE word=B058 value=0xFFFFB058 -> r3
+pc=0x020534 op=924C literal=0x0205D0 word=B218 value=0xFFFFB218 -> r2
+pc=0x02053C op=9149 literal=0x0205D2 word=B204 value=0xFFFFB204 -> r1
+pc=0x020540 op=9348 literal=0x0205D4 word=B0E0 value=0xFFFFB0E0 -> r3
+pc=0x02062A op=9566 literal=0x0206FA word=B587 value=0xFFFFB587 -> r5
+pc=0x02062C op=9466 literal=0x0206FC word=B586 value=0xFFFFB586 -> r4
+pc=0x020688 op=9339 literal=0x0206FE word=B585 value=0xFFFFB585 -> r3
+pc=0x0206AC op=9126 literal=0x0206FC word=B586 value=0xFFFFB586 -> r1
+pc=0x0206B0 op=9223 literal=0x0206FA word=B587 value=0xFFFFB587 -> r2
+pc=0x020758 op=9939 literal=0x0207CE word=B578 value=0xFFFFB578 -> r9
+pc=0x02075A op=9A39 literal=0x0207D0 word=B57C value=0xFFFFB57C -> r10
+pc=0x02075C op=9B39 literal=0x0207D2 word=B574 value=0xFFFFB574 -> r11
+pc=0x0207A4 op=9416 literal=0x0207D4 word=B538 value=0xFFFFB538 -> r4 <<< TARGET
+pc=0x020830 op=9D30 literal=0x020894 word=B538 value=0xFFFFB538 -> r13 <<< TARGET
+pc=0x02086E op=9312 literal=0x020896 word=B586 value=0xFFFFB586 -> r3
+pc=0x020878 op=920E literal=0x020898 word=B587 value=0xFFFFB587 -> r2
+pc=0x0208EC op=9955 literal=0x02099A word=B538 value=0xFFFFB538 -> r9 <<< TARGET
+pc=0x02093C op=912E literal=0x02099C word=B580 value=0xFFFFB580 -> r1
+pc=0x02097E op=930E literal=0x02099E word=B594 value=0xFFFFB594 -> r3
+pc=0x020A34 op=9350 literal=0x020AD8 word=B594 value=0xFFFFB594 -> r3
+pc=0x020B10 op=9955 literal=0x020BBE word=B538 value=0xFFFFB538 -> r9 <<< TARGET
+pc=0x020B60 op=912E literal=0x020BC0 word=B580 value=0xFFFFB580 -> r1
+pc=0x020BA2 op=930E literal=0x020BC2 word=B594 value=0xFFFFB594 -> r3
+pc=0x020C58 op=9350 literal=0x020CFC word=B594 value=0xFFFFB594 -> r3
+pc=0x020D34 op=9955 literal=0x020DE2 word=B538 value=0xFFFFB538 -> r9 <<< TARGET
+pc=0x020D84 op=912E literal=0x020DE4 word=B580 value=0xFFFFB580 -> r1
+pc=0x020DC6 op=930E literal=0x020DE6 word=B594 value=0xFFFFB594 -> r3
+pc=0x020E7C op=9350 literal=0x020F20 word=B594 value=0xFFFFB594 -> r3
+pc=0x020F60 op=9264 literal=0x02102C word=B585 value=0xFFFFB585 -> r2
+pc=0x020FE0 op=9225 literal=0x02102E word=B57C value=0xFFFFB57C -> r2
+pc=0x021014 op=920C literal=0x021030 word=B594 value=0xFFFFB594 -> r2
+pc=0x021068 op=927F literal=0x02116A word=B090 value=0xFFFFB090 -> r2
+pc=0x02106C op=937E literal=0x02116C word=B094 value=0xFFFFB094 -> r3
+pc=0x021074 op=927B literal=0x02116E word=B4F4 value=0xFFFFB4F4 -> r2
+pc=0x021086 op=9173 literal=0x021170 word=B518 value=0xFFFFB518 -> r1
+pc=0x021088 op=9373 literal=0x021172 word=B514 value=0xFFFFB514 -> r3
+pc=0x0210EE op=9341 literal=0x021174 word=B4D0 value=0xFFFFB4D0 -> r3
+pc=0x021142 op=9218 literal=0x021176 word=B585 value=0xFFFFB585 -> r2
+pc=0x0211C2 op=9272 literal=0x0212AA word=B538 value=0xFFFFB538 -> r2 <<< TARGET
+pc=0x021250 op=922C literal=0x0212AC word=B588 value=0xFFFFB588 -> r2
+pc=0x021254 op=912B literal=0x0212AE word=B598 value=0xFFFFB598 -> r1
+pc=0x021258 op=932A literal=0x0212B0 word=B6BC value=0xFFFFB6BC -> r3
+pc=0x02127C op=9319 literal=0x0212B2 word=B800 value=0xFFFFB800 -> r3
+pc=0x0212A0 op=9208 literal=0x0212B4 word=B580 value=0xFFFFB580 -> r2
+pc=0x02131C op=936F literal=0x0213FE word=B090 value=0xFFFFB090 -> r3
+pc=0x021320 op=926E literal=0x021400 word=B1CC value=0xFFFFB1CC -> r2
+pc=0x021330 op=9267 literal=0x021402 word=B580 value=0xFFFFB580 -> r2
+pc=0x021340 op=9360 literal=0x021404 word=B585 value=0xFFFFB585 -> r3
+pc=0x021388 op=933B literal=0x021402 word=B580 value=0xFFFFB580 -> r3
+pc=0x02144C op=9277 literal=0x02153E word=B218 value=0xFFFFB218 -> r2
+pc=0x021452 op=9375 literal=0x021540 word=B0E0 value=0xFFFFB0E0 -> r3
+pc=0x02146E op=9368 literal=0x021542 word=B598 value=0xFFFFB598 -> r3
+pc=0x02147E op=9260 literal=0x021542 word=B598 value=0xFFFFB598 -> r2
+pc=0x02148E op=9359 literal=0x021544 word=B760 value=0xFFFFB760 -> r3
+pc=0x0214B2 op=9248 literal=0x021546 word=B588 value=0xFFFFB588 -> r2
+pc=0x0214C6 op=933E literal=0x021546 word=B588 value=0xFFFFB588 -> r3
+pc=0x0214E4 op=9430 literal=0x021548 word=B58C value=0xFFFFB58C -> r4
+pc=0x0214FC op=9125 literal=0x02154A word=B584 value=0xFFFFB584 -> r1
+pc=0x0215E0 op=9038 literal=0x021654 word=B6B8 value=0xFFFFB6B8 -> r0
+pc=0x021602 op=9328 literal=0x021656 word=B584 value=0xFFFFB584 -> r3
+pc=0x021774 op=936D literal=0x021852 word=B090 value=0xFFFFB090 -> r3
+pc=0x021778 op=926C literal=0x021854 word=B304 value=0xFFFFB304 -> r2
+pc=0x0217CE op=9243 literal=0x021858 word=B59C value=0xFFFFB59C -> r2
+pc=0x0218E4 op=9253 literal=0x02198E word=B218 value=0xFFFFB218 -> r2
+pc=0x0218EE op=9150 literal=0x021992 word=B220 value=0xFFFFB220 -> r1
+pc=0x02193C op=942A literal=0x021994 word=B59C value=0xFFFFB59C -> r4
+pc=0x0219E0 op=9083 literal=0x021AEA word=B689 value=0xFFFFB689 -> r0
+pc=0x0219F6 op=927A literal=0x021AEE word=B680 value=0xFFFFB680 -> r2
+pc=0x021A90 op=922E literal=0x021AF0 word=B090 value=0xFFFFB090 -> r2
+pc=0x021A98 op=932B literal=0x021AF2 word=B09C value=0xFFFFB09C -> r3
+pc=0x021AA0 op=9228 literal=0x021AF4 word=B0E4 value=0xFFFFB0E4 -> r2
+pc=0x021AA8 op=9325 literal=0x021AF6 word=B384 value=0xFFFFB384 -> r3
+pc=0x021AB0 op=9122 literal=0x021AF8 word=B3A6 value=0xFFFFB3A6 -> r1
+pc=0x021B78 op=9356 literal=0x021C28 word=B8A4 value=0xFFFFB8A4 -> r3
+pc=0x021BA0 op=9043 literal=0x021C2A word=B82C value=0xFFFFB82C -> r0
+pc=0x021BD0 op=932C literal=0x021C2C word=B585 value=0xFFFFB585 -> r3
+pc=0x021BF2 op=941C literal=0x021C2E word=B68A value=0xFFFFB68A -> r4
+pc=0x021BF4 op=931A literal=0x021C2C word=B585 value=0xFFFFB585 -> r3
+pc=0x021C6C op=925D literal=0x021D2A word=B4EC value=0xFFFFB4EC -> r2
+pc=0x021C84 op=9352 literal=0x021D2C word=B4D4 value=0xFFFFB4D4 -> r3
+pc=0x021C98 op=9349 literal=0x021D2E word=B4E0 value=0xFFFFB4E0 -> r3
+pc=0x021CB0 op=933E literal=0x021D30 word=B734 value=0xFFFFB734 -> r3
+pc=0x021CC4 op=9335 literal=0x021D32 word=B73C value=0xFFFFB73C -> r3
+pc=0x021D14 op=930E literal=0x021D34 word=B760 value=0xFFFFB760 -> r3
+pc=0x021D7A op=9350 literal=0x021E1E word=B68A value=0xFFFFB68A -> r3
+pc=0x021E08 op=920A literal=0x021E20 word=B68B value=0xFFFFB68B -> r2
+pc=0x021E10 op=9106 literal=0x021E20 word=B68B value=0xFFFFB68B -> r1
+pc=0x021ED0 op=9913 literal=0x021EFA word=B689 value=0xFFFFB689 -> r9
+pc=0x021EE0 op=930C literal=0x021EFC word=B68B value=0xFFFFB68B -> r3
+pc=0x021F38 op=9D69 literal=0x02200E word=B686 value=0xFFFFB686 -> r13
+pc=0x021F3A op=9E69 literal=0x022010 word=B687 value=0xFFFFB687 -> r14
+pc=0x021F4C op=9261 literal=0x022012 word=B680 value=0xFFFFB680 -> r2
+pc=0x021F7E op=9249 literal=0x022014 word=B1CC value=0xFFFFB1CC -> r2
+pc=0x021F80 op=9349 literal=0x022016 word=B580 value=0xFFFFB580 -> r3
+pc=0x021FCE op=9323 literal=0x022018 word=B574 value=0xFFFFB574 -> r3
+pc=0x022158 op=927B literal=0x022252 word=B689 value=0xFFFFB689 -> r2
+pc=0x022164 op=9E77 literal=0x022256 word=B680 value=0xFFFFB680 -> r14
+pc=0x0221BC op=924C literal=0x022258 word=B68C value=0xFFFFB68C -> r2
+pc=0x0221D2 op=9142 literal=0x02225A word=B684 value=0xFFFFB684 -> r1
+pc=0x0221E0 op=913C literal=0x02225C word=B688 value=0xFFFFB688 -> r1
+pc=0x0221E4 op=9338 literal=0x022258 word=B68C value=0xFFFFB68C -> r3
+pc=0x0221E8 op=9137 literal=0x02225A word=B684 value=0xFFFFB684 -> r1
+pc=0x0221F6 op=9431 literal=0x02225C word=B688 value=0xFFFFB688 -> r4
+pc=0x02221C op=931F literal=0x02225E word=B578 value=0xFFFFB578 -> r3
+pc=0x02221E op=921F literal=0x022260 word=B585 value=0xFFFFB585 -> r2
+pc=0x0222A4 op=936F literal=0x022386 word=B094 value=0xFFFFB094 -> r3
+pc=0x0222A8 op=946E literal=0x022388 word=B68C value=0xFFFFB68C -> r4
+pc=0x0222EE op=914C literal=0x02238A word=B688 value=0xFFFFB688 -> r1
+pc=0x022302 op=9243 literal=0x02238C word=B684 value=0xFFFFB684 -> r2
+pc=0x022306 op=9140 literal=0x02238A word=B688 value=0xFFFFB688 -> r1
+pc=0x022324 op=9432 literal=0x02238C word=B684 value=0xFFFFB684 -> r4
+pc=0x02233C op=9327 literal=0x02238E word=B0C8 value=0xFFFFB0C8 -> r3
+pc=0x0223DC op=9201 literal=0x0223E2 word=B689 value=0xFFFFB689 -> r2
+pc=0x0223F0 op=9247 literal=0x022482 word=B6C0 value=0xFFFFB6C0 -> r2
+pc=0x0223F8 op=9144 literal=0x022484 word=B218 value=0xFFFFB218 -> r1
+pc=0x022400 op=9341 literal=0x022486 word=B0E0 value=0xFFFFB0E0 -> r3
+pc=0x022408 op=913E literal=0x022488 word=B090 value=0xFFFFB090 -> r1
+pc=0x022420 op=9333 literal=0x02248A word=B0CC value=0xFFFFB0CC -> r3
+pc=0x022428 op=9030 literal=0x02248C word=B304 value=0xFFFFB304 -> r0
+pc=0x022430 op=922D literal=0x02248E word=B094 value=0xFFFFB094 -> r2
+pc=0x022460 op=9016 literal=0x022490 word=B6B8 value=0xFFFFB6B8 -> r0
+pc=0x0224D4 op=9378 literal=0x0225C8 word=B580 value=0xFFFFB580 -> r3
+pc=0x0224D6 op=9478 literal=0x0225CA word=B6B8 value=0xFFFFB6B8 -> r4
+pc=0x0224D8 op=9278 literal=0x0225CC word=B585 value=0xFFFFB585 -> r2
+pc=0x022546 op=9242 literal=0x0225CE word=B58C value=0xFFFFB58C -> r2
+pc=0x022576 op=932B literal=0x0225D0 word=B204 value=0xFFFFB204 -> r3
+pc=0x022580 op=9327 literal=0x0225D2 word=B6C4 value=0xFFFFB6C4 -> r3
+pc=0x022590 op=9220 literal=0x0225D4 word=B6C0 value=0xFFFFB6C0 -> r2
+pc=0x0225A6 op=9215 literal=0x0225D4 word=B6C0 value=0xFFFFB6C0 -> r2
+pc=0x0225AE op=930F literal=0x0225D0 word=B204 value=0xFFFFB204 -> r3
+pc=0x0225B0 op=9411 literal=0x0225D6 word=B6B9 value=0xFFFFB6B9 -> r4
+pc=0x022640 op=9669 literal=0x022716 word=B6C4 value=0xFFFFB6C4 -> r6
+pc=0x022698 op=913E literal=0x022718 word=B6C0 value=0xFFFFB6C0 -> r1
+pc=0x0226A2 op=943A literal=0x02271A word=B6B8 value=0xFFFFB6B8 -> r4
+pc=0x0226A4 op=9338 literal=0x022718 word=B6C0 value=0xFFFFB6C0 -> r3
+pc=0x0226C8 op=9527 literal=0x02271A word=B6B8 value=0xFFFFB6B8 -> r5
+pc=0x0226CA op=9427 literal=0x02271C word=B6C8 value=0xFFFFB6C8 -> r4
+pc=0x022750 op=938F literal=0x022872 word=B204 value=0xFFFFB204 -> r3
+pc=0x022754 op=9A8E literal=0x022874 word=B6B8 value=0xFFFFB6B8 -> r10
+pc=0x022768 op=9285 literal=0x022876 word=B6C8 value=0xFFFFB6C8 -> r2
+pc=0x022776 op=9C7F literal=0x022878 word=B6BC value=0xFFFFB6BC -> r12
+pc=0x02277A op=9E7E literal=0x02287A word=B6C9 value=0xFFFFB6C9 -> r14
+pc=0x022794 op=936F literal=0x022876 word=B6C8 value=0xFFFFB6C8 -> r3
+pc=0x0227C8 op=9355 literal=0x022876 word=B6C8 value=0xFFFFB6C8 -> r3
+pc=0x022846 op=9015 literal=0x022874 word=B6B8 value=0xFFFFB6B8 -> r0
+pc=0x02285A op=900B literal=0x022874 word=B6B8 value=0xFFFFB6B8 -> r0
+pc=0x0228AC op=9008 literal=0x0228C0 word=B6B9 value=0xFFFFB6B9 -> r0
+pc=0x0228C8 op=9378 literal=0x0229BC word=B218 value=0xFFFFB218 -> r3
+pc=0x0228D4 op=9273 literal=0x0229BE word=B0E0 value=0xFFFFB0E0 -> r2
+pc=0x0228E2 op=936E literal=0x0229C2 word=B024 value=0xFFFFB024 -> r3
+pc=0x022900 op=9064 literal=0x0229CC word=B700 value=0xFFFFB700 -> r0
+pc=0x022904 op=9263 literal=0x0229CE word=B706 value=0xFFFFB706 -> r2
+pc=0x02290E op=935F literal=0x0229D0 word=B702 value=0xFFFFB702 -> r3
+pc=0x022910 op=905F literal=0x0229D2 word=B708 value=0xFFFFB708 -> r0
+pc=0x02291C op=925A literal=0x0229D4 word=B704 value=0xFFFFB704 -> r2
+pc=0x022920 op=9059 literal=0x0229D6 word=B70A value=0xFFFFB70A -> r0
+pc=0x022938 op=924E literal=0x0229D8 word=B6F0 value=0xFFFFB6F0 -> r2
+pc=0x022946 op=9041 literal=0x0229CC word=B700 value=0xFFFFB700 -> r0
+pc=0x022948 op=9341 literal=0x0229CE word=B706 value=0xFFFFB706 -> r3
+pc=0x022954 op=923C literal=0x0229D0 word=B702 value=0xFFFFB702 -> r2
+pc=0x022958 op=903B literal=0x0229D2 word=B708 value=0xFFFFB708 -> r0
+pc=0x022962 op=9337 literal=0x0229D4 word=B704 value=0xFFFFB704 -> r3
+pc=0x022964 op=9037 literal=0x0229D6 word=B70A value=0xFFFFB70A -> r0
+pc=0x022A32 op=9566 literal=0x022B02 word=B6EC value=0xFFFFB6EC -> r5
+pc=0x022A36 op=9365 literal=0x022B04 word=B70C value=0xFFFFB70C -> r3
+pc=0x022A38 op=9E65 literal=0x022B06 word=B6E8 value=0xFFFFB6E8 -> r14
+pc=0x022A46 op=925F literal=0x022B08 word=B6F8 value=0xFFFFB6F8 -> r2
+pc=0x022A54 op=9259 literal=0x022B0A word=B6FC value=0xFFFFB6FC -> r2
+pc=0x022A58 op=9158 literal=0x022B0C word=B6F4 value=0xFFFFB6F4 -> r1
+pc=0x022A62 op=9154 literal=0x022B0E word=B6F0 value=0xFFFFB6F0 -> r1
+pc=0x022A6C op=934E literal=0x022B0C word=B6F4 value=0xFFFFB6F4 -> r3
+pc=0x022A98 op=933A literal=0x022B10 word=B218 value=0xFFFFB218 -> r3
+pc=0x022A9E op=9238 literal=0x022B12 word=B024 value=0xFFFFB024 -> r2
+pc=0x022AA0 op=9138 literal=0x022B14 word=B4D0 value=0xFFFFB4D0 -> r1
+pc=0x022B9C op=9B56 literal=0x022C4C word=B702 value=0xFFFFB702 -> r11
+pc=0x022BA0 op=9356 literal=0x022C50 word=B6E8 value=0xFFFFB6E8 -> r3
+pc=0x022BAA op=9D50 literal=0x022C4E word=B700 value=0xFFFFB700 -> r13
+pc=0x022BD4 op=923C literal=0x022C50 word=B6E8 value=0xFFFFB6E8 -> r2
+pc=0x022C00 op=9327 literal=0x022C52 word=B706 value=0xFFFFB706 -> r3
+pc=0x022C3E op=9309 literal=0x022C54 word=B708 value=0xFFFFB708 -> r3
+pc=0x022CA0 op=9E35 literal=0x022D0E word=B704 value=0xFFFFB704 -> r14
+pc=0x022CA2 op=9235 literal=0x022D10 word=B70A value=0xFFFFB70A -> r2
+pc=0x022CD0 op=941F literal=0x022D12 word=B70D value=0xFFFFB70D -> r4
+pc=0x022CDC op=921A literal=0x022D14 word=B706 value=0xFFFFB706 -> r2
+pc=0x022D38 op=9361 literal=0x022DFE word=B218 value=0xFFFFB218 -> r3
+pc=0x022D3C op=9260 literal=0x022E00 word=B024 value=0xFFFFB024 -> r2
+pc=0x022D42 op=915E literal=0x022E02 word=B090 value=0xFFFFB090 -> r1
+pc=0x022D44 op=935E literal=0x022E04 word=B204 value=0xFFFFB204 -> r3
+pc=0x022D4C op=925B literal=0x022E06 word=B08C value=0xFFFFB08C -> r2
+pc=0x022D64 op=9350 literal=0x022E08 word=B318 value=0xFFFFB318 -> r3
+pc=0x022FF0 op=9C7A literal=0x0230E8 word=B706 value=0xFFFFB706 -> r12
+pc=0x022FF2 op=9D7A literal=0x0230EA word=B708 value=0xFFFFB708 -> r13
+pc=0x022FF4 op=9E7A literal=0x0230EC word=B70A value=0xFFFFB70A -> r14
+pc=0x022FF6 op=957A literal=0x0230EE word=B70D value=0xFFFFB70D -> r5
+pc=0x0230BA op=9319 literal=0x0230F0 word=B090 value=0xFFFFB090 -> r3
+pc=0x0230C4 op=9315 literal=0x0230F2 word=B6F4 value=0xFFFFB6F4 -> r3
+pc=0x0230D8 op=930C literal=0x0230F4 word=B700 value=0xFFFFB700 -> r3
+pc=0x0230DC op=920B literal=0x0230F6 word=B702 value=0xFFFFB702 -> r2
+pc=0x0230E0 op=910A literal=0x0230F8 word=B704 value=0xFFFFB704 -> r1
+pc=0x023140 op=921B literal=0x02317A word=B6E8 value=0xFFFFB6E8 -> r2
+pc=0x023144 op=931A literal=0x02317C word=B6F0 value=0xFFFFB6F0 -> r3
+pc=0x023148 op=9119 literal=0x02317E word=B6EC value=0xFFFFB6EC -> r1
+pc=0x023152 op=9015 literal=0x023180 word=B70D value=0xFFFFB70D -> r0
+pc=0x023166 op=900B literal=0x023180 word=B70D value=0xFFFFB70D -> r0
+pc=0x023188 op=937B literal=0x023282 word=B090 value=0xFFFFB090 -> r3
+pc=0x02318C op=927A literal=0x023284 word=B09C value=0xFFFFB09C -> r2
+pc=0x02318E op=947A literal=0x023286 word=B738 value=0xFFFFB738 -> r4
+pc=0x0231C8 op=925E literal=0x023288 word=B734 value=0xFFFFB734 -> r2
+pc=0x0231D4 op=9059 literal=0x02328A word=B469 value=0xFFFFB469 -> r0
+pc=0x0231D8 op=9358 literal=0x02328C word=B304 value=0xFFFFB304 -> r3
+pc=0x0231F0 op=934D literal=0x02328E word=B4E0 value=0xFFFFB4E0 -> r3
+pc=0x023212 op=9E3D literal=0x023290 word=B730 value=0xFFFFB730 -> r14
+pc=0x02325C op=9213 literal=0x023286 word=B738 value=0xFFFFB738 -> r2
+pc=0x02327C op=9304 literal=0x023288 word=B734 value=0xFFFFB734 -> r3
+pc=0x0232D4 op=9150 literal=0x023378 word=B734 value=0xFFFFB734 -> r1
+pc=0x0232E8 op=9047 literal=0x02337A word=B469 value=0xFFFFB469 -> r0
+pc=0x0232EC op=9246 literal=0x02337C word=B304 value=0xFFFFB304 -> r2
+pc=0x023314 op=9333 literal=0x02337E word=B730 value=0xFFFFB730 -> r3
+pc=0x023324 op=9E2C literal=0x023380 word=B738 value=0xFFFFB738 -> r14
+pc=0x0233A4 op=9271 literal=0x02348A word=B73C value=0xFFFFB73C -> r2
+pc=0x0233B4 op=936A literal=0x02348C word=B304 value=0xFFFFB304 -> r3
+pc=0x0233C0 op=9365 literal=0x02348E word=B090 value=0xFFFFB090 -> r3
+pc=0x0233C6 op=9263 literal=0x023490 word=B024 value=0xFFFFB024 -> r2
+pc=0x0233CE op=9360 literal=0x023492 word=B218 value=0xFFFFB218 -> r3
+pc=0x0233E4 op=9651 literal=0x02348A word=B73C value=0xFFFFB73C -> r6
+pc=0x0234E4 op=9245 literal=0x023572 word=B218 value=0xFFFFB218 -> r2
+pc=0x0234E8 op=9344 literal=0x023574 word=B204 value=0xFFFFB204 -> r3
+pc=0x023500 op=9339 literal=0x023576 word=B744 value=0xFFFFB744 -> r3
+pc=0x023504 op=9C38 literal=0x023578 word=B740 value=0xFFFFB740 -> r12
+pc=0x02350C op=9235 literal=0x02357A word=B0E8 value=0xFFFFB0E8 -> r2
+pc=0x023538 op=9320 literal=0x02357C word=B090 value=0xFFFFB090 -> r3
+pc=0x023620 op=9008 literal=0x023634 word=B740 value=0xFFFFB740 -> r0
+pc=0x02366E op=936C literal=0x02374A word=B380 value=0xFFFFB380 -> r3
+pc=0x023690 op=935B literal=0x02374A word=B380 value=0xFFFFB380 -> r3
+pc=0x02369A op=9158 literal=0x02374E word=B090 value=0xFFFFB090 -> r1
+pc=0x0236BC op=9148 literal=0x023750 word=B8A4 value=0xFFFFB8A4 -> r1
+pc=0x0236BE op=9448 literal=0x023752 word=B760 value=0xFFFFB760 -> r4
+pc=0x0237D4 op=924C literal=0x023870 word=B0C8 value=0xFFFFB0C8 -> r2
+pc=0x023848 op=9313 literal=0x023872 word=B0E4 value=0xFFFFB0E4 -> r3
+pc=0x023954 op=937A literal=0x023A4C word=B798 value=0xFFFFB798 -> r3
+pc=0x023958 op=9279 literal=0x023A4E word=B794 value=0xFFFFB794 -> r2
+pc=0x02395E op=9177 literal=0x023A50 word=B790 value=0xFFFFB790 -> r1
+pc=0x023962 op=9376 literal=0x023A52 word=B78C value=0xFFFFB78C -> r3
+pc=0x02397C op=926C literal=0x023A58 word=B306 value=0xFFFFB306 -> r2
+pc=0x023980 op=916B literal=0x023A5A word=B204 value=0xFFFFB204 -> r1
+pc=0x0239CE op=9045 literal=0x023A5C word=B469 value=0xFFFFB469 -> r0
+pc=0x0239EC op=9337 literal=0x023A5E word=B784 value=0xFFFFB784 -> r3
+pc=0x023A10 op=9E26 literal=0x023A60 word=B788 value=0xFFFFB788 -> r14
+pc=0x023AA8 op=9233 literal=0x023B12 word=B784 value=0xFFFFB784 -> r2
+pc=0x023B00 op=9207 literal=0x023B12 word=B784 value=0xFFFFB784 -> r2
+pc=0x023B54 op=9358 literal=0x023C08 word=B218 value=0xFFFFB218 -> r3
+pc=0x023B58 op=9257 literal=0x023C0A word=B090 value=0xFFFFB090 -> r2
+pc=0x023B5C op=9156 literal=0x023C0C word=B0E0 value=0xFFFFB0E0 -> r1
+pc=0x023B94 op=943C literal=0x023C10 word=B7C2 value=0xFFFFB7C2 -> r4
+pc=0x023C4C op=9B76 literal=0x023D3C word=B2EC value=0xFFFFB2EC -> r11
+pc=0x023C50 op=9A75 literal=0x023D3E word=B2CC value=0xFFFFB2CC -> r10
+pc=0x023C54 op=9E74 literal=0x023D40 word=B2DC value=0xFFFFB2DC -> r14
+pc=0x023C60 op=906B literal=0x023D3A word=B7C2 value=0xFFFFB7C2 -> r0
+pc=0x023DA8 op=9665 literal=0x023E76 word=B7C0 value=0xFFFFB7C0 -> r6
+pc=0x023DB4 op=9160 literal=0x023E78 word=B7C1 value=0xFFFFB7C1 -> r1
+pc=0x023DCC op=9255 literal=0x023E7A word=B7C2 value=0xFFFFB7C2 -> r2
+pc=0x023DD6 op=9350 literal=0x023E7A word=B7C2 value=0xFFFFB7C2 -> r3
+pc=0x023DEE op=9044 literal=0x023E7A word=B7C2 value=0xFFFFB7C2 -> r0
+pc=0x023E30 op=9226 literal=0x023E80 word=B7B8 value=0xFFFFB7B8 -> r2
+pc=0x023E34 op=9320 literal=0x023E78 word=B7C1 value=0xFFFFB7C1 -> r3
+pc=0x023E60 op=920F literal=0x023E82 word=B7BC value=0xFFFFB7BC -> r2
+pc=0x023E6C op=9205 literal=0x023E7A word=B7C2 value=0xFFFFB7C2 -> r2
+pc=0x023E90 op=918B literal=0x023FAA word=B7C2 value=0xFFFFB7C2 -> r1
+pc=0x023E98 op=9388 literal=0x023FAC word=B7BC value=0xFFFFB7BC -> r3
+pc=0x023E9C op=9287 literal=0x023FAE word=B7B8 value=0xFFFFB7B8 -> r2
+pc=0x023EAE op=937F literal=0x023FB0 word=B7B4 value=0xFFFFB7B4 -> r3
+pc=0x023EDC op=9268 literal=0x023FB0 word=B7B4 value=0xFFFFB7B4 -> r2
+pc=0x023EE0 op=9063 literal=0x023FAA word=B7C2 value=0xFFFFB7C2 -> r0
+pc=0x023EF2 op=995E literal=0x023FB2 word=B7C1 value=0xFFFFB7C1 -> r9
+pc=0x023EF4 op=9A5E literal=0x023FB4 word=B7C0 value=0xFFFFB7C0 -> r10
+pc=0x023F58 op=932E literal=0x023FB8 word=B218 value=0xFFFFB218 -> r3
+pc=0x023F5C op=922D literal=0x023FBA word=B0E0 value=0xFFFFB0E0 -> r2
+pc=0x023F80 op=951C literal=0x023FBC word=B7A4 value=0xFFFFB7A4 -> r5
+pc=0x024066 op=9230 literal=0x0240CA word=B7C1 value=0xFFFFB7C1 -> r2
+pc=0x024068 op=9130 literal=0x0240CC word=B7C0 value=0xFFFFB7C0 -> r1
+pc=0x024070 op=902D literal=0x0240CE word=B7BC value=0xFFFFB7BC -> r0
+pc=0x024076 op=932B literal=0x0240D0 word=B7B8 value=0xFFFFB7B8 -> r3
+pc=0x02407A op=922A literal=0x0240D2 word=B7B4 value=0xFFFFB7B4 -> r2
+pc=0x02409C op=941A literal=0x0240D4 word=B7A4 value=0xFFFFB7A4 -> r4
+pc=0x0240B2 op=9010 literal=0x0240D6 word=B7C2 value=0xFFFFB7C2 -> r0
+pc=0x0240F0 op=9320 literal=0x024134 word=B4A4 value=0xFFFFB4A4 -> r3
+pc=0x0240F4 op=921F literal=0x024136 word=B218 value=0xFFFFB218 -> r2
+pc=0x024106 op=9317 literal=0x024138 word=B7C8 value=0xFFFFB7C8 -> r3
+pc=0x024112 op=9212 literal=0x02413A word=B7CC value=0xFFFFB7CC -> r2
+pc=0x02411E op=930D literal=0x02413C word=B7D0 value=0xFFFFB7D0 -> r3
+pc=0x024126 op=920A literal=0x02413E word=B7D4 value=0xFFFFB7D4 -> r2
+pc=0x02415A op=926D literal=0x024238 word=B7E8 value=0xFFFFB7E8 -> r2
+pc=0x02417C op=915E literal=0x02423C word=B7DC value=0xFFFFB7DC -> r1
+pc=0x02417E op=935B literal=0x024238 word=B7E8 value=0xFFFFB7E8 -> r3
+pc=0x024182 op=925A literal=0x02423A word=B7D8 value=0xFFFFB7D8 -> r2
+pc=0x024188 op=9359 literal=0x02423E word=B7E0 value=0xFFFFB7E0 -> r3
+pc=0x02418C op=9258 literal=0x024240 word=B7E4 value=0xFFFFB7E4 -> r2
+pc=0x0241A8 op=934B literal=0x024242 word=B218 value=0xFFFFB218 -> r3
+pc=0x0241BC op=9342 literal=0x024244 word=B128 value=0xFFFFB128 -> r3
+pc=0x0241C0 op=9241 literal=0x024246 word=B12C value=0xFFFFB12C -> r2
+pc=0x0241C4 op=9140 literal=0x024248 word=B090 value=0xFFFFB090 -> r1
+pc=0x024206 op=9A1B literal=0x024240 word=B7E4 value=0xFFFFB7E4 -> r10
+pc=0x024208 op=9C17 literal=0x02423A word=B7D8 value=0xFFFFB7D8 -> r12
+pc=0x02420A op=9D17 literal=0x02423C word=B7DC value=0xFFFFB7DC -> r13
+pc=0x02420C op=9E17 literal=0x02423E word=B7E0 value=0xFFFFB7E0 -> r14
+pc=0x02426C op=998B literal=0x024386 word=B7E8 value=0xFFFFB7E8 -> r9
+pc=0x0242EC op=9E4D literal=0x02438A word=B7D8 value=0xFFFFB7D8 -> r14
+pc=0x0242F4 op=9348 literal=0x024388 word=B090 value=0xFFFFB090 -> r3
+pc=0x02430E op=923A literal=0x024386 word=B7E8 value=0xFFFFB7E8 -> r2
+pc=0x024364 op=9E12 literal=0x02438C word=B7DC value=0xFFFFB7DC -> r14
+pc=0x02436C op=930C literal=0x024388 word=B090 value=0xFFFFB090 -> r3
+pc=0x0243BC op=9225 literal=0x02440A word=B7E8 value=0xFFFFB7E8 -> r2
+pc=0x02442C op=9231 literal=0x024492 word=B6E8 value=0xFFFFB6E8 -> r2
+pc=0x024430 op=932E literal=0x024490 word=B598 value=0xFFFFB598 -> r3
+pc=0x02447C op=920A literal=0x024494 word=B7EC value=0xFFFFB7EC -> r2
+pc=0x024482 op=9107 literal=0x024494 word=B7EC value=0xFFFFB7EC -> r1
+pc=0x0244B6 op=9321 literal=0x0244FC word=B218 value=0xFFFFB218 -> r3
+pc=0x0244B8 op=9221 literal=0x0244FE word=B4C8 value=0xFFFFB4C8 -> r2
+pc=0x0244EA op=9209 literal=0x024500 word=B7F0 value=0xFFFFB7F0 -> r2
+pc=0x0244F0 op=9306 literal=0x024500 word=B7F0 value=0xFFFFB7F0 -> r3
+pc=0x024534 op=9323 literal=0x02457E word=B058 value=0xFFFFB058 -> r3
+pc=0x024538 op=9222 literal=0x024580 word=B028 value=0xFFFFB028 -> r2
+pc=0x02453E op=9120 literal=0x024582 word=B218 value=0xFFFFB218 -> r1
+pc=0x024540 op=9320 literal=0x024584 word=B0E0 value=0xFFFFB0E0 -> r3
+pc=0x024546 op=921E literal=0x024586 word=B090 value=0xFFFFB090 -> r2
+pc=0x024548 op=911E literal=0x024588 word=B318 value=0xFFFFB318 -> r1
+pc=0x024618 op=933A literal=0x024690 word=B6E8 value=0xFFFFB6E8 -> r3
+pc=0x0246D0 op=9340 literal=0x024754 word=B224 value=0xFFFFB224 -> r3
+pc=0x0246D4 op=913F literal=0x024756 word=B318 value=0xFFFFB318 -> r1
+pc=0x0246F2 op=9231 literal=0x024758 word=B370 value=0xFFFFB370 -> r2
+pc=0x0246F4 op=9331 literal=0x02475A word=B374 value=0xFFFFB374 -> r3
+pc=0x024702 op=952B literal=0x02475C word=B7F8 value=0xFFFFB7F8 -> r5
+pc=0x02479E op=936E literal=0x02487E word=B7F8 value=0xFFFFB7F8 -> r3
+pc=0x0247BC op=935F literal=0x02487E word=B7F8 value=0xFFFFB7F8 -> r3
+pc=0x0247DA op=9350 literal=0x02487E word=B7F8 value=0xFFFFB7F8 -> r3
+pc=0x024808 op=933A literal=0x024880 word=B7FC value=0xFFFFB7FC -> r3
+pc=0x024810 op=9237 literal=0x024882 word=B800 value=0xFFFFB800 -> r2
+pc=0x0248FC op=932D literal=0x02495A word=B7FC value=0xFFFFB7FC -> r3
+pc=0x024900 op=922C literal=0x02495C word=B800 value=0xFFFFB800 -> r2
+pc=0x024914 op=9122 literal=0x02495C word=B800 value=0xFFFFB800 -> r1
+pc=0x024918 op=921F literal=0x02495A word=B7FC value=0xFFFFB7FC -> r2
+pc=0x024978 op=9065 literal=0x024A46 word=B830 value=0xFFFFB830 -> r0
+pc=0x024994 op=9057 literal=0x024A46 word=B830 value=0xFFFFB830 -> r0
+pc=0x0249A8 op=924E literal=0x024A48 word=B220 value=0xFFFFB220 -> r2
+pc=0x0249DC op=9435 literal=0x024A4A word=B808 value=0xFFFFB808 -> r4
+pc=0x024A18 op=9218 literal=0x024A4C word=B028 value=0xFFFFB028 -> r2
+pc=0x024A34 op=9C0B literal=0x024A4E word=B818 value=0xFFFFB818 -> r12
+pc=0x024A38 op=9D0A literal=0x024A50 word=B814 value=0xFFFFB814 -> r13
+pc=0x024AA6 op=9275 literal=0x024B94 word=B818 value=0xFFFFB818 -> r2
+pc=0x024ABC op=906B literal=0x024B96 word=B469 value=0xFFFFB469 -> r0
+pc=0x024AD0 op=9062 literal=0x024B98 word=B814 value=0xFFFFB814 -> r0
+pc=0x024ADC op=925D literal=0x024B9A word=B090 value=0xFFFFB090 -> r2
+pc=0x024B08 op=9B4A literal=0x024BA0 word=B80C value=0xFFFFB80C -> r11
+pc=0x024B2E op=9438 literal=0x024BA2 word=B810 value=0xFFFFB810 -> r4
+pc=0x024B88 op=9304 literal=0x024B94 word=B818 value=0xFFFFB818 -> r3
+pc=0x024BEC op=946D literal=0x024CCA word=B82C value=0xFFFFB82C -> r4
+pc=0x024BEE op=906D literal=0x024CCC word=B830 value=0xFFFFB830 -> r0
+pc=0x024C00 op=9065 literal=0x024CCE word=B868 value=0xFFFFB868 -> r0
+pc=0x024C12 op=905D literal=0x024CD0 word=B86C value=0xFFFFB86C -> r0
+pc=0x024C24 op=9055 literal=0x024CD2 word=B870 value=0xFFFFB870 -> r0
+pc=0x024C36 op=904D literal=0x024CD4 word=B888 value=0xFFFFB888 -> r0
+pc=0x024C48 op=9045 literal=0x024CD6 word=B88C value=0xFFFFB88C -> r0
+pc=0x024C5A op=903D literal=0x024CD8 word=B894 value=0xFFFFB894 -> r0
+pc=0x024C66 op=9038 literal=0x024CDA word=B898 value=0xFFFFB898 -> r0
+pc=0x024C78 op=9030 literal=0x024CDC word=B89C value=0xFFFFB89C -> r0
+pc=0x024CA8 op=940F literal=0x024CCA word=B82C value=0xFFFFB82C -> r4
+pc=0x024CB6 op=9008 literal=0x024CCA word=B82C value=0xFFFFB82C -> r0
+pc=0x024CF4 op=9484 literal=0x024E00 word=B834 value=0xFFFFB834 -> r4
+pc=0x024D16 op=9576 literal=0x024E06 word=B830 value=0xFFFFB830 -> r5
+pc=0x024D18 op=9376 literal=0x024E08 word=B83E value=0xFFFFB83E -> r3
+pc=0x024D40 op=9263 literal=0x024E0A word=B220 value=0xFFFFB220 -> r2
+pc=0x024D44 op=9362 literal=0x024E0C word=B218 value=0xFFFFB218 -> r3
+pc=0x024D54 op=935B literal=0x024E0E word=B204 value=0xFFFFB204 -> r3
+pc=0x024D58 op=925A literal=0x024E10 word=B090 value=0xFFFFB090 -> r2
+pc=0x024D82 op=9D3D literal=0x024E00 word=B834 value=0xFFFFB834 -> r13
+pc=0x024DB8 op=9E2B literal=0x024E12 word=B831 value=0xFFFFB831 -> r14
+pc=0x024EF2 op=902B literal=0x024F4C word=B831 value=0xFFFFB831 -> r0
+pc=0x024F30 op=920D literal=0x024F4E word=B838 value=0xFFFFB838 -> r2
+pc=0x024F34 op=9D0C literal=0x024F50 word=B83E value=0xFFFFB83E -> r13
+pc=0x024F36 op=900C literal=0x024F52 word=B830 value=0xFFFFB830 -> r0
+pc=0x024FB4 op=9243 literal=0x02503E word=B838 value=0xFFFFB838 -> r2
+pc=0x025072 op=908C literal=0x02518E word=B830 value=0xFFFFB830 -> r0
+pc=0x025090 op=937E literal=0x025190 word=B218 value=0xFFFFB218 -> r3
+pc=0x0250BE op=9C68 literal=0x025192 word=B840 value=0xFFFFB840 -> r12
+pc=0x0250C0 op=9D65 literal=0x02518E word=B830 value=0xFFFFB830 -> r13
+pc=0x0250C2 op=9E67 literal=0x025194 word=B832 value=0xFFFFB832 -> r14
+pc=0x0250CE op=9262 literal=0x025196 word=B83C value=0xFFFFB83C -> r2
+pc=0x0252A4 op=9326 literal=0x0252F4 word=B218 value=0xFFFFB218 -> r3
+pc=0x0252B8 op=921D literal=0x0252F6 word=B318 value=0xFFFFB318 -> r2
+pc=0x0254CC op=936F literal=0x0255AE word=B218 value=0xFFFFB218 -> r3
+pc=0x0254D0 op=926E literal=0x0255B0 word=B058 value=0xFFFFB058 -> r2
+pc=0x0254D6 op=906C literal=0x0255B2 word=B304 value=0xFFFFB304 -> r0
+pc=0x0254D8 op=936C literal=0x0255B4 word=B318 value=0xFFFFB318 -> r3
+pc=0x025508 op=9455 literal=0x0255B6 word=B838 value=0xFFFFB838 -> r4
+pc=0x02550C op=9C54 literal=0x0255B8 word=B833 value=0xFFFFB833 -> r12
+pc=0x025528 op=9047 literal=0x0255BA word=B830 value=0xFFFFB830 -> r0
+pc=0x025634 op=9B4D literal=0x0256D2 word=B83C value=0xFFFFB83C -> r11
+pc=0x025636 op=9E4D literal=0x0256D4 word=B830 value=0xFFFFB830 -> r14
+pc=0x025644 op=9047 literal=0x0256D6 word=B833 value=0xFFFFB833 -> r0
+pc=0x02572E op=9012 literal=0x025756 word=B830 value=0xFFFFB830 -> r0
+pc=0x025742 op=9008 literal=0x025756 word=B830 value=0xFFFFB830 -> r0
+pc=0x025758 op=9339 literal=0x0257CE word=B218 value=0xFFFFB218 -> r3
+pc=0x02575E op=9438 literal=0x0257D2 word=B868 value=0xFFFFB868 -> r4
+pc=0x0257A6 op=9414 literal=0x0257D2 word=B868 value=0xFFFFB868 -> r4
+pc=0x0257BA op=900A literal=0x0257D2 word=B868 value=0xFFFFB868 -> r0
+pc=0x0257F8 op=9E2A literal=0x025850 word=B86C value=0xFFFFB86C -> r14
+pc=0x02583C op=9008 literal=0x025850 word=B86C value=0xFFFFB86C -> r0
+pc=0x025878 op=9371 literal=0x02595E word=B204 value=0xFFFFB204 -> r3
+pc=0x02587C op=9270 literal=0x025960 word=B218 value=0xFFFFB218 -> r2
+pc=0x025880 op=916F literal=0x025962 word=B0E0 value=0xFFFFB0E0 -> r1
+pc=0x0258C8 op=9A4C literal=0x025964 word=B870 value=0xFFFFB870 -> r10
+pc=0x0259D4 op=9359 literal=0x025A8A word=B090 value=0xFFFFB090 -> r3
+pc=0x0259D8 op=9258 literal=0x025A8C word=B204 value=0xFFFFB204 -> r2
+pc=0x0259DC op=9157 literal=0x025A8E word=B218 value=0xFFFFB218 -> r1
+pc=0x025A0C op=9E40 literal=0x025A90 word=B870 value=0xFFFFB870 -> r14
+pc=0x025A4C op=9020 literal=0x025A90 word=B870 value=0xFFFFB870 -> r0
+pc=0x025A66 op=9013 literal=0x025A90 word=B870 value=0xFFFFB870 -> r0
+pc=0x025CD8 op=9008 literal=0x025CEC word=B870 value=0xFFFFB870 -> r0
+pc=0x025D08 op=937D literal=0x025E06 word=B204 value=0xFFFFB204 -> r3
+pc=0x025D0C op=927C literal=0x025E08 word=B218 value=0xFFFFB218 -> r2
+pc=0x025D4C op=9E5E literal=0x025E0C word=B888 value=0xFFFFB888 -> r14
+pc=0x025F3C op=9013 literal=0x025F66 word=B888 value=0xFFFFB888 -> r0
+pc=0x025F50 op=9009 literal=0x025F66 word=B888 value=0xFFFFB888 -> r0
+pc=0x025F90 op=9250 literal=0x026034 word=B08C value=0xFFFFB08C -> r2
+pc=0x025FA4 op=9E47 literal=0x026036 word=B88D value=0xFFFFB88D -> r14
+pc=0x025FD4 op=902F literal=0x026036 word=B88D value=0xFFFFB88D -> r0
+pc=0x025FF6 op=941F literal=0x026038 word=B88C value=0xFFFFB88C -> r4
+pc=0x02601E op=900B literal=0x026038 word=B88C value=0xFFFFB88C -> r0
+pc=0x02607C op=941F literal=0x0260BE word=B894 value=0xFFFFB894 -> r4
+pc=0x0260B0 op=9005 literal=0x0260BE word=B894 value=0xFFFFB894 -> r0
+pc=0x0260D8 op=9383 literal=0x0261E2 word=B218 value=0xFFFFB218 -> r3
+pc=0x0260DC op=9282 literal=0x0261E4 word=B024 value=0xFFFFB024 -> r2
+pc=0x02617C op=9433 literal=0x0261E6 word=B898 value=0xFFFFB898 -> r4
+pc=0x02633C op=936A literal=0x026414 word=B218 value=0xFFFFB218 -> r3
+pc=0x026346 op=9266 literal=0x026416 word=B154 value=0xFFFFB154 -> r2
+pc=0x026768 op=9005 literal=0x026776 word=B89C value=0xFFFFB89C -> r0
+pc=0x026794 op=9378 literal=0x026888 word=B384 value=0xFFFFB384 -> r3
+pc=0x0267A4 op=9371 literal=0x02688A word=B8B0 value=0xFFFFB8B0 -> r3
+pc=0x0267A8 op=9270 literal=0x02688C word=B8B8 value=0xFFFFB8B8 -> r2
+pc=0x0267B2 op=906C literal=0x02688E word=B82C value=0xFFFFB82C -> r0
+pc=0x0267B4 op=9E6C literal=0x026890 word=B8BC value=0xFFFFB8BC -> r14
+pc=0x0267B8 op=936B literal=0x026892 word=B585 value=0xFFFFB585 -> r3
+pc=0x026864 op=9316 literal=0x026894 word=B8A4 value=0xFFFFB8A4 -> r3
+pc=0x02686E op=9311 literal=0x026894 word=B8A4 value=0xFFFFB8A4 -> r3
+pc=0x0268D8 op=9370 literal=0x0269BC word=B784 value=0xFFFFB784 -> r3
+pc=0x0268DC op=926F literal=0x0269BE word=B4B8 value=0xFFFFB4B8 -> r2
+pc=0x0268E0 op=916E literal=0x0269C0 word=B585 value=0xFFFFB585 -> r1
+pc=0x0268E8 op=936B literal=0x0269C2 word=B680 value=0xFFFFB680 -> r3
+pc=0x0268EC op=926A literal=0x0269C4 word=B4A0 value=0xFFFFB4A0 -> r2
+pc=0x0268F6 op=9B66 literal=0x0269C6 word=B8B0 value=0xFFFFB8B0 -> r11
+pc=0x0268F8 op=9C66 literal=0x0269C8 word=B8B4 value=0xFFFFB8B4 -> r12
+pc=0x0268FA op=9D66 literal=0x0269CA word=B8B8 value=0xFFFFB8B8 -> r13
+pc=0x0268FC op=9E66 literal=0x0269CC word=B8AC value=0xFFFFB8AC -> r14
+pc=0x02697C op=9327 literal=0x0269CE word=B3A6 value=0xFFFFB3A6 -> r3
+pc=0x026980 op=9526 literal=0x0269D0 word=B8A8 value=0xFFFFB8A8 -> r5
+pc=0x0269A0 op=9116 literal=0x0269D0 word=B8A8 value=0xFFFFB8A8 -> r1
+pc=0x0269AA op=930E literal=0x0269CA word=B8B8 value=0xFFFFB8B8 -> r3
+pc=0x0269AE op=920B literal=0x0269C8 word=B8B4 value=0xFFFFB8B4 -> r2
+pc=0x0269B2 op=9308 literal=0x0269C6 word=B8B0 value=0xFFFFB8B0 -> r3
+pc=0x0269B6 op=9209 literal=0x0269CC word=B8AC value=0xFFFFB8AC -> r2
+pc=0x026A08 op=903A literal=0x026A80 word=B8BC value=0xFFFFB8BC -> r0
+pc=0x026A6C op=9309 literal=0x026A82 word=B8A8 value=0xFFFFB8A8 -> r3
+pc=0x026AAC op=9375 literal=0x026B9A word=B434 value=0xFFFFB434 -> r3
+pc=0x026AFC op=934E literal=0x026B9C word=B440 value=0xFFFFB440 -> r3
+pc=0x026BE0 op=935F literal=0x026CA2 word=B450 value=0xFFFFB450 -> r3
+pc=0x026BE6 op=935D literal=0x026CA4 word=B454 value=0xFFFFB454 -> r3
+pc=0x026BEC op=935B literal=0x026CA6 word=B458 value=0xFFFFB458 -> r3
+pc=0x026BF2 op=9359 literal=0x026CA8 word=B45C value=0xFFFFB45C -> r3
+pc=0x026C2C op=973D literal=0x026CAA word=B8E0 value=0xFFFFB8E0 -> r7
+pc=0x026C84 op=9511 literal=0x026CAA word=B8E0 value=0xFFFFB8E0 -> r5
+pc=0x026CBA op=9454 literal=0x026D66 word=B8DE value=0xFFFFB8DE -> r4
+pc=0x026DA2 op=928A literal=0x026EBA word=B8E0 value=0xFFFFB8E0 -> r2
+pc=0x026E18 op=9D4F literal=0x026EBA word=B8E0 value=0xFFFFB8E0 -> r13
+pc=0x026EB2 op=9502 literal=0x026EBA word=B8E0 value=0xFFFFB8E0 -> r5
+pc=0x026F22 op=9D3B literal=0x026F9C word=B8E0 value=0xFFFFB8E0 -> r13
+pc=0x027004 op=944E literal=0x0270A4 word=B8E0 value=0xFFFFB8E0 -> r4
+pc=0x0271C6 op=9404 literal=0x0271D2 word=B8E0 value=0xFFFFB8E0 -> r4
+pc=0x0272B4 op=9433 literal=0x02731E word=B8E0 value=0xFFFFB8E0 -> r4
+pc=0x02742A op=9406 literal=0x02743A word=B8E0 value=0xFFFFB8E0 -> r4
+pc=0x02756E op=9403 literal=0x027578 word=B8E0 value=0xFFFFB8E0 -> r4
+pc=0x027AFC op=9377 literal=0x027BEE word=B090 value=0xFFFFB090 -> r3
+pc=0x027B00 op=9276 literal=0x027BF0 word=B094 value=0xFFFFB094 -> r2
+pc=0x027B0C op=9371 literal=0x027BF2 word=B1F5 value=0xFFFFB1F5 -> r3
+pc=0x027B10 op=9270 literal=0x027BF4 word=B218 value=0xFFFFB218 -> r2
+pc=0x027BD8 op=9309 literal=0x027BEE word=B090 value=0xFFFFB090 -> r3
+pc=0x027C6C op=9367 literal=0x027D3E word=B218 value=0xFFFFB218 -> r3
+pc=0x027CD0 op=9339 literal=0x027D46 word=B090 value=0xFFFFB090 -> r3
+pc=0x027E84 op=935C literal=0x027F40 word=B09C value=0xFFFFB09C -> r3
+pc=0x027E88 op=925B literal=0x027F42 word=B090 value=0xFFFFB090 -> r2
+pc=0x027E8E op=9159 literal=0x027F44 word=B204 value=0xFFFFB204 -> r1
+pc=0x027E90 op=9359 literal=0x027F46 word=B218 value=0xFFFFB218 -> r3
+pc=0x027E96 op=9257 literal=0x027F48 word=B038 value=0xFFFFB038 -> r2
+pc=0x027EA8 op=934F literal=0x027F4A word=B318 value=0xFFFFB318 -> r3
+pc=0x0280DC op=934B literal=0x028176 word=B218 value=0xFFFFB218 -> r3
+pc=0x0280E0 op=924A literal=0x028178 word=B090 value=0xFFFFB090 -> r2
+pc=0x0280E6 op=9048 literal=0x02817A word=B318 value=0xFFFFB318 -> r0
+pc=0x0281C4 op=9271 literal=0x0282AA word=B03C value=0xFFFFB03C -> r2
+pc=0x0281C8 op=9370 literal=0x0282AC word=B024 value=0xFFFFB024 -> r3
+pc=0x0281CC op=916F literal=0x0282AE word=B204 value=0xFFFFB204 -> r1
+pc=0x028358 op=9345 literal=0x0283E6 word=B218 value=0xFFFFB218 -> r3
+pc=0x02835C op=9244 literal=0x0283E8 word=B058 value=0xFFFFB058 -> r2
+pc=0x028362 op=9142 literal=0x0283EA word=B204 value=0xFFFFB204 -> r1
+pc=0x028364 op=9342 literal=0x0283EC word=B090 value=0xFFFFB090 -> r3
+pc=0x0286AA op=9348 literal=0x02873E word=B090 value=0xFFFFB090 -> r3
+pc=0x028794 op=935C literal=0x028850 word=B218 value=0xFFFFB218 -> r3
+pc=0x028798 op=925B literal=0x028852 word=B204 value=0xFFFFB204 -> r2
+pc=0x0288F0 op=9344 literal=0x02897C word=B218 value=0xFFFFB218 -> r3
+pc=0x0288F4 op=9243 literal=0x02897E word=B204 value=0xFFFFB204 -> r2
+pc=0x0288FA op=9141 literal=0x028980 word=B090 value=0xFFFFB090 -> r1
+pc=0x0288FC op=9341 literal=0x028982 word=B094 value=0xFFFFB094 -> r3
+pc=0x028904 op=903E literal=0x028984 word=B304 value=0xFFFFB304 -> r0
+pc=0x028B08 op=935B literal=0x028BC2 word=B218 value=0xFFFFB218 -> r3
+pc=0x028B0C op=925A literal=0x028BC4 word=B0E0 value=0xFFFFB0E0 -> r2
+pc=0x028D36 op=9307 literal=0x028D48 word=B090 value=0xFFFFB090 -> r3
+pc=0x028D58 op=9315 literal=0x028D86 word=B0E0 value=0xFFFFB0E0 -> r3
+pc=0x028D5C op=9214 literal=0x028D88 word=B09C value=0xFFFFB09C -> r2
+pc=0x028D60 op=9113 literal=0x028D8A word=B218 value=0xFFFFB218 -> r1
+pc=0x028DE0 op=9358 literal=0x028E94 word=B4E0 value=0xFFFFB4E0 -> r3
+pc=0x028DE4 op=9257 literal=0x028E96 word=B218 value=0xFFFFB218 -> r2
+pc=0x028DEA op=9155 literal=0x028E98 word=B21C value=0xFFFFB21C -> r1
+pc=0x028E10 op=9243 literal=0x028E9A word=B304 value=0xFFFFB304 -> r2
+pc=0x028F78 op=916E literal=0x029058 word=B218 value=0xFFFFB218 -> r1
+pc=0x028F90 op=9360 literal=0x029054 word=B094 value=0xFFFFB094 -> r3
+pc=0x028F94 op=925F literal=0x029056 word=B204 value=0xFFFFB204 -> r2
+pc=0x028FA4 op=925A literal=0x02905C word=B220 value=0xFFFFB220 -> r2
+pc=0x028FAE op=9056 literal=0x02905E word=B304 value=0xFFFFB304 -> r0
+pc=0x028FB6 op=9353 literal=0x029060 word=B08C value=0xFFFFB08C -> r3
+pc=0x029404 op=9278 literal=0x0294F8 word=B090 value=0xFFFFB090 -> r2
+pc=0x02941C op=936B literal=0x0294F6 word=B204 value=0xFFFFB204 -> r3
+pc=0x029420 op=916B literal=0x0294FA word=B024 value=0xFFFFB024 -> r1
+pc=0x029428 op=9368 literal=0x0294FC word=B0E0 value=0xFFFFB0E0 -> r3
+pc=0x029434 op=9164 literal=0x029500 word=B306 value=0xFFFFB306 -> r1
+pc=0x029436 op=9262 literal=0x0294FE word=B218 value=0xFFFFB218 -> r2
+pc=0x029698 op=9346 literal=0x029728 word=B220 value=0xFFFFB220 -> r3
+pc=0x02969C op=9245 literal=0x02972A word=B090 value=0xFFFFB090 -> r2
+pc=0x0296A0 op=9044 literal=0x02972C word=B318 value=0xFFFFB318 -> r0
+pc=0x0297D6 op=9B86 literal=0x0298E6 word=B51C value=0xFFFFB51C -> r11
+pc=0x029818 op=9362 literal=0x0298E0 word=B218 value=0xFFFFB218 -> r3
+pc=0x02981C op=9261 literal=0x0298E2 word=B204 value=0xFFFFB204 -> r2
+pc=0x029820 op=9160 literal=0x0298E4 word=B090 value=0xFFFFB090 -> r1
+pc=0x029828 op=935D literal=0x0298E6 word=B51C value=0xFFFFB51C -> r3
+pc=0x029A80 op=9267 literal=0x029B52 word=B218 value=0xFFFFB218 -> r2
+pc=0x029CC0 op=9272 literal=0x029DA8 word=B038 value=0xFFFFB038 -> r2
+pc=0x029E10 op=9369 literal=0x029EE6 word=B218 value=0xFFFFB218 -> r3
+pc=0x029E1C op=9364 literal=0x029EE8 word=B038 value=0xFFFFB038 -> r3
+pc=0x029E20 op=9263 literal=0x029EEA word=B318 value=0xFFFFB318 -> r2
+pc=0x02A168 op=9216 literal=0x02A198 word=B090 value=0xFFFFB090 -> r2
+pc=0x02A228 op=9325 literal=0x02A276 word=B218 value=0xFFFFB218 -> r3
+pc=0x02A22C op=9224 literal=0x02A278 word=B0E0 value=0xFFFFB0E0 -> r2
+pc=0x02A29A op=9309 literal=0x02A2B0 word=B08C value=0xFFFFB08C -> r3
+pc=0x02A488 op=9378 literal=0x02A57C word=B218 value=0xFFFFB218 -> r3
+pc=0x02A624 op=9260 literal=0x02A6E8 word=B218 value=0xFFFFB218 -> r2
+pc=0x02A71C op=9356 literal=0x02A7CC word=B218 value=0xFFFFB218 -> r3
+pc=0x02A722 op=9254 literal=0x02A7CE word=B0E0 value=0xFFFFB0E0 -> r2
+pc=0x02A724 op=9154 literal=0x02A7D0 word=B090 value=0xFFFFB090 -> r1
+pc=0x02A884 op=9377 literal=0x02A976 word=B09C value=0xFFFFB09C -> r3
+pc=0x02A898 op=9371 literal=0x02A97E word=B0E0 value=0xFFFFB0E0 -> r3
+pc=0x02A89C op=9270 literal=0x02A980 word=B218 value=0xFFFFB218 -> r2
+pc=0x02A900 op=923D literal=0x02A97E word=B0E0 value=0xFFFFB0E0 -> r2
+pc=0x02A904 op=933C literal=0x02A980 word=B218 value=0xFFFFB218 -> r3
+pc=0x02AC24 op=9362 literal=0x02ACEC word=B218 value=0xFFFFB218 -> r3
+pc=0x02AC28 op=9261 literal=0x02ACEE word=B090 value=0xFFFFB090 -> r2
+pc=0x02AC38 op=935A literal=0x02ACF0 word=B73C value=0xFFFFB73C -> r3
+pc=0x02AC68 op=9143 literal=0x02ACF2 word=B1F7 value=0xFFFFB1F7 -> r1
+pc=0x02AF64 op=9317 literal=0x02AF96 word=B0E0 value=0xFFFFB0E0 -> r3
+pc=0x02B008 op=932B literal=0x02B062 word=B090 value=0xFFFFB090 -> r3
+pc=0x02B00C op=922A literal=0x02B064 word=B08C value=0xFFFFB08C -> r2
+pc=0x02B1DC op=9349 literal=0x02B272 word=B09C value=0xFFFFB09C -> r3
+pc=0x02B204 op=9237 literal=0x02B276 word=B218 value=0xFFFFB218 -> r2
+pc=0x02B208 op=9336 literal=0x02B278 word=B0E0 value=0xFFFFB0E0 -> r3
+pc=0x02B20C op=9131 literal=0x02B272 word=B09C value=0xFFFFB09C -> r1
+pc=0x02B362 op=9325 literal=0x02B3B0 word=B154 value=0xFFFFB154 -> r3
+pc=0x02B364 op=9225 literal=0x02B3B2 word=B218 value=0xFFFFB218 -> r2
+pc=0x02B400 op=9377 literal=0x02B4F2 word=B09C value=0xFFFFB09C -> r3
+pc=0x02B404 op=9276 literal=0x02B4F4 word=B08C value=0xFFFFB08C -> r2
+pc=0x02B408 op=9175 literal=0x02B4F6 word=B0E0 value=0xFFFFB0E0 -> r1
+pc=0x02B40C op=9374 literal=0x02B4F8 word=B218 value=0xFFFFB218 -> r3
+pc=0x02B600 op=9324 literal=0x02B64C word=B218 value=0xFFFFB218 -> r3
+pc=0x02B8CC op=9333 literal=0x02B936 word=B218 value=0xFFFFB218 -> r3
+pc=0x02B8D2 op=9231 literal=0x02B938 word=B0E0 value=0xFFFFB0E0 -> r2
+pc=0x02B8F0 op=9322 literal=0x02B938 word=B0E0 value=0xFFFFB0E0 -> r3
+pc=0x02B8F4 op=921F literal=0x02B936 word=B218 value=0xFFFFB218 -> r2
+pc=0x02B970 op=9266 literal=0x02BA40 word=B0E0 value=0xFFFFB0E0 -> r2
+pc=0x02BA02 op=931D literal=0x02BA40 word=B0E0 value=0xFFFFB0E0 -> r3
+pc=0x02BA7E op=928A literal=0x02BB96 word=B218 value=0xFFFFB218 -> r2
+pc=0x02BA80 op=938A literal=0x02BB98 word=B0E0 value=0xFFFFB0E0 -> r3
+pc=0x02BBF4 op=937E literal=0x02BCF4 word=B218 value=0xFFFFB218 -> r3
+pc=0x02C1FC op=9338 literal=0x02C270 word=B0E0 value=0xFFFFB0E0 -> r3
+pc=0x02C200 op=9237 literal=0x02C272 word=B218 value=0xFFFFB218 -> r2
+pc=0x02C22C op=9020 literal=0x02C270 word=B0E0 value=0xFFFFB0E0 -> r0
+pc=0x02C230 op=931F literal=0x02C272 word=B218 value=0xFFFFB218 -> r3
+pc=0x02C298 op=908A literal=0x02C3B0 word=B0E0 value=0xFFFFB0E0 -> r0
+pc=0x02C2A0 op=9387 literal=0x02C3B2 word=B218 value=0xFFFFB218 -> r3
+pc=0x02C63A op=9189 literal=0x02C750 word=B218 value=0xFFFFB218 -> r1
+pc=0x02C63C op=9389 literal=0x02C752 word=B0E0 value=0xFFFFB0E0 -> r3
+pc=0x02CA50 op=9356 literal=0x02CB00 word=B1FA value=0xFFFFB1FA -> r3
+pc=0x02CA76 op=9343 literal=0x02CB00 word=B1FA value=0xFFFFB1FA -> r3
+pc=0x02DA48 op=9361 literal=0x02DB0E word=B304 value=0xFFFFB304 -> r3
+pc=0x02DD28 op=9318 literal=0x02DD5C word=B734 value=0xFFFFB734 -> r3
+pc=0x02DD30 op=9115 literal=0x02DD5E word=B218 value=0xFFFFB218 -> r1
+pc=0x02E220 op=938A literal=0x02E338 word=B218 value=0xFFFFB218 -> r3
+pc=0x0322E0 op=9230 literal=0x032344 word=B090 value=0xFFFFB090 -> r2
+pc=0x0323C4 op=9352 literal=0x03246C word=B090 value=0xFFFFB090 -> r3
+pc=0x0323C8 op=9251 literal=0x03246E word=B204 value=0xFFFFB204 -> r2
+pc=0x0323CC op=9150 literal=0x032470 word=B218 value=0xFFFFB218 -> r1
+pc=0x0323D4 op=934D literal=0x032472 word=B154 value=0xFFFFB154 -> r3
+pc=0x0323E2 op=9247 literal=0x032474 word=B158 value=0xFFFFB158 -> r2
+pc=0x0323E8 op=9145 literal=0x032476 word=B058 value=0xFFFFB058 -> r1
+pc=0x0323F4 op=9040 literal=0x032478 word=B318 value=0xFFFFB318 -> r0
+pc=0x0327C8 op=9123 literal=0x032812 word=B154 value=0xFFFFB154 -> r1
+pc=0x0327EA op=9214 literal=0x032816 word=B218 value=0xFFFFB218 -> r2
+pc=0x0327EC op=9314 literal=0x032818 word=B228 value=0xFFFFB228 -> r3
+pc=0x0328D8 op=936D literal=0x0329B6 word=B154 value=0xFFFFB154 -> r3
+pc=0x032988 op=9229 literal=0x0329DE word=B08C value=0xFFFFB08C -> r2
+pc=0x03299C op=9320 literal=0x0329E0 word=B090 value=0xFFFFB090 -> r3
+pc=0x032A28 op=937A literal=0x032B20 word=B090 value=0xFFFFB090 -> r3
+pc=0x032C98 op=932C literal=0x032CF4 word=B090 value=0xFFFFB090 -> r3
+pc=0x032D18 op=9363 literal=0x032DE2 word=B218 value=0xFFFFB218 -> r3
+pc=0x032D2C op=925A literal=0x032DE4 word=B204 value=0xFFFFB204 -> r2
+pc=0x032D30 op=9159 literal=0x032DE6 word=B090 value=0xFFFFB090 -> r1
+pc=0x032F5C op=937D literal=0x03305A word=B204 value=0xFFFFB204 -> r3
+pc=0x032F60 op=927C literal=0x03305C word=B090 value=0xFFFFB090 -> r2
+pc=0x0330DC op=917B literal=0x0331D6 word=B090 value=0xFFFFB090 -> r1
+pc=0x0330EC op=9272 literal=0x0331D4 word=B304 value=0xFFFFB304 -> r2
+pc=0x0330F6 op=936F literal=0x0331D8 word=B094 value=0xFFFFB094 -> r3
+pc=0x03317C op=912E literal=0x0331DC word=B210 value=0xFFFFB210 -> r1
+pc=0x033620 op=934A literal=0x0336B8 word=B090 value=0xFFFFB090 -> r3
+pc=0x033654 op=9333 literal=0x0336BE word=B210 value=0xFFFFB210 -> r3
+pc=0x033838 op=9260 literal=0x0338FC word=B304 value=0xFFFFB304 -> r2
+pc=0x03383C op=915F literal=0x0338FE word=B218 value=0xFFFFB218 -> r1
+pc=0x03384C op=9259 literal=0x033902 word=B204 value=0xFFFFB204 -> r2
+pc=0x033AC0 op=933F literal=0x033B42 word=B218 value=0xFFFFB218 -> r3
+pc=0x033AE0 op=9330 literal=0x033B44 word=B304 value=0xFFFFB304 -> r3
+pc=0x033E64 op=9363 literal=0x033F2E word=B218 value=0xFFFFB218 -> r3
+pc=0x034014 op=9335 literal=0x034082 word=B218 value=0xFFFFB218 -> r3
+pc=0x034104 op=9355 literal=0x0341B2 word=B220 value=0xFFFFB220 -> r3
+pc=0x034108 op=9254 literal=0x0341B4 word=B218 value=0xFFFFB218 -> r2
+pc=0x0342B0 op=9344 literal=0x03433C word=B218 value=0xFFFFB218 -> r3
+pc=0x0343FC op=9351 literal=0x0344A2 word=B218 value=0xFFFFB218 -> r3
+pc=0x034400 op=9250 literal=0x0344A4 word=B204 value=0xFFFFB204 -> r2
+pc=0x034406 op=914E literal=0x0344A6 word=B220 value=0xFFFFB220 -> r1
+pc=0x034408 op=934E literal=0x0344A8 word=B21C value=0xFFFFB21C -> r3
+pc=0x034448 op=9330 literal=0x0344AC word=B090 value=0xFFFFB090 -> r3
+pc=0x034A00 op=938D literal=0x034B1E word=B090 value=0xFFFFB090 -> r3
+pc=0x034BB4 op=935C literal=0x034C70 word=B090 value=0xFFFFB090 -> r3
+pc=0x034BB8 op=925B literal=0x034C72 word=B218 value=0xFFFFB218 -> r2
+pc=0x034BC2 op=9157 literal=0x034C74 word=B4FC value=0xFFFFB4FC -> r1
+pc=0x034BC4 op=9357 literal=0x034C76 word=B204 value=0xFFFFB204 -> r3
+pc=0x034BCC op=9254 literal=0x034C78 word=B094 value=0xFFFFB094 -> r2
+pc=0x034BF4 op=9241 literal=0x034C7A word=B210 value=0xFFFFB210 -> r2
+pc=0x0353C4 op=936C literal=0x0354A0 word=B218 value=0xFFFFB218 -> r3
+pc=0x0353C8 op=926B literal=0x0354A2 word=B090 value=0xFFFFB090 -> r2
+pc=0x0353CC op=916A literal=0x0354A4 word=B204 value=0xFFFFB204 -> r1
+pc=0x0353D4 op=9067 literal=0x0354A6 word=B304 value=0xFFFFB304 -> r0
+pc=0x035554 op=9271 literal=0x03563A word=B204 value=0xFFFFB204 -> r2
+pc=0x035568 op=9368 literal=0x03563C word=B090 value=0xFFFFB090 -> r3
+pc=0x035580 op=925D literal=0x03563E word=B218 value=0xFFFFB218 -> r2
+pc=0x0355E8 op=922D literal=0x035646 word=B08C value=0xFFFFB08C -> r2
+pc=0x0355FC op=9224 literal=0x035648 word=B304 value=0xFFFFB304 -> r2
+pc=0x035C88 op=9250 literal=0x035D2C word=B090 value=0xFFFFB090 -> r2
+pc=0x035CB4 op=923A literal=0x035D2C word=B090 value=0xFFFFB090 -> r2
+pc=0x035D60 op=936C literal=0x035E3C word=B090 value=0xFFFFB090 -> r3
+pc=0x035DE8 op=932A literal=0x035E40 word=B218 value=0xFFFFB218 -> r3
+pc=0x035DEC op=9226 literal=0x035E3C word=B090 value=0xFFFFB090 -> r2
+pc=0x035DF2 op=9126 literal=0x035E42 word=B094 value=0xFFFFB094 -> r1
+pc=0x035DFC op=9122 literal=0x035E44 word=B304 value=0xFFFFB304 -> r1
+pc=0x035F6C op=916B literal=0x036046 word=B094 value=0xFFFFB094 -> r1
+pc=0x036750 op=938B literal=0x03686A word=B304 value=0xFFFFB304 -> r3
+pc=0x03676C op=927F literal=0x03686E word=B218 value=0xFFFFB218 -> r2
+pc=0x03676E op=937D literal=0x03686C word=B090 value=0xFFFFB090 -> r3
+pc=0x036770 op=917E literal=0x036870 word=B0C8 value=0xFFFFB0C8 -> r1
+pc=0x03694C op=923B literal=0x0369C6 word=B090 value=0xFFFFB090 -> r2
+pc=0x036A04 op=9231 literal=0x036A6A word=B204 value=0xFFFFB204 -> r2
+pc=0x036A10 op=922E literal=0x036A70 word=B090 value=0xFFFFB090 -> r2
+pc=0x036AE4 op=9312 literal=0x036B0C word=B204 value=0xFFFFB204 -> r3
+pc=0x036AE8 op=9211 literal=0x036B0E word=B218 value=0xFFFFB218 -> r2
+pc=0x036AEC op=9110 literal=0x036B10 word=B154 value=0xFFFFB154 -> r1
+pc=0x036AF2 op=930E literal=0x036B12 word=B08C value=0xFFFFB08C -> r3
+pc=0x036CB0 op=9336 literal=0x036D20 word=B204 value=0xFFFFB204 -> r3
+pc=0x036CB4 op=9235 literal=0x036D22 word=B090 value=0xFFFFB090 -> r2
+pc=0x036CBA op=9133 literal=0x036D24 word=B304 value=0xFFFFB304 -> r1
+pc=0x036DF0 op=9336 literal=0x036E60 word=B218 value=0xFFFFB218 -> r3
+pc=0x036F20 op=931E literal=0x036F60 word=B218 value=0xFFFFB218 -> r3
+pc=0x037138 op=9342 literal=0x0371C0 word=B094 value=0xFFFFB094 -> r3
+pc=0x03713C op=9241 literal=0x0371C2 word=B090 value=0xFFFFB090 -> r2
+pc=0x037144 op=903F literal=0x0371C6 word=B304 value=0xFFFFB304 -> r0
+pc=0x037354 op=9342 literal=0x0373DC word=B090 value=0xFFFFB090 -> r3
+pc=0x03735A op=9240 literal=0x0373DE word=B204 value=0xFFFFB204 -> r2
+pc=0x037420 op=9372 literal=0x037508 word=B058 value=0xFFFFB058 -> r3
+pc=0x037436 op=9268 literal=0x03750A word=B220 value=0xFFFFB220 -> r2
+pc=0x0376E4 op=9115 literal=0x037712 word=B218 value=0xFFFFB218 -> r1
+pc=0x037BEC op=9376 literal=0x037CDC word=B218 value=0xFFFFB218 -> r3
+pc=0x037BF8 op=9373 literal=0x037CE2 word=B090 value=0xFFFFB090 -> r3
+pc=0x037F18 op=933A literal=0x037F90 word=B218 value=0xFFFFB218 -> r3
+pc=0x037F1E op=9238 literal=0x037F92 word=B090 value=0xFFFFB090 -> r2
+pc=0x03845C op=924D literal=0x0384FA word=B218 value=0xFFFFB218 -> r2
+pc=0x038460 op=914C literal=0x0384FC word=B090 value=0xFFFFB090 -> r1
+pc=0x038464 op=934B literal=0x0384FE word=B0E0 value=0xFFFFB0E0 -> r3
+pc=0x03846A op=9249 literal=0x038500 word=B306 value=0xFFFFB306 -> r2
+pc=0x03846C op=9149 literal=0x038502 word=B094 value=0xFFFFB094 -> r1
+pc=0x038482 op=9340 literal=0x038506 word=B302 value=0xFFFFB302 -> r3
+pc=0x0386A4 op=923E literal=0x038724 word=B090 value=0xFFFFB090 -> r2
+pc=0x038B38 op=920A literal=0x038B50 word=B0CC value=0xFFFFB0CC -> r2
+pc=0x038B3C op=9309 literal=0x038B52 word=B0E0 value=0xFFFFB0E0 -> r3
+pc=0x038BA0 op=9157 literal=0x038C52 word=B210 value=0xFFFFB210 -> r1
+pc=0x038D60 op=9215 literal=0x038D8E word=B204 value=0xFFFFB204 -> r2
+pc=0x038D64 op=9314 literal=0x038D90 word=B218 value=0xFFFFB218 -> r3
+pc=0x038D68 op=9113 literal=0x038D92 word=B090 value=0xFFFFB090 -> r1
+pc=0x038F6C op=931B literal=0x038FA6 word=B090 value=0xFFFFB090 -> r3
+pc=0x038F70 op=921A literal=0x038FA8 word=B204 value=0xFFFFB204 -> r2
+pc=0x039582 op=9353 literal=0x03962C word=B0B8 value=0xFFFFB0B8 -> r3
+pc=0x039884 op=9332 literal=0x0398EC word=B218 value=0xFFFFB218 -> r3
+pc=0x03C266 op=933A literal=0x03C2DE word=B538 value=0xFFFFB538 -> r3 <<< TARGET
+pc=0x03C27A op=9331 literal=0x03C2E0 word=B680 value=0xFFFFB680 -> r3
+pc=0x03C296 op=9325 literal=0x03C2E4 word=B218 value=0xFFFFB218 -> r3
+pc=0x03C2AE op=9219 literal=0x03C2E4 word=B218 value=0xFFFFB218 -> r2
+pc=0x03C2C2 op=9310 literal=0x03C2E6 word=B208 value=0xFFFFB208 -> r3
+pc=0x03C348 op=9374 literal=0x03C434 word=B0C8 value=0xFFFFB0C8 -> r3
+pc=0x03C360 op=9268 literal=0x03C434 word=B0C8 value=0xFFFFB0C8 -> r2
+pc=0x03C370 op=9361 literal=0x03C436 word=B020 value=0xFFFFB020 -> r3
+pc=0x03C43E op=90B8 literal=0x03C5B2 word=B154 value=0xFFFFB154 -> r0
+pc=0x03C4C0 op=9377 literal=0x03C5B2 word=B154 value=0xFFFFB154 -> r3
+pc=0x03C500 op=9359 literal=0x03C5B6 word=B37C value=0xFFFFB37C -> r3
+pc=0x03C61E op=9380 literal=0x03C722 word=B118 value=0xFFFFB118 -> r3
+pc=0x03C628 op=937C literal=0x03C724 word=B11C value=0xFFFFB11C -> r3
+pc=0x03C656 op=9366 literal=0x03C726 word=B1C8 value=0xFFFFB1C8 -> r3
+pc=0x03CE32 op=9358 literal=0x03CEE6 word=B6BC value=0xFFFFB6BC -> r3
+pc=0x03D3C6 op=9334 literal=0x03D432 word=B120 value=0xFFFFB120 -> r3
+pc=0x03D3D0 op=9330 literal=0x03D434 word=B124 value=0xFFFFB124 -> r3
+pc=0x03D838 op=9263 literal=0x03D902 word=B304 value=0xFFFFB304 -> r2
+pc=0x03D844 op=935E literal=0x03D904 word=B218 value=0xFFFFB218 -> r3
+pc=0x03D848 op=925D literal=0x03D906 word=B204 value=0xFFFFB204 -> r2
+pc=0x03DA30 op=927C literal=0x03DB2C word=B204 value=0xFFFFB204 -> r2
+pc=0x03DA34 op=9379 literal=0x03DB2A word=B154 value=0xFFFFB154 -> r3
+pc=0x03DA3C op=9177 literal=0x03DB2E word=B090 value=0xFFFFB090 -> r1
+pc=0x03DA44 op=9374 literal=0x03DB30 word=B218 value=0xFFFFB218 -> r3
+pc=0x03DA90 op=934F literal=0x03DB32 word=B128 value=0xFFFFB128 -> r3
+pc=0x03DA94 op=924E literal=0x03DB34 word=B12C value=0xFFFFB12C -> r2
+pc=0x03DAD0 op=9332 literal=0x03DB38 word=B306 value=0xFFFFB306 -> r3
+pc=0x03DADC op=932D literal=0x03DB3A word=B0C8 value=0xFFFFB0C8 -> r3
+pc=0x03E65E op=9315 literal=0x03E68C word=B090 value=0xFFFFB090 -> r3
+pc=0x03E768 op=9360 literal=0x03E82C word=B218 value=0xFFFFB218 -> r3
+pc=0x03E76C op=925F literal=0x03E82E word=B090 value=0xFFFFB090 -> r2
+pc=0x03E77C op=9356 literal=0x03E82C word=B218 value=0xFFFFB218 -> r3
+pc=0x03E780 op=9255 literal=0x03E82E word=B090 value=0xFFFFB090 -> r2
+pc=0x03E786 op=9153 literal=0x03E830 word=B204 value=0xFFFFB204 -> r1
+pc=0x03E788 op=9353 literal=0x03E832 word=B304 value=0xFFFFB304 -> r3
+pc=0x03E988 op=9385 literal=0x03EA96 word=B090 value=0xFFFFB090 -> r3
+pc=0x03EF04 op=933B literal=0x03EF7E word=B218 value=0xFFFFB218 -> r3
+pc=0x03EF08 op=923A literal=0x03EF80 word=B090 value=0xFFFFB090 -> r2
+pc=0x03F004 op=9388 literal=0x03F118 word=B218 value=0xFFFFB218 -> r3
+pc=0x03F1FC op=9335 literal=0x03F26A word=B218 value=0xFFFFB218 -> r3
+pc=0x03F2B4 op=9282 literal=0x03F3BC word=B218 value=0xFFFFB218 -> r2
+pc=0x03FBD0 op=934E literal=0x03FC70 word=B0A0 value=0xFFFFB0A0 -> r3
+pc=0x03FBD4 op=924D literal=0x03FC72 word=B090 value=0xFFFFB090 -> r2
+pc=0x03FBD8 op=914C literal=0x03FC74 word=B218 value=0xFFFFB218 -> r1
+pc=0x03FBE0 op=9247 literal=0x03FC72 word=B090 value=0xFFFFB090 -> r2
+pc=0x03FBF8 op=933A literal=0x03FC70 word=B0A0 value=0xFFFFB0A0 -> r3
+pc=0x03FBFC op=913B literal=0x03FC76 word=B09C value=0xFFFFB09C -> r1
+pc=0x03FC04 op=9336 literal=0x03FC74 word=B218 value=0xFFFFB218 -> r3
+pc=0x03FC0E op=9233 literal=0x03FC78 word=B304 value=0xFFFFB304 -> r2
+pc=0x03FC2C op=9327 literal=0x03FC7E word=B204 value=0xFFFFB204 -> r3
+pc=0x040008 op=935F literal=0x0400CA word=B218 value=0xFFFFB218 -> r3
+pc=0x04021C op=936A literal=0x0402F4 word=B204 value=0xFFFFB204 -> r3
+pc=0x040220 op=9269 literal=0x0402F6 word=B154 value=0xFFFFB154 -> r2
+pc=0x040224 op=9168 literal=0x0402F8 word=B218 value=0xFFFFB218 -> r1
+pc=0x040478 op=9291 literal=0x04059E word=B204 value=0xFFFFB204 -> r2
+pc=0x040490 op=9384 literal=0x04059C word=B094 value=0xFFFFB094 -> r3
+pc=0x040494 op=9184 literal=0x0405A0 word=B090 value=0xFFFFB090 -> r1
+pc=0x04049C op=9381 literal=0x0405A2 word=B0E0 value=0xFFFFB0E0 -> r3
+pc=0x0404A8 op=927C literal=0x0405A4 word=B218 value=0xFFFFB218 -> r2
+pc=0x0404AC op=917B literal=0x0405A6 word=B304 value=0xFFFFB304 -> r1
+pc=0x040948 op=9356 literal=0x0409F8 word=B218 value=0xFFFFB218 -> r3
+pc=0x04094E op=9254 literal=0x0409FA word=B090 value=0xFFFFB090 -> r2
+pc=0x040A40 op=9370 literal=0x040B24 word=B218 value=0xFFFFB218 -> r3
+pc=0x040A46 op=926E literal=0x040B26 word=B090 value=0xFFFFB090 -> r2
+pc=0x040DC4 op=924A literal=0x040E5C word=B118 value=0xFFFFB118 -> r2
+pc=0x040DC8 op=9349 literal=0x040E5E word=B11C value=0xFFFFB11C -> r3
+pc=0x04915C op=9410 literal=0x049180 word=B3CC value=0xFFFFB3CC -> r4
+pc=0x04B0FC op=935C literal=0x04B1B8 word=B08C value=0xFFFFB08C -> r3
+pc=0x04B186 op=9218 literal=0x04B1BA word=B58D value=0xFFFFB58D -> r2
+pc=0x04B222 op=9265 literal=0x04B2F0 word=B0C8 value=0xFFFFB0C8 -> r2
+pc=0x04B224 op=9365 literal=0x04B2F2 word=B08C value=0xFFFFB08C -> r3
+pc=0x04B296 op=932E literal=0x04B2F6 word=B538 value=0xFFFFB538 -> r3 <<< TARGET
+pc=0x04B2B6 op=921F literal=0x04B2F8 word=B680 value=0xFFFFB680 -> r2
+pc=0x04B386 op=926E literal=0x04B466 word=B218 value=0xFFFFB218 -> r2
+pc=0x04B3A0 op=9362 literal=0x04B468 word=B208 value=0xFFFFB208 -> r3
+pc=0x04B3EE op=923D literal=0x04B46C word=B0CC value=0xFFFFB0CC -> r2
+pc=0x04B42C op=921F literal=0x04B46E word=B6BC value=0xFFFFB6BC -> r2
+pc=0x04B4E0 op=9493 literal=0x04B60A word=B6C0 value=0xFFFFB6C0 -> r4
+pc=0x04B4E8 op=9390 literal=0x04B60C word=B6C4 value=0xFFFFB6C4 -> r3
+pc=0x04B65E op=937D literal=0x04B75C word=B204 value=0xFFFFB204 -> r3
+pc=0x04B72A op=9218 literal=0x04B75E word=B1C8 value=0xFFFFB1C8 -> r2
+pc=0x04B746 op=930B literal=0x04B760 word=B1D8 value=0xFFFFB1D8 -> r3
+pc=0x04B7B6 op=935F literal=0x04B878 word=B1C8 value=0xFFFFB1C8 -> r3
+pc=0x04B7D2 op=9352 literal=0x04B87A word=B1DC value=0xFFFFB1DC -> r3
+pc=0x04CC94 op=9CD0 literal=0x04CE38 word=B3CC value=0xFFFFB3CC -> r12
+pc=0x04D520 op=9228 literal=0x04D574 word=B304 value=0xFFFFB304 -> r2
+pc=0x04D544 op=9317 literal=0x04D576 word=B090 value=0xFFFFB090 -> r3
+pc=0x04D548 op=9216 literal=0x04D578 word=B094 value=0xFFFFB094 -> r2
+pc=0x0523BC op=9164 literal=0x052488 word=B08C value=0xFFFFB08C -> r1
+pc=0x052428 op=912F literal=0x05248A word=B320 value=0xFFFFB320 -> r1
+pc=0x052508 op=9244 literal=0x052594 word=B218 value=0xFFFFB218 -> r2
+pc=0x052514 op=913F literal=0x052596 word=B304 value=0xFFFFB304 -> r1
+pc=0x0525EE op=9363 literal=0x0526B8 word=B218 value=0xFFFFB218 -> r3
+pc=0x05703C op=9A5E literal=0x0570FC word=B1B4 value=0xFFFFB1B4 -> r10
+pc=0x05B922 op=9999 literal=0x05BA58 word=B3B3 value=0xFFFFB3B3 -> r9
+pc=0x05B932 op=9999 literal=0x05BA68 word=B3B3 value=0xFFFFB3B3 -> r9
+pc=0x0603A8 op=9358 literal=0x06045C word=B218 value=0xFFFFB218 -> r3
+pc=0x0605F0 op=931E literal=0x060630 word=B14C value=0xFFFFB14C -> r3
+pc=0x0605F4 op=921D literal=0x060632 word=B150 value=0xFFFFB150 -> r2
+pc=0x060DFA op=9267 literal=0x060ECC word=B304 value=0xFFFFB304 -> r2
+pc=0x060E42 op=9345 literal=0x060ED0 word=B37C value=0xFFFFB37C -> r3
+pc=0x060EF8 op=9343 literal=0x060F82 word=B37C value=0xFFFFB37C -> r3
+pc=0x06132C op=9352 literal=0x0613D4 word=B218 value=0xFFFFB218 -> r3
+pc=0x061334 op=914F literal=0x0613D6 word=B304 value=0xFFFFB304 -> r1
+pc=0x06323C op=9174 literal=0x063328 word=B218 value=0xFFFFB218 -> r1
+pc=0x063914 op=9055 literal=0x0639C2 word=B3C4 value=0xFFFFB3C4 -> r0
+pc=0x063D00 op=905E literal=0x063DC0 word=B3C4 value=0xFFFFB3C4 -> r0
+pc=0x06464C op=9263 literal=0x064716 word=B304 value=0xFFFFB304 -> r2
+pc=0x06472A op=90C0 literal=0x0648AE word=B625 value=0xFFFFB625 -> r0
+pc=0x0648FC op=922E literal=0x06495C word=B58D value=0xFFFFB58D -> r2
+pc=0x064900 op=932D literal=0x06495E word=B1C8 value=0xFFFFB1C8 -> r3
+pc=0x064908 op=912A literal=0x064960 word=B580 value=0xFFFFB580 -> r1
+pc=0x06490C op=9229 literal=0x064962 word=B538 value=0xFFFFB538 -> r2 <<< TARGET
+pc=0x064910 op=9328 literal=0x064964 word=B680 value=0xFFFFB680 -> r3
+pc=0x064996 op=933D literal=0x064A14 word=B090 value=0xFFFFB090 -> r3
+pc=0x064998 op=923D literal=0x064A16 word=B0E4 value=0xFFFFB0E4 -> r2
+pc=0x06499E op=913B literal=0x064A18 word=B0E0 value=0xFFFFB0E0 -> r1
+pc=0x0649A8 op=9237 literal=0x064A1A word=B218 value=0xFFFFB218 -> r2
+pc=0x064A4E op=9385 literal=0x064B5C word=B68B value=0xFFFFB68B -> r3
+pc=0x064A50 op=9185 literal=0x064B5E word=B68A value=0xFFFFB68A -> r1
+pc=0x064B34 op=9315 literal=0x064B62 word=B37C value=0xFFFFB37C -> r3
+pc=0x064B90 op=934E literal=0x064C30 word=B8A4 value=0xFFFFB8A4 -> r3
+pc=0x064BA0 op=9348 literal=0x064C34 word=B3A6 value=0xFFFFB3A6 -> r3
+pc=0x064C94 op=938C literal=0x064DB0 word=B218 value=0xFFFFB218 -> r3
+pc=0x064C98 op=928B literal=0x064DB2 word=B090 value=0xFFFFB090 -> r2
+pc=0x065278 op=934E literal=0x065318 word=B218 value=0xFFFFB218 -> r3
+pc=0x065288 op=9247 literal=0x06531A word=B090 value=0xFFFFB090 -> r2
+pc=0x065438 op=9373 literal=0x065522 word=B090 value=0xFFFFB090 -> r3
+pc=0x06543E op=9271 literal=0x065524 word=B09C value=0xFFFFB09C -> r2
+pc=0x065440 op=9171 literal=0x065526 word=B218 value=0xFFFFB218 -> r1
+pc=0x065446 op=936F literal=0x065528 word=B0E0 value=0xFFFFB0E0 -> r3
+pc=0x065500 op=9217 literal=0x065532 word=B0CC value=0xFFFFB0CC -> r2
+pc=0x065BBC op=9363 literal=0x065C86 word=B304 value=0xFFFFB304 -> r3
+pc=0x065BC0 op=9162 literal=0x065C88 word=B218 value=0xFFFFB218 -> r1
+pc=0x065E2A op=9366 literal=0x065EFA word=B304 value=0xFFFFB304 -> r3
+pc=0x065E2C op=9166 literal=0x065EFC word=B218 value=0xFFFFB218 -> r1
+pc=0x065E30 op=9265 literal=0x065EFE word=B4A4 value=0xFFFFB4A4 -> r2
+pc=0x065E48 op=935A literal=0x065F00 word=B090 value=0xFFFFB090 -> r3
+pc=0x065F0A op=91E0 literal=0x0660CE word=B002 value=0xFFFFB002 -> r1
+pc=0x066102 op=935C literal=0x0661BE word=B204 value=0xFFFFB204 -> r3
+pc=0x066104 op=925C literal=0x0661C0 word=B300 value=0xFFFFB300 -> r2
+pc=0x066210 op=937F literal=0x066312 word=B218 value=0xFFFFB218 -> r3
+pc=0x066218 op=917D literal=0x066316 word=B220 value=0xFFFFB220 -> r1
+pc=0x06684C op=9347 literal=0x0668DE word=B304 value=0xFFFFB304 -> r3
+pc=0x066858 op=9342 literal=0x0668E0 word=B218 value=0xFFFFB218 -> r3
+pc=0x066AF4 op=937F literal=0x066BF6 word=B204 value=0xFFFFB204 -> r3
+pc=0x066AFA op=927D literal=0x066BF8 word=B218 value=0xFFFFB218 -> r2
+pc=0x066CB8 op=9220 literal=0x066CFC word=B304 value=0xFFFFB304 -> r2
+pc=0x066FC6 op=9134 literal=0x067032 word=B58D value=0xFFFFB58D -> r1
+pc=0x066FD0 op=9330 literal=0x067034 word=B6C0 value=0xFFFFB6C0 -> r3
+pc=0x066FD4 op=9130 literal=0x067038 word=B090 value=0xFFFFB090 -> r1
+pc=0x066FDC op=922B literal=0x067036 word=B0C8 value=0xFFFFB0C8 -> r2
+pc=0x066FE4 op=9329 literal=0x06703A word=B538 value=0xFFFFB538 -> r3 <<< TARGET
+pc=0x066FEC op=9226 literal=0x06703C word=B594 value=0xFFFFB594 -> r2
+pc=0x0673DA op=9134 literal=0x067446 word=B58D value=0xFFFFB58D -> r1
+pc=0x0673E4 op=9330 literal=0x067448 word=B6C0 value=0xFFFFB6C0 -> r3
+pc=0x0673E8 op=9130 literal=0x06744C word=B090 value=0xFFFFB090 -> r1
+pc=0x0673F0 op=922B literal=0x06744A word=B0C8 value=0xFFFFB0C8 -> r2
+pc=0x0673F8 op=9329 literal=0x06744E word=B538 value=0xFFFFB538 -> r3 <<< TARGET
+pc=0x067400 op=9226 literal=0x067450 word=B594 value=0xFFFFB594 -> r2
+pc=0x067928 op=9374 literal=0x067A14 word=B218 value=0xFFFFB218 -> r3
+pc=0x067A64 op=9282 literal=0x067B6C word=B304 value=0xFFFFB304 -> r2
+pc=0x067A68 op=9181 literal=0x067B6E word=B218 value=0xFFFFB218 -> r1
+pc=0x0680B0 op=934D literal=0x06814E word=B0B8 value=0xFFFFB0B8 -> r3
+pc=0x0680FC op=9429 literal=0x068152 word=B3C4 value=0xFFFFB3C4 -> r4
+pc=0x06818A op=9D3E literal=0x06820A word=B3C4 value=0xFFFFB3C4 -> r13
+pc=0x0684A0 op=9221 literal=0x0684E6 word=B204 value=0xFFFFB204 -> r2
+pc=0x06878A op=9265 literal=0x068858 word=B304 value=0xFFFFB304 -> r2
+pc=0x068A72 op=914C literal=0x068B0E word=B003 value=0xFFFFB003 -> r1
+pc=0x068C5E op=922B literal=0x068CB8 word=B140 value=0xFFFFB140 -> r2
+pc=0x068C72 op=9324 literal=0x068CBE word=B144 value=0xFFFFB144 -> r3
+pc=0x068CF6 op=9365 literal=0x068DC4 word=B090 value=0xFFFFB090 -> r3
+pc=0x068D04 op=925F literal=0x068DC6 word=B320 value=0xFFFFB320 -> r2
+pc=0x068E70 op=931E literal=0x068EB0 word=B090 value=0xFFFFB090 -> r3
+pc=0x069986 op=9347 literal=0x069A18 word=B218 value=0xFFFFB218 -> r3
+pc=0x0699E4 op=931A literal=0x069A1C word=B208 value=0xFFFFB208 -> r3
+pc=0x06A596 op=928B literal=0x06A6B0 word=B218 value=0xFFFFB218 -> r2
+pc=0x06A5E2 op=9265 literal=0x06A6B0 word=B218 value=0xFFFFB218 -> r2
+pc=0x06A64C op=9230 literal=0x06A6B0 word=B218 value=0xFFFFB218 -> r2
+pc=0x06A74A op=9110 literal=0x06A76E word=B319 value=0xFFFFB319 -> r1
+pc=0x06A756 op=920A literal=0x06A76E word=B319 value=0xFFFFB319 -> r2
+pc=0x06A77C op=916B literal=0x06A856 word=B1E9 value=0xFFFFB1E9 -> r1
+pc=0x06A790 op=9162 literal=0x06A858 word=B208 value=0xFFFFB208 -> r1
+pc=0x06A7A0 op=915C literal=0x06A85C word=B218 value=0xFFFFB218 -> r1
+pc=0x06A7BC op=914F literal=0x06A85E word=B024 value=0xFFFFB024 -> r1
+pc=0x06A7E8 op=9238 literal=0x06A85C word=B218 value=0xFFFFB218 -> r2
+pc=0x06A7F4 op=9130 literal=0x06A858 word=B208 value=0xFFFFB208 -> r1
+pc=0x06A804 op=912B literal=0x06A85E word=B024 value=0xFFFFB024 -> r1
+pc=0x06A984 op=9118 literal=0x06A9B8 word=B218 value=0xFFFFB218 -> r1
+pc=0x06A994 op=9110 literal=0x06A9B8 word=B218 value=0xFFFFB218 -> r1
+pc=0x06A9A4 op=9109 literal=0x06A9BA word=B868 value=0xFFFFB868 -> r1
+pc=0x06A9A6 op=9208 literal=0x06A9BA word=B868 value=0xFFFFB868 -> r2
+pc=0x06A9C8 op=9113 literal=0x06A9F2 word=B218 value=0xFFFFB218 -> r1
+pc=0x06A9D8 op=910D literal=0x06A9F6 word=B868 value=0xFFFFB868 -> r1
+pc=0x06A9DA op=920C literal=0x06A9F6 word=B868 value=0xFFFFB868 -> r2
+pc=0x06ACFC op=910B literal=0x06AD16 word=B218 value=0xFFFFB218 -> r1
+pc=0x07E700 op=901E literal=0x07E740 word=B204 value=0xFFFFB204 -> r0
+pc=0x07E708 op=901B literal=0x07E742 word=B1E9 value=0xFFFFB1E9 -> r0
+
+TARGET REFERENCE COUNT: 15
+
+==== TARGET ref pc=0x01BBF4 -> 0xFFFFB538 r2 0x01BB74-0x01BCF4 ====
+01BB74: 00 05    mov.w        r0,@(r0,r0)
+01BB76: 79 ac    add          #-84,r9
+01BB78: 2f e6    mov.l        r14,@-r15
+01BB7A: 4f 22    sts.l        pr,@-r15
+01BB7C: 94 0b    mov.w        0x1bb96,r4
+01BB7E: d3 06    mov.l        0x1bb98,r3
+01BB80: 43 0b    jsr          @r3
+01BB82: ee 00    mov          #0,r14
+01BB84: 60 0e    exts.b       r0,r0
+01BB86: 20 08    tst          r0,r0
+01BB88: 8d 01    bt/s         0x1bb8e
+01BB8A: 00 09    nop          
+01BB8C: ee 01    mov          #1,r14
+01BB8E: 60 e3    mov          r14,r0
+01BB90: 4f 26    lds.l        @r15+,pr
+01BB92: 00 0b    rts          
+01BB94: 6e f6    mov.l        @r15+,r14
+01BB96: 81 2c    mov.w        r0,@(24,r2)
+01BB98: 00 03    bsrf         r0
+
+==== TARGET ref pc=0x01BC00 -> 0xFFFFB330 r3 0x01BB80-0x01BD00 ====
+01BB80: 43 0b    jsr          @r3
+01BB82: ee 00    mov          #0,r14
+01BB84: 60 0e    exts.b       r0,r0
+01BB86: 20 08    tst          r0,r0
+01BB88: 8d 01    bt/s         0x1bb8e
+01BB8A: 00 09    nop          
+01BB8C: ee 01    mov          #1,r14
+01BB8E: 60 e3    mov          r14,r0
+01BB90: 4f 26    lds.l        @r15+,pr
+01BB92: 00 0b    rts          
+01BB94: 6e f6    mov.l        @r15+,r14
+01BB96: 81 2c    mov.w        r0,@(24,r2)
+01BB98: 00 03    bsrf         r0
+
+==== TARGET ref pc=0x01ED64 -> 0xFFFFB538 r2 0x01ECE4-0x01EE64 ====
+01ECE4: 4f 26    lds.l        @r15+,pr
+01ECE6: 00 0b    rts          
+01ECE8: f5 3a    fmov         fr3,@r5
+01ECEA: b0 9c    bsr          0x1ee26
+01ECEC: b0 90    bsr          0x1ee10
+01ECEE: b0 e0    bsr          0x1eeb2
+01ECF0: b2 18    bsr          0x1f124
+01ECF2: b4 e0    bsr          0x1f6b6
+01ECF4: b4 d4    bsr          0x1f6a0
+01ECF6: b4 ec    bsr          0x1f6d2
+01ECF8: b4 c0    bsr          0x1f67c
+01ECFA: b7 3c    bsr          0x1fb76
+01ECFC: b6 e8    bsr          0x1fad0
+01ECFE: b4 bc    bsr          0x1f67a
+01ED00: b4 c4    bsr          0x1f68c
+
+==== TARGET ref pc=0x01FED4 -> 0xFFFFB538 r5 0x01FE54-0x01FFD4 ====
+01FE54: d2 15    mov.l        0x1feac,r2
+01FE56: 42 2b    jmp          @r2
+01FE58: 6e f6    mov.l        @r15+,r14
+01FE5A: 4f 22    sts.l        pr,@-r15
+01FE5C: b0 2c    bsr          0x1feb8
+01FE5E: 00 09    nop          
+01FE60: 94 07    mov.w        0x1fe72,r4
+01FE62: d2 13    mov.l        0x1feb0,r2
+01FE64: d3 13    mov.l        0x1feb4,r3
+01FE66: 22 40    mov.b        r4,@r2
+01FE68: 4f 26    lds.l        @r15+,pr
+01FE6A: 00 0b    rts          
+01FE6C: 23 40    mov.b        r4,@r3
+01FE6E: b1 e0    bsr          0x20232
+01FE70: b0 90    bsr          0x1ff94
+01FE72: 00 ff    mac.l        @r15+,@r0+
+
+==== TARGET ref pc=0x0207A4 -> 0xFFFFB538 r4 0x020724-0x0208A4 ====
+020724: 8f 03    bf/s         0x2072e
+020726: 00 09    nop          
+020728: e3 09    mov          #9,r3
+02072A: a0 15    bra          0x20758
+02072C: 2e 30    mov.b        r3,@r14
+02072E: e1 03    mov          #3,r1
+020730: a0 12    bra          0x20758
+020732: 2e 10    mov.b        r1,@r14
+020734: 60 43    mov          r4,r0
+020736: 88 01    cmp/eq       #1,r0
+020738: 8f 03    bf/s         0x20742
+02073A: 00 09    nop          
+02073C: e0 04    mov          #4,r0
+02073E: a0 0b    bra          0x20758
+020740: 2e 00    mov.b        r0,@r14
+020742: 60 63    mov          r6,r0
+020744: 88 01    cmp/eq       #1,r0
+020746: 8f 02    bf/s         0x2074e
+020748: 00 09    nop          
+02074A: a0 01    bra          0x20750
+02074C: e2 06    mov          #6,r2
+02074E: e2 08    mov          #8,r2
+020750: a0 02    bra          0x20758
+020752: 2e 20    mov.b        r2,@r14
+020754: e1 0a    mov          #10,r1
+020756: 2e 10    mov.b        r1,@r14
+020758: 99 39    mov.w        0x207ce,r9
+02075A: 9a 39    mov.w        0x207d0,r10
+02075C: 9b 39    mov.w        0x207d2,r11
+02075E: 60 e0    mov.b        @r14,r0
+020760: 60 0c    extu.b       r0,r0
+020762: 88 0a    cmp/eq       #10,r0
+020764: 8d 1d    bt/s         0x207a2
+020766: 00 09    nop          
+020768: 88 01    cmp/eq       #1,r0
+02076A: 8d 28    bt/s         0x207be
+02076C: 00 09    nop          
+02076E: 88 04    cmp/eq       #4,r0
+020770: 8d 25    bt/s         0x207be
+020772: 00 09    nop          
+020774: 88 05    cmp/eq       #5,r0
+020776: 8d 22    bt/s         0x207be
+020778: 00 09    nop          
+02077A: 88 02    cmp/eq       #2,r0
+02077C: 8d 23    bt/s         0x207c6
+02077E: 00 09    nop          
+020780: 88 06    cmp/eq       #6,r0
+020782: 8d 20    bt/s         0x207c6
+020784: 00 09    nop          
+020786: 88 07    cmp/eq       #7,r0
+020788: 8d 1d    bt/s         0x207c6
+02078A: 00 09    nop          
+02078C: 88 03    cmp/eq       #3,r0
+02078E: 8d 22    bt/s         0x207d6
+020790: 00 09    nop          
+020792: 88 08    cmp/eq       #8,r0
+020794: 8d 1f    bt/s         0x207d6
+020796: 00 09    nop          
+020798: 88 09    cmp/eq       #9,r0
+02079A: 8d 1c    bt/s         0x207d6
+02079C: 00 09    nop          
+02079E: a0 1c    bra          0x207da
+0207A0: 00 09    nop          
+0207A2: 65 73    mov          r7,r5
+0207A4: 94 16    mov.w        0x207d4,r4
+0207A6: e6 0f    mov          #15,r6
+0207A8: f4 9d    fldi1        fr4
+0207AA: 75 01    add          #1,r5
+0207AC: f4 4a    fmov         fr4,@r4
+0207AE: 63 5c    extu.b       r5,r3
+0207B0: 33 63    cmp/ge       r6,r3
+0207B2: 8f fa    bf/s         0x207aa
+0207B4: 74 04    add          #4,r4
+0207B6: fb 4a    fmov         fr4,@r11
+0207B8: f9 4a    fmov         fr4,@r9
+0207BA: a0 0e    bra          0x207da
+0207BC: fa 4a    fmov         fr4,@r10
+0207BE: b0 83    bsr          0x208c8
+0207C0: 00 09    nop          
+0207C2: a0 0a    bra          0x207da
+0207C4: 00 09    nop          
+0207C6: b2 a3    bsr          0x20d10
+0207C8: 00 09    nop          
+0207CA: a0 06    bra          0x207da
+0207CC: 00 09    nop          
+0207CE: b5 78    bsr          0x212c2
+0207D0: b5 7c    bsr          0x212cc
+0207D2: b5 74    bsr          0x212be
+0207D4: b5 38    bsr          0x21248
+0207D6: b1 89    bsr          0x20aec
+0207D8: 00 09    nop          
+0207DA: 60 e0    mov.b        @r14,r0
+0207DC: 60 0c    extu.b       r0,r0
+0207DE: 88 01    cmp/eq       #1,r0
+0207E0: 8d 1a    bt/s         0x20818
+0207E2: 00 09    nop          
+0207E4: 88 04    cmp/eq       #4,r0
+0207E6: 8d 17    bt/s         0x20818
+0207E8: 00 09    nop          
+0207EA: 88 05    cmp/eq       #5,r0
+0207EC: 8d 14    bt/s         0x20818
+0207EE: 00 09    nop          
+0207F0: 88 02    cmp/eq       #2,r0
+0207F2: 8d 11    bt/s         0x20818
+0207F4: 00 09    nop          
+0207F6: 88 06    cmp/eq       #6,r0
+0207F8: 8d 0e    bt/s         0x20818
+0207FA: 00 09    nop          
+0207FC: 88 07    cmp/eq       #7,r0
+0207FE: 8d 0b    bt/s         0x20818
+020800: 00 09    nop          
+020802: 88 03    cmp/eq       #3,r0
+020804: 8d 08    bt/s         0x20818
+020806: 00 09    nop          
+020808: 88 08    cmp/eq       #8,r0
+02080A: 8d 05    bt/s         0x20818
+02080C: 00 09    nop          
+02080E: 88 09    cmp/eq       #9,r0
+020810: 8d 02    bt/s         0x20818
+020812: 00 09    nop          
+020814: a0 2b    bra          0x2086e
+020816: 00 09    nop          
+020818: c7 20    mova         0x2089c,r0
+02081A: fd 08    fmov         @r0,fr13
+02081C: dc 20    mov.l        0x208a0,r12
+02081E: f7 dc    fmov         fr13,fr7
+020820: d3 23    mov.l        0x208b0,r3
+020822: c7 20    mova         0x208a4,r0
+020824: de 20    mov.l        0x208a8,r14
+020826: fe 08    fmov         @r0,fr14
+020828: c7 20    mova         0x208ac,r0
+02082A: ff 08    fmov         @r0,fr15
+02082C: f6 38    fmov         @r3,fr6
+02082E: f5 b8    fmov         @r11,fr5
+020830: 9d 30    mov.w        0x20894,r13
+020832: 4c 0b    jsr          @r12
+020834: f4 d8    fmov         @r13,fr4
+020836: f4 0c    fmov         fr0,fr4
+020838: f5 fc    fmov         fr15,fr5
+02083A: 4e 0b    jsr          @r14
+02083C: f6 ec    fmov         fr14,fr6
+02083E: f7 dc    fmov         fr13,fr7
+020840: d2 1c    mov.l        0x208b4,r2
+020842: fb 0a    fmov         fr0,@r11
+020844: f6 28    fmov         @r2,fr6
+020846: f5 98    fmov         @r9,fr5
+020848: 4c 0b    jsr          @r12
+02084A: f4 d8    fmov         @r13,fr4
+02084C: f4 0c    fmov         fr0,fr4
+02084E: f5 fc    fmov         fr15,fr5
+020850: 4e 0b    jsr          @r14
+020852: f6 ec    fmov         fr14,fr6
+020854: f9 0a    fmov         fr0,@r9
+020856: c7 18    mova         0x208b8,r0
+020858: d3 18    mov.l        0x208bc,r3
+02085A: f7 08    fmov         @r0,fr7
+02085C: f6 38    fmov         @r3,fr6
+02085E: f5 a8    fmov         @r10,fr5
+020860: 4c 0b    jsr          @r12
+020862: f4 d8    fmov         @r13,fr4
+020864: f4 0c    fmov         fr0,fr4
+020866: f5 fc    fmov         fr15,fr5
+020868: 4e 0b    jsr          @r14
+02086A: f6 ec    fmov         fr14,fr6
+02086C: fa 0a    fmov         fr0,@r10
+02086E: 93 12    mov.w        0x20896,r3
+020870: d1 13    mov.l        0x208c0,r1
+020872: 62 30    mov.b        @r3,r2
+020874: d3 13    mov.l        0x208c4,r3
+020876: 21 20    mov.b        r2,@r1
+020878: 92 0e    mov.w        0x20898,r2
+02087A: 60 20    mov.b        @r2,r0
+02087C: 23 00    mov.b        r0,@r3
+02087E: 4f 26    lds.l        @r15+,pr
+020880: fd f9    fmov         @r15+,fr13
+020882: fe f9    fmov         @r15+,fr14
+020884: ff f9    fmov         @r15+,fr15
+020886: 69 f6    mov.l        @r15+,r9
+020888: 6a f6    mov.l        @r15+,r10
+02088A: 6b f6    mov.l        @r15+,r11
+02088C: 6c f6    mov.l        @r15+,r12
+02088E: 6d f6    mov.l        @r15+,r13
+020890: 00 0b    rts          
+020892: 6e f6    mov.l        @r15+,r14
+020894: b5 38    bsr          0x21308
+020896: b5 86    bsr          0x213a6
+020898: b5 87    bsr          0x213aa
+
+==== TARGET ref pc=0x020830 -> 0xFFFFB538 r13 0x0207B0-0x020930 ====
+0207B0: 33 63    cmp/ge       r6,r3
+0207B2: 8f fa    bf/s         0x207aa
+0207B4: 74 04    add          #4,r4
+0207B6: fb 4a    fmov         fr4,@r11
+0207B8: f9 4a    fmov         fr4,@r9
+0207BA: a0 0e    bra          0x207da
+0207BC: fa 4a    fmov         fr4,@r10
+0207BE: b0 83    bsr          0x208c8
+0207C0: 00 09    nop          
+0207C2: a0 0a    bra          0x207da
+0207C4: 00 09    nop          
+0207C6: b2 a3    bsr          0x20d10
+0207C8: 00 09    nop          
+0207CA: a0 06    bra          0x207da
+0207CC: 00 09    nop          
+0207CE: b5 78    bsr          0x212c2
+0207D0: b5 7c    bsr          0x212cc
+0207D2: b5 74    bsr          0x212be
+0207D4: b5 38    bsr          0x21248
+0207D6: b1 89    bsr          0x20aec
+0207D8: 00 09    nop          
+0207DA: 60 e0    mov.b        @r14,r0
+0207DC: 60 0c    extu.b       r0,r0
+0207DE: 88 01    cmp/eq       #1,r0
+0207E0: 8d 1a    bt/s         0x20818
+0207E2: 00 09    nop          
+0207E4: 88 04    cmp/eq       #4,r0
+0207E6: 8d 17    bt/s         0x20818
+0207E8: 00 09    nop          
+0207EA: 88 05    cmp/eq       #5,r0
+0207EC: 8d 14    bt/s         0x20818
+0207EE: 00 09    nop          
+0207F0: 88 02    cmp/eq       #2,r0
+0207F2: 8d 11    bt/s         0x20818
+0207F4: 00 09    nop          
+0207F6: 88 06    cmp/eq       #6,r0
+0207F8: 8d 0e    bt/s         0x20818
+0207FA: 00 09    nop          
+0207FC: 88 07    cmp/eq       #7,r0
+0207FE: 8d 0b    bt/s         0x20818
+020800: 00 09    nop          
+020802: 88 03    cmp/eq       #3,r0
+020804: 8d 08    bt/s         0x20818
+020806: 00 09    nop          
+020808: 88 08    cmp/eq       #8,r0
+02080A: 8d 05    bt/s         0x20818
+02080C: 00 09    nop          
+02080E: 88 09    cmp/eq       #9,r0
+020810: 8d 02    bt/s         0x20818
+020812: 00 09    nop          
+020814: a0 2b    bra          0x2086e
+020816: 00 09    nop          
+020818: c7 20    mova         0x2089c,r0
+02081A: fd 08    fmov         @r0,fr13
+02081C: dc 20    mov.l        0x208a0,r12
+02081E: f7 dc    fmov         fr13,fr7
+020820: d3 23    mov.l        0x208b0,r3
+020822: c7 20    mova         0x208a4,r0
+020824: de 20    mov.l        0x208a8,r14
+020826: fe 08    fmov         @r0,fr14
+020828: c7 20    mova         0x208ac,r0
+02082A: ff 08    fmov         @r0,fr15
+02082C: f6 38    fmov         @r3,fr6
+02082E: f5 b8    fmov         @r11,fr5
+020830: 9d 30    mov.w        0x20894,r13
+020832: 4c 0b    jsr          @r12
+020834: f4 d8    fmov         @r13,fr4
+020836: f4 0c    fmov         fr0,fr4
+020838: f5 fc    fmov         fr15,fr5
+02083A: 4e 0b    jsr          @r14
+02083C: f6 ec    fmov         fr14,fr6
+02083E: f7 dc    fmov         fr13,fr7
+020840: d2 1c    mov.l        0x208b4,r2
+020842: fb 0a    fmov         fr0,@r11
+020844: f6 28    fmov         @r2,fr6
+020846: f5 98    fmov         @r9,fr5
+020848: 4c 0b    jsr          @r12
+02084A: f4 d8    fmov         @r13,fr4
+02084C: f4 0c    fmov         fr0,fr4
+02084E: f5 fc    fmov         fr15,fr5
+020850: 4e 0b    jsr          @r14
+020852: f6 ec    fmov         fr14,fr6
+020854: f9 0a    fmov         fr0,@r9
+020856: c7 18    mova         0x208b8,r0
+020858: d3 18    mov.l        0x208bc,r3
+02085A: f7 08    fmov         @r0,fr7
+02085C: f6 38    fmov         @r3,fr6
+02085E: f5 a8    fmov         @r10,fr5
+020860: 4c 0b    jsr          @r12
+020862: f4 d8    fmov         @r13,fr4
+020864: f4 0c    fmov         fr0,fr4
+020866: f5 fc    fmov         fr15,fr5
+020868: 4e 0b    jsr          @r14
+02086A: f6 ec    fmov         fr14,fr6
+02086C: fa 0a    fmov         fr0,@r10
+02086E: 93 12    mov.w        0x20896,r3
+020870: d1 13    mov.l        0x208c0,r1
+020872: 62 30    mov.b        @r3,r2
+020874: d3 13    mov.l        0x208c4,r3
+020876: 21 20    mov.b        r2,@r1
+020878: 92 0e    mov.w        0x20898,r2
+02087A: 60 20    mov.b        @r2,r0
+02087C: 23 00    mov.b        r0,@r3
+02087E: 4f 26    lds.l        @r15+,pr
+020880: fd f9    fmov         @r15+,fr13
+020882: fe f9    fmov         @r15+,fr14
+020884: ff f9    fmov         @r15+,fr15
+020886: 69 f6    mov.l        @r15+,r9
+020888: 6a f6    mov.l        @r15+,r10
+02088A: 6b f6    mov.l        @r15+,r11
+02088C: 6c f6    mov.l        @r15+,r12
+02088E: 6d f6    mov.l        @r15+,r13
+020890: 00 0b    rts          
+020892: 6e f6    mov.l        @r15+,r14
+020894: b5 38    bsr          0x21308
+020896: b5 86    bsr          0x213a6
+020898: b5 87    bsr          0x213aa
+
+==== TARGET ref pc=0x0208EC -> 0xFFFFB538 r9 0x02086C-0x0209EC ====
+02086C: fa 0a    fmov         fr0,@r10
+02086E: 93 12    mov.w        0x20896,r3
+020870: d1 13    mov.l        0x208c0,r1
+020872: 62 30    mov.b        @r3,r2
+020874: d3 13    mov.l        0x208c4,r3
+020876: 21 20    mov.b        r2,@r1
+020878: 92 0e    mov.w        0x20898,r2
+02087A: 60 20    mov.b        @r2,r0
+02087C: 23 00    mov.b        r0,@r3
+02087E: 4f 26    lds.l        @r15+,pr
+020880: fd f9    fmov         @r15+,fr13
+020882: fe f9    fmov         @r15+,fr14
+020884: ff f9    fmov         @r15+,fr15
+020886: 69 f6    mov.l        @r15+,r9
+020888: 6a f6    mov.l        @r15+,r10
+02088A: 6b f6    mov.l        @r15+,r11
+02088C: 6c f6    mov.l        @r15+,r12
+02088E: 6d f6    mov.l        @r15+,r13
+020890: 00 0b    rts          
+020892: 6e f6    mov.l        @r15+,r14
+020894: b5 38    bsr          0x21308
+020896: b5 86    bsr          0x213a6
+020898: b5 87    bsr          0x213aa
+
+==== TARGET ref pc=0x020B10 -> 0xFFFFB538 r9 0x020A90-0x020C10 ====
+020A90: ff 2e    fmac         fr0,fr2,fr15
+020A92: 63 5c    extu.b       r5,r3
+020A94: 33 e3    cmp/ge       r14,r3
+020A96: 8f f5    bf/s         0x20a84
+020A98: 74 04    add          #4,r4
+020A9A: f5 dc    fmov         fr13,fr5
+020A9C: 63 b2    mov.l        @r11,r3
+020A9E: c7 10    mova         0x20ae0,r0
+020AA0: d2 10    mov.l        0x20ae4,r2
+020AA2: f6 08    fmov         @r0,fr6
+020AA4: f3 28    fmov         @r2,fr3
+020AA6: f2 38    fmov         @r3,fr2
+020AA8: f1 c8    fmov         @r12,fr1
+020AAA: f2 32    fmul         fr3,fr2
+020AAC: d3 0e    mov.l        0x20ae8,r3
+020AAE: f1 21    fsub         fr2,fr1
+020AB0: f2 38    fmov         @r3,fr2
+020AB2: f1 20    fadd         fr2,fr1
+020AB4: f4 1c    fmov         fr1,fr4
+020AB6: 4d 0b    jsr          @r13
+020AB8: f4 f0    fadd         fr15,fr4
+020ABA: fa 0a    fmov         fr0,@r10
+020ABC: 7f 0c    add          #12,r15
+020ABE: 4f 26    lds.l        @r15+,pr
+020AC0: fc f9    fmov         @r15+,fr12
+020AC2: fd f9    fmov         @r15+,fr13
+020AC4: fe f9    fmov         @r15+,fr14
+020AC6: ff f9    fmov         @r15+,fr15
+020AC8: 68 f6    mov.l        @r15+,r8
+020ACA: 69 f6    mov.l        @r15+,r9
+020ACC: 6a f6    mov.l        @r15+,r10
+020ACE: 6b f6    mov.l        @r15+,r11
+020AD0: 6c f6    mov.l        @r15+,r12
+020AD2: 6d f6    mov.l        @r15+,r13
+020AD4: 00 0b    rts          
+020AD6: 6e f6    mov.l        @r15+,r14
+020AD8: b5 94    bsr          0x21604
+
+==== TARGET ref pc=0x020D34 -> 0xFFFFB538 r9 0x020CB4-0x020E34 ====
+020CB4: ff 2e    fmac         fr0,fr2,fr15
+020CB6: 63 5c    extu.b       r5,r3
+020CB8: 33 e3    cmp/ge       r14,r3
+020CBA: 8f f5    bf/s         0x20ca8
+020CBC: 74 04    add          #4,r4
+020CBE: f5 dc    fmov         fr13,fr5
+020CC0: 63 b2    mov.l        @r11,r3
+020CC2: c7 10    mova         0x20d04,r0
+020CC4: d2 10    mov.l        0x20d08,r2
+020CC6: f6 08    fmov         @r0,fr6
+020CC8: f3 28    fmov         @r2,fr3
+020CCA: f2 38    fmov         @r3,fr2
+020CCC: f1 c8    fmov         @r12,fr1
+020CCE: f2 32    fmul         fr3,fr2
+020CD0: d3 0e    mov.l        0x20d0c,r3
+020CD2: f1 21    fsub         fr2,fr1
+020CD4: f2 38    fmov         @r3,fr2
+020CD6: f1 20    fadd         fr2,fr1
+020CD8: f4 1c    fmov         fr1,fr4
+020CDA: 4d 0b    jsr          @r13
+020CDC: f4 f0    fadd         fr15,fr4
+020CDE: fa 0a    fmov         fr0,@r10
+020CE0: 7f 0c    add          #12,r15
+020CE2: 4f 26    lds.l        @r15+,pr
+020CE4: fc f9    fmov         @r15+,fr12
+020CE6: fd f9    fmov         @r15+,fr13
+020CE8: fe f9    fmov         @r15+,fr14
+020CEA: ff f9    fmov         @r15+,fr15
+020CEC: 68 f6    mov.l        @r15+,r8
+020CEE: 69 f6    mov.l        @r15+,r9
+020CF0: 6a f6    mov.l        @r15+,r10
+020CF2: 6b f6    mov.l        @r15+,r11
+020CF4: 6c f6    mov.l        @r15+,r12
+020CF6: 6d f6    mov.l        @r15+,r13
+020CF8: 00 0b    rts          
+020CFA: 6e f6    mov.l        @r15+,r14
+020CFC: b5 94    bsr          0x21828
+
+==== TARGET ref pc=0x0211C2 -> 0xFFFFB538 r2 0x021142-0x0212C2 ====
+021142: 92 18    mov.w        0x21176,r2
+021144: 63 20    mov.b        @r2,r3
+021146: 23 38    tst          r3,r3
+021148: 8d 0c    bt/s         0x21164
+02114A: 00 09    nop          
+02114C: d1 18    mov.l        0x211b0,r1
+02114E: f3 18    fmov         @r1,fr3
+021150: d0 15    mov.l        0x211a8,r0
+021152: f2 08    fmov         @r0,fr2
+021154: f3 25    fcmp/gt      fr2,fr3
+021156: 8d 05    bt/s         0x21164
+021158: 00 09    nop          
+02115A: d3 16    mov.l        0x211b4,r3
+02115C: f1 38    fmov         @r3,fr1
+02115E: f1 25    fcmp/gt      fr2,fr1
+021160: 8d 2a    bt/s         0x211b8
+021162: 00 09    nop          
+021164: e1 00    mov          #0,r1
+021166: a0 35    bra          0x211d4
+021168: 2d 10    mov.b        r1,@r13
+02116A: b0 90    bsr          0x2128e
+02116C: b0 94    bsr          0x21298
+02116E: b4 f4    bsr          0x21b5a
+021170: b5 18    bsr          0x21ba4
+021172: b5 14    bsr          0x21b9e
+021174: b4 d0    bsr          0x21b18
+021176: b5 85    bsr          0x21c84
+021178: 00 05    mov.w        r0,@(r0,r0)
+
+==== TARGET ref pc=0x03C266 -> 0xFFFFB538 r3 0x03C1E6-0x03C366 ====
+03C1E6: e5 06    mov          #6,r5
+03C1E8: 94 77    mov.w        0x3c2da,r4
+03C1EA: 62 e0    mov.b        @r14,r2
+03C1EC: 62 2c    extu.b       r2,r2
+03C1EE: 32 53    cmp/ge       r5,r2
+03C1F0: 8d 06    bt/s         0x3c200
+03C1F2: 00 09    nop          
+03C1F4: d3 3d    mov.l        0x3c2ec,r3
+03C1F6: 62 30    mov.b        @r3,r2
+03C1F8: 62 2c    extu.b       r2,r2
+03C1FA: 32 53    cmp/ge       r5,r2
+03C1FC: 8f 04    bf/s         0x3c208
+03C1FE: 00 09    nop          
+03C200: 60 40    mov.b        @r4,r0
+03C202: c9 bf    and          #191,r0
+03C204: a0 03    bra          0x3c20e
+03C206: 24 00    mov.b        r0,@r4
+03C208: 60 40    mov.b        @r4,r0
+03C20A: cb 40    or           #64,r0
+03C20C: 24 00    mov.b        r0,@r4
+03C20E: 7f 04    add          #4,r15
+03C210: 4f 26    lds.l        @r15+,pr
+03C212: 6d f6    mov.l        @r15+,r13
+03C214: 00 0b    rts          
+03C216: 6e f6    mov.l        @r15+,r14
+03C218: 93 60    mov.w        0x3c2dc,r3
+03C21A: 00 0b    rts          
+03C21C: 60 30    mov.b        @r3,r0
+03C21E: d2 35    mov.l        0x3c2f4,r2
+03C220: 00 0b    rts          
+03C222: 60 20    mov.b        @r2,r0
+03C224: d3 34    mov.l        0x3c2f8,r3
+03C226: 00 0b    rts          
+03C228: 60 30    mov.b        @r3,r0
+03C22A: d2 34    mov.l        0x3c2fc,r2
+03C22C: 00 0b    rts          
+03C22E: 60 20    mov.b        @r2,r0
+03C230: d3 33    mov.l        0x3c300,r3
+03C232: 00 0b    rts          
+03C234: 60 30    mov.b        @r3,r0
+03C236: d2 33    mov.l        0x3c304,r2
+03C238: 00 0b    rts          
+03C23A: 60 20    mov.b        @r2,r0
+03C23C: d3 32    mov.l        0x3c308,r3
+03C23E: 00 0b    rts          
+03C240: 60 30    mov.b        @r3,r0
+03C242: d2 32    mov.l        0x3c30c,r2
+03C244: 00 0b    rts          
+03C246: 60 20    mov.b        @r2,r0
+03C248: d3 31    mov.l        0x3c310,r3
+03C24A: f4 38    fmov         @r3,fr4
+03C24C: c7 31    mova         0x3c314,r0
+03C24E: f6 08    fmov         @r0,fr6
+03C250: d2 31    mov.l        0x3c318,r2
+03C252: 42 2b    jmp          @r2
+03C254: f5 9d    fldi1        fr5
+03C256: ff fb    fmov         fr15,@-r15
+03C258: ff eb    fmov         fr14,@-r15
+03C25A: fe 9d    fldi1        fr14
+03C25C: c7 2f    mova         0x3c31c,r0
+03C25E: fe 4d    fneg         fr14
+03C260: d2 2d    mov.l        0x3c318,r2
+03C262: f6 ec    fmov         fr14,fr6
+03C264: f5 08    fmov         @r0,fr5
+03C266: 93 3a    mov.w        0x3c2de,r3
+03C268: f4 38    fmov         @r3,fr4
+03C26A: f4 e0    fadd         fr14,fr4
+03C26C: fe f9    fmov         @r15+,fr14
+03C26E: 42 2b    jmp          @r2
+03C270: ff f9    fmov         @r15+,fr15
+03C272: f6 9d    fldi1        fr6
+03C274: c7 29    mova         0x3c31c,r0
+03C276: f6 4d    fneg         fr6
+03C278: d2 27    mov.l        0x3c318,r2
+03C27A: 93 31    mov.w        0x3c2e0,r3
+03C27C: f4 38    fmov         @r3,fr4
+03C27E: 42 2b    jmp          @r2
+03C280: f5 08    fmov         @r0,fr5
+03C282: f6 8d    fldi0        fr6
+03C284: c7 26    mova         0x3c320,r0
+03C286: 93 2c    mov.w        0x3c2e2,r3
+03C288: d2 23    mov.l        0x3c318,r2
+03C28A: f4 38    fmov         @r3,fr4
+03C28C: 42 2b    jmp          @r2
+03C28E: f5 08    fmov         @r0,fr5
+03C290: 4f 22    sts.l        pr,@-r15
+03C292: f6 8d    fldi0        fr6
+03C294: c7 23    mova         0x3c324,r0
+03C296: 93 25    mov.w        0x3c2e4,r3
+03C298: d2 23    mov.l        0x3c328,r2
+03C29A: f4 38    fmov         @r3,fr4
+03C29C: 42 0b    jsr          @r2
+03C29E: f5 08    fmov         @r0,fr5
+03C2A0: 4f 26    lds.l        @r15+,pr
+03C2A2: 60 0d    extu.w       r0,r0
+03C2A4: 00 0b    rts          
+03C2A6: 40 19    shlr8        r0
+03C2A8: 4f 22    sts.l        pr,@-r15
+03C2AA: f6 8d    fldi0        fr6
+03C2AC: c7 1d    mova         0x3c324,r0
+03C2AE: 92 19    mov.w        0x3c2e4,r2
+03C2B0: d3 1d    mov.l        0x3c328,r3
+03C2B2: f4 28    fmov         @r2,fr4
+03C2B4: 43 0b    jsr          @r3
+03C2B6: f5 08    fmov         @r0,fr5
+03C2B8: 4f 26    lds.l        @r15+,pr
+03C2BA: 00 0b    rts          
+03C2BC: 00 09    nop          
+03C2BE: f6 8d    fldi0        fr6
+03C2C0: d2 15    mov.l        0x3c318,r2
+03C2C2: 93 10    mov.w        0x3c2e6,r3
+03C2C4: f4 38    fmov         @r3,fr4
+03C2C6: 42 2b    jmp          @r2
+03C2C8: f5 9d    fldi1        fr5
+03C2CA: 93 0d    mov.w        0x3c2e8,r3
+03C2CC: c7 17    mova         0x3c32c,r0
+03C2CE: f4 38    fmov         @r3,fr4
+03C2D0: f6 08    fmov         @r0,fr6
+03C2D2: c7 17    mova         0x3c330,r0
+03C2D4: d2 10    mov.l        0x3c318,r2
+03C2D6: 42 2b    jmp          @r2
+03C2D8: f5 08    fmov         @r0,fr5
+03C2DA: c2 91    mov.l        r0,@(580,gbr)
+03C2DC: c2 8c    mov.l        r0,@(560,gbr)
+03C2DE: b5 38    bsr          0x3cd52
+03C2E0: b6 80    bsr          0x3cfe4
+03C2E2: af 94    bra          0x3c20e
+03C2E4: b2 18    bsr          0x3c718
+03C2E6: b2 08    bsr          0x3c6fa
+03C2E8: b9 a8    bsr          0x3b63c
+
+==== TARGET ref pc=0x04B296 -> 0xFFFFB538 r3 0x04B216-0x04B396 ====
+04B216: ff eb    fmov         fr14,@-r15
+04B218: ff db    fmov         fr13,@-r15
+04B21A: fd 8d    fldi0        fr13
+04B21C: c7 3b    mova         0x4b30c,r0
+04B21E: f5 dc    fmov         fr13,fr5
+04B220: 4f 22    sts.l        pr,@-r15
+04B222: 92 65    mov.w        0x4b2f0,r2
+04B224: 93 65    mov.w        0x4b2f2,r3
+04B226: fe 28    fmov         @r2,fr14
+04B228: f4 38    fmov         @r3,fr4
+04B22A: d1 37    mov.l        0x4b308,r1
+04B22C: f6 08    fmov         @r0,fr6
+04B22E: ff 18    fmov         @r1,fr15
+04B230: d2 37    mov.l        0x4b310,r2
+04B232: ff 42    fmul         fr4,fr15
+04B234: 42 0b    jsr          @r2
+04B236: f4 fc    fmov         fr15,fr4
+04B238: 60 0c    extu.b       r0,r0
+04B23A: 88 00    cmp/eq       #0,r0
+04B23C: 8f 03    bf/s         0x4b246
+04B23E: 00 09    nop          
+04B240: 94 58    mov.w        0x4b2f4,r4
+04B242: a0 0f    bra          0x4b264
+04B244: 00 09    nop          
+04B246: d3 33    mov.l        0x4b314,r3
+04B248: f3 38    fmov         @r3,fr3
+04B24A: f3 e2    fmul         fr14,fr3
+04B24C: f3 f3    fdiv         fr15,fr3
+04B24E: f3 3c    fmov         fr3,fr3
+04B250: c7 31    mova         0x4b318,r0
+04B252: f4 3c    fmov         fr3,fr4
+04B254: d2 32    mov.l        0x4b320,r2
+04B256: f6 dc    fmov         fr13,fr6
+04B258: f2 08    fmov         @r0,fr2
+04B25A: f4 22    fmul         fr2,fr4
+04B25C: c7 2f    mova         0x4b31c,r0
+04B25E: 42 0b    jsr          @r2
+04B260: f5 08    fmov         @r0,fr5
+04B262: 64 03    mov          r0,r4
+04B264: d3 2f    mov.l        0x4b324,r3
+04B266: 23 40    mov.b        r4,@r3
+04B268: 4f 26    lds.l        @r15+,pr
+04B26A: fd f9    fmov         @r15+,fr13
+04B26C: fe f9    fmov         @r15+,fr14
+04B26E: 00 0b    rts          
+04B270: ff f9    fmov         @r15+,fr15
+04B272: 4f 22    sts.l        pr,@-r15
+04B274: d2 2c    mov.l        0x4b328,r2
+04B276: f4 28    fmov         @r2,fr4
+04B278: c7 2c    mova         0x4b32c,r0
+04B27A: f6 08    fmov         @r0,fr6
+04B27C: d3 28    mov.l        0x4b320,r3
+04B27E: 43 0b    jsr          @r3
+04B280: f5 9d    fldi1        fr5
+04B282: 64 03    mov          r0,r4
+04B284: d2 2a    mov.l        0x4b330,r2
+04B286: 4f 26    lds.l        @r15+,pr
+04B288: 00 0b    rts          
+04B28A: 22 40    mov.b        r4,@r2
+04B28C: 4f 22    sts.l        pr,@-r15
+04B28E: f3 9d    fldi1        fr3
+04B290: c7 21    mova         0x4b318,r0
+04B292: f3 4d    fneg         fr3
+04B294: d2 22    mov.l        0x4b320,r2
+04B296: 93 2e    mov.w        0x4b2f6,r3
+04B298: f2 08    fmov         @r0,fr2
+04B29A: f4 38    fmov         @r3,fr4
+04B29C: c7 25    mova         0x4b334,r0
+04B29E: f4 30    fadd         fr3,fr4
+04B2A0: f6 08    fmov         @r0,fr6
+04B2A2: f4 22    fmul         fr2,fr4
+04B2A4: c7 24    mova         0x4b338,r0
+04B2A6: 42 0b    jsr          @r2
+04B2A8: f5 08    fmov         @r0,fr5
+04B2AA: 64 03    mov          r0,r4
+04B2AC: d3 23    mov.l        0x4b33c,r3
+04B2AE: 4f 26    lds.l        @r15+,pr
+04B2B0: 00 0b    rts          
+04B2B2: 23 40    mov.b        r4,@r3
+04B2B4: 4f 22    sts.l        pr,@-r15
+04B2B6: 92 1f    mov.w        0x4b2f8,r2
+04B2B8: c7 17    mova         0x4b318,r0
+04B2BA: f4 28    fmov         @r2,fr4
+04B2BC: f3 08    fmov         @r0,fr3
+04B2BE: f4 32    fmul         fr3,fr4
+04B2C0: c7 1c    mova         0x4b334,r0
+04B2C2: f6 08    fmov         @r0,fr6
+04B2C4: c7 1c    mova         0x4b338,r0
+04B2C6: d3 16    mov.l        0x4b320,r3
+04B2C8: 43 0b    jsr          @r3
+04B2CA: f5 08    fmov         @r0,fr5
+04B2CC: d2 1c    mov.l        0x4b340,r2
+04B2CE: 64 03    mov          r0,r4
+04B2D0: 4f 26    lds.l        @r15+,pr
+04B2D2: 00 0b    rts          
+04B2D4: 22 40    mov.b        r4,@r2
+04B2D6: f4 8d    fldi0        fr4
+04B2D8: c7 16    mova         0x4b334,r0
+04B2DA: 4f 22    sts.l        pr,@-r15
+04B2DC: f6 08    fmov         @r0,fr6
+04B2DE: c7 16    mova         0x4b338,r0
+04B2E0: d3 0f    mov.l        0x4b320,r3
+04B2E2: 43 0b    jsr          @r3
+04B2E4: f5 08    fmov         @r0,fr5
+04B2E6: 64 03    mov          r0,r4
+04B2E8: d2 16    mov.l        0x4b344,r2
+04B2EA: 4f 26    lds.l        @r15+,pr
+04B2EC: 00 0b    rts          
+04B2EE: 22 40    mov.b        r4,@r2
+04B2F0: b0 c8    bsr          0x4b484
+04B2F2: b0 8c    bsr          0x4b40e
+04B2F4: 00 ff    mac.l        @r15+,@r0+
+04B2F6: b5 38    bsr          0x4bd6a
+04B2F8: b6 80    bsr          0x4bffc
+
+==== TARGET ref pc=0x06490C -> 0xFFFFB538 r2 0x06488C-0x064A0C ====
+
+==== TARGET ref pc=0x066FE4 -> 0xFFFFB538 r3 0x066F64-0x0670E4 ====
+066F64: 00 09    nop          
+066F66: 88 01    cmp/eq       #1,r0
+066F68: 8d 17    bt/s         0x66f9a
+066F6A: 00 09    nop          
+066F6C: 88 02    cmp/eq       #2,r0
+066F6E: 8d 14    bt/s         0x66f9a
+066F70: 00 09    nop          
+066F72: a0 14    bra          0x66f9e
+066F74: 00 09    nop          
+066F76: b4 d1    bsr          0x6791c
+066F78: 00 09    nop          
+066F7A: b0 13    bsr          0x66fa4
+066F7C: 00 09    nop          
+066F7E: b0 f7    bsr          0x67170
+066F80: 00 09    nop          
+066F82: b1 89    bsr          0x67298
+066F84: 00 09    nop          
+066F86: b1 a1    bsr          0x672cc
+066F88: 00 09    nop          
+066F8A: b2 15    bsr          0x673b8
+066F8C: 00 09    nop          
+066F8E: b2 f7    bsr          0x67580
+066F90: 00 09    nop          
+066F92: b3 89    bsr          0x676a8
+066F94: 00 09    nop          
+066F96: a3 a1    bra          0x676dc
+066F98: 4f 26    lds.l        @r15+,pr
+066F9A: a4 1b    bra          0x677d4
+066F9C: 4f 26    lds.l        @r15+,pr
+066F9E: 4f 26    lds.l        @r15+,pr
+066FA0: 00 0b    rts          
+066FA2: 00 09    nop          
+066FA4: 2f e6    mov.l        r14,@-r15
+066FA6: 2f d6    mov.l        r13,@-r15
+066FA8: ff fb    fmov         fr15,@-r15
+066FAA: ff eb    fmov         fr14,@-r15
+066FAC: ff db    fmov         fr13,@-r15
+066FAE: ff cb    fmov         fr12,@-r15
+066FB0: d3 25    mov.l        0x67048,r3
+066FB2: 4f 22    sts.l        pr,@-r15
+066FB4: 7f e0    add          #-32,r15
+066FB6: 43 0b    jsr          @r3
+066FB8: 00 09    nop          
+066FBA: d3 24    mov.l        0x6704c,r3
+066FBC: 43 0b    jsr          @r3
+066FBE: 2f 00    mov.b        r0,@r15
+066FC0: 80 f4    mov.b        r0,@(4,r15)
+066FC2: e0 10    mov          #16,r0
+066FC4: d2 22    mov.l        0x67050,r2
+066FC6: 91 34    mov.w        0x67032,r1
+066FC8: 63 10    mov.b        @r1,r3
+066FCA: 42 0b    jsr          @r2
+066FCC: 0f 34    mov.b        r3,@(r0,r15)
+066FCE: 62 f3    mov          r15,r2
+066FD0: 93 30    mov.w        0x67034,r3
+066FD2: 72 1c    add          #28,r2
+066FD4: 91 30    mov.w        0x67038,r1
+066FD6: 22 00    mov.b        r0,@r2
+066FD8: fd 38    fmov         @r3,fr13
+066FDA: e0 18    mov          #24,r0
+066FDC: 92 2b    mov.w        0x67036,r2
+066FDE: fc 28    fmov         @r2,fr12
+066FE0: f3 18    fmov         @r1,fr3
+066FE2: ff 37    fmov         fr3,@(r0,r15)
+066FE4: 93 29    mov.w        0x6703a,r3
+066FE6: e0 0c    mov          #12,r0
+066FE8: d1 1a    mov.l        0x67054,r1
+066FEA: ff 38    fmov         @r3,fr15
+066FEC: 92 26    mov.w        0x6703c,r2
+066FEE: f3 28    fmov         @r2,fr3
+066FF0: ff 37    fmov         fr3,@(r0,r15)
+066FF2: d3 19    mov.l        0x67058,r3
+066FF4: 43 0b    jsr          @r3
+066FF6: fe 18    fmov         @r1,fr14
+066FF8: d3 18    mov.l        0x6705c,r3
+066FFA: 62 f3    mov          r15,r2
+066FFC: 72 14    add          #20,r2
+066FFE: 22 00    mov.b        r0,@r2
+067000: 43 0b    jsr          @r3
+067002: e4 0d    mov          #13,r4
+067004: 80 f8    mov.b        r0,@(8,r15)
+067006: d4 16    mov.l        0x67060,r4
+067008: d3 16    mov.l        0x67064,r3
+06700A: 43 0b    jsr          @r3
+06700C: f4 ec    fmov         fr14,fr4
+06700E: f4 0c    fmov         fr0,fr4
+067010: d2 15    mov.l        0x67068,r2
+067012: d3 16    mov.l        0x6706c,r3
+067014: 43 0b    jsr          @r3
+067016: f5 28    fmov         @r2,fr5
+067018: 9d 11    mov.w        0x6703e,r13
+06701A: 9e 11    mov.w        0x67040,r14
+06701C: 60 f0    mov.b        @r15,r0
+06701E: 60 0c    extu.b       r0,r0
+067020: 88 01    cmp/eq       #1,r0
+067022: 8f 25    bf/s         0x67070
+067024: f4 0c    fmov         fr0,fr4
+067026: e2 00    mov          #0,r2
+067028: 60 e0    mov.b        @r14,r0
+06702A: c9 7f    and          #127,r0
+06702C: 2e 00    mov.b        r0,@r14
+06702E: a0 81    bra          0x67134
+067030: 2d 21    mov.w        r2,@r13
+067032: b5 8d    bsr          0x67b50
+067034: b6 c0    bsr          0x67db8
+067036: b0 c8    bsr          0x671ca
+067038: b0 90    bsr          0x6715c
+06703A: b5 38    bsr          0x67aae
+06703C: b5 94    bsr          0x67b68
+06703E: c5 80    mov.w        @(256,gbr),r0
+067040: c5 88    mov.w        @(272,gbr),r0
+
+==== TARGET ref pc=0x0673F8 -> 0xFFFFB538 r3 0x067378-0x0674F8 ====
+067378: fe fa    fmov         fr15,@r14
+06737A: 4f 26    lds.l        @r15+,pr
+06737C: fe f9    fmov         @r15+,fr14
+06737E: ff f9    fmov         @r15+,fr15
+067380: 6d f6    mov.l        @r15+,r13
+067382: 00 0b    rts          
+067384: 6e f6    mov.l        @r15+,r14
+067386: c5 88    mov.w        @(272,gbr),r0
+067388: c5 86    mov.w        @(268,gbr),r0
+06738A: c5 74    mov.w        @(232,gbr),r0
+06738C: 81 78    mov.w        r0,@(16,r7)
+06738E: c5 80    mov.w        @(256,gbr),r0
+067390: 00 05    mov.w        r0,@(r0,r0)
+067392: 84 e8    mov.b        @(8,r14),r0
+067394: 3b a3    cmp/ge       r10,r11
+067396: d7 0a    mov.l        0x673c0,r7
+067398: 00 05    mov.w        r0,@(r0,r0)
+06739A: 85 e0    mov.w        @(0,r14),r0
+06739C: 00 04    mov.b        r0,@(r0,r0)
+06739E: d2 66    mov.l        0x67538,r2
+
+==== closed-loop/O2 cluster 0x01F700-0x01FB20 ====
+
+==== raw literal pool 0x1F820-0x1F880 ====
+01F820: a0 27 fa fa b0 90 b5 00 b5 1c b5 04 b5 08 b4 fc
+01F830: b3 04 b5 0c 00 00 20 9c 00 05 47 14 ff ff b5 24
+01F840: 00 05 47 3c 00 01 81 86 ff ff b5 35 00 05 44 28
+01F850: 00 05 47 28 ff ff b5 30 00 05 44 00 00 05 89 bc
+01F860: 00 05 89 c0 00 05 44 14 00 01 87 da d1 38 f3 18
+01F870: fa 3a e9 00 db 38 f5 fc d3 38 c7 36 9c 62 fe 08
