@@ -1,0 +1,48 @@
+name: Analyze v68 AF Correction
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/analyze-afcorr-v68.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Scan AF correction references
+        shell: python
+        run: |
+          from pathlib import Path
+          b=Path('roms/experimental/v68/forester_sg9_sti_MAP_IAT_GM_dMap_v68_SPARK_CUT_ENABLED.bin').read_bytes()
+          print('size',len(b))
+          for val in [0xffffb538,0xffffb330,0xffffb580,0xffffb680]:
+              pat=val.to_bytes(4,'big')
+              offs=[]; s=0
+              while True:
+                  i=b.find(pat,s)
+                  if i<0: break
+                  offs.append(i); s=i+1
+              print(f'CONST {val:08x}:', [hex(x) for x in offs])
+              for lit in offs:
+                  refs=[]
+                  for pc in range(max(0,lit-0x500),min(len(b)-2,lit+1),2):
+                      op=(b[pc]<<8)|b[pc+1]
+                      if (op & 0xf000)==0xd000:
+                          disp=op&0xff
+                          tgt=((pc+4)&~3)+disp*4
+                          if tgt==lit:
+                              refs.append((pc,op,(op>>8)&0xf))
+                  print(' refs',[(hex(pc),hex(op),rn) for pc,op,rn in refs])
+                  for pc,op,rn in refs:
+                      lo=max(0,pc-0x30); hi=min(len(b),pc+0x60)
+                      print(f' around ref pc={pc:06x} rn=r{rn} lit={lit:06x}')
+                      for a in range(lo,hi,16):
+                          chunk=b[a:min(a+16,hi)]
+                          print(f'{a:06x}: '+chunk.hex(' '))
+          # Also locate direct literal of float zero / one only around AF refs is too broad; omit.
