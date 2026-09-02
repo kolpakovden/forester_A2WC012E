@@ -17,83 +17,77 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Scan AF correction RAM addressing
+      - name: Install Capstone
+        run: python3 -m pip install --user 'capstone>=5.0.0'
+
+      - name: Disassemble AF correction neighborhood
         shell: python
         run: |
           from pathlib import Path
+          import capstone
           b=Path('roms/experimental/v68/forester_sg9_sti_MAP_IAT_GM_dMap_v68_SPARK_CUT_ENABLED.bin').read_bytes()
           out=[]
-          def p(*x): out.append(' '.join(map(str,x)))
-          p('file: v68 SPARK_CUT_ENABLED')
-          p('size:',len(b))
-          p('target AF Correction #1 RAM: 0xFFFFB538')
-          p('target 2-byte mirror: 0xFFFFB330')
+          def p(s=''): out.append(str(s))
+          p('A2WC012E v68 AF Correction static disassembly')
+          p('target: A/F Correction #1 float RAM 0xFFFFB538')
+          p('mirror: 0xFFFFB330')
           p('')
+          p('capstone version: '+capstone.__version__)
+          p('CS_ARCH_SH present: '+str(hasattr(capstone,'CS_ARCH_SH')))
+          if not hasattr(capstone,'CS_ARCH_SH'):
+              raise SystemExit('Capstone build has no SuperH support')
+          modes=[]
+          for n in ['CS_MODE_SH2','CS_MODE_SH2A','CS_MODE_BIG_ENDIAN','CS_MODE_SHFPU']:
+              if hasattr(capstone,n): modes.append((n,getattr(capstone,n)))
+          p('available SH modes: '+repr(modes))
+          mode=getattr(capstone,'CS_MODE_SH2',0) | getattr(capstone,'CS_MODE_BIG_ENDIAN',0)
+          if hasattr(capstone,'CS_MODE_SHFPU'): mode |= capstone.CS_MODE_SHFPU
+          md=capstone.Cs(capstone.CS_ARCH_SH, mode)
+          md.detail=True
 
-          # Decode SH2 PC-relative MOV.L literal references.
-          refs_by_lit={}
+          def dump(lo,hi,title):
+              p('')
+              p('==== '+title+f' 0x{lo:06X}-0x{hi:06X} ====')
+              for ins in md.disasm(b[lo:hi],lo):
+                  raw=b[ins.address:ins.address+ins.size].hex(' ')
+                  p(f'{ins.address:06X}: {raw:<8} {ins.mnemonic:<12} {ins.op_str}')
+
+          # Main cluster containing literals B524/B530/B535/B536/B537.
+          dump(0x1F450,0x1F900,'closed-loop/O2 cluster')
+
+          # Find every PC-relative MOV.L literal whose value is within B500-B560,
+          # then disassemble +/- 0x60 around the instruction.
+          refs=[]
           for pc in range(0,len(b)-1,2):
               op=(b[pc]<<8)|b[pc+1]
               if (op & 0xF000)==0xD000:
-                  tgt=((pc+4)&~3)+(op&0xff)*4
-                  if tgt+4<=len(b):
-                      refs_by_lit.setdefault(tgt,[]).append((pc,op,(op>>8)&0xf))
-
-          found=[]
-          for i in range(0,len(b)-3,2):
-              v=int.from_bytes(b[i:i+4],'big')
-              if 0xffff9000 <= v <= 0xffffdfff:
-                  found.append((i,v))
-          p('RAM literals 0xFFFF9000-0xFFFFDFFF:',len(found))
+                  lit=((pc+4)&~3)+(op&0xff)*4
+                  if lit+4<=len(b):
+                      val=int.from_bytes(b[lit:lit+4],'big')
+                      if 0xFFFFB500 <= val <= 0xFFFFB560:
+                          refs.append((pc,lit,val,(op>>8)&0xf))
           p('')
+          p('==== references to RAM literals B500-B560 ====')
+          for pc,lit,val,rn in refs:
+              p(f'pc=0x{pc:06X} literal=0x{lit:06X} value=0x{val:08X} -> r{rn}')
+          seen=set()
+          for pc,lit,val,rn in refs:
+              lo=max(0,(pc-0x50)&~1); hi=min(len(b),(pc+0x80)&~1)
+              key=(lo,hi)
+              if key in seen: continue
+              seen.add(key)
+              dump(lo,hi,f'RAM ref near 0x{pc:06X} -> 0x{val:08X}')
 
-          # Focus on literals around B000-B8FF, with references and raw windows.
-          focus=[(i,v) for i,v in found if 0xffffb000 <= v <= 0xffffb8ff]
-          p('FOCUS literals 0xFFFFB000-0xFFFFB8FF:',len(focus))
-          for i,v in focus:
-              p(f'LIT 0x{i:06X} = 0x{v:08X}')
-              refs=refs_by_lit.get(i,[])
-              p('  REFS:', ', '.join(f'0x{pc:06X}:op={op:04X}->r{rn}' for pc,op,rn in refs) or 'none')
-              for pc,op,rn in refs:
-                  lo=max(0,pc-0x30); hi=min(len(b),pc+0x70)
-                  p(f'  WINDOW around 0x{pc:06X}:')
-                  for a in range(lo,hi,16):
-                      p(f'    {a:06X}: '+b[a:min(a+16,hi)].hex(' '))
-          p('')
-
-          # Exact / nearby addresses useful for AF correction tracing.
-          vals=[
-              0xffffb000,0xffffb300,0xffffb330,0xffffb400,0xffffb500,
-              0xffffb538,0xffffb53c,0xffffb600,0xffffb680,0xffffb6e8,
-              0xffffb800,0xffffb868,0xffff0000
-          ]
-          for val in vals:
-              pat=val.to_bytes(4,'big'); offs=[]; s=0
-              while True:
-                  j=b.find(pat,s)
-                  if j<0: break
-                  offs.append(j); s=j+1
-              p(f'EXACT 0x{val:08X}: '+(', '.join(f'0x{x:X}' for x in offs) if offs else 'none'))
-
-          # Also look for literals whose low 16 bits are close to B538/B330;
-          # useful if code loads a page/base pointer then indexes from it.
-          p('')
-          p('NEAR TARGET RAM LITERALS (+/-0x100):')
-          for i,v in found:
-              if (0xffffb438 <= v <= 0xffffb638) or (0xffffb230 <= v <= 0xffffb430):
-                  refs=refs_by_lit.get(i,[])
-                  p(f'0x{i:06X} -> 0x{v:08X}; refs=' + ','.join(f'0x{pc:06X}' for pc,_,_ in refs))
-
-          Path('evidence/afcorr-v68-static-analysis.txt').write_text('\n'.join(out)+'\n')
+          Path('evidence/afcorr-v68-disassembly.txt').write_text('\n'.join(out)+'\n')
 
       - name: Commit analysis report
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add evidence/afcorr-v68-static-analysis.txt
+          git add evidence/afcorr-v68-disassembly.txt
           if git diff --cached --quiet; then
             echo 'analysis report unchanged'
             exit 0
           fi
-          git commit -m 'Add v68 AF correction static analysis'
+          git commit -m 'Add v68 AF correction disassembly'
           git push
