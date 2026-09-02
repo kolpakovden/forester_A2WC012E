@@ -16,18 +16,30 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Verify exact v68
-        shell: bash
+      - name: Install Capstone
+        run: python3 -m pip install --user 'capstone>=5.0.0'
+      - name: Disassemble AF correction and learning limits
+        shell: python
         run: |
-          echo '8f02eecf37fad5340baf0ba5d66e62308a979660b4926c6ad0559fc53f869ecc  roms/experimental/v68/forester_sg9_sti_MAP_IAT_GM_dMap_v68_SPARK_CUT_ENABLED.bin' | sha256sum -c -
-      - name: Stage exact v68
-        shell: bash
-        run: |
-          mkdir -p artifact
-          cp roms/experimental/v68/forester_sg9_sti_MAP_IAT_GM_dMap_v68_SPARK_CUT_ENABLED.bin artifact/
-      - name: Upload exact v68
-        uses: actions/upload-artifact@v4
-        with:
-          name: A2WC012E_v68_exact_analysis_base
-          path: artifact/forester_sg9_sti_MAP_IAT_GM_dMap_v68_SPARK_CUT_ENABLED.bin
-          retention-days: 7
+          from pathlib import Path
+          import capstone
+          b=Path('roms/experimental/v68/forester_sg9_sti_MAP_IAT_GM_dMap_v68_SPARK_CUT_ENABLED.bin').read_bytes()
+          mode=capstone.CS_MODE_SH2|capstone.CS_MODE_BIG_ENDIAN
+          if hasattr(capstone,'CS_MODE_SHFPU'): mode |= capstone.CS_MODE_SHFPU
+          md=capstone.Cs(capstone.CS_ARCH_SH,mode); md.skipdata=True
+          ranges=[
+            (0x20370,0x20430,'xref 0x58B68 (1.15)'),
+            (0x21240,0x21330,'xref 0x58B38/3C (0.85/1.05)'),
+            (0x21980,0x21B30,'A/F Learning #1 Limits 0x58BE0/E4'),
+            (0x21F80,0x22170,'A/F correction candidate constants 0x58BD0-D4 and 0x58BC8-CC'),
+            (0x22160,0x222C0,'second A/F Learning #1 Limits xref'),
+            (0x247D0,0x249A0,'0x58B3C xrefs')]
+          for lo,hi,title in ranges:
+              print('\n====',title,f'0x{lo:06X}-0x{hi:06X}','====')
+              for ins in md.disasm(b[lo:hi],lo):
+                  raw=b[ins.address:ins.address+ins.size].hex(' ')
+                  print(f'{ins.address:06X}: {raw:<8} {ins.mnemonic:<12} {ins.op_str}')
+          print('\nROM constants:')
+          import struct
+          for off in [0x58B38,0x58B3C,0x58B68,0x58BC8,0x58BCC,0x58BD0,0x58BD4,0x58BE0,0x58BE4]:
+              print(f'{off:06X}: {b[off:off+4].hex()} = {struct.unpack(">f",b[off:off+4])[0]}')
