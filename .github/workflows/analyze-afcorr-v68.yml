@@ -15,34 +15,38 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Scan AF correction references
+      - name: Scan AF correction RAM addressing
         shell: python
         run: |
           from pathlib import Path
           b=Path('roms/experimental/v68/forester_sg9_sti_MAP_IAT_GM_dMap_v68_SPARK_CUT_ENABLED.bin').read_bytes()
           print('size',len(b))
-          for val in [0xffffb538,0xffffb330,0xffffb580,0xffffb680]:
-              pat=val.to_bytes(4,'big')
-              offs=[]; s=0
-              while True:
-                  i=b.find(pat,s)
-                  if i<0: break
-                  offs.append(i); s=i+1
-              print(f'CONST {val:08x}:', [hex(x) for x in offs])
-              for lit in offs:
-                  refs=[]
-                  for pc in range(max(0,lit-0x500),min(len(b)-2,lit+1),2):
-                      op=(b[pc]<<8)|b[pc+1]
-                      if (op & 0xf000)==0xd000:
-                          disp=op&0xff
-                          tgt=((pc+4)&~3)+disp*4
-                          if tgt==lit:
-                              refs.append((pc,op,(op>>8)&0xf))
-                  print(' refs',[(hex(pc),hex(op),rn) for pc,op,rn in refs])
+          # Find all literal-looking RAM addresses near the fueling variables.
+          found=[]
+          for i in range(0,len(b)-3,2):
+              v=int.from_bytes(b[i:i+4],'big')
+              if 0xffffb000 <= v <= 0xffffb8ff:
+                  found.append((i,v))
+          print('RAM literals B000-B8FF count',len(found))
+          for i,v in found:
+              print(f'LIT {i:06x} -> {v:08x}')
+              refs=[]
+              for pc in range(max(0,i-0x500),i+1,2):
+                  op=(b[pc]<<8)|b[pc+1]
+                  if (op & 0xf000)==0xd000:
+                      tgt=((pc+4)&~3)+(op&0xff)*4
+                      if tgt==i:
+                          refs.append((pc,op,(op>>8)&0xf))
+              if refs:
+                  print('  refs',[(f'{pc:06x}',f'{op:04x}',rn) for pc,op,rn in refs])
                   for pc,op,rn in refs:
-                      lo=max(0,pc-0x30); hi=min(len(b),pc+0x60)
-                      print(f' around ref pc={pc:06x} rn=r{rn} lit={lit:06x}')
-                      for a in range(lo,hi,16):
-                          chunk=b[a:min(a+16,hi)]
-                          print(f'{a:06x}: '+chunk.hex(' '))
-          # Also locate direct literal of float zero / one only around AF refs is too broad; omit.
+                      lo=max(0,pc-0x20); hi=min(len(b),pc+0x50)
+                      for a in range(lo,hi,16): print(f'  {a:06x}: '+b[a:min(a+16,hi)].hex(' '))
+          # Search likely page/base addresses as exact literals too.
+          for val in [0xffffb000,0xffffb300,0xffffb400,0xffffb500,0xffffb538,0xffffb600,0xffffb680,0xffff0000]:
+              pat=val.to_bytes(4,'big'); offs=[]; s=0
+              while True:
+                  j=b.find(pat,s)
+                  if j<0: break
+                  offs.append(j); s=j+1
+              print(f'EXACT {val:08x}:',[hex(x) for x in offs])
