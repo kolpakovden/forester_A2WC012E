@@ -1,5 +1,48 @@
 # Changelog
 
+## 2026-09-25 — v85 FFS Spark Cut
+
+Base ROM:
+- `forester_sg9_sti_MAP_IAT_GM_dMap_v84_AF_off.bin`
+- SHA256 `30b1994039775bbef362bcd166d6fcfbde3d618585115a7a44edeb53f3bae278`
+
+Test ROM:
+- `forester_sg9_sti_MAP_IAT_GM_dMap_v85_FFS_SPARK_CUT.bin`
+- SHA256 `61e7802c2f6594ccc8046c72c0fbd1d31fdbec62c79dfc3a900bf0b19d3f6d57`
+- Internal ID: `A2WC0MME`
+- size: 524288 bytes
+
+Цель:
+- заменить fuel-cut ограничение во время Flat-Foot Shift на spark cut;
+- сохранить рассчитанную MerpMod FFS target RPM;
+- не затронуть штатный hard-redline fuel cut;
+- оставить Launch Control отдельным режимом.
+
+Реализация:
+- FFS active state: `FFFFCA3C == 2`;
+- исходные FFS `RevLimCut/RevLimResume` сохраняются в `FFFFCA7C/FFFFCA80`;
+- active limiter thresholds на время FFS поднимаются до hard redline, чтобы MerpMod не переустанавливал FFS fuel-cut;
+- OCR spark scheduler использует сохранённый FFS target;
+- стартовый spark pattern: `2/5`;
+- hard redline остаётся fuel-cut защитой;
+- LC остаётся отдельным условием;
+- OEM/Merp RevLimiter code `0x25758-0x2583F` не изменён.
+
+Статус:
+- **EXPERIMENTAL / awaiting vehicle validation**.
+
+Первая проверка:
+- только на полностью прогретом моторе;
+- короткое переключение, без серии боевых стартов;
+- логировать RPM, throttle, clutch/FFS state, Injector Pulse Width, AFR/lambda, ignition timing, FBKC/FKL/knock, active RevLimCut и spark-cut flag/counter;
+- ключевой критерий: при FFS IPW не должен проваливаться к ~`0.77 ms`, как при старом fuel-cut поведении;
+- после теста результат и CSV добавить в историю версии.
+
+Checksum:
+- builder checksum не пересчитывает;
+- перед прошивкой открыть/сохранить BIN через EcuFlash/subarudbw.
+
+
 Этот файл фиксирует только осмысленные этапы настройки. Неудачные эксперименты описываются в `docs/rejected-experiments.md` и при необходимости сохраняются отдельно как rejected ROM.
 
 ## Правила версий
