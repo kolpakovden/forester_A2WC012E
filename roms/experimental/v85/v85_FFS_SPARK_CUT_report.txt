@@ -1,0 +1,44 @@
+v85 FFS SPARK CUT - EXPERIMENTAL
+Input SHA256: 30b1994039775bbef362bcd166d6fcfbde3d618585115a7a44edeb53f3bae278
+Output SHA256: 61e7802c2f6594ccc8046c72c0fbd1d31fdbec62c79dfc3a900bf0b19d3f6d57
+Internal ID: A2WC0MME
+Size: 524288
+
+Design:
+- FFS active state: FFFFCA3C == 2
+- Save original FFS RevLimCut/Resume into FFFFCA7C/FFFFCA80
+- Move active Merp limiter thresholds to hard redline while FFS is active, preventing FFS fuel cut from being reasserted
+- OCR spark scheduler uses saved original FFS target
+- Spark pattern: 2 cut / 5 events
+- Hard redline remains OEM/Merp fuel-cut protection
+- LC remains separate and is upgraded to v69-style clean threshold override
+- OEM RevLimiter code 0x25758-0x2583F unchanged
+
+Patch regions:
+0x00A13A-0x00A13B (2 bytes)
+0x01132E-0x01132E (1 byte)
+0x06ADC8-0x06ADC8 (1 byte)
+0x06B000-0x06B08F (144 bytes)
+0x06B092-0x06B093 (2 bytes)
+0x06B096-0x06B097 (2 bytes)
+0x06B09A-0x06B09B (2 bytes)
+0x06B09E-0x06B09F (2 bytes)
+0x06B0A2-0x06B0A3 (2 bytes)
+0x06B0A6-0x06B0A7 (2 bytes)
+0x06B0AA-0x06B0AB (2 bytes)
+0x06B0AE-0x06B0AF (2 bytes)
+0x06B0B2-0x06B0B7 (6 bytes)
+0x06B100-0x06B1A7 (168 bytes)
+0x06B1AA-0x06B1AB (2 bytes)
+0x06B1AE-0x06B1AF (2 bytes)
+0x06B1B2-0x06B1B3 (2 bytes)
+0x06B1B6-0x06B1B7 (2 bytes)
+0x06B1BA-0x06B1BB (2 bytes)
+0x06B1BE-0x06B1C7 (10 bytes)
+0x06B1CA-0x06B1D3 (10 bytes)
+
+IMPORTANT:
+- checksum is not recalculated by the builder;
+- open/save with EcuFlash/subarudbw before flashing;
+- first vehicle test must be short and fully warmed;
+- log RPM, throttle, clutch/FFS, IPW, AFR/lambda, ignition, knock/FBKC/FKL, RevLim Active Cut RPM, spark-cut flag/counter.
