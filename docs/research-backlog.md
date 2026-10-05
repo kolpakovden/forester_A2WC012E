@@ -4,6 +4,49 @@
 
 ## High priority
 
+
+### SD transient lean-out / Tip-in threshold validation
+
+Сравнение Forester_SG9_MAP_clean_v25.bin с CarBerry 4.2 показало:
+
+~~~text
+Forester Minimum Tip-in Activation: 1.000 ms
+CarBerry reference:                 0.384 ms
+
+Forester base Tip-in crosses threshold: ~6.2% Delta TPS
+CarBerry base Tip-in crosses threshold: ~2.2% Delta TPS
+~~~
+
+Сама Forester Tip-in curve не слабее CarBerry; проблема может быть именно в позднем разрешении дополнительного pulse.
+
+Нужен controlled test без одновременной правки VE:
+
+1. baseline на 1.000 ms;
+2. test 0.600 ms;
+3. при направленно положительном результате отдельный test 0.500 ms.
+
+Логировать:
+
+- RPM;
+- throttle / Delta TPS, если доступен;
+- MAP;
+- boost error;
+- Injector Pulse Width;
+- Wideband AFR/lambda;
+- final/commanded fueling;
+- SD airflow / Engine Load;
+- ECT / IAT;
+- AF Correction / Learning;
+- Tip-in runtime value, если удастся вывести.
+
+Критерий подтверждения гипотезы: lean spike уменьшается без нового rich spike/рывка, steady-state не требует ухудшения VE и результат повторяется.
+
+Не копировать CarBerry 0.384 ms напрямую.
+
+Подробности: [sd-transient-fueling.md](sd-transient-fueling.md).
+
+Статус: **PROBABLE / HIGH PRIORITY TEST**.
+
 ### v69 Clean Spark Cut validation
 
 v68 `LC Cut Mode = 1` был проверен на автомобиле и дал заметно более сильный spool, но Injector Pulse Width всё ещё периодически падал до ~`0.77 ms`; значит LC fuel cut оставался активен.

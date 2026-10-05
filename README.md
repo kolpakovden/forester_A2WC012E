@@ -83,6 +83,7 @@
 - [`docs/experimental-map-series.md`](docs/experimental-map-series.md) — история последних experimental v36→v41 и точные изменения.
 - [`docs/launch-control-spark-cut.md`](docs/launch-control-spark-cut.md) — Advanced LC, v68 mixed fuel/spark behaviour и v69 Clean Spark Cut.
 - [`docs/maf-scaling.md`](docs/maf-scaling.md) — методика CL/OL MAF, формулы и реальные фильтры логов.
+- [`docs/sd-transient-fueling.md`](docs/sd-transient-fueling.md) — переходное топливо в SD: сравнение A2WC0MME с CarBerry 4.2, Tip-in Enrichment и гипотеза бедного провала.
 - [`docs/gm-iat-scaling.md`](docs/gm-iat-scaling.md) — GM 25036751 / ACDelco 213-190 IAT: offsets A2WC012E, штатная кривая, рассчитанный 30-point scaling и план проверки на автомобиле.
 - [`docs/tgv-delete.md`](docs/tgv-delete.md) — TGV DTC delete и найденная вторая Idle Timing table.
 - [`docs/known-results.md`](docs/known-results.md) — уже установленные факты проекта.

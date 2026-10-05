@@ -84,6 +84,74 @@ Target Throttle Plate Position
 
 ---
 
+
+## ✅ CONFIRMED — current patched A2WC0MME v25 SD/transient offsets
+
+Следующие offsets подтверждены непосредственным декодированием текущего patched BIN:
+
+~~~text
+File:    Forester_SG9_MAP_clean_v25.bin
+Size:    524288 bytes
+SHA256:  2ca539d0c47e3b1eec96c41e1e514c7b19b0e3786e9d826a41d3a3505b4c5d99
+~~~
+
+### MerpMod Speed Density
+
+~~~text
+Speed Density Mode:              0x69DD4
+
+Volumetric Efficiency Table 1:   0x69EA4
+  MAP axis:                      0x69DE4
+  RPM axis:                      0x69E44
+
+Atmospheric Pressure Compensation:
+  table:                         0x6A378
+  MAP axis:                      0x6A340
+  atmospheric pressure axis:     0x6A35C
+
+SD Blending Table:
+  table:                         0x6A448
+  MAP axis:                      0x6A3F8
+  RPM axis:                      0x6A420
+
+Engine Load Smoothing Factor A:  0x5774C
+Engine Load Smoothing Factor B:  0x57750
+Engine Load Smoothing Final:     0x57754
+~~~
+
+0x6A378 — Atmospheric Pressure Compensation. В clean v25 отдельной Delta MAP Compensation table нет.
+
+### Transient fueling / Tip-in
+
+~~~text
+Throttle Tip-in Enrichment:
+  table:                         0x59B84
+  Delta TPS axis:                0x59B3C
+
+Minimum Tip-in Activation:       0x58DA8
+Minimum Delta TPS Activation:    0x58DA4
+
+Tip-in Compensation (Boost Error):
+  table:                         0x5933C
+  axis:                          0x59318
+
+Tip-in Compensation (ECT):
+  table:                         0x59BA8
+  ECT axis:                      0x58F14
+~~~
+
+Decoded v25 baseline:
+
+~~~text
+Minimum Tip-in Activation:       1.000 ms
+Minimum Delta TPS Activation:    0.20 %
+Injector Flow Scaling:           750.00 cc/min
+~~~
+
+Эти offsets относятся к текущей patched A2WC0MME branch и не должны автоматически переноситься на другой ROM ID.
+
+Подробности: [sd-transient-fueling.md](sd-transient-fueling.md).
+
 ## 🟡 PROBABLE — адреса из близкого A2WC011E/custom definition
 
 Ниже адреса, известные по JDM Forester STI `A2WC011E_v1` и производным A2WC012E XML. Часть структуры уже совпала с A2WC012E, но каждый оставшийся адрес всё равно нужно подтверждать отдельно.

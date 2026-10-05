@@ -61,3 +61,22 @@ A2WC0MME LC Spark Event Counter      0xFFCA79
 v69 status: **EXPERIMENTAL / awaiting vehicle validation**.
 
 Подробности: [`../docs/launch-control-spark-cut.md`](../docs/launch-control-spark-cut.md).
+
+
+## Delta MAP / Atmospheric Pressure definition warning
+
+Для текущего Forester_SG9_MAP_clean_v25.bin адреса:
+
+~~~text
+0x6A340 / 0x6A35C / 0x6A378
+~~~
+
+относятся к **Atmospheric Pressure Compensation**.
+
+Не привязывать Delta MAP Compensation к 0x6A378.
+
+Common/base XML может содержать описание таблицы Delta MAP Compensation без ROM-specific address, потому что эта функция существует в общей кодовой базе MerpMod. Но в upstream A2WC012E target SD_DMAP = 0, поэтому в clean v25 отдельной Delta MAP table нет.
+
+Исторические custom DMap/DMapMini patches рассматриваются отдельно и требуют собственного ROM-specific definition.
+
+Подробнее: [../docs/sd-transient-fueling.md](../docs/sd-transient-fueling.md).
