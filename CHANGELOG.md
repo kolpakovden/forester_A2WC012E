@@ -1,5 +1,34 @@
 # Changelog
 
+## 2026-10-05 — SD transient fueling / CarBerry reference
+
+Документация обновлена по результатам прямого сравнения текущего A2WC0MME v25 и CarBerry 4.2 reference BIN.
+
+Подтверждено:
+
+- 0x6A378 в current v25 — **Atmospheric Pressure Compensation**, а не Delta MAP Compensation;
+- upstream A2WC012E target MerpMod использует SD_DMAP = 0; clean v25 не содержит отдельной SDDeltaMapTable;
+- Forester Throttle Tip-in Enrichment @ 0x59B84, Delta TPS axis 0x59B3C;
+- Minimum Tip-in Activation @ 0x58DA8 = 1.000 ms;
+- Minimum Delta TPS Activation @ 0x58DA4 = 0.20%;
+- current injector scaling декодируется как 750.00 cc/min.
+
+Reference CarBerry 4.2:
+
+- full Speed Density mode подтверждён mode signature;
+- Full-Time Open Loop выключен;
+- 100% SD row Engine Load Smoothing = 0%;
+- Minimum Tip-in Activation = 0.384 ms;
+- base Tip-in curve пересекает threshold примерно при 2.2% Delta TPS, против примерно 6.2% у Forester.
+
+Новая рабочая гипотеза: бедный переходный провал на Forester может быть связан не с отсутствием Delta MAP, а с поздним разрешением штатного Tip-in Enrichment. Добавлен controlled test plan 1.000 -> 0.600 ms без одновременной правки VE.
+
+Добавлен документ:
+
+- docs/sd-transient-fueling.md.
+
+Статус причинной гипотезы: **PROBABLE / требует vehicle log**.
+
 ## 2026-09-25 — v85 FFS Spark Cut
 
 Base ROM:
@@ -171,6 +200,7 @@ Test ROM:
 - В основную карту добавлены связанные idle/load/IAT candidates из рабочего definition без повышения их до `CONFIRMED`.
 - Добавлен `docs/experimental-map-series.md`: отдельная история experimental изменений v36, v37, v38, v40 и v41 с точными offsets и old/new values.
 - Зафиксирована текущая экспериментальная ветка Delta MAP compensation (`DMapMini`): 7×7 neutral table, `Pull3D 0x00002110`, `pDeltaMap 0xFFFFAF88`, `pEngineSpeed 0xFFFFB218`. Статус — `EXPERIMENTAL`, без утверждения о подтверждённом поведении на автомобиле.
+- Уточнение 2026-10-05: этот пункт относится именно к исторической **custom DMapMini patch-ветке**. В clean/upstream A2WC012E SD target стоит `SD_DMAP = 0`, а `0x6A378` в current v25 является Atmospheric Pressure Compensation.
 
 ## 2026-08-18 — collaboration / repository hardening
 

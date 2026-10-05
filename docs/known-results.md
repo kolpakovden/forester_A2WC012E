@@ -61,6 +61,71 @@ Points:           54
 - верх под нагрузкой — анализ по широкополосной лямбде;
 - после правок проверять соседние точки кривой, а не только одну ячейку.
 
+
+## Speed Density / transient fueling
+
+### ✅ CONFIRMED — 0x6A378 является Atmospheric Pressure Compensation
+
+Для Forester_SG9_MAP_clean_v25.bin:
+
+~~~text
+SHA256: 2ca539d0c47e3b1eec96c41e1e514c7b19b0e3786e9d826a41d3a3505b4c5d99
+
+Volumetric Efficiency Table 1:   0x69EA4
+  MAP axis:                      0x69DE4
+  RPM axis:                      0x69E44
+
+Atmospheric Pressure Compensation:
+  table:                         0x6A378
+  MAP axis:                      0x6A340
+  atmospheric pressure axis:     0x6A35C
+
+SD Blending Table:
+  table:                         0x6A448
+  MAP axis:                      0x6A3F8
+  RPM axis:                      0x6A420
+~~~
+
+Поэтому 0x6A378 нельзя использовать как адрес Delta MAP Compensation.
+
+Для upstream target A2WC012E MerpMod задано SD_DMAP = 0, и clean v25 не содержит отдельной SDDeltaMapTable.
+
+Исторические custom-ветки проекта с DMap/Delta MAP следует рассматривать отдельно от clean/upstream SD build.
+
+### ✅ CONFIRMED — Tip-in Enrichment в v25 имеет высокий activation threshold
+
+В текущем v25:
+
+~~~text
+Throttle Tip-in Enrichment:
+  table:                      0x59B84
+  Delta TPS axis:             0x59B3C
+
+Minimum Tip-in Activation:    0x58DA8 = 1.000 ms
+Minimum Delta TPS Activation: 0x58DA4 = 0.20 %
+
+Injector Flow Scaling:        750.00 cc/min
+~~~
+
+Сама базовая Tip-in curve не является слабой: она достигает примерно 0.984 ms уже при ~6% Delta TPS, но из-за threshold 1.000 ms дополнительный впрыск в этой точке ещё не разрешается. Пересечение базовой curve с threshold происходит примерно при 6.2% Delta TPS при нейтральных compensations.
+
+### 🟡 PROBABLE — delayed Tip-in activation может быть причиной lean spike на разгоне
+
+Reference CarBerry 4.2 использует отдельный transient Tip-in injection и имеет:
+
+~~~text
+Minimum Tip-in Activation: ~0.384 ms
+base curve crosses threshold at ~2.2% Delta TPS
+~~~
+
+При этом его VE может оставаться гладкой, а Engine Load Smoothing в строке 100% SD равен 0%.
+
+Рабочая гипотеза: на Forester часть переходного дефицита топлива сейчас компенсируется неровностями VE, потому что Tip-in при умеренном открытии дросселя не проходит threshold 1.000 ms.
+
+До controlled before/after test это не считается CONFIRMED.
+
+Подробности и тест-план: [sd-transient-fueling.md](sd-transient-fueling.md).
+
 ## Injector scaling
 
 Исторически в проекте встречались значения scalar:
