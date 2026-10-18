@@ -167,3 +167,16 @@ In `FUN_002744`: bank X=0, select channel descriptor; bank Y=F and Y=FE00; `STE 
 Previous thought that 4 channels were injector cylinders gains plausibility but **not proved**. These are definitely TPU channels 8,9,10,11; assigning them to injector outputs requires tracing TPU CFSR/HSQR/CPR initialization, parameter RAM FF00/FF10/FF20/FF30 layout, and board wiring or corroborating code. More importantly the actual channel function / microcode dictates what request code 01 does.
 
 Next research: find code writing `0xFFFE0C..0xFFFE12` (CFSR0..3), `0xFFFE16` HSQR1, `0xFFFE1E` CPR1, and TPU parameter RAM for channels 8..11 (e.g. `0xFFFF80..0xFFFFBF` if channel indexing in standard 16-byte units; verify exact addressing). Locate other uses of descriptor +0/+2/+6/+8/+C. Avoid assuming raw Ghidra C accurately models banked I/O. No production ROM changes made.
+
+## 9. Original CarBerry ROM verification and offline arithmetic harness (2026-10-18)
+
+User supplied `work2_100+95_3D04EA4605_CarBerry42_FULL_160KiB(1).bin`. The file is 163840 bytes and SHA-256 matches the previously recorded original ROM (`b06e1282a4b274db856d250ae8a1babaf175729f7f9e9fec12e465fb774a4483`). The offsets below were verified by direct binary extraction rather than manual transcription.
+
+- Base Tip-in: file descriptor 0x21413 = 00, 18 axis entries at 0x21400..0x21411, 18 values at 0x21414..0x21425.
+- Base duplicate: descriptor 0x23887 = 00, 18 axis entries at 0x23874..0x23885, values at 0x23888..0x23899. Both axis and value sequences identical byte-for-byte.
+- RPM compensation: descriptor 0x21429 = 80, 8-bit factor 20, start 10, count 08; 9 data bytes [1D 1E 20 20 20 20 20 20 20].
+- Positive boost error: descriptor 0x21438 = 81, 16-bit factor 0400, 16-bit start 0000, count 08, data [10 10 20 20 20 20 20 20 20].
+- ECT: descriptor 0x21445 = 80, factor 10, start 00, count 0F, values [67 5F 57 50 48 40 39 33 2D 28 25 22 20 20 20 20].
+- Direct arithmetic model of A872..A8B4: `factor=min(65535, (rpm_raw*boost_raw*ect_raw)>>4)`, `tip_raw=(factor * base_return_D)>>16`. At neutral 0x20/0x20/0x20 factor=2048 and thus `tip_raw=base_return_D>>5` (within unsigned assumptions). This is **not** evidence that the base table byte or XML milliseconds can be used directly as `base_return_D`.
+- An independent Python test harness was built in the ChatGPT runtime (`carberry_tipin_lab.py`, `raw_table_values.csv`, `README.md`) and passed ROM/duplicate/descriptor/arithmetic sanity assertions. It is NOT bit-exact for table lookup and does NOT emulate the full ECU. These outputs were offered as a downloadable ZIP in chat and are not part of the GitHub repo.
+- Next critical task: trace `FUN_00F572` + `FUN_00F7A2` + `FUN_00F6A0` + `FUN_0087DE`, including `0x1042` and bank register state, to establish the 16-bit base return value, physical scaling and whether both apparently identical table lookups see identical coordinates. Only then compare raw Tip-in result to XML min threshold `0x293FA`.
