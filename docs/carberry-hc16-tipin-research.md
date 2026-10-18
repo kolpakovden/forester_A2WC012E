@@ -112,3 +112,39 @@ FUN_00AC68:
 5. Только затем сверять с Forester v25/v84 и планировать порт. **Не изменять, не прошивать v84 до статической и стендовой проверки.**
 
 См. также [sd-transient-fueling.md](sd-transient-fueling.md) и [merpmod-a2wc012e-address-map.md](merpmod-a2wc012e-address-map.md).
+
+## 7. Update 2026-10-18: full Ghidra decompile of FUN_00A7C4, compensation calibration
+
+Full decompiler output was supplied by the user for `FUN_00A7C4(ushort param_1)`. **Important:** this is *not* reference-quality C. HC16 SLEIGH/decompiler tracks banked registers, custom call conventions and return registers imperfectly (variables `extraout_A`, `undefined2`, apparently incorrect `iVar2` expression).
+
+### Calibrations verified with ECUFlash / XML
+
+- `0x29429` descriptor area / RPM table address `0x2942A`; visible RPM compensation: 800:-9.38%, 1200:-6.25%, >=1600:0% (at displayed RPM axis points).
+- `0x29438` descriptor / Positive Boost Error table `0x29439`; values 0 and 1.24 psi: -50%, >=2.48 psi displayed: 0%.
+- `0x29445` descriptor / ECT table `0x29446`; ECT -40:+221.88%, -30:+196.88%, -20:+171.88%, -10:+150%, 0:+125%, 10:+100%, 20:+78.12%, 30:+59.38%, 40:+40.62%, 50:+25%, 60:+15.62%, 70:+6.25%, >=80°C displayed: 0%.
+- Both boost/ECT compensation tables use `ThrottleTip-inEnrichmentCompensation(%)1`, `uint8`, `raw*3.125 - 100`. 0% correction is a neutral compensation, **not necessarily zero injection**.
+- `LDY #0x9429/#0x9438/#0x9445` preceding respective `FUN_008360` calls. Context `EK=2` at `0xA85C` in Ghidra, and `FUN_008360` begins `TEKB; TBXK; TBYK` (copies EK low nibble to banks). Corresponding banked addresses `0x29429/0x29438/0x29445`, nominal file offsets `0x21429/0x21438/0x21445`. Context `EK=2` is Ghidra inferred, runtime bank state remains to be proved.
+
+### Key observations from decompiler (checked against earlier disassembly)
+
+- `0x0B02` increments with saturation at 255; reset based on `0x293FF`.
+- `0x0B01` reset based on `0x293FE`, incremented after successful threshold test.
+- `0x0B04` zeroed depending on accumulated/reset condition, otherwise used in activation check against `0x293FC` and updated after accepted Tip-in pulse. **Better interpretation: cumulative throttle activity**, not directly injector output.
+- Activation requires TPS delta against `0x293F8`, application counter against `0x293F9`, cumulative against `0x293FC`, and several bit flags. Some decompiled bitwise negation expressions are suspicious and must be reconciled with actual BSET/BRSET/BRCLR semantics.
+- Three `FUN_008360` lookups: RPM at `0x9429` -> `0x0B09`; boost error at `0x9438` -> `0x0B08`; ECT at `0x9445` -> `0x0B0E`. Precise input unit/interpolation still not recovered.
+- `FUN_00FF7C()` stores into `0x0B06`. Meaning and scaling unknown.
+- `0x0B0A`: post-multiplication computed value, compared to `0x293FA` (=0.384 ms according to XML).
+- On accepted result, saturating addition to `0x09A8` stored into `0x0B0C`, then `FUN_0027DC()` is called; this routine is a **priority next target** to verify separate injector firing / control.
+- Following accepted event: increment `0x0B01`, reset `0x0B02`, and update `0x0B04` with branch-specific saturation/zero rules.
+
+### Major arithmetic caveat
+
+The decompiler emits `iVar2 = (uint)uVar4 * (uint)((uVar4 & 0xff) >> 2)` but assembly has `TDE; LDAA 0x0B0E,IZ; CLRB; LSRD; LSRD; EMUL` which clearly involves a **third operand read from `0x0B0E`**, omitted from the decompiler expression. It must not be used as-is in any Forester port. Reconstruct exact E/D register flow, multiplication, shifts and overflow handling using Motorola CPU16 instruction semantics.
+
+### Revised status and priority
+
+The Tip-in state machine and table **locations** are substantially established, not the validated mathematical model or injection actuator path. Before writing a Forester ROM patch:
+1. inspect `FUN_0027DC` and the call chain to injector firing;
+2. trace `FUN_00FF7C` to clarify `0x0B06`;
+3. restore fixed-point arithmetic from `0xA872–0xA8B8` using register-by-register symbolic execution;
+4. unit-test equivalent C code on a PC and verify behavior at threshold/overflow extremes.
