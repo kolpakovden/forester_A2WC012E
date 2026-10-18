@@ -148,3 +148,22 @@ The Tip-in state machine and table **locations** are substantially established, 
 2. trace `FUN_00FF7C` to clarify `0x0B06`;
 3. restore fixed-point arithmetic from `0xA872–0xA8B8` using register-by-register symbolic execution;
 4. unit-test equivalent C code on a PC and verify behavior at threshold/overflow extremes.
+
+## 8. Update 2026-10-18: FUN_002744 is confirmed TPU host-service interface
+
+The user provided four 14-byte channel descriptors in ROM at 0x266A–0x26A1, and HC16 listing for `FUN_002744`. Channel index n=0..3 computes `X=0x266A + 14*n`.
+
+| n | +0 | +2 | +4 | +6 | +8 | +A | +C | TPU channel |
+|---|---|---|---|---|---|---|---|---|
+| 0 | FF00 | 0002 | 0001 | 0001 | 0002 | FE1A | FE16 | 8 |
+| 1 | FF10 | 0008 | 0004 | 0004 | 0008 | FE1A | FE16 | 9 |
+| 2 | FF20 | 0020 | 0010 | 0010 | 0020 | FE1A | FE16 | 10 |
+| 3 | FF30 | 0080 | 0040 | 0040 | 0080 | FE1A | FE16 | 11 |
+
+All words big-endian. Datasheet MC68HC16Y1TS TPU map identifies `0xFFFE1A` as **HSRR1 (Host Service Request Register 1)** and `0xFFFE16` as **HSQR1 (Host Sequence Register 1)**. HSRR1 allocates two bits per channel 8..15: masks `1,4,0x10,0x40` select TPU8..TPU11 with request code 01 each. See https://www.nxp.com/docs/en/data-sheet/MC68HC16Y1TS.pdf and https://www.nxp.com/docs/en/application-note/TPUPN06.pdf.
+
+In `FUN_002744`: bank X=0, select channel descriptor; bank Y=F and Y=FE00; `STE 0x1FE,IY` writes to physical `0xFFFFE` (TPU parameter RAM, channel 15 last word, likely shared staging/parameter data; semantics not yet identified). `LDD +4,IX` fetches request mask; `LDY +A,IX` gets register offset FE1A; `STD 0,IY` issues TPU host service request; poll until `LDD 0,IY == 0`. The poll indicates request serviced/cleared, **not** necessarily end of electrical injector pulse. P register temporarily modified and restored.
+
+Previous thought that 4 channels were injector cylinders gains plausibility but **not proved**. These are definitely TPU channels 8,9,10,11; assigning them to injector outputs requires tracing TPU CFSR/HSQR/CPR initialization, parameter RAM FF00/FF10/FF20/FF30 layout, and board wiring or corroborating code. More importantly the actual channel function / microcode dictates what request code 01 does.
+
+Next research: find code writing `0xFFFE0C..0xFFFE12` (CFSR0..3), `0xFFFE16` HSQR1, `0xFFFE1E` CPR1, and TPU parameter RAM for channels 8..11 (e.g. `0xFFFF80..0xFFFFBF` if channel indexing in standard 16-byte units; verify exact addressing). Locate other uses of descriptor +0/+2/+6/+8/+C. Avoid assuming raw Ghidra C accurately models banked I/O. No production ROM changes made.
