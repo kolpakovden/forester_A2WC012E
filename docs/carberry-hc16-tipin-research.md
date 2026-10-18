@@ -1,6 +1,6 @@
 # CarBerry 4.2 → Forester SH7055: HC16 reverse engineering log
 
-**Дата фиксации:** 2026-10-18  
+> **Update 2026-10-19:** the Delta input producer and interrupt call site have now been found: see [CarBerry Tip-in Delta and interrupt evidence](carberry-tipin-delta-interrupt-2026-10-19.md). Historical "unknown producer/math" sections below reflect earlier stages; do not treat them as current unresolved findings. Java Ghidra scanners are in [tools/carberry-ghidra](../tools/carberry-ghidra/README.md).\n\n**Дата фиксации:** 2026-10-18  
 **Статус:** RESEARCH / экспериментальный дизассемблер; **не является готовым патчем**.  
 **Цель:** восстановить переносимую логику CarBerry (сначала Tip-in / transient fueling) и в дальнейшем реализовать её независимо на Forester A2WC012E/A2WC0MME, не переносить код Motorola непосредственно в SH7055.
 
