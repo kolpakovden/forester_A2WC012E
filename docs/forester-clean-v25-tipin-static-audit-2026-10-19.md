@@ -148,8 +148,22 @@ axis values (float32 BE) = [0,64,128,192,256,320,384,448,512]; 9 uint8 BE values
 axis (°C) = [-40,-30,-20,-10,0,10,20,30,40,50,60,70,80,90,100,110].
 Raw uint16 ordinates = [29950,27460,25166,22872,20382,18153,15991,14025,12321,10748,9699,8716,8192,8192,8192,8192], each divided by 8192. Selected ratios: -40 °C=3.656, 20 °C=1.952, 40 °C=1.504, 60 °C=1.184, 70 °C=1.064, >=80 °C=1.000. RAM B090 is the actual input; check external definition to confirm its physical temperature units before relying on °C labels.
 
-**Minimum pulse gate and lookup-scale uncertainty (correction):** The gate loads float32 250.0 at ROM 0x58DA8 and compares it against the *output of three table lookups and two multiplications*. The base descriptor at 0x54910 contains float32 scalar **4.0**, but we have not verified whether generic lookup routine 0x209C multiplies, divides, or otherwise applies that scalar to the raw 16-bit ordinate. Thus a *numerical Delta TPS threshold* (e.g. 6.19% or 3.55%) CANNOT be established reliably from raw base ordinates alone; these numbers are valid **only in an unverified model that assumes lookup returns the raw uint16 ordinate**. If 0x209C multiplies the raw ordinate by 4.0, the gate-crossing TPS deltas would instead be around 0.81% (250 internal units) and below the first axis value (150 internal units). Do not treat the earlier percentages as ECU facts.
+**New evidence: the actual 0x209C scale instruction was found in a Ghidra dump (2026-10-19).** At 0x209C the generic table lookup calls helper 0x2684, selects a type-specific lookup function via a byte offset in the table descriptor, and then executes the following *only when returned R3 != 0*:
 
-The same uncertainty affects the nominal pulse-duration conversion: prior XML calibration definition labels 250 units as 1.000 ms, but the scale of lookup intermediates FR0/FR14 and final injector request has not yet been independently traced. **Resolve 0x209C lookup scaling first.** The temperature and difference compensation ordinate scalars are also decoded as ROM fields, but their application by 0x209C is provisional until the routine itself is proven.
+~~~asm
+020B6  TST   R3,R3
+020B8  BT/S  020C4
+020BC  ADD   #12,R4
+020BE  FMOV.S @R4+,FR0      ; descriptor +0x0C Scale
+020C0  FMOV.S @R4,FR1       ; descriptor +0x10 Offset
+020C2  FMAC  FR0,FR2,FR1    ; FR1 = Offset + Scale * FR2
+020C8  FMOV  FR1,FR0       ; returned float result
+~~~
+
+Thus **the scale math itself IS now confirmed**: when R3 != 0, Result = Offset + Scale * lookup_FR2. For descriptor 0x54910, Scale=4.0 and Offset=0. We still need to establish R3 return conditions from handler 0x2730 (descriptor byte+2 = 0x08, dispatch table 0x20CC + 8), and what the typed lookup returns in FR2 for this table (raw vs normalized). Be careful: Ghidra's decompiler output shows a simplified indirect call and cannot alone prove the value of R3 in every normal lookup.
+
+Conditional scenario only — assuming active scale branch, raw uint16 value returned in FR2, and both compensation results 1.0, gate250/4 => raw62.5, which interpolates at about **0.807%** Delta TPS (between 0.40%,raw33 and 0.98%,raw75). At hypothetical gate150/4 => raw37.5, about **0.462%** Delta TPS. These numbers replace the previously proposed 6.19% and 3.55% *under this new conditional model*; they are not hardware-confirmed. With another boost compensation (e.g. 0.5), they differ accordingly.
+
+Critical nuance: these modeled differences indicate that modifying gate250→150 may have a much smaller or different effect than previously suggested. Do not recommend a flash-ready reduction until R3 branch behavior, typed 0x2730 lookup units, and physical injector scheduling are validated.
 
 **Provisional engineering choice:** Evaluate a single reversible clean-v25 parameter experiment at nominal 0.600 ms (float32 150.0 BE = 43 16 00 00 at ROM 0x58DA8; clean baseline 250.0 BE = 43 7A 00 00), *only* after confirming table-to-runtime units, injector scheduler, checksum correction and safety test/logging plan. Do **not** apply as a flash-ready patch solely on this static analysis; also avoid direct adoption of CarBerry 0.384 ms gate because actuator implementation and timing are different/unverified. The aim is to retain OEM logic and change only minimum threshold if evidence supports it. No ROM bytes have been changed in the repository.
