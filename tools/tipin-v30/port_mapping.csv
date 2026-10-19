@@ -1,0 +1,9 @@
+feature,CarBerry,Forester OEM,integration status
+base enrichment,18 point U8 axis / U8 table @0x21400/0x21414,18 point float axis / U16 table @0x59B3C/0x59B84,BLOCKED: input units and output transformation
+RPM compensation,8 intervals U8 @0x21429,RPM dependent compensation in OEM path not fully paired,BLOCKED: sensor encoding/map
+boost-error compensation,8 intervals U16 @0x21438,descriptor @0x5455C,BLOCKED: signedness and scaling
+ECT compensation,15 intervals U8 @0x21445,descriptor @0x54924,BLOCKED: rounding and sensor scaling
+activation,CarBerry TPS delta bytes 0x17D6..0x17DA,"delta TPS >= 0.20 @0x58DA4, other OEM gates",BLOCKED: event cadence/state parity
+output actuator,HC16 TPU path,SH7055 FUN_27344 -> FUN_985C -> FUN_9B10,BLOCKED: physical units/safe timing
+threshold,"CarBerry min 0x60 raw (model, needs context)",float 250.0 @0x58DA8 (v25),BLOCKED: not same units
+integrity,CarBerry checks unknown,SH7055 checksums unknown,BLOCKED: flash readiness

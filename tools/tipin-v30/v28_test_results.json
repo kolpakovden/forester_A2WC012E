@@ -1,0 +1,9 @@
+{
+  "status": "OFFLINE_ONLY_NOT_FLASHABLE",
+  "crosschecks_passed": 35131,
+  "base_points": 18,
+  "source_carberry_sha256": "b06e1282a4b274db856d250ae8a1babaf175729f7f9e9fec12e465fb774a4483",
+  "source_forester_sha256": "2ca539d0c47e3b1eec96c41e1e514c7b19b0e3786e9d826a41d3a3505b4c5d99",
+  "ecu_bin_modified": false,
+  "limitations": ["C/Python model parity is not HC16 equivalence", "CarBerry input byte mapping unknown", "Physical time scale unknown", "No checksum verification", "No injected ECU hook"]
+}
