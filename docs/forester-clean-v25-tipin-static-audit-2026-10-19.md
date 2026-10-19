@@ -167,3 +167,32 @@ Conditional scenario only — assuming active scale branch, raw uint16 value ret
 Critical nuance: these modeled differences indicate that modifying gate250→150 may have a much smaller or different effect than previously suggested. Do not recommend a flash-ready reduction until R3 branch behavior, typed 0x2730 lookup units, and physical injector scheduling are validated.
 
 **Provisional engineering choice:** Evaluate a single reversible clean-v25 parameter experiment at nominal 0.600 ms (float32 150.0 BE = 43 16 00 00 at ROM 0x58DA8; clean baseline 250.0 BE = 43 7A 00 00), *only* after confirming table-to-runtime units, injector scheduler, checksum correction and safety test/logging plan. Do **not** apply as a flash-ready patch solely on this static analysis; also avoid direct adoption of CarBerry 0.384 ms gate because actuator implementation and timing are different/unverified. The aim is to retain OEM logic and change only minimum threshold if evidence supports it. No ROM bytes have been changed in the repository.
+
+## Confirmed 0x2730 typed lookup: UInt16 linear interpolation and applied Scale (2026-10-19)
+
+Additional user Ghidra SH-2A/FPU listing:
+
+~~~asm
+2730 F2 8D  FLDI0 FR2
+2732 40 00  SHLL R0          ; index * 2, 16-bit ordinate
+2734 F2 04  FCMP/EQ FR0,FR2  ; t == 0?
+2736 31 0C  ADD R0,R1       ; first ordinate address
+2738 60 15  MOV.W @R1+,R0
+273A 60 0D  EXTU.W R0,R0
+273C 40 5A  LDS R0,FPUL
+273E 8D 06  BT/S 274E       ; skip interpolation if t == 0
+2740 F2 2D  _FLOAT FPUL,FR2 ; Y1
+2742 60 11  MOV.W @R1,R0
+2744 60 0D  EXTU.W R0,R0
+2746 40 5A  LDS R0,FPUL
+2748 F1 2D  FLOAT FPUL,FR1 ; Y2
+274A F1 21  FSUB FR2,FR1
+274C F2 1E  FMAC FR0,FR1,FR2 ; Y1 + t*(Y2-Y1)
+274E 00 0B  RTS
+~~~
+
+The dispatched handler 0x2730 corresponds to descriptor byte+2 = 0x08 (0x209C dispatch table pointer at 0x20CC+8 = 0x2730). At 0x20AA, R3 is loaded with unsigned type byte 8, and the above 0x2730 handler never writes R3. Therefore the gate 0x20B6 TST R3,R3 is nonzero and the 0x20BC..0x20C2 Scale/Offset FMA is executed. For the Tip-in descriptor at 0x54910, final base lookup is **4.0 * [Y1+t*(Y2-Y1)] + 0.0**. This confirms earlier suspected scaling.
+
+**Numerical gate model, conditional on compensations equal to 1.0:** OEM threshold 250 internal units implies raw base 62.5, linearly interpolated at about **0.807% Delta TPS** (between axis 0.40%,raw33 and 0.98%,raw75). Alternative nominal threshold 150 internal units implies raw base 37.5 => about **0.462% Delta TPS**. These interpolation results depend on literal float axis precision and endpoint behavior; real operating condition depends on the two compensations, early-exit gates, injector scheduling and final physical units. This is now a code-supported table model, **not an ECU pulse measurement**.
+
+The scaling question in prior sections is resolved for type 0x08. Next priority: verify behavior of the output actuator chain and characterize compensation lookups as actually invoked; test whether threshold change is needed with engine logs, rather than assuming it.
