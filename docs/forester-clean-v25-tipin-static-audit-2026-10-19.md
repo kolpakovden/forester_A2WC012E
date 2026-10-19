@@ -129,3 +129,31 @@ The XML's 0.004 ms/raw conversion makes 250 equal to a nominal 1.000 ms threshol
 CarBerry 4.2 forms a saturated 8-bit difference about neutral 128 using a two-update-old internal sample. Forester v25 forms a float32 subtraction between the current TPS and two-update-old history in B028. Thus the history-depth **appears equivalent**, but physical TPS scaling, tick cadence, gate logic, compensation curves, actual injector event and timing **remain unverified**. CarBerry uses a divide-by-8 path from an interrupt handler with unknown base cadence; Forester Delta TPS is downstream of 0x6330 with unknown cadence.
 
 Next: trace scheduler/periodic source of 0x6330; characterize both compensation descriptors 0x5455C/0x54924; investigate actuator calls 0xD754/0x3980; gather matched throttle-step logs to test hypotheses. Do not modify or flash clean v25 until the relevant actuator, math and A/B tests are validated.
+
+
+## Quantitative calibration comparison (2026-10-19, clean v25)
+
+Decoded directly from original bytes, descriptor encoding: 0x04 has uint8 ordinate; 0x08 has uint16 ordinate; float32 big-endian multiplication scalar at descriptor +0x0C. This gives:
+
+| Descriptor | Axis pointer | Value pointer | 1D table | Ordinate factor |
+| --- | --- | --- | --- | --- |
+| 0x54910 | 0x59B3C | 0x59B84 | 18 TPS-delta points | uint16 * 4.0 (internal tip-in units) |
+| 0x5455C | 0x59318 | 0x5933C | 9 boost-error/difference points | uint8 * 1/128 |
+| 0x54924 | 0x58F14 | 0x59BA8 | 16 temperature points | uint16 * 1/8192 |
+
+**Boost-error compensation:**
+axis values (float32 BE) = [0,64,128,192,256,320,384,448,512]; 9 uint8 BE values = [64,64,128,128,128,128,128,128,128], so compensation = [0.5,0.5,1,1,1,1,1,1,1]. The code feeds this table with the difference RAM FFFFAF08 minus RAM FFFFAF94. Units of that difference are not independently established.
+
+**Temperature compensation:**
+axis (°C) = [-40,-30,-20,-10,0,10,20,30,40,50,60,70,80,90,100,110].
+Raw uint16 ordinates = [29950,27460,25166,22872,20382,18153,15991,14025,12321,10748,9699,8716,8192,8192,8192,8192], each divided by 8192. Selected ratios: -40 °C=3.656, 20 °C=1.952, 40 °C=1.504, 60 °C=1.184, 70 °C=1.064, >=80 °C=1.000. RAM B090 is the actual input; check external definition to confirm its physical temperature units before relying on °C labels.
+
+**Minimum gate modeled against base table:** threshold at 0x58DA8 = float32 250.0 internal units. Baseline tip-in table scalar = 4.0 internal units/raw; previous conversion 0.004 ms/raw = 0.001 ms/internal unit (requires independent unit/actuator verification). Assuming continuous linear interpolation, warmed compensation 1.0 and difference compensation 1.0, the opening TPS delta at which the calculated number reaches the gate is approximately:
+- threshold 250 units (nominal 1.000 ms) -> 6.193% TPS delta;
+- threshold 200 units (nominal 0.800 ms) -> 4.874%;
+- threshold 150 units (nominal 0.600 ms) -> 3.545%;
+- threshold 96 units (nominal 0.384 ms) -> 1.489%.
+
+Example at 20 °C, compensated threshold crossing would move to approximately 2.55% delta if boost-error multiplier is 1.0. If boost-error multiplier is 0.5 and temperature multiplier is 1.0, nominal gate crossing is at ~12.75% delta (interpolated from the OEM base curve). These are **calibration models only**, not measured AFR, true injector-event delivery, or validated runtime behavior.
+
+**Provisional engineering choice:** Evaluate a single reversible clean-v25 parameter experiment at nominal 0.600 ms (float32 150.0 BE = 43 16 00 00 at ROM 0x58DA8; clean baseline 250.0 BE = 43 7A 00 00), *only* after confirming table-to-runtime units, injector scheduler, checksum correction and safety test/logging plan. Do **not** apply as a flash-ready patch solely on this static analysis; also avoid direct adoption of CarBerry 0.384 ms gate because actuator implementation and timing are different/unverified. The aim is to retain OEM logic and change only minimum threshold if evidence supports it. No ROM bytes have been changed in the repository.
