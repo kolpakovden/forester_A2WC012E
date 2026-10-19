@@ -54,3 +54,78 @@ At 5.86% Delta TPS the **base uncorrected** table reads 0.972 ms (below 1.000-ms
 **Next reverse-engineering job:** disassemble the region responsible for references to literal-pool offsets `0x24BAC`, `0x24BBC`, `0x24BCC`, trace throttle Delta and minimum pulse gates, and identify if/where extra injection is scheduled. If hardware logs are available, compare matched warmed throttle-step events including TPS, RPM, MAP, commanded lambda, wideband lambda, injection PW, IAT and ECT. Only then consider an isolated reversible threshold experiment. Do not attempt an unvalidated code port or direct CarBerry byte patch.
 
 Offline extractor with SHA verification and full decoded table was produced as a downloadable artifact in this conversation. Source v25 and v84 were unchanged.
+
+
+## Addendum 2026-10-19: OEM SH7055 Delta TPS producer and call graph
+
+**Evidence:** user-supplied Ghidra SH-2A/FPU disassembly plus direct read-only verification of the exact Forester clean v25 ROM (524288 bytes, SHA256 listed above). SH7055's SH-2E/FPU architecture is not identical to Ghidra's provisional SH-2A decoder. Ghidra previously misclassified active instructions as float data and literal-pool words as MOVI20 code. Verify code/data boundaries; no BIN writes or ECU flash occurred.
+
+### Delta TPS producer: 0x171C6
+
+~~~asm
+171C6 7F FC   ADD    #-4,R15
+171C8 96 36   MOV.W  @(PC),R6       ; literal B02C => RAM FFFFB02C
+171D0 E5 02   MOV    #2,R5
+171D6 75 FF   ADD    #-1,R5
+171D8 F3 48   FMOV.S @R4,FR3
+171DC F7 3B   FMOV.S FR3,@-R7
+171E0 8D F9   BT/S   171D6
+171E2 74 FC   _ADD   #-4,R4        ; branch delay slot
+171E4 94 27   MOV.W  @(PC),R4      ; literal B024
+171E8 93 27   MOV.W  @(PC),R3      ; literal B028
+171EA F3 48   FMOV.S @R4,FR3      ; read current TPS
+171EC F6 3A   FMOV.S FR3,@R6      ; save current to B02C
+171EE F3 66   FMOV.S @(R0,R6),FR3 ; R0=8 => history B034
+171F0 F2 48   FMOV.S @R4,FR2      ; current
+171F2 F2 31   FSUB   FR3,FR2     ; current minus historical
+171F4 F3 2A   FMOV.S FR2,@R3      ; write B028 Delta TPS
+171F6 00 0B   RTS
+~~~
+
+RAM layout: B024=current TPS; B028=Delta TPS; B02C/B030/B034=history Float32. The loop shifts B030→B034 and B02C→B030, saves current B024→B02C and computes B028=B024−B034. If called once per TPS update, that history corresponds to TPS[n]−TPS[n−2]. The *elapsed time* of the comparison window is not yet known.
+
+### Confirmed call at 0x170F6 and upstream chain
+
+Reading the raw v25 bytes confirms a SH relative branch-and-subroutine:
+
+~~~asm
+170F6 B0 66  BSR 0x171C6  ; target = 0x170F6+4+(0x066*2)
+170F8 00 09  NOP
+~~~
+
+An aligned ROM opcode scan identified this BSR, while a literal 32-bit big-endian search for 00 01 71 C6 found zero matches. Hence the 0 XREF count in partially disassembled Ghidra was a false negative.
+
+Observed caller chain with PC-relative literal targets:
+
+~~~text
+0x6330 routine
+  0x634A MOV.L literal @0x63D4 = 0x1028C ; JSR via register
+0x1028C routine
+  0x10372 MOV.L literal @0x10570 = 0x170E8 ; JSR via register
+0x170E8 routine
+  0x170F6 BSR 0x171C6
+0x171C6 Delta TPS history update and write -> RAM 0xFFFFB028
+~~~
+
+This **does not establish a frequency** for the 0x6330 dispatcher or whether every entry reaches this path. Determine scheduling, gate conditions and period before assigning milliseconds.
+
+### OEM Tip-in consumer and gate
+
+User-supplied FPU disassembly establishes:
+- 0x24A22 loads float32 RAM B028 into FR15 as Delta TPS, used as base lookup argument at 0x24AE6.
+- 0x24A9C..0x24AA4 loads 0x58DA4 (float 0.20) and returns early if Delta TPS is below that threshold.
+- Additional early exits include 0x24AB0 (RAM B818 versus calibration 0x58852=7), 0x24AB8 (local byte), 0x24ACA (RAM B469 bit 0x80, unknown meaning), 0x24AD8 (float 0x58DAC=23.0 versus RAM B814).
+- 0x24AE2..0x24AE6 calls lookup 0x209C with base table descriptor 0x54910 and FR15 argument, returning FR0, copied to FR14.
+- 0x24AF8..0x24AFC uses table descriptor 0x5455C with RAM AF08 minus RAM AF94.
+- 0x24B00..0x24B06 uses descriptor 0x54924 with RAM B090.
+- 0x24B12..0x24B16 multiplies base by both table compensation results and stores result at RAM B80C.
+- 0x24B18..0x24B20 checks float32 250.0 at 0x58DA8; if final result is below 250, branches to function epilogue at 0x24B5C. Equality passes this gate.
+- 0x24B22..0x24B5A includes subsequent state updates and calls to 0x3980, 0xD754, 0x3994 and 0x24D8. Injector firing is **not yet proven**.
+
+The XML's 0.004 ms/raw conversion makes 250 equal to a nominal 1.000 ms threshold, but confirm units at the intermediate float and real injection actuation stage before claiming 1.000 ms is actually delivered.
+
+### CarBerry comparison and next work
+
+CarBerry 4.2 forms a saturated 8-bit difference about neutral 128 using a two-update-old internal sample. Forester v25 forms a float32 subtraction between the current TPS and two-update-old history in B028. Thus the history-depth **appears equivalent**, but physical TPS scaling, tick cadence, gate logic, compensation curves, actual injector event and timing **remain unverified**. CarBerry uses a divide-by-8 path from an interrupt handler with unknown base cadence; Forester Delta TPS is downstream of 0x6330 with unknown cadence.
+
+Next: trace scheduler/periodic source of 0x6330; characterize both compensation descriptors 0x5455C/0x54924; investigate actuator calls 0xD754/0x3980; gather matched throttle-step logs to test hypotheses. Do not modify or flash clean v25 until the relevant actuator, math and A/B tests are validated.
